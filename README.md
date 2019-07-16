@@ -3,7 +3,7 @@
 
 __김연준, 고주원, 양소영, 이세민__
 
-<img src="/images/likelion_logo.png" width="100%">
+<img src="/images/likelion_logo.png" width="300" height="300">
 
 ### 0. 개요
 ------------------------------
@@ -38,4 +38,4 @@ __김연준, 고주원, 양소영, 이세민__
  * 기타: HTML, CSS
  * 서버/DB: Heroku / Postgres 
  
-### Copyright 2019. 멋쟁이 사자처럼(김연준, 고주원, 양소영, 이세민) inc. all rights reserved
+##### Copyright 2019. 멋쟁이 사자처럼(김연준, 고주원, 양소영, 이세민) inc. all rights reserved
