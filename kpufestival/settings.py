@@ -37,9 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'account',
-    'info',
-    'board',
+    'account.apps.AccountConfig',
+    'info.apps.InfoConfig',
+    'board.apps.BoardConfig',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +57,7 @@ ROOT_URLCONF = 'kpufestival.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['kpufestival/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,3 +121,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'account', 'static'),
+    os.path.join(BASE_DIR, 'board', 'static'),
+    os.path.join(BASE_DIR, 'info', 'static'),
+    os.path.join(BASE_DIR, 'kpufestival', 'static'),
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
