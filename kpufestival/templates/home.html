@@ -1,5 +1,8 @@
 <!--홈입니다-->
 {% extends 'base.html'%}
+
+{% load staticfiles %}
+
 {% block content %}
 <style>
 .img{ 
@@ -17,13 +20,13 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="/static/admin/img/lineup1.png" class="d-block w-100" alt="...">
+        <img src="{% static 'img/lineup1.png' %}" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="/static/admin/img/lineup2.png" class="d-block w-100" alt="...">
+        <img src="{% static 'img/lineup2.png' %}" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="/static/admin/img/lineup3.png" class="d-block w-100" alt="...">
+        <img src="{% static 'img/lineup3.png' %}" class="d-block w-100" alt="...">
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
