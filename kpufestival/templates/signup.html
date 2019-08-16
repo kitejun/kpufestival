@@ -1,5 +1,6 @@
 <!--회원가입입니다-->
 {% extends 'base.html' %}
+{% load staticfiles %}
 
 {% block content %}
 <style>
@@ -10,7 +11,7 @@
   <div class="container">
    <div class="card-body">
     <div class="container">
-      <img class="img" src="/static/admin/img/logo.png" />
+      <img class="img" src="{% static 'img/logo.png' %}" />
       <!--로고는 추후 변경 또는 텍스트로 대체-->
     </div>      
     <br><!--가입폼은 기본으로 해뒀습니다 소셜로그인하시면 변경할게요-->
@@ -36,9 +37,9 @@
       </div>
       </form><br>
       <div class="login-btn-container" >
-        <img class="login-img" src="/static/admin/img/naver_btn.png" />
-        <img class="login-img" style="margin-left: 5px;"src="/static/admin/img/kakao_btn.png" />
-        <img class="login-img" style="width: 80px;" src="/static/admin/img/google_btn.png" />
+        <img class="login-img" src="{% static 'img/naver_btn.png' %}" />
+        <img class="login-img" style="margin-left: 5px;"src="{% static 'img/kakao_btn.png' %}" />
+        <img class="login-img" style="width: 80px;" src="{% static 'img/google_btn.png' %}" />
       </div>  
     </div>
     </div>
