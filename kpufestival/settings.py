@@ -37,8 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'account',
-    'info',
+    'account.apps.AccountConfig',
+    'info.apps.InfoConfig',
+    'board.apps.BoardConfig',
 ]
 
 MIDDLEWARE = [
@@ -122,7 +123,11 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
-# Extra places for collectstatic to find static files.
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'account', 'static'),
+    os.path.join(BASE_DIR, 'board', 'static'),
+    os.path.join(BASE_DIR, 'info', 'static'),
+    os.path.join(BASE_DIR, 'kpufestival', 'static'),
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
