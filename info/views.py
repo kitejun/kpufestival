@@ -5,3 +5,6 @@ def temp(request):
     
 def home(request):
     return render(request, 'home.html')
+
+def developer(request):
+    return render(request,'developer.html')
