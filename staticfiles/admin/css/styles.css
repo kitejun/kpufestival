@@ -114,6 +114,11 @@ div#footer{
     background-color: #323232;
     border-color: #323232;
 }
+/*소셜로그인 버튼*/
+.login-img{
+    width: 69px;
+  }
+  
 
 /*웹*/ 
 @media (min-width: 1025px)  {
