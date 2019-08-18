@@ -27,19 +27,19 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a name="nav"class="nav-link js-scroll-trigger" href="#" style="color: white;">축제소개</a>
+          <a name="nav"class="nav-link js-scroll-trigger" href="{% url 'introduce' %}" style="color: white;">축제소개</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="introduce" style="color: white;">주점소개 </a>
+          <a class="nav-link js-scroll-trigger" href="{% url 'introduce' %}" style="color: white;">주점소개 </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="board" style="color: white;">게시판 </a>
+          <a class="nav-link js-scroll-trigger" href="{% url 'board' %}" style="color: white;">게시판 </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#" style="color: white;">개발자소개</a>
+          <a class="nav-link js-scroll-trigger" href="{% url 'introduce' %}" style="color: white;">개발자소개</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="login" style="color: white;">로그인</a>
+          <a class="nav-link js-scroll-trigger" href="{% url 'login' %}" style="color: white;">로그인</a>
         </li>
       </ul>
     </div>
