@@ -1,4 +1,4 @@
-<!--베이스입니다-->
+<!--로그인입니다-->
 {% extends 'base.html'%}
 {% load staticfiles %}
 
@@ -7,7 +7,7 @@
 <body>
  <div class="wrapper">
   <div class="container">
-   <div class="card-body">
+   <div class="card-body" id="login-box">
     <div class="container">
       <img class="img" src="{% static 'img/logo.png' %}" />
       <!--로고는 추후 변경 또는 텍스트로 대체-->
@@ -33,6 +33,7 @@
         <input type="submit" value="로그인" class="btn btn-primary justify-content-center" style="display: flex" />
       </div>
       </form>
+      <!--signup으로 링크걸어주세요-->
       <p class="sign_up_p">아직 회원이 아니라면? <a class="sign_up_link" href="#">회원가입</a></p>
 
       <div class="login-btn-container" >
@@ -40,7 +41,6 @@
         <img class="login-img" style="margin-left: 5px;"src="{% static 'img/kakao_btn.png' %}" />
         <img class="login-img" style="width: 80px;" src="{% static 'img/google_btn.png' %}" />
       </div>  
-      <!--signup으로 링크걸어주세요-->
       </div>
     </div>
   </div>
