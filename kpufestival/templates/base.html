@@ -15,36 +15,36 @@
 </head>
 
 <body>
+  <div class="header">
   <!--navbar-->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">                
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
   <div class="container">
-    <a class="navbar-brand js-scroll-trigger" href="#page-top"><a href="{% url 'home' %}">
-      <img id="icon" src="{% static 'img/logo.png' %}" width="100">
-    </a></a>
+    <a class="navbar-brand js-scroll-trigger" href="{% url 'home' %}">
+        <img id="icon" src="{% static 'img/logo.png' %}" width="60">
+    </a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a name="nav"class="nav-link js-scroll-trigger" href="{% url 'introduce' %}" style="color: white;">축제소개</a>
+          <a class="nav-link js-scroll-trigger navcontent" href="{% url 'introduce' %}">주점소개 </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="{% url 'introduce' %}" style="color: white;">주점소개 </a>
+          <a class="nav-link js-scroll-trigger navcontent" href="{% url 'board' %}">게시판 </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="{% url 'board' %}" style="color: white;">게시판 </a>
+          <a class="nav-link js-scroll-trigger navcontent" href="{% url 'developer'%}" >개발자소개</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="{% url 'developer'%}" style="color: white;">개발자소개</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="{% url 'login' %}" style="color: white;">로그인</a>
+          <a class="nav-link js-scroll-trigger navcontent" href="{% url 'login' %}">로그인</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
+</div>
+
 {% block content %}
 
 {% endblock %}

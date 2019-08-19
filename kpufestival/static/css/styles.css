@@ -1,6 +1,8 @@
 /*폰트*/
 @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800');
 @import url('https://fonts.googleapis.com/css?family=Black+Han+Sans|Do+Hyeon&display=swap');
+/*유튜브 폰트*/
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 *{box-sizing: border-box;}
 html,body{height: 100%;}
@@ -10,28 +12,189 @@ body{margin:0;
 a:link,a:visited,a:active{color:inherit;}
 
 body{
-    font-family: 'Do Hyeon', sans-serif;}
-#footer{
-    font-family: 'Nanum Gothic', sans-serif;
-    background-color: #323232;
-    color: #ffffff;
-    text-align: left;
-    padding: 1.5em;
-    margin: 0;
-}
+    font-family:'Roboto', 'Do Hyeon', sans-serif;}
+
 #mainNav{
-    background-color: rgba( 0, 0,0, 0.6 );
+    background-color: #FFFFFF;
     font-size: 25px;
 }
 
+#right{
+    float:right;
+}
 /*intro,developer*/
 .card{
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 120;
+    border: 0;
     width: 100%;
 }
 .intro_content{
-    margin:30px;
+    margin:10px;
+    text-align: center;
 }
+
+#dev-img{
+    height: 300;
+}
+
+#intro-body{
+    height: 83.2;
+}
+/*카드 바디*/
+.h-card-text{
+    color: #606060;
+    margin:0;
+}
+
+/*intro img*/
+#intro-card-img{
+    height: 117.5;
+    /*border-bottom:5px solid red;*/
+}
+
+/*intro detail 페이지*/
+/*웹*/
+@media (min-width: 1025px)  {
+#detail-container{
+    margin-left:29%;
+    margin-right:29%;
+    margin-top:12%; 
+    margin-bottom: 12%;
+    width: 840; 
+    }
+}
+/*모바일*/
+@media (max-width: 1025px)  {
+#detail-container{
+    margin-left:7%;
+    margin-right:7%;
+    margin-top:30%; 
+    margin-bottom: 12%;
+    width: 840; 
+    }
+}
+
+#carouselExampleControls{
+    margin-bottom: 15px;
+}
+#detail-text{
+    color:#606060;
+}
+#tag{
+    color: #065FD4;
+}
+#contain-right{
+    float:right;
+}
+
+#icon_btn{
+    width: 40;
+}
+#detail-img{
+    width: 840; height:480;
+}
+#user-img{
+    width:60;
+    height:60;
+}
+#sub_button{
+    color: white;
+    background-color: red;
+    float: right;
+}
+/* base */
+.navcontent{
+    color: #282828 !important;
+}
+
+/* home */
+.section{
+    background: #dbdbdb;
+}
+#jb-container {
+    width: 1025px;
+    margin: 10px auto;
+    padding: 20px;
+    border: 1px solid #bcbcbc;
+}
+#jb-header {
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #bcbcbc;
+}
+#jb-content {
+    width: 600px;
+    padding: 20px;
+    margin-bottom: 20px;
+    float: left;
+    border: 1px solid #bcbcbc;
+}
+#jb-sidebar {
+    width: 300px;
+    padding: 20px;
+    margin-bottom: 20px;
+    float: right;
+    border: 1px solid #bcbcbc;
+}
+#jb-footer {
+    clear: both;
+    padding: 20px;
+    border: 1px solid #bcbcbc;
+}
+@media ( max-width: 1025px ) {
+    #jb-container {
+        height: 100%;
+        margin-top: 220px;
+        width: auto;
+    }
+    #jb-header{
+        height: 20%;
+    }
+    #jb-content {
+        height: 20%;
+      float: none;
+      width: auto;
+    }
+    #jb-sidebar {
+        height: 20%;
+      float: none;
+      width: auto;
+    }
+    #jb-footer{
+        height: 20%;
+    }
+}
+
+/*board*/
+#comment-box{
+  font-family: Arial, sans-serif;
+  margin-left: 10;
+}
+#comment-box p{
+  margin:0;
+}
+#context-box{
+  margin-left: 10;
+  font-size:25px;
+}
+#context-box p{
+  margin:0;
+  font-size:20px;
+}
+#context-box span{
+  font-size: 20px;
+}
+#right-icon{
+  float: right;
+  width: 38px;
+  margin-right: 10px;
+}
+.btn{
+  color: white;
+  background-color: red;
+}
+
+
 
 /*로그인,회원가입*/
 /*카드*/
@@ -103,3 +266,4 @@ body{
         height: 1200px;
     }
 }
+

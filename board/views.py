@@ -7,5 +7,9 @@ def board(request):
 
 def detail(request):
     return render(request,'detail.html')
+
 def introduce(request):
     return render(request,'introduce.html')
+
+def introdetail(request):
+    return render(request,'intro_detail.html')

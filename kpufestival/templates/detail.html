@@ -1,51 +1,107 @@
+<!--게시판 디테일페이지입니다-->
 {% extends 'base.html' %}
 {% block content %}
+{%load staticfiles%}
 <style>
 
 </style>
-
-<div class="container-fluid" style="margin-top:150px;"> 
-   <div class="row">
-      <div class="col-0 col-lg-2"></div>
-        <div class="col-12 col-lg-8"><br>
-            <button name="button" type="submit" class="btn btn-light">목록으로</button>
-            <div class="card" style="margin-top:10px;">
-              <div class="card-body" style=" padding-bottom:8px;padding-top:8px;">
-                <!--제목-->
-                <h4>
-                <strong>제목:</strong>
-                사랑을 찾습니다..
-                </h4>
-                <span>바보</span>
-                <span>3 months</span>
-              </div>
-            <div class="card-body" style="border-top:1px solid #989898">
-                <!--내용-->
-                <h5>
-                <strong>내용:</strong>
-                축제페이지이이
-                </h5>
-                </div>
-            </div>
-        <br>
-        <!--댓글 갯수-->
-            <p><span>5</span> 개의 댓글</p>
-          </div>         
-        <div class="col-0 col-lg-2"></div>
+<div id="detail-container">
+  <!--삭제버튼-->
+    <img id="right-icon" src="{% static 'img/delete_btn.png'%}">
+  <!--수정버튼-->
+    <img id="right-icon" src="{% static 'img/edit_btn.png'%}">
+    <br>
+    <hr>
+    <br>
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-9">
+        <!--제목-->
+          <h3>사랑을 찾습니다..</h3>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-1">
+          <!--작성자 아이콘-->
+        <img id="user-img" src="{% static 'img/icon.png'%}">
+        </div>
+        <div class="col-9">
+          <div id="context-box">
+            <!--작성자이름-->
+              <span>댕댕쓰</span>
+              <!--작성시간-->
+              <span id="detail-text"> 1분전</span>
+              <!--내용-->
+              <p>유툽 커뮤니티가 이런식이더라구요</p>
+              <p>이건 약간 맘에 안들긴하는군요</p>
+              <p>깔끔하긴한데 밍숭맹숭한</p>
+              <p>수정해볼 예정입니다</p>
+                <!--좋아요-->
+              <a href="{% url 'detail' %}">
+                  <img src="{% static 'img/like_btn.png'%}" style="margin-bottom:6px;">
+                  <span id="detail-text"> 13</span>
+                </a>
+                <!--싫어요-->
+                <a href="{% url 'detail' %}">
+                  <img src="{% static 'img/dislike_btn.png'%}" style="margin-top:2px;">
+                  <span id="detail-text"> 3</span>
+                </a>  
+          </div>
+        </div>
       </div> 
-    </div> 
-      <div class="container">
-        <form/>
-          <div class="form-group">
-            <textarea class="form-control">
-            </textarea>
-          <br>
-          <div class="input-field center-btn">
-          <button name="button" type="submit" class="btn btn-light">댓글달기</button>
+        <br>
+        <hr>
+        <!--댓글 갯수-->
+        <div class="row">
+          <div class="col-1"></div>
+          <div class="col-9">
+            <p>댓글 5개</p>
           </div>
+        </div>
+        <div class="row">
+          <div class="col-1"></div>
+          <div class="col-9">
+            <form>
+            <div class="form-group">
+              <textarea class="form-control">
+              </textarea>
+            <br>
+            <!--댓글 버튼-->
+            <button name="button" type="submit" class="btn btn-light" id="right">댓글달기</button>
+            </div>
+          </form>
           </div>
-          <hr>                                                    
-  </form>                                    
-</div> 
-  
+        </div>
+        <hr>
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="col-1">
+          <!--작성자아이콘-->
+        <img id="user-img" src="{% static 'img/icon.png'%}">
+        </div>
+        <div class="col-9">
+          <div id="comment-box">
+            <!--작성자-->
+              <strong><span>댕댕쓰</span></strong>
+              <!--댓글작성시간-->
+              <span id="detail-text">1분전</span>
+              <!--내용-->
+              <p>댓글 내용이 이렇게 주루르륵나오는거죠</p>
+              <p>길어지면 자세히 보기가 생기구</p>
+              <p>주르륵</p>
+                <!--좋아요-->
+              <a href="{% url 'detail' %}">
+                  <img src="{% static 'img/like_btn.png'%}" style="margin-bottom:6px;">
+                  <span id="detail-text"> 13</span>
+                </a>
+                <!--싫어요-->
+                <a href="{% url 'detail' %}">
+                  <img src="{% static 'img/dislike_btn.png'%}" style="margin-top:2px;">
+                  <span id="detail-text"> 3</span>
+                </a>  
+          </div>
+        </div>
+      </div>                                    
+</div>
 {% endblock %}
