@@ -1,6 +1,8 @@
 /*폰트*/
 @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800');
 @import url('https://fonts.googleapis.com/css?family=Black+Han+Sans|Do+Hyeon&display=swap');
+/*유튜브 폰트*/
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 *{box-sizing: border-box;}
 html,body{height: 100%;}
@@ -10,15 +12,8 @@ body{margin:0;
 a:link,a:visited,a:active{color:inherit;}
 
 body{
-    font-family: 'Do Hyeon', sans-serif;}
-#footer{
-    font-family: 'Nanum Gothic', sans-serif;
-    background-color: #323232;
-    color: #ffffff;
-    text-align: left;
-    padding: 1.5em;
-    margin: 0;
-}
+    font-family:'Roboto', 'Do Hyeon', sans-serif;}
+
 #mainNav{
     background-color: rgba( 0, 0,0, 0.6 );
     font-size: 25px;
@@ -26,13 +21,33 @@ body{
 
 /*intro,developer*/
 .card{
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 120;
+    border: 0;
     width: 100%;
 }
 .intro_content{
-    margin:30px;
+    margin:10px;
+    text-align: center;
 }
 
+#dev-img{
+    height: 300;
+}
+
+#intro-body{
+    height: 83.2;
+}
+/*카드 바디*/
+.h-card-text{
+    color: #606060;
+    margin:0;
+}
+
+/*intro img*/
+#intro-card-img{
+    height: 117.5;
+    /*border-bottom:5px solid red;*/
+  }
 /*로그인,회원가입*/
 /*카드*/
 .card-body{
