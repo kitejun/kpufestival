@@ -19,6 +19,9 @@ body{
     font-size: 25px;
 }
 
+#right{
+    float:right;
+}
 /*intro,developer*/
 .card{
     width: 120;
@@ -53,8 +56,8 @@ body{
 /*웹*/
 @media (min-width: 1025px)  {
 #detail-container{
-    margin-left:25%;
-    margin-right:25%;
+    margin-left:29%;
+    margin-right:29%;
     margin-top:12%; 
     margin-bottom: 12%;
     width: 840; 
@@ -71,7 +74,7 @@ body{
     }
 }
 
-#carousel{
+#carouselExampleControls{
     margin-bottom: 15px;
 }
 #detail-text{
@@ -99,6 +102,37 @@ body{
     background-color: red;
     float: right;
 }
+
+
+/*board*/
+#comment-box{
+  font-family: Arial, sans-serif;
+  margin-left: 10;
+}
+#comment-box p{
+  margin:0;
+}
+#context-box{
+  margin-left: 10;
+  font-size:25px;
+}
+#context-box p{
+  margin:0;
+  font-size:20px;
+}
+#context-box span{
+  font-size: 20px;
+}
+#right-icon{
+  float: right;
+  width: 38px;
+  margin-right: 10px;
+}
+.btn{
+  color: white;
+  background-color: red;
+}
+
 
 
 /*로그인,회원가입*/

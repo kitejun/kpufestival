@@ -9,11 +9,13 @@
   <br>
   <div class="row">
   <!--이부분부터 추가 for문으로 넣으시면 됩니다-->
+  <a href="{%url 'introdetail'%}">
   <div style="width: 210;">
     <div class="card" style="width: 210;">
         <img class="card-img-top h-img" src="{% static 'img/example1.png'%}" id="intro-card-img">
         <div id="intro-body">
         <!--음식 이미지-->
+        <br>
         <h5>학과명</h5>
         <a href="#"><p class="h-card-text" data-toggle="modal" data-target="#exampleModal">위치(지도 더보기로)</p></a>
         <!-- Modal -->
@@ -41,6 +43,7 @@
       </div>
       </div>
     </div>
+    </a>
     <!--여기까지-->
   </div>
   
