@@ -47,7 +47,60 @@ body{
 #intro-card-img{
     height: 117.5;
     /*border-bottom:5px solid red;*/
-  }
+}
+
+/*intro detail 페이지*/
+/*웹*/
+@media (min-width: 1025px)  {
+#detail-container{
+    margin-left:25%;
+    margin-right:25%;
+    margin-top:12%; 
+    margin-bottom: 12%;
+    width: 840; 
+    }
+}
+/*모바일*/
+@media (max-width: 1025px)  {
+#detail-container{
+    margin-left:7%;
+    margin-right:7%;
+    margin-top:30%; 
+    margin-bottom: 12%;
+    width: 840; 
+    }
+}
+
+#carousel{
+    margin-bottom: 15px;
+}
+#detail-text{
+    color:#606060;
+}
+#tag{
+    color: #065FD4;
+}
+#contain-right{
+    float:right;
+}
+
+#icon_btn{
+    width: 40;
+}
+#detail-img{
+    width: 840; height:480;
+}
+#user-img{
+    width:60;
+    height:60;
+}
+#sub_button{
+    color: white;
+    background-color: red;
+    float: right;
+}
+
+
 /*로그인,회원가입*/
 /*카드*/
 .card-body{
@@ -118,3 +171,4 @@ body{
         height: 1200px;
     }
 }
+

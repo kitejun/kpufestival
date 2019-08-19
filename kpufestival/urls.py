@@ -12,5 +12,7 @@ urlpatterns = [
     path('board/',board.views.board,name="board"),
     path('detail/',board.views.detail,name="detail"),
     path('introduce/',board.views.introduce,name="introduce"),
+    path('introdetail/',board.views.introdetail,name="introdetail"),
     path('developer/',info.views.developer,name="developer"),
+    
 ]
