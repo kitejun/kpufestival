@@ -5,7 +5,7 @@
 <style>
 
 </style>
-<div id="detail-container">
+<div class="contatiner" id="detail-container">
   <!--삭제버튼-->
     <img id="right-icon" src="{% static 'img/delete_btn.png'%}">
   <!--수정버튼-->
@@ -38,12 +38,12 @@
               <p>깔끔하긴한데 밍숭맹숭한</p>
               <p>수정해볼 예정입니다</p>
                 <!--좋아요-->
-              <a href="{% url 'detail' %}">
+              <a href="{% url 'boarddetail' %}">
                   <img src="{% static 'img/like_btn.png'%}" style="margin-bottom:6px;">
                   <span id="detail-text"> 13</span>
                 </a>
                 <!--싫어요-->
-                <a href="{% url 'detail' %}">
+                <a href="{% url 'boarddetail' %}">
                   <img src="{% static 'img/dislike_btn.png'%}" style="margin-top:2px;">
                   <span id="detail-text"> 3</span>
                 </a>  
@@ -91,12 +91,12 @@
               <p>길어지면 자세히 보기가 생기구</p>
               <p>주르륵</p>
                 <!--좋아요-->
-              <a href="{% url 'detail' %}">
+              <a href="{% url 'boarddetail' %}">
                   <img src="{% static 'img/like_btn.png'%}" style="margin-bottom:6px;">
                   <span id="detail-text"> 13</span>
                 </a>
                 <!--싫어요-->
-                <a href="{% url 'detail' %}">
+                <a href="{% url 'boarddetail' %}">
                   <img src="{% static 'img/dislike_btn.png'%}" style="margin-top:2px;">
                   <span id="detail-text"> 3</span>
                 </a>  

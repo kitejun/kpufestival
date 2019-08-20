@@ -66,8 +66,8 @@ body{
 /*모바일*/
 @media (max-width: 1025px)  {
 #detail-container{
-    margin-left:7%;
-    margin-right:7%;
+    margin-left:13.5%;
+    margin-right:13.5%;
     margin-top:30%; 
     margin-bottom: 12%;
     width: 840; 
