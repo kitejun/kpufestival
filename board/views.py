@@ -5,8 +5,11 @@ from django.shortcuts import render
 def board(request):
     return render(request,'board.html')
 
-def detail(request):
-    return render(request,'detail.html')
+def boarddetail(request):
+    return render(request,'board_detail.html')
+
+def boardnew(request):
+    return render(request,'board_new.html')
 
 def introduce(request):
     return render(request,'introduce.html')
