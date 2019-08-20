@@ -15,7 +15,7 @@ body{
     font-family:'Roboto', 'Do Hyeon', sans-serif;}
 
 #mainNav{
-    background-color: rgba( 0, 0,0, 0.6 );
+    background-color: #FFFFFF;
     font-size: 25px;
 }
 
@@ -102,7 +102,68 @@ body{
     background-color: red;
     float: right;
 }
+/* base */
+.navcontent{
+    color: #282828 !important;
+}
 
+/* home */
+.section{
+    background: #dbdbdb;
+}
+#jb-container {
+    width: 1025px;
+    margin: 10px auto;
+    padding: 20px;
+    border: 1px solid #bcbcbc;
+}
+#jb-header {
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #bcbcbc;
+}
+#jb-content {
+    width: 600px;
+    padding: 20px;
+    margin-bottom: 20px;
+    float: left;
+    border: 1px solid #bcbcbc;
+}
+#jb-sidebar {
+    width: 300px;
+    padding: 20px;
+    margin-bottom: 20px;
+    float: right;
+    border: 1px solid #bcbcbc;
+}
+#jb-footer {
+    clear: both;
+    padding: 20px;
+    border: 1px solid #bcbcbc;
+}
+@media ( max-width: 1025px ) {
+    #jb-container {
+        height: 100%;
+        margin-top: 220px;
+        width: auto;
+    }
+    #jb-header{
+        height: 20%;
+    }
+    #jb-content {
+        height: 20%;
+      float: none;
+      width: auto;
+    }
+    #jb-sidebar {
+        height: 20%;
+      float: none;
+      width: auto;
+    }
+    #jb-footer{
+        height: 20%;
+    }
+}
 
 /*board*/
 #comment-box{

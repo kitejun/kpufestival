@@ -7,7 +7,10 @@
 <style>
 .img{ 
     width:100%; 
-} 
+}
+.pp-tableCell{
+    height: auto !important;
+}
 
 </style>
 <link rel="stylesheet" type="text/css" href="{% static 'dist/jquery.pagepiling.css' %}" >
@@ -27,6 +30,8 @@
                 }
 			});
 	    });
+
+		normalScrollElements :  ' .pp -scrollable '
     </script>
 <div id="pagepiling">
     <div class="section">
@@ -58,19 +63,32 @@
         </div>
     </div>
     <div class="section" id="section1">
-        <div class="row">
-            <h1>Section 1</h1>
+        <div id="jb-container">
+          <div id="jb-header">
+            <h1>Responsive Layout</h1>
+          </div>
+          <div id="jb-content">
+            <h2>Content</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis nulla. Phasellus lacinia tempus mauris eu laoreet. Proin gravida velit dictum dui consequat malesuada. Aenean et nibh eu purus scelerisque aliquet nec non justo. Aliquam vitae aliquet ipsum. Etiam condimentum varius purus ut ultricies. Mauris id odio pretium, sollicitudin sapien eget, adipiscing risus.</p>
+          </div>
+          <div id="jb-sidebar">
+            <h2>Sidebar</h2>
+            <ul>
+              <li>Lorem</li>
+              <li>Ipsum</li>
+              <li>Dolor</li>
+            </ul>
+          </div>
+          <div id="jb-footer">
+            <p>Copyright</p>
+          </div>
         </div>
     </div>
     <div class="section" id="section2">
-        <div class="row">
-            <h1>Section 2</h1>
-        </div>
+        <h1>Section 2</h1>
     </div>
     <div class="section" id="section3">
-        <div class="row">
-            <h1>Section 3</h1>
-        </div>
+        <h1>Section 3</h1>
     </div>
 </div>
 
