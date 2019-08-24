@@ -1,14 +1,11 @@
-from django.contrib import admin
-from django.urls import path, include
-import info.views
-import account.views
-import board.views
+from django.urls import path
+from . import views
 
 urlpatterns = [
-    path('board/', board.views.board,name="board"),
-    path('boarddetail/', board.views.boarddetail,name="boarddetail"),
-    path('boardnew/', board.views.boardnew,name="boardnew"),
-    path('introduce/', board.views.introduce,name="introduce"),
-    path('introdetail/', board.views.introdetail,name="introdetail"),
+    path('', views.board,name="board"),
+    path('board_detail/', views.board_detail,name="board_detail"),
+    path('new/', views.new,name="new"),
+    path('introduce/', views.introduce,name="introduce"),
+    path('intro_detail/', views.intro_detail,name="intro_detail"),
 
 ]
