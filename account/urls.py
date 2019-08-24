@@ -1,10 +1,8 @@
-from django.contrib import admin
-from django.urls import path, include
-import info.views
-import account.views
-import board.views
+from django.urls import path
+from . import views
 
 urlpatterns = [
-    path('login/',account.views.login,name="login"),
-    path('signup/',account.views.signup,name="signup"),
+    path('login/', views.login, name="login"),
+    path('signup/', views.signup, name="signup"),
+    path('logout/', views.logout, name="logout"),
 ]
