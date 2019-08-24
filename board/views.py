@@ -27,16 +27,9 @@ def board(request):
     # 댓글 수
     counts=Board.objects.count()
 
-    #정렬 방법
-    sort = request.GET.get('sort', '') # url의 쿼리를 가져옴
-    if sort =='likes': # 인기순
-        board_list = Board.objects.annotate(like_count=Count('like_users')).order_by('-like_count', '-pub_date')
-    elif sort == 'mypost':
-        user = request.user
-        board_list = Board.objects.filter(author = user).order_by('-pub_date') #복수를 가져올수 있음
-    else:
-        board_list=Board.objects.all()
-
+    board_list=Board.objects.all()
+        
+    #페이지
     paginator = Paginator(board_list,5)
     total_len=len(board_list)
 
@@ -64,8 +57,9 @@ def board(request):
 
 
 
-def board_detail(request):
-    return render(request,'board_detail.html')
+def board_detail(request, board_id):
+    details = get_object_or_404(Board, pk=board_id)
+    return render(request, 'board_detail.html', {'details': details})
 
 def new(request):
     # 로그인 안 되어있을 때 로그인 페이지로
