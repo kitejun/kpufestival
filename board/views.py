@@ -56,7 +56,6 @@ def board(request):
     return render (request,'board.html', context )
 
 
-
 def board_detail(request, board_id):
     details = get_object_or_404(Board, pk=board_id)
     return render(request, 'board_detail.html', {'details': details})
