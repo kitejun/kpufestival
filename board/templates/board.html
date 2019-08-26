@@ -21,37 +21,41 @@
   <br><br>
   <!--이부분에 추가해주세요-->
   <table class="table">
-    
     <tbody>
+      <tr>
+        <td>
+          <span>제목</span>
+        </td>
+        <td>
+          <span>작성자</span>
+        </td>
+        <td id="td-center">
+          <span>조회수</span>
+        </td>
+        <td id="td-center">
+          <span>좋아요</span>
+        </td>
+      </tr>
       {% for board in posts %}
       <tr>
         <td>
           <a href="{% url 'board_detail' board.id %}">
             <span>{{board.summary_title}}</span>
+            <span>({{ board.comments.count }})</span>
           </a>
           <!--제목-->
-          <br>
-          <span>{{ board.pub_date|date:'bj일 f' }}</span>
+          <!--날짜는 제외하는게 깔끔할거같아요-->
+          <!--{{ board.pub_date|date:'bj일 f' }}-->
           <!--날짜-->
         </td>
         <td>
-          <span>작성자</span><br>
           <!--작성자-->
           <span>{{ board.author }}</span>
         </td>
-        <td>
-          <span>댓글 수</span><br>
-          <!--댓글-->
-          <span>{{ board.comments.count }}</span>
-        </td>
-        <td>
-          <span>조회수</span><br>
-          <!--댓글-->
+        <td id="td-center">
           <span>{{ board.hits }}</span>
         </td>
-        <td>
-          <span>좋아요 수</span><br>
-          <!--댓글-->
+        <td id="td-center">
           <span>{{ board.like_users.count }}</span>
         </td>
       </tr>
@@ -61,7 +65,32 @@
   </table>
 
   <!--로그인 구현 후 글쓰기 버튼 if문 처리-->
+  {% if user.is_authenticated %}
   <a class="btn" href="{%url 'new'%}" id="right" style="color: white">글쓰기</a>
+  {% else %}
+  <button id="sub_button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal">글쓰기</button>
+    <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">게시판 이용</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <h3>로그인이 필요합니다</h3>
+              </div>
+              <div class="modal-footer">
+                <a class="btn" href="{%url 'login'%}" id="right" style="color: white">로그인하러가기</a>
+                <button type="button" class="btn btn-light" data-dismiss="modal">닫기</button>
+              </div>
+            </div>
+          </div>
+        </div> 
+       <!--Modal-->
+   {% endif %}
   <br>
 
   <!--pagenation-->

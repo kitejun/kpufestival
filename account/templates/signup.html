@@ -20,8 +20,8 @@
         <form method="POST" action="{% url 'signup'%}" class="user" id="user" accept-charset="UTF-8">
           {% csrf_token %}
           <div class="form">
-            <label class="control-label" for="email">이메일</label><br />
-            <input name="username" autofocus="autofocus" class="form-control" type="email" id="email" />
+            <label class="control-label" for="email">아이디</label><br />
+            <input name="username" autofocus="autofocus" class="form-control" type="text" id="email" />
           </div>
           <br>
           <div class="form">

@@ -193,6 +193,9 @@ body{
   color: white;
   background-color: red;
 }
+#td-center{
+    text-align: center;
+}
 
 
 
