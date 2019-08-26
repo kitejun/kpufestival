@@ -4,33 +4,55 @@
 {
     #pagepiling
     {
-        display:none !important;
+        display:none;
     }
     .festival
     {
-        display:none !important;
+        display:none;
     }
     .section
     {
-        display:none !important;
+        display:none;
     }
     #section
     {
-        display:none !important;
+        display:none;
     }
     #section2
     {
-        display:none !important;
+        display:none;
     }
     #section3
     {
-        display:none !important;
+        display:none;
     }
     #section4
     {
-        display:none !important;
+        display:none;
     }
-    
+    #section_mobile
+    {
+        margin-top: 0px;
+        padding: 0px;
+    }
+    #main_img
+    {
+        width:70%;
+        margin: 0px;
+    }
+    #mobi_container
+    {
+        margin-top:120px;
+    }
+    #icon
+    {
+        width:200px;
+    }
+    .line-up
+    {
+        background-image: url( '/static/img/Line-up.jpg' );
+        background-size: 100%;
+    }
 
 }
 
@@ -39,7 +61,11 @@
 {
     #section_mobile
     {
-        display:none !important;
+        display:none;
+    }
+    #icon
+    {
+        width:300px;
     }
 
 }
