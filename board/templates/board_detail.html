@@ -35,12 +35,12 @@
         <!--내용-->
         <p>{{details.context}}</p>
         <!--좋아요-->
-        <a href="{% url 'board_detail' %}">
+        <a href="#">
           <img src="{% static 'img/like_btn.png'%}" style="margin-bottom:6px;">
           <span id="detail-text"> 13</span>
         </a>
         <!--싫어요-->
-        <a href="{% url 'board_detail' %}">
+        <a href="#">
           <img src="{% static 'img/dislike_btn.png'%}" style="margin-top:2px;">
           <span id="detail-text"> 3</span>
         </a>
@@ -91,9 +91,9 @@
         <!--좋아요-->
         <!--
           {% if user in details.like_users.all %}
-        <br><a href="{% url 'like' details.id %}">좋아요</a><br><br>
+        <br><a href="#"">좋아요</a><br><br>
         {% else %}
-        <a href="{% url 'like' details.id %}">
+        <a href="#">
             좋아요 취소
         </a> <br>
         {% endif %}
