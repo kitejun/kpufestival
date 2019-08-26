@@ -1,0 +1,114 @@
+<!--게시판 디테일페이지입니다-->
+{% extends 'base.html' %}
+{% block content %}
+{%load staticfiles%}
+<style>
+
+</style>
+<div class="contatiner" id="detail-container">
+  <!--삭제버튼-->
+  <img id="right-icon" src="{% static 'img/delete_btn.png'%}">
+  <!--수정버튼-->
+  <img id="right-icon" src="{% static 'img/edit_btn.png'%}">
+  <br>
+  <hr>
+  <br>
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-9">
+      <!--제목-->
+      <h3>{{details.title}}</h3>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-1">
+      <!--작성자 아이콘-->
+      <img id="user-img" src="{% static 'img/icon.png'%}">
+    </div>
+    <div class="col-9">
+      <div id="context-box">
+        <!--작성자이름-->
+        <span>{{details.author}}</span>
+        <!--작성시간-->
+        <span id="detail-text">{{details.pub_date}}</span>
+        <!--내용-->
+        <p>{{details.context}}</p>
+        <!--좋아요-->
+        <a href="#">
+          <img src="{% static 'img/like_btn.png'%}" style="margin-bottom:6px;">
+          <span id="detail-text"> 13</span>
+        </a>
+        <!--싫어요-->
+        <a href="#">
+          <img src="{% static 'img/dislike_btn.png'%}" style="margin-top:2px;">
+          <span id="detail-text"> 3</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <br>
+  <hr>
+  <!--댓글 갯수-->
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-9">
+      <p>댓글 5개</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-9">
+      <form>
+        <div class="form-group">
+          <textarea class="form-control">
+              </textarea>
+          <br>
+          <!--댓글 버튼-->
+          <button name="button" type="submit" class="btn btn-light" id="right">댓글달기</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-1">
+      <!--작성자아이콘-->
+      <img id="user-img" src="{% static 'img/icon.png'%}">
+    </div>
+    <div class="col-9">
+      <div id="comment-box">
+        <!--작성자-->
+        <strong><span>댕댕쓰</span></strong>
+        <!--댓글작성시간-->
+        <span id="detail-text">1분전</span>
+        <!--내용-->
+        <p>댓글 내용이 이렇게 주루르륵나오는거죠</p>
+        <p>길어지면 자세히 보기가 생기구</p>
+        <p>주르륵</p>
+
+        <!--좋아요-->
+        <!--
+          {% if user in details.like_users.all %}
+        <br><a href="#"">좋아요</a><br><br>
+        {% else %}
+        <a href="#">
+            좋아요 취소
+        </a> <br>
+        {% endif %}
+
+        {{ details.like_users.count }} 명이 좋아합니다.
+        -->
+        
+
+        <!--싫어요-->
+        <a href="#">
+          <img src="{% static 'img/dislike_btn.png'%}" style="margin-top:2px;">
+          <span id="detail-text"> 3</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
