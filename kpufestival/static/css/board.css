@@ -42,24 +42,20 @@
     text-align: center;
 }
 
+#intro-card-content{
+    font-size: 1.25rem;
+}
 #dev-img{
     height: 350;
 }
 
-#intro-body{
-    height: 83.2;
-}
+
 /*카드 바디*/
 .h-card-text{
     color: #606060;
     margin:0;
 }
 
-/*intro img*/
-#intro-card-img{
-    height: 117.5;
-    /*border-bottom:5px solid red;*/
-}
 
 /*intro detail 페이지*/
 /*웹*/

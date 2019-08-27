@@ -5,20 +5,22 @@
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/board.css' %}">
 
-<div class="container" style="margin-top:12%; margin-bottom: 12%">
-  <h3>학과별 주점소개</h3>
+<!--컨테이너 속성변경해야함 이거때문에 다 작게 보임-->
+<div class="container" style="margin-top:12%;">
+  <h2>학과별 주점소개</h2>
   <br>
-  <div class="row">
+  <div class="row" style="margin-bottom: 30px;">
   <!--이부분부터 추가 for문으로 넣으시면 됩니다-->
+  <div class="col-lg-3 col-sm-6 col-xs-6">
   <a href="{%url 'intro_detail'%}">
-  <div style="width: 210;">
-    <div class="card" style="width: 210;">
+    <div class="card">
         <img class="card-img-top h-img" src="{% static 'img/example1.png'%}" id="intro-card-img">
         <div id="intro-body">
         <!--음식 이미지-->
         <br>
-        <h5>학과명</h5>
-        <a href="#"><p class="h-card-text" data-toggle="modal" data-target="#exampleModal">위치(지도 더보기로)</p></a>
+        <span style="font-size: 30px;">학과명</span>
+        <span>좋아요개수</span>
+        <a href="#"><p id="intro-card-content" class="h-card-text" data-toggle="modal" data-target="#exampleModal">위치</p></a>
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
@@ -40,15 +42,13 @@
           </div>
         </div>
         <!--위치나 이미지 클릭하면 지도로 위치알려주기-->
-        <p class="h-card-text">소개글</p>
+        <p id="intro-card-content" class="h-card-text">소개글</p>
       </div>
       </div>
-    </div>
     </a>
-    <!--여기까지-->
   </div>
-  
+  <!--여기까지-->
   <br><br>
-  </div>
+  </div>  
 </div>
 {% endblock %}
