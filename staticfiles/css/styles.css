@@ -6,208 +6,216 @@
 
 *{box-sizing: border-box;}
 html,body{height: 100%;}
-body{margin:0;
-    display:flex;
-    flex-direction:column;}
 a:link,a:visited,a:active{color:inherit;}
 
 body{
     font-family:'Roboto', 'Do Hyeon', sans-serif;}
 
 #mainNav{
-    background-color: rgba( 0, 0,0, 0.6 );
+    background-color: #FFFFFF;
     font-size: 25px;
 }
 
 #right{
     float:right;
 }
-/*intro,developer*/
-.card{
-    width: 120;
-    border: 0;
-    width: 100%;
-}
-.intro_content{
-    margin:10px;
-    text-align: center;
-}
 
-#dev-img{
-    height: 300;
-}
-
-#intro-body{
-    height: 83.2;
-}
-/*카드 바디*/
-.h-card-text{
-    color: #606060;
-    margin:0;
-}
-
-/*intro img*/
-#intro-card-img{
-    height: 117.5;
-    /*border-bottom:5px solid red;*/
-}
-
-/*intro detail 페이지*/
-/*웹*/
-@media (min-width: 1025px)  {
-#detail-container{
-    margin-left:29%;
-    margin-right:29%;
-    margin-top:12%; 
-    margin-bottom: 12%;
-    width: 840; 
-    }
-}
-/*모바일*/
-@media (max-width: 1025px)  {
-#detail-container{
-    margin-left:7%;
-    margin-right:7%;
-    margin-top:30%; 
-    margin-bottom: 12%;
-    width: 840; 
-    }
-}
-
-#carouselExampleControls{
-    margin-bottom: 15px;
-}
-#detail-text{
-    color:#606060;
-}
-#tag{
-    color: #065FD4;
-}
-#contain-right{
-    float:right;
-}
-
-#icon_btn{
-    width: 40;
-}
-#detail-img{
-    width: 840; height:480;
-}
-#user-img{
-    width:60;
-    height:60;
-}
-#sub_button{
-    color: white;
-    background-color: red;
-    float: right;
+/* base */
+.navcontent{
+    color: #282828 !important;
 }
 
 /* home */
 .section{
-    background: #ffffff;
-
+    background: #dbdbdb;
 }
-
-/*board*/
-#comment-box{
-  font-family: Arial, sans-serif;
-  margin-left: 10;
+#jb-container {
+    width: 1025px;
+    margin: 10px auto;
+    padding: 20px;
+    border: 1px solid #bcbcbc;
 }
-#comment-box p{
-  margin:0;
+#jb-header {
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #bcbcbc;
 }
-#context-box{
-  margin-left: 10;
-  font-size:25px;
+#jb-content {
+    width: 600px;
+    padding: 20px;
+    margin-bottom: 20px;
+    float: left;
+    border: 1px solid #bcbcbc;
 }
-#context-box p{
-  margin:0;
-  font-size:20px;
+#jb-sidebar {
+    width: 300px;
+    padding: 20px;
+    margin-bottom: 20px;
+    float: right;
+    border: 1px solid #bcbcbc;
 }
-#context-box span{
-  font-size: 20px;
+#jb-footer {
+    clear: both;
+    padding: 20px;
+    border: 1px solid #bcbcbc;
 }
-#right-icon{
-  float: right;
-  width: 38px;
-  margin-right: 10px;
-}
-.btn{
-  color: white;
-  background-color: red;
-}
-
-
-
-/*로그인,회원가입*/
-/*카드*/
-.card-body{
-    padding: 60px;
-}
-#login-box{
-    border: 1px solid #BDBDBD;
-    border-radius: 5px;
-}
-/*폼태그*/
-.form-control:focus{
-  border-color: #989898;
-  color: #000000;
-  background-color: #fff;
-  outline: 0;
-  box-shadow: 0 0 0 0.1rem #989898;
-}       
-
-/*버튼*/
-.btn-primary{
-    background-color:#323232;
-    border: 1px solid #323232;
-    margin-left: auto;
-    margin-right: auto;
-}
-.btn-primary:hover {
-    color: #fff;
-    background-color: #323232;
-    border-color: #323232;
-}
-
-/*소셜로그인 container*/
-.login-btn-container{
-    justify-content:center; display:flex;
-}
-/*소셜로그인 버튼*/
-.login-img{
-  width: 69px;
-  height: 69px;
-}
-
-/*웹*/ 
-@media (min-width: 1025px)  {
-    .img{
-        width: 200px;   
-        margin-left:25%;
-        margin-right: 25%; 
-    }   
-    .wrapper{
-        margin-top:200px;
-        margin-bottom:200px;
-        margin-left: 30%;
-        margin-right: 30%;
+@media ( max-width: 1025px ) {
+    #jb-container {
+        height: 100%;
+        margin-top: 220px;
+        width: auto;
+    }
+    #jb-header{
+        height: 20%;
+    }
+    #jb-content {
+        height: 20%;
+      float: none;
+      width: auto;
+    }
+    #jb-sidebar {
+        height: 20%;
+      float: none;
+      width: auto;
+    }
+    #jb-footer{
+        height: 20%;
     }
 }
 
-/*모바일*/
-@media (max-width: 1025px)  {
-    .img{
-        width: 200px;
-        margin-left: 30%;   
-        margin-right: 30%;
-    }
-    .wrapper{
-        margin-top:200px;
-        margin-left: 5%;
-        margin-right: 5%;
-        height: 1200px;
-    }
+
+/*제목에 hover들어가는거*/
+
+.sm-link{
+    --uismLinkDisplay: var(--smLinkDisplay, inline-flex);   
+    --uismLinkTextColor: var(--smLinkTextColor);
+    --uismLinkTextColorHover: var(--smLinkTextColorHover);  
+    
+    display: var(--uismLinkDisplay);
+    color: var(--uismLinkTextColor);
+    position: relative;
+    overflow: hidden;
 }
 
+a.sm-link{
+    text-decoration: none;
+}
+
+.sm-link__label{
+  display: block;
+}
+
+/* sm-link_padding-all */ 
+
+.sm-link_padding-all{
+    --uismLinkLineWeight: var(--smLinkLineWeight, 2px);
+    --uismLinkLineColor: var(--smLinkLineColor, #000);
+    --uismLinkPadding: var(--smLinkPadding, 5px);
+    
+    padding: var(--uismLinkPadding);
+}
+
+.sm-link_padding-all::before, 
+.sm-link_padding-all::after{
+  width: 100%;
+  height: var(--uismLinkLineWeight);
+  left: 0;
+}
+
+.sm-link_padding-all::before{
+  top: 0;
+}
+
+.sm-link_padding-all::after{
+  bottom: 0;
+}
+
+.sm-link_padding-all .sm-link__label::before,
+.sm-link_padding-all .sm-link__label::after{
+  width: var(--uismLinkLineWeight);
+  height: 100%;
+  top: 0;
+}
+
+.sm-link_padding-all .sm-link__label::before{
+  left: 0;
+}
+
+.sm-link_padding-all .sm-link__label::after{
+  right: 0;
+}
+
+.sm-link_padding-all::before,
+.sm-link_padding-all::after,
+.sm-link_padding-all .sm-link__label::before,
+.sm-link_padding-all .sm-link__label::after{
+  content: "";     
+    background-color: var(--uismLinkLineColor);
+  position: absolute; 
+    opacity: 0;
+    
+    will-change: transform, opacity;
+    transition-property: transform, opacity;
+}
+
+.sm-link_padding-all:hover::before,
+.sm-link_padding-all:hover::after,
+.sm-link_padding-all:hover .sm-link__label::before,
+.sm-link_padding-all:hover .sm-link__label::after{
+    opacity: 1;
+}
+
+/* effect 1 */
+
+.sm-link1::before{
+  transform: translate3d(-105%, 0, 0);
+}
+
+.sm-link1::after{
+  transform: translate3d(105%, 0, 0);
+}
+
+.sm-link1 .sm-link__label::before{
+  transform: translate3d(0%, -100%, 0);
+}
+
+.sm-link1 .sm-link__label::after{
+  transform: translate3d(0%, 100%, 0);
+}
+
+.sm-link1::before,
+.sm-link1::after,
+.sm-link1 .sm-link__label::before,
+.sm-link1 .sm-link__label::after{
+    transition-timing-function: ease-out;
+    transition-duration: .2s, .15s;
+    transition-delay: 0s, .15s;
+}
+
+.sm-link1:hover::before,
+.sm-link1:hover::after,
+.sm-link1:hover .sm-link__label::before,
+.sm-link1:hover .sm-link__label::after{
+  transform: translate3d(0, 0, 0);
+    opacity: 1;
+    
+    transition-duration: .25s;
+    transition-delay: 0s;
+}
+
+/*
+SETTINGS
+*/
+
+.sm-link{
+    --smLinkPadding: 10px 15px;
+    --smLinkLineWeight: 5px;
+    /*색 변경은 밑에서*/
+    --smLinkLineColor: rgb(252, 155, 155);  
+    --smLinkTextColor: #243aab;
+    --smLinkTextColorHover: #1b255a;
+}
+
+.sm-link_bg{
+    --smLinkTextColorHover: #fff;
+}
