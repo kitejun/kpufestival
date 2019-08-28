@@ -2,13 +2,13 @@
 /*board*/
 #comment-box{
     font-family: Arial, sans-serif;
-    margin-left: 10em;
+    margin-left: 10;
   }
   #comment-box p{
     margin:0;
   }
   #context-box{
-    margin-left: 10em;
+    margin-left: 10;
     font-size:25px;
   }
   #context-box p{
@@ -45,6 +45,9 @@
 #intro-card-content{
     font-size: 1.25rem;
 }
+#dev-img{
+    height: 350;
+}
 
 
 /*카드 바디*/
@@ -72,6 +75,7 @@
     margin-right:13.5%;
     margin-top:30%; 
     margin-bottom: 12%;
+    width: 840; 
     }
 }
 
