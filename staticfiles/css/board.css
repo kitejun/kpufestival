@@ -2,13 +2,13 @@
 /*board*/
 #comment-box{
     font-family: Arial, sans-serif;
-    margin-left: 10em;
+    margin-left: 10;
   }
   #comment-box p{
     margin:0;
   }
   #context-box{
-    margin-left: 10em;
+    margin-left: 10;
     font-size:25px;
   }
   #context-box p{
@@ -32,15 +32,6 @@
   }
 
 /*intro,developer*/
-#my-container{
-    margin:4rem;
-  }
-  /*모바일*/
-@media (max-width: 1025px)  {
-  #my-container{
-    margin:1rem;
-  }
-}
 .card{
     width: 120;
     border: 0;
@@ -51,33 +42,11 @@
     text-align: center;
 }
 
-#intro-card-title{
-    font-size: 2.5rem;
-}
-
-#intro-card-like{
-    font-size: 1.25rem;
-}
-
 #intro-card-content{
     font-size: 1.25rem;
 }
-/*모바일*/
-@media (max-width: 1025px)  {
-    #intro-card-title{
-        font-size: 1.5rem;
-    }
-    
-    #intro-card-like{
-        font-size: 0.8rem;
-    }
-    
-    #intro-card-content{
-        font-size: 1rem;
-    }
-}
 #dev-img{
-    height: 300px;
+    height: 350;
 }
 
 
@@ -106,9 +75,7 @@
     margin-right:13.5%;
     margin-top:30%; 
     margin-bottom: 12%;
-    }
-    #dev-img{
-        height: 200px;
+    width: 840; 
     }
 }
 
@@ -134,8 +101,8 @@
     width: 1110px; height:600px;
 }
 #user-img{
-    width:5rem;
-    height:5rem;
+    width:60;
+    height:60;
 }
 #sub_button{
     color: white;
@@ -150,17 +117,7 @@
 }
 /*모바일*/
 @media (max-width: 1025px)  {
-    #detail-text{
-        font-size: 1rem;
-    }
-    #tag{
-        font-size: 1rem;
-    }
     #detail-img{
-        width: 500px; height:200px;
+        width: 710px; height:380px;
     }
-    #sub_button{
-        margin-top:20px;
-        font-size: 1.2rem;
-    }  
 }
