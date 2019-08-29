@@ -77,7 +77,7 @@
     }
 }
 #dev-img{
-    height: 350;
+    height: 300px;
 }
 
 
@@ -107,6 +107,9 @@
     margin-top:30%; 
     margin-bottom: 12%;
     width: 840; 
+    }
+    #dev-img{
+        height: 200px;
     }
 }
 
