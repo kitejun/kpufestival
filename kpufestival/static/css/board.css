@@ -148,7 +148,17 @@
 }
 /*모바일*/
 @media (max-width: 1025px)  {
-    #detail-img{
-        width: 710px; height:380px;
+    #detail-text{
+        font-size: 1rem;
     }
+    #tag{
+        font-size: 1rem;
+    }
+    #detail-img{
+        width: 500px; height:200px;
+    }
+    #sub_button{
+        margin-top:20px;
+        font-size: 1.2rem;
+    }  
 }
