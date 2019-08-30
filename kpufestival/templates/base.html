@@ -77,15 +77,6 @@
   }
 }
 
-/*햄버거버튼*/
-#menu{
-  font-size:4rem;
-  cursor:pointer;
-  float: left; 
-  margin-left:1rem; 
-  margin-top: 1rem;
-}
-
 /*로고 가운데정렬*/
 #icon-container{
   justify-content:center;
@@ -97,15 +88,40 @@
 #icon{
   width: 22rem;
 }
+
+/*hamburger*/
+.hamburger{
+  float: left; 
+  margin-left:2.5rem; 
+  margin-top: 2rem;
+}
+.hamburger .line{
+  width: 50px;
+  height: 5px;
+  background-color: #2c3e50;
+  display: block;
+  margin: 8px auto;
+}
+
+.hamburger:hover{
+  cursor: pointer;
+}
+
 /*모바일*/
 @media (max-width: 1025px)  {
   /*메뉴 내용*/
   .overlay a {
     font-size: 28px;
   }
-  #menu{
-  font-size:2rem;
-}
+  .hamburger{
+    float: left; 
+    margin-top:0.8rem;
+    margin-bottom:0.8rem;
+  }
+  .hamburger .line{
+    width: 28px;
+    height: 2.5px;
+  }
   #icon{
     width: 10rem;
   }
@@ -113,7 +129,7 @@
 </style>
 </head>
 <body>
-
+    
 <div id="myNav" class="overlay">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <div class="overlay-content">
@@ -132,8 +148,12 @@
   </div>
 </div>
 
-
-<span id="menu" onclick="openNav()">&#9776; </span>
+<div class="hamburger" onclick="openNav()">
+    <span class="line"></span>
+    <span class="line"></span>
+    <span class="line"></span>
+</div>  
+<!--<span id="menu" onclick="openNav()">&#9776; </span>-->
 
 <div id="icon-container">
   <a href="{% url 'home' %}" class="sm-link sm-link_padding-all sm-link1">
