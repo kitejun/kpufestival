@@ -42,7 +42,7 @@
     }
     #mobi_container
     {
-        margin-top:120px;
+        margin-top:10px;
     }
     #icon
     {
@@ -50,10 +50,53 @@
     }
     .line-up
     {
-        background-image: url( '/static/img/Line-up.jpg' );
+        background-image: url( '/static/img/Line-up.png' );
         background-size: 100%;
     }
-
+    .main_info
+    {
+        background-image: url( '/static/img/main_info.png' );
+        background-size: 100% 200px;
+    }
+    .line-up3
+    {
+        background-image: url( '/static/img/da-du.png' );
+        background-size: 100%;
+    }
+    .line-up4
+    {
+        background-image: url( '/static/img/mamamoo.png' );
+        background-size: 100%;
+    }
+    .line-up5
+    {
+        background-image: url( '/static/img/jannavi.png' );
+        background-size: 100%;
+    }
+    body,html
+    {
+        overflow: auto !important;
+    }
+    #pp-nav
+    {
+        display: none;
+    }
+    #jb-content {
+        width: 100%;
+        height: 200px;
+        margin-bottom: 20px;
+        float: left;
+        border: 1px solid #bcbcbc;
+    }
+    .picture_size
+    {
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+        height: 200px;
+    }
 }
 
 /* pc에서 보여지는 부분입니당 */
