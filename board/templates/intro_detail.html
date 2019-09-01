@@ -2,11 +2,12 @@
 
 {% load staticfiles %}
 {% block content %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/board.css' %}">
-
 <style>
+.content-box{
+    margin-top:20;
+}
 </style>
-<div class="container" >
+<div class="container" id="detail-container">
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -31,7 +32,7 @@
   <!--태그-->
   <a id="tag">#컴공 </a><a id="tag">#존맛</a>
   <!--학과명-->
-  <h1 id="intro-card-title">컴퓨터공학과</h1>
+  <h1>컴퓨터공학과</h1>
   <!--조회수-->
   <span id="detail-text">460,959 views</span>
   <div id="contain-right">
@@ -57,7 +58,7 @@
   <!--학과별 이미지-->
   <img id="user-img" src="{% static 'img/icon.png'%}">
   <!--학과이름-->
-  <span id="intro-card-title">컴퓨터공학과 맛집</span>
+  <span style="font-size: 30px;">컴퓨터공학과 맛집</span>
   <!--지도 보여주는 버튼-->
   <button id="sub_button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal">위치보기</button>
     <!-- Modal -->
