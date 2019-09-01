@@ -1,12 +1,15 @@
-<!--베이스입니다-->
+<!DOCTYPE html>
+<html>
+<head>
 {% load staticfiles %}
 
-
+<!--bootstrap 추가-->
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!--CSS only-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
@@ -21,306 +24,162 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-  <!-- pagePilling js  -->
-</head>
-
+  <link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css'%}">
+  <!-- pagePilling js   -->
 <style>
-/*
-P.S: if you like my content maybe you will become a donator and donate some money? That helps me to create new awesome materials. https://www.paypal.me/melnik909
-*/
 
-/*
-* core styles
-*/
-
-.sm-link{
-    --uismLinkDisplay: var(--smLinkDisplay, inline-flex);   
-    --uismLinkTextColor: var(--smLinkTextColor);
-    --uismLinkTextColorHover: var(--smLinkTextColorHover);  
-    
-    display: var(--uismLinkDisplay);
-    color: var(--uismLinkTextColor);
-    position: relative;
-    overflow: hidden;
+/*nav*/
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.87);
+  overflow-x: hidden;
+  transition: 0.5s;
 }
 
-a.sm-link{
-    text-decoration: none;
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
 }
 
-.sm-link__label{
+/*메뉴 내용*/
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 42px;
+  color: #818181;
   display: block;
+  transition: 0.3s;
 }
 
-/* sm-link_padding-all */ 
-
-.sm-link_padding-all{
-    --uismLinkLineWeight: var(--smLinkLineWeight, 2px);
-    --uismLinkLineColor: var(--smLinkLineColor, #000);
-    --uismLinkPadding: var(--smLinkPadding, 5px);
-    
-    padding: var(--uismLinkPadding);
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
 }
 
-.sm-link_padding-all::before, 
-.sm-link_padding-all::after{
-  width: 100%;
-  height: var(--uismLinkLineWeight);
-  left: 0;
+/*닫기 버튼*/
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
 }
 
-.sm-link_padding-all::before{
-  top: 0;
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
 }
 
-.sm-link_padding-all::after{
-  bottom: 0;
+/*로고 가운데정렬*/
+#icon-container{
+  justify-content:center;
+  display:flex; 
+  margin-top:0.8rem;
+  margin-bottom:0.8rem;
 }
 
-.sm-link_padding-all .sm-link__label::before,
-.sm-link_padding-all .sm-link__label::after{
-  width: var(--uismLinkLineWeight);
-  height: 100%;
-  top: 0;
+#icon{
+  width: 22rem;
 }
 
-.sm-link_padding-all .sm-link__label::before{
-  left: 0;
+/*hamburger*/
+.hamburger{
+  float: left; 
+  margin-left:2.5rem; 
+  margin-top: 2rem;
+}
+.hamburger .line{
+  width: 50px;
+  height: 5px;
+  background-color: #2c3e50;
+  display: block;
+  margin: 8px auto;
 }
 
-.sm-link_padding-all .sm-link__label::after{
-  right: 0;
+.hamburger:hover{
+  cursor: pointer;
 }
 
-.sm-link_padding-all::before,
-.sm-link_padding-all::after,
-.sm-link_padding-all .sm-link__label::before,
-.sm-link_padding-all .sm-link__label::after{
-  content: "";     
-    background-color: var(--uismLinkLineColor);
-  position: absolute; 
-    opacity: 0;
-    
-    will-change: transform, opacity;
-    transition-property: transform, opacity;
-}
-
-.sm-link_padding-all:hover::before,
-.sm-link_padding-all:hover::after,
-.sm-link_padding-all:hover .sm-link__label::before,
-.sm-link_padding-all:hover .sm-link__label::after{
-    opacity: 1;
-}
-
-/* effect 1 */
-
-.sm-link1::before{
-  transform: translate3d(-105%, 0, 0);
-}
-
-.sm-link1::after{
-  transform: translate3d(105%, 0, 0);
-}
-
-.sm-link1 .sm-link__label::before{
-  transform: translate3d(0%, -100%, 0);
-}
-
-.sm-link1 .sm-link__label::after{
-  transform: translate3d(0%, 100%, 0);
-}
-
-.sm-link1::before,
-.sm-link1::after,
-.sm-link1 .sm-link__label::before,
-.sm-link1 .sm-link__label::after{
-    transition-timing-function: ease-out;
-    transition-duration: .2s, .15s;
-    transition-delay: 0s, .15s;
-}
-
-.sm-link1:hover::before,
-.sm-link1:hover::after,
-.sm-link1:hover .sm-link__label::before,
-.sm-link1:hover .sm-link__label::after{
-  transform: translate3d(0, 0, 0);
-    opacity: 1;
-    
-    transition-duration: .25s;
-    transition-delay: 0s;
-}
-
-/* effect 5 */
-
-.sm-link5::before,
-.sm-link5::after,
-.sm-link5 .sm-link__label::before,
-.sm-link5 .sm-link__label::after{
-    transition-timing-function: ease-out;
-    transition-duration: .2s, .15s;
-    transition-delay: 0s, .15s; 
-}
-
-.sm-link5::before{
-  transform: translate3d(-100%, 0, 0);
-}
-
-.sm-link5::after{
-  transform: translate3d(100%, 0, 0);
-}
-
-.sm-link5 .sm-link__label::before{
-  transform: translate3d(0, 100%, 0);
-}
-
-.sm-link5 .sm-link__label::after{
-  transform: translate3d(0, -100%, 0);
-}
-
-.sm-link5:hover::before,
-.sm-link5:hover::after,
-.sm-link5:hover .sm-link__label::before,
-.sm-link5:hover .sm-link__label::after{
-  transform: translate3d(0, 0, 0);
-    transition-delay: 0s;   
-}
-/* effect 6 */
-
-.sm-link6::before,
-.sm-link6::after, 
-.sm-link6 .sm-link__label::before,
-.sm-link6 .sm-link__label::after{
-  transition-duration: .2s;
-  transition-timing-function: ease-out;
-}
-
-.sm-link6::before, 
-.sm-link6::after{
-  width: 100%;
-  height: var(--uismLinkLineWeight);
-  left: 0;
-}
-
-.sm-link6 .sm-link__label::before,
-.sm-link6 .sm-link__label::after{
-  width: var(--uismLinkLineWeight);
-  height: 100%;
-  top: 0;
-}
-
-.sm-link6::before{
-  top: 0;
-  transform: translate3d(-105%, 0, 0);
-}
-
-.sm-link6::after{
-  bottom: 0;
-  transform: translate3d(105%, 0, 0);
-}
-
-.sm-link6 .sm-link__label::before{
-  left: 0;
-  transform: translate3d(0, 105%, 0);
-}
-
-.sm-link6 .sm-link__label::after{
-  right: 0;
-  transform: translate3d(0, -105%, 0);
-}
-
-.sm-link6:hover::before,
-.sm-link6:hover::after,
-.sm-link6:hover .sm-link__label::before,
-.sm-link6:hover .sm-link__label::after{
-  transform: translate3d(0, 0, 0);
-}
-
-.sm-link6:hover::before{
-  transition-delay: 0s;
-}
-
-.sm-link6 .sm-link__label::after,
-.sm-link6:hover::after{
-  transition-delay: .25s;
-}
-
-.sm-link6::after,
-.sm-link6:hover .sm-link__label::after{
-  transition-delay: .15s;
-}
-
-.sm-link6::before,
-.sm-link6:hover .sm-link__label::before{
-  transition-delay: .35s;
-}
-
-
-/*
-SETTINGS
-*/
-
-.sm-link{
-    --smLinkPadding: 10px 15px;
-    --smLinkLineWeight: 5px;
-    --smLinkLineColor: rgb(252, 155, 155);
-    --smLinkTextColor: #243aab;
-    --smLinkTextColorHover: #1b255a;
-}
-
-.sm-link_bg{
-    --smLinkTextColorHover: #fff;
+/*모바일*/
+@media (max-width: 1025px)  {
+  /*메뉴 내용*/
+  .overlay a {
+    font-size: 28px;
+  }
+  .hamburger{
+    float: left; 
+    margin-top:0.8rem;
+    margin-bottom:0.8rem;
+  }
+  .hamburger .line{
+    width: 28px;
+    height: 2.5px;
+  }
+  #icon{
+    width: 10rem;
+  }
 }
 </style>
+</head>
 <body>
-  <div class="header">
-    <!--navbar-->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">
-          <a href="{% url 'home' %}" class="sm-link sm-link_padding-all sm-link1" id="main_img">
-            <span class="sm-link__label"><img id="icon" src="{% static 'img/kpufestival.png' %}" width="300"></span>
-          </a>
-        </a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-          data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-          aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger navcontent" href="{% url 'introduce' %}">주점소개 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger navcontent" href="{% url 'board' %}">게시판 </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger navcontent" href="{% url 'developer'%}">개발자소개</a>
-            </li>
-
-            {% if user.is_authenticated %}
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger navcontent" href="javascript:{document.getElementById('logout').submit()}">로그아웃</a>
-              <form id="logout" method="POST" action="{% url 'logout' %}">
-                {% csrf_token %}  <input type="hidden" />
-              </form>
-            </li>
-            {% else %}
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger navcontent" href="{% url 'login' %}">로그인</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger navcontent" href="{% url 'signup' %}">회원가입</a>
-            </li>
-            {% endif %}
-
-          </ul>
-        </div>
-      </div>
-    </nav>
+    
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a href="{% url 'introduce' %}">주점소개</a>
+    <a href="{% url 'board' %}">게시판</a>
+    <a href="{% url 'developer'%}">개발자소개</a>
+    {% if user.is_authenticated %}
+      <a href="javascript:{document.getElementById('logout').submit()}">로그아웃</a>
+      <form id="logout" method="POST" action="{% url 'logout' %}">
+        {% csrf_token %}  <input type="hidden" />
+      </form>
+    {% else %}
+      <a href="{% url 'login' %}">로그인</a>
+      <a href="{% url 'signup' %}">회원가입</a>
+    {% endif %}
   </div>
+</div>
 
-  {% block content %}
+<div class="hamburger" onclick="openNav()">
+    <span class="line"></span>
+    <span class="line"></span>
+    <span class="line"></span>
+</div>  
+<!--<span id="menu" onclick="openNav()">&#9776; </span>-->
 
-  {% endblock %}
+<div id="icon-container">
+  <a href="{% url 'home' %}" class="sm-link sm-link_padding-all sm-link1">
+    <span class="sm-link__label">
+      <img id="icon" src="{% static 'img/kpufestival.png' %}"></span>
+  </a>
+</div>
+
+
+
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+</script>
+ {% block content %}
+
+ {% endblock %}     
 </body>
+
+</html>

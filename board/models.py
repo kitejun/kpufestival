@@ -48,3 +48,8 @@ class Comment(models.Model):
     
     class Meta:
         ordering=['-id']
+
+
+# introduce 모델
+# 학과명,좋아요 개수,싫어요 개수,조회수,위치,소개글,태그
+# 사진-메뉴 또는 컨셉사진 2장,지도,학과별 아이콘(동그란모양)
