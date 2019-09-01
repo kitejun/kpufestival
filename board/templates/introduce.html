@@ -1,23 +1,31 @@
 <!--학과,동아리별 주점소개페이지입니다-->
 {%extends 'base.html'%}
 {% load staticfiles %}
-<style>
-</style>
+
 {% block content %}
-<div class="container" style="margin-top:12%; margin-bottom: 12%">
-  <h3>학과별 주점소개</h3>
+<style>
+
+</style>
+<link rel="stylesheet" type="text/css" href="{% static 'css/board.css' %}">
+
+<!--컨테이너 속성변경해야함 이거때문에 다 작게 보임-->
+<div id="my-container">
+<div style="margin:0 auto">
+  <h2>학과별 주점소개</h2>
   <br>
-  <div class="row">
+  <div class="row" style="margin-bottom: 30px;">
   <!--이부분부터 추가 for문으로 넣으시면 됩니다-->
+  <!--bootstrap4부터는 모바일은 col-숫자형태로 바뀜!-->
+  <div class="col-lg-3 col-6" style="margin-bottom: 30px;">
   <a href="{%url 'intro_detail'%}">
-  <div style="width: 210;">
-    <div class="card" style="width: 210;">
+    <div class="card">
         <img class="card-img-top h-img" src="{% static 'img/example1.png'%}" id="intro-card-img">
         <div id="intro-body">
         <!--음식 이미지-->
         <br>
-        <h5>학과명</h5>
-        <a href="#"><p class="h-card-text" data-toggle="modal" data-target="#exampleModal">위치(지도 더보기로)</p></a>
+        <span id="intro-card-title">학과명</span>
+        <span id="intro-card-like">좋아요개수</span>
+        <a href="#"><p id="intro-card-content" class="h-card-text" data-toggle="modal" data-target="#exampleModal">위치</p></a>
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
@@ -39,15 +47,13 @@
           </div>
         </div>
         <!--위치나 이미지 클릭하면 지도로 위치알려주기-->
-        <p class="h-card-text">소개글</p>
+        <p id="intro-card-content" class="h-card-text">소개글</p>
       </div>
       </div>
-    </div>
     </a>
-    <!--여기까지-->
   </div>
-  
-  <br><br>
-  </div>
+  <!--여기까지-->
+  </div>  
+</div>
 </div>
 {% endblock %}
