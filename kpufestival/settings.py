@@ -37,9 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'account.apps.AccountConfig',
     'info.apps.InfoConfig',
     'board.apps.BoardConfig',
+
+    'imagekit'
 ]
 
 MIDDLEWARE = [
@@ -130,4 +133,5 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'kpufestival', 'static'),
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
