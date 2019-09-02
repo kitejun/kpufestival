@@ -5,11 +5,11 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/board.css' %}">
 
 <div class="container">
-  <div class="row mt-4">
+  <div class="row mt-4 ml-2">
   <!-- 검색기능 -->
       <input class="btn" type="submit" value="검색하기">
   </div>
-  <div class="row mt-4">
+  <div class="row mt-4 mx-1">
   <!--이부분에 추가해주세요-->
       <div class="table-responsive">
         <table class="table">
@@ -60,7 +60,7 @@
   {% if user.is_authenticated %}
   <a class="btn" href="{%url 'new'%}" id="right" style="color: white">글쓰기</a>
   {% else %}
-  <button id="sub_button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal">글쓰기</button>
+  <button id="sub_button" class="btn right" data-toggle="modal" data-target="#exampleModal">글쓰기</button>
     <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
