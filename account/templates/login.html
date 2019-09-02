@@ -5,53 +5,61 @@
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/account.css' %}">
 <body>
-  <div class="wrapper">
-    <div class="container">
-      <div class="card-body" id="login-box">
-        <div class="container">
+<div class="wrapper">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 mx-5">
+        <div class="card-body" id="login-box">
+          <div class="container">
           <h1 style="justify-content: center; display:flex;">로그인</h1>
-        </div>
-        <br>
+          </div>
         <!--가입폼은 기본으로 해뒀습니다 소셜로그인하시면 변경할게요-->
         <form class="user" id="user" action="#" accept-charset="UTF-8" method="post">
-          {% csrf_token %}
-          <div class="form">
-            <label class="control-label" for="email">아이디</label><br />
-            <input name="username" autofocus="autofocus" class="form-control" type="text" id="email" />
+        {% csrf_token %}
+          <div class="row">
+            <div class="form-group col-12">
+              <label class="control-label" for="email">아이디</label><br />
+              <input name="username" autofocus="autofocus" class="form-control" type="text" id="email" />
+            </div>
           </div>
-          <br>
-          <div class="form">
-            <label class="control-label" for="password">비밀번호</label><br />
-            <input name="password" autocomplete="off" class="form-control" type="password" id="password" />
+          <div class="row">
+            <div class="form-group col-12">
+              <label class="control-label" for="password">비밀번호</label><br />
+              <input name="password" autocomplete="off" class="form-control" type="password" id="password" />
+            </div>
           </div>
-          <br>
-          <div class="form">
-            <input name="remember" type="hidden" value="0" />
-            <input type="checkbox" value="1" name="remember" id="user_remember" />
-            <label for="user_remember">저장하기</label>
+          <div class="row">
+            <div class="form-group col-12">
+              <input name="remember" type="hidden" value="0" />
+              <input type="checkbox" value="1" name="remember" id="user_remember" />
+              <label for="user_remember">저장하기</label>
 
-            <input type="submit" value="로그인" class="btn btn-primary" style="float:right" />
+              <input type="submit" value="로그인" class="btn btn-primary" style="float:right" />
+            </div>
           </div>
         </form>
-        <p class="sign_up_p">아직 회원이 아니라면? <a class="sign_up_link" href="{% url 'signup' %}">회원가입</a></p>
-
+          <div class="row">
+            <p class="sign_up_p pl-3">아직 회원이 아니라면? <a class="sign_up_link" href="{% url 'signup' %}">회원가입</a></p>
+          </div>
         <div class="login-btn-container">
-          <img class="login-img" src="{% static 'img/naver_btn.png' %}" />
-          <img class="login-img" style="margin-left: 5px;" src="{% static 'img/kakao_btn.png' %}" />
-          <img class="login-img" style="margin-left: 5px;" src="{% static 'img/google_btn.png' %}" />
+        <img class="login-img" src="{% static 'img/naver_btn.png' %}" />
+        <img class="login-img" style="margin-left: 5px;" src="{% static 'img/kakao_btn.png' %}" />
+        <img class="login-img" style="margin-left: 5px;" src="{% static 'img/google_btn.png' %}" />
         </div>
 
         {% if messages %}
         <ul class="messages">
-          <br><br>
-          {% for message in messages %}
-          <li class="{{ message.tags }}">{{ message }}</li>
-          {% endfor %}
+        <br><br>
+        {% for message in messages %}
+        <li class="{{ message.tags }}">{{ message }}</li>
+        {% endfor %}
         </ul>
         {% endif %}
 
+        </div>
       </div>
     </div>
   </div>
+</div>
 </body>
 {%endblock%}
