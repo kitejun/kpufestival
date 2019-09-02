@@ -90,27 +90,6 @@
 
 /*intro detail 페이지*/
 /*웹*/
-@media (min-width: 1025px)  {
-#detail-container{
-    margin-left:29%;
-    margin-right:29%;
-    margin-top:12%; 
-    margin-bottom: 12%;
-    width: 840; 
-    }
-}
-/*모바일*/
-@media (max-width: 1025px)  {
-#detail-container{
-    margin-left:13.5%;
-    margin-right:13.5%;
-    margin-top:30%; 
-    margin-bottom: 12%;
-    }
-    #dev-img{
-        height: 200px;
-    }
-}
 
 #carouselExampleControls{
     margin-bottom: 15px;
@@ -138,12 +117,8 @@
     height:5rem;
 }
 #sub_button{
-    color: white;
-    font-size: 1.5rem;
-    background-color: red;
     float: right;
-}  
-/* 1110*0.648*/
+}
   
 .content-box{
     margin-top:20;
@@ -160,7 +135,6 @@
         width: 500px; height:200px;
     }
     #sub_button{
-        margin-top:20px;
-        font-size: 1.2rem;
-    }  
+        float : right;
+    }
 }
