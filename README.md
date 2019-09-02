@@ -36,6 +36,6 @@ __김연준, 고주원, 양소영, 이세민__
  * Tool: Visual Code
  * 언어: Python, JavaScript
  * 기타: HTML, CSS
- * 서버/DB: Heroku / Postgres 
+ * 서버 :Heroku / DB : Postgres SQL
  
 ##### Copyright 2019. 멋쟁이 사자처럼(김연준, 고주원, 양소영, 이세민) inc. all rights reserved
