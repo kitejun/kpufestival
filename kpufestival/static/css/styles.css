@@ -85,7 +85,6 @@ body{
 
 
 /*제목에 hover들어가는거*/
-
 .sm-link{
     --uismLinkDisplay: var(--smLinkDisplay, inline-flex);   
     --uismLinkTextColor: var(--smLinkTextColor);
@@ -109,7 +108,7 @@ a.sm-link{
 
 .sm-link_padding-all{
     --uismLinkLineWeight: var(--smLinkLineWeight, 2px);
-    --uismLinkLineColor: var(--smLinkLineColor, #000);
+    --uismLinkLineColor: var(--smLinkLineColor, #000000);
     --uismLinkPadding: var(--smLinkPadding, 5px);
     
     padding: var(--uismLinkPadding);
@@ -217,5 +216,5 @@ SETTINGS
 }
 
 .sm-link_bg{
-    --smLinkTextColorHover: #fff;
+    --smLinkTextColorHover: #ffffff;
 }
