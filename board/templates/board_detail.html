@@ -27,13 +27,14 @@
     </div>
     <div class="col-9">
       <div id="context-box">
+        {{details.update_counter_hit}}
         <!--작성자이름-->
         <span>{{details.author}}</span>
         <!--작성시간-->
         <span id="detail-text">{{details.pub_date}}</span>
 
         <!-- 사진 -->
-        <p><img src="{{ details.image.url }}"  style="width: 55%;"></p>
+        <p><img src="{{ details.image.url }}" style="width: 55%;"></p>
 
         <!--내용-->
         <p>{{details.context}}</p>
@@ -103,7 +104,7 @@
 
         {{ details.like_users.count }} 명이 좋아합니다.
         -->
-        
+
 
         <!--싫어요-->
         <a href="#">
