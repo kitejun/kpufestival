@@ -1,7 +1,7 @@
 astroid==2.2.5
 colorama==0.4.1
 dj-database-url==0.5.0
-Django==2.2.3
+Django==2.2.4
 django-appconf==1.0.3
 django-imagekit==4.0.2
 gunicorn==19.9.0
