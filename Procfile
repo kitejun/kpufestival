@@ -1,0 +1,1 @@
+web: gunicorn kpufestival.wsgi --log-file -
