@@ -85,6 +85,15 @@ def new(request):
         form = BoardPost()
         return render(request, 'board_new.html', {'form':form}) # form형태로 전달
 
+def like(request, board_id):
+    board = get_object_or_404(Board, id=board_id)
+    if request.user in board.like_users.all():
+        board.like_users.remove(request.user)
+    else:
+        board.like_users.add(request.user)
+    return redirect('/board/board_detail/' + str(board.id))
+
+
 def introduce(request):
     return render(request,'introduce.html')
 

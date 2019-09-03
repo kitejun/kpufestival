@@ -40,8 +40,15 @@
         <p>{{details.context}}</p>
         <!--좋아요-->
         <a href="#">
-          <img src="{% static 'img/like_btn.png'%}" style="margin-bottom:6px;">
-          <span id="detail-text"> 13</span>
+          <!--
+            <img src="{% static 'img/like_btn.png'%}" style="margin-bottom:6px;">
+          -->
+          {% if user in details.like_users.all %}
+          <a href="{% url 'like' details.id %}">좋아요 취소</a>
+          {% else %}
+          <a href="{% url 'like' details.id %}" >좋아요</a>
+          {% endif %}
+          <span id="detail-text">{{ details.like_users.count }}</span>
         </a>
         <!--싫어요-->
         <a href="#">
