@@ -2,107 +2,124 @@
 <html>
 
 <head>
-  <!--CSS only-->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-  <!--bootstrap js-->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-  <link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css'%}">
-  <!-- pagePilling js   -->
-<style>
+  {% load staticfiles %}
 
-/*nav*/
-.overlay {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 5;
-  top: 0;
-  left: 0;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0, 0.87);
-  overflow-x: hidden;
-  transition: 0.5s;
-}
+  <!--bootstrap 추가-->
 
-.overlay-content {
-  position: relative;
-  top: 25%;
-  width: 100%;
-  text-align: center;
-  margin-top: 30px;
-}
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--CSS only-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 
-/*메뉴 내용*/
-.overlay a {
-  padding: 8px;
-  text-decoration: none;
-  font-size: 42px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
+    <!--bootstrap js-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css'%}">
+    <!-- pagePilling js   -->
 
-.overlay a:hover, .overlay a:focus {
-  color: #f1f1f1;
-}
+      <!-- 카카오 채팅 -->
+  <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
-/*닫기 버튼*/
-.overlay .closebtn {
-  position: absolute;
-  top: 20px;
-  right: 45px;
-  font-size: 60px;
-}
+    <style>
+      /*nav*/
+      .overlay {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 5;
+        top: 0;
+        left: 0;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.87);
+        overflow-x: hidden;
+        transition: 0.5s;
+      }
 
-@media screen and (max-height: 450px) {
-  .overlay a {font-size: 20px}
-  .overlay .closebtn {
-  font-size: 40px;
-  top: 15px;
-  right: 35px;
-  }
-}
+      .overlay-content {
+        position: relative;
+        top: 25%;
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+      }
 
-/*로고 가운데정렬*/
-#icon-container{
-  justify-content:center;
-  display:flex; 
-  margin-top:0.8rem;
-  margin-bottom:0.8rem;
-}
+      /*메뉴 내용*/
+      .overlay a {
+        padding: 8px;
+        text-decoration: none;
+        font-size: 42px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      }
 
-#icon{
-  width: 22rem;
-}
+      .overlay a:hover,
+      .overlay a:focus {
+        color: #f1f1f1;
+      }
 
-/*hamburger*/
-.hamburger{
-  float: left; 
-  margin-left:2.5rem; 
-  margin-top: 2rem;
-}
-.hamburger .line{
-  width: 50px;
-  height: 5px;
-  background-color: #2c3e50;
-  display: block;
-  margin: 8px auto;
-}
+      /*닫기 버튼*/
+      .overlay .closebtn {
+        position: absolute;
+        top: 20px;
+        right: 45px;
+        font-size: 60px;
+      }
 
-.hamburger:hover{
-  cursor: pointer;
-}
+      @media screen and (max-height: 450px) {
+        .overlay a {
+          font-size: 20px
+        }
+
+        .overlay .closebtn {
+          font-size: 40px;
+          top: 15px;
+          right: 35px;
+        }
+      }
+
+      /*로고 가운데정렬*/
+      #icon-container {
+        justify-content: center;
+        display: flex;
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+      }
+
+      #icon {
+        width: 22rem;
+      }
+
+      /*hamburger*/
+      .hamburger {
+        float: left;
+        margin-left: 2.5rem;
+        margin-top: 2rem;
+      }
+
+      .hamburger .line {
+        width: 50px;
+        height: 5px;
+        background-color: #2c3e50;
+        display: block;
+        margin: 8px auto;
+      }
+
+      .hamburger:hover {
+        cursor: pointer;
+      }
 
 /*게시판 메뉴*/
 .board a:last-child{display: none}
@@ -132,22 +149,22 @@
   .board:hover a:first-child{display:inline-block}
   .board:hover a:last-child{display:inline-block}
 }
+    </style>
+  </head>
 
-
-</style>
-</head>
 <body>
-    
-<div id="myNav" class="overlay">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <div class="overlay-content">
-    <a href="{% url 'introduce' %}">주점소개</a>
-    <div class="board">
-      <a href="{% url 'board' %}">게시판</a>
-      <a href="{% url 'board' %}">분실물</a>
-    </div>
-    <a href="{% url 'developer'%}">개발자소개</a>
-    {% if user.is_authenticated %}
+
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+      <a href="{% url 'introduce' %}">주점소개</a>
+      <div class="board">
+        <a href="{% url 'board' %}">게시판</a>
+        <!--분실물페이지 링크로 걸어주세요-->
+        <a href="{% url 'board' %}">분실물</a>
+      </div>
+      <a href="{% url 'developer'%}">개발자소개</a>
+      {% if user.is_authenticated %}
       <a href="javascript:{document.getElementById('logout').submit()}">로그아웃</a>
       <form id="logout" method="POST" action="{% url 'logout' %}">
         {% csrf_token %} <input type="hidden" />
