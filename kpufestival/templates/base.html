@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
-{% load staticfiles %}
 
-<!--bootstrap 추가-->
 <head>
   <!--CSS only-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -153,43 +150,58 @@
     {% if user.is_authenticated %}
       <a href="javascript:{document.getElementById('logout').submit()}">로그아웃</a>
       <form id="logout" method="POST" action="{% url 'logout' %}">
-        {% csrf_token %}  <input type="hidden" />
+        {% csrf_token %} <input type="hidden" />
       </form>
-    {% else %}
+      {% else %}
       <a href="{% url 'login' %}">로그인</a>
-      <a href="{% url 'signup' %}">회원가입</a>
-    {% endif %}
+      {% endif %}
+    </div>
   </div>
-</div>
 
-<div class="hamburger" onclick="openNav()">
+  <div class="hamburger" onclick="openNav()">
     <span class="line"></span>
     <span class="line"></span>
     <span class="line"></span>
-</div>  
-<!--<span id="menu" onclick="openNav()">&#9776; </span>-->
+  </div>
+  <!--<span id="menu" onclick="openNav()">&#9776; </span>-->
 
-<div id="icon-container">
-  <a href="{% url 'home' %}" class="sm-link sm-link_padding-all sm-link1">
-    <span class="sm-link__label">
-      <img id="icon" src="{% static 'img/kpufestival.png' %}"></span>
-  </a>
-</div>
+  <div id="icon-container">
+    <a href="{% url 'home' %}" class="sm-link sm-link_padding-all sm-link1">
+      <span class="sm-link__label">
+        <img id="icon" src="{% static 'img/kpufestival.png' %}"></span>
+    </a>
+  </div>
 
 
 
-<script>
-function openNav() {
-  document.getElementById("myNav").style.width = "100%";
-}
+  <script>
+    function openNav() {
+      document.getElementById("myNav").style.width = "100%";
+    }
 
-function closeNav() {
-  document.getElementById("myNav").style.width = "0%";
-}
-</script>
- {% block content %}
+    function closeNav() {
+      document.getElementById("myNav").style.width = "0%";
+    }
+  </script>
+  {% block content %}
 
- {% endblock %}     
+  {% endblock %}
+  <div>
+    <div style="position:fixed; right:0px; bottom:0px;" id="plusfriend-chat-button"></div>
+  </div>
+
+  <script type='text/javascript'>
+    //<![CDATA[
+    // 사용할 앱의 JavaScript 키를 설정해 주세요.
+    Kakao.init('5f2d23cd2c499b2da83462fb37ae738e');
+    // 플러스친구 1:1채팅 버튼을 생성합니다.
+    Kakao.PlusFriend.createChatButton({
+      container: '#plusfriend-chat-button',
+      plusFriendId: '_BqiaT' // 플러스친구 홈 URL에 명시된 id로 설정합니다.
+    });
+   //]]>
+  </script>
+
 </body>
 
 </html>

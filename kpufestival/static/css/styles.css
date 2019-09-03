@@ -42,7 +42,7 @@ body{
 }
 #jb-content {
     width: 600px;
-    padding: 20px;
+    
     margin-bottom: 20px;
     float: left;
     border: 1px solid #bcbcbc;
@@ -69,7 +69,7 @@ body{
         height: 20%;
     }
     #jb-content {
-        height: 20%;
+        height: 30%;
       float: none;
       width: auto;
     }

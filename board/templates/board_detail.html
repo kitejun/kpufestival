@@ -27,16 +27,28 @@
     </div>
     <div class="col-9">
       <div id="context-box">
+        {{details.update_counter_hit}}
         <!--작성자이름-->
         <span>{{details.author}}</span>
         <!--작성시간-->
         <span id="detail-text">{{details.pub_date}}</span>
+
+        <!-- 사진 -->
+        <p><img src="{{ details.image.url }}" style="width: 55%;"></p>
+
         <!--내용-->
         <p>{{details.context}}</p>
         <!--좋아요-->
         <a href="#">
-          <img src="{% static 'img/like_btn.png'%}" style="margin-bottom:6px;">
-          <span id="detail-text"> 13</span>
+          <!--
+            <img src="{% static 'img/like_btn.png'%}" style="margin-bottom:6px;">
+          -->
+          {% if user in details.like_users.all %}
+          <a href="{% url 'like' details.id %}">좋아요 취소</a>
+          {% else %}
+          <a href="{% url 'like' details.id %}" >좋아요</a>
+          {% endif %}
+          <span id="detail-text">{{ details.like_users.count }}</span>
         </a>
         <!--싫어요-->
         <a href="#">
@@ -99,7 +111,7 @@
 
         {{ details.like_users.count }} 명이 좋아합니다.
         -->
-        
+
 
         <!--싫어요-->
         <a href="#">
