@@ -50,11 +50,20 @@
           {% endif %}
           <span id="detail-text">{{ details.like_users.count }}</span>
         </a>
+
         <!--싫어요-->
         <a href="#">
-          <img src="{% static 'img/dislike_btn.png'%}" style="margin-top:2px;">
-          <span id="detail-text"> 3</span>
+          <!--
+            <img src="{% static 'img/dislike_btn.png'%}" style="margin-top:2px;">
+          -->
+          {% if user in details.hate_users.all %}
+          <a href="{% url 'hate' details.id %}">싫어요 취소</a>
+          {% else %}
+          <a href="{% url 'hate' details.id %}">싫어요</a>
+          {% endif %}
+          <span id="detail-text">{{ details.hate_users.count }}</span>
         </a>
+
       </div>
     </div>
   </div>
@@ -64,7 +73,7 @@
   <div class="row">
     <div class="col-1"></div>
     <div class="col-9">
-      <p>댓글 5개</p>
+      <p>댓글 수: {{ details.comments.count }}</p>
     </div>
   </div>
 

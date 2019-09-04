@@ -7,7 +7,6 @@ from django.contrib import auth
 from django.core.files.storage import FileSystemStorage
 
 from .models import Board, Comment
-from .forms import BoardPost, PostSearchForm
 from django.views.generic.edit import FormView
 from django.db.models import Q
 
@@ -91,6 +90,14 @@ def like(request, board_id):
         board.like_users.remove(request.user)
     else:
         board.like_users.add(request.user)
+    return redirect('/board/board_detail/' + str(board.id))
+
+def hate(request, board_id):
+    board = get_object_or_404(Board, id=board_id)
+    if request.user in board.hate_users.all():
+        board.hate_users.remove(request.user)
+    else:
+        board.hate_users.add(request.user)
     return redirect('/board/board_detail/' + str(board.id))
 
 # 댓글

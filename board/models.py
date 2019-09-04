@@ -9,7 +9,8 @@ class Board(models.Model):
     context=models.TextField()
     hits=models.PositiveIntegerField(default=0)
     like_users=models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='like_users')
-    
+    hate_users=models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='hate_users')
+
     class Meta:
         ordering=['-id']
 
@@ -31,11 +32,6 @@ class Board(models.Model):
         self.hits=self.hits+1
         self.save()
         return ''
-
-    @property
-    def update_counter(self):
-        self.like=self.like+1
-        self.save()
 
 class Comment(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
