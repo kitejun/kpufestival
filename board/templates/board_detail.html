@@ -118,7 +118,7 @@
 
         <!--싫어요-->
         <!--
-                    <img src="{% static 'img/dislike_btn.png'%}" style="margin-top:2px;">
+          <img src="{% static 'img/dislike_btn.png'%}" style="margin-top:2px;">
         -->
         {% if user in comment.comment_hate_users.all %}
         <a href="{% url 'comment_hate' comment.id %}">싫어요 취소</a>
