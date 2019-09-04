@@ -93,6 +93,29 @@ def like(request, board_id):
         board.like_users.add(request.user)
     return redirect('/board/board_detail/' + str(board.id))
 
+# 댓글
+def comment_write(request, board_id):
+    # 로그인 안 되어있을 때 로그인 페이지로
+    if not request.user.is_authenticated:
+        return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
+        
+    if request.method == 'POST':
+        board = get_object_or_404(Board, pk=board_id)
+        content = request.POST.get('content')
+        author_user=request.user
+        Comment.objects.create(board=board, comment_body=content, author=author_user)
+        return redirect('/board/board_detail/' + str(board.id))
+    
+
+# 댓글 삭제하기
+def comment_delete(request,comment_id):
+    
+    comment = get_object_or_404(Comment, pk=comment_id)
+    comment.delete()
+    # return redirect('/board/detail/' + 'str(comment.id)')
+    # return redirect('/board/detail/', comment_id=comment.board.id)
+    return redirect('/board')
+
 
 def introduce(request):
     return render(request,'introduce.html')
@@ -105,3 +128,4 @@ def intro_detail(request):
 # intro_detail
 # -학과명,좋아요 개수,싫어요 개수,조회수,태그,소개글,학과 아이콘 표시/모달에서 지도 표시
 # -카톡 공유하기 기능(학과명,사진 공유 혹은 링크)#
+
