@@ -36,6 +36,7 @@
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
     <style>
+      
       /*nav*/
       .overlay {
         height: 100%;
@@ -156,7 +157,6 @@
   </head>
 
 <body>
-
   <div id="myNav" class="overlay">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <div class="overlay-content">
@@ -179,7 +179,7 @@
   </div>
 
 
-  <div id="forabsolute" style="position: absolute; width:100%;background-color: rgba( 0, 0, 0, 0.5 );z-index: 100;">
+  <div id="forabsolute">
     <div class="hamburger" onclick="openNav()">
       <span class="line"></span>
       <span class="line"></span>
@@ -196,9 +196,16 @@
   </div>
   
 
+<!-- 특정 URL에만 css 적용시킬려고 만든 자바스크립트 -->
+<script>
+ if ( window.location.pathname == '/' ) 
+ { 
+   document.write( '<style>#forabsolute{position: absolute;width:100%;background-color: rgba( 0, 0, 0, 0.4 );z-index: 100;}</style>' ); 
+ } 
+</script>
 
   
- <!-- 페이지필링 적용시켜볼려고 넣은 자바스크립트 -->
+ <!-- 페이지필링 자바스크립트 -->
   <script>
   $(document).ready(function() {
 			/*
