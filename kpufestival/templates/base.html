@@ -124,29 +124,34 @@
         cursor: pointer;
       }
 
-      /*모바일*/
-      @media (max-width: 1025px) {
+/*게시판 메뉴*/
+.board a:last-child{display: none}
+.board:hover a:first-child{display:inline-block}
+.board:hover a:last-child{display:inline-block}
 
-        /*메뉴 내용*/
-        .overlay a {
-          font-size: 28px;
-        }
-
-        .hamburger {
-          float: left;
-          margin-top: 0.8rem;
-          margin-bottom: 0.8rem;
-        }
-
-        .hamburger .line {
-          width: 28px;
-          height: 2.5px;
-        }
-
-        #icon {
-          width: 10rem;
-        }
-      }
+/*모바일*/
+@media (max-width: 1025px)  {
+  /*메뉴 내용*/
+  .overlay a {
+    font-size: 28px;
+  }
+  .hamburger{
+    float: left; 
+    margin-top:0.8rem;
+    margin-bottom:0.8rem;
+  }
+  .hamburger .line{
+    width: 28px;
+    height: 2.5px;
+  }
+  #icon{
+    width: 10rem;
+  }
+  .board a:first-child{display: inline-block}
+  .board a:last-child{display: inline-block}
+  .board:hover a:first-child{display:inline-block}
+  .board:hover a:last-child{display:inline-block}
+}
     </style>
   </head>
 
@@ -156,7 +161,11 @@
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <div class="overlay-content">
       <a href="{% url 'introduce' %}">주점소개</a>
-      <a href="{% url 'board' %}">게시판</a>
+      <div class="board">
+        <a href="{% url 'board' %}">게시판</a>
+        <!--분실물페이지 링크로 걸어주세요-->
+        <a href="{% url 'board' %}">분실물</a>
+      </div>
       <a href="{% url 'developer'%}">개발자소개</a>
       {% if user.is_authenticated %}
       <a href="javascript:{document.getElementById('logout').submit()}">로그아웃</a>
