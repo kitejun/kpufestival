@@ -41,8 +41,8 @@
 
         <!--좋아요-->
         <!--
-            <img src="{% static 'img/like_btn.png'%}" style="margin-bottom:6px;">
-          -->
+          <img src="{% static 'img/like_btn.png'%}" style="margin-bottom:6px;">
+        -->
         {% if user in details.like_users.all %}
         <a href="{% url 'like' details.id %}">좋아요 취소</a>
         {% else %}
@@ -52,8 +52,8 @@
 
         <!--싫어요-->
         <!--
-            <img src="{% static 'img/dislike_btn.png'%}" style="margin-top:2px;">
-          -->
+          <img src="{% static 'img/dislike_btn.png'%}" style="margin-top:2px;">
+        -->
         {% if user in details.hate_users.all %}
         <a href="{% url 'hate' details.id %}">싫어요 취소</a>
         {% else %}
@@ -107,7 +107,7 @@
         <br>
         <!--좋아요-->
         <!--
-           <img src="{% static 'img/like_btn.png'%}" style="margin-top:2px;">
+          <img src="{% static 'img/like_btn.png'%}" style="margin-top:2px;">
         -->
         {% if user in comment.comment_like_users.all %}
         <a href="{% url 'comment_like' comment.id %}">좋아요 취소</a>
