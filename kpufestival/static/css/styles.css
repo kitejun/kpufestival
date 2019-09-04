@@ -8,6 +8,8 @@
 html,body{height: 100%;}
 a:link,a:visited,a:active{color:inherit;}
 
+
+
 body{
     font-family:'Roboto', 'Do Hyeon', sans-serif;}
 
@@ -216,5 +218,5 @@ SETTINGS
 }
 
 .sm-link_bg{
-    --smLinkTextColorHover: #ffffff;
+    --smLinkTextColorHover: #fff;
 }
