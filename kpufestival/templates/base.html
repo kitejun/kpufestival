@@ -27,10 +27,13 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css'%}">
-    <!-- pagePilling js   -->
 
-      <!-- 카카오 채팅 -->
-  <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <!-- pagePilling js   -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'dist/jquery.pagepiling.js' %}"></script>
+
+    <!-- 카카오 채팅 -->
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
     <style>
       /*nav*/
@@ -38,7 +41,7 @@
         height: 100%;
         width: 0;
         position: fixed;
-        z-index: 5;
+        z-index: 101;
         top: 0;
         left: 0;
         background-color: rgb(0, 0, 0);
@@ -166,19 +169,83 @@
     </div>
   </div>
 
-  <div class="hamburger" onclick="openNav()">
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-  </div>
-  <!--<span id="menu" onclick="openNav()">&#9776; </span>-->
 
-  <div id="icon-container">
-    <a href="{% url 'home' %}" class="sm-link sm-link_padding-all sm-link1">
-      <span class="sm-link__label">
-        <img id="icon" src="{% static 'img/kpufestival.png' %}"></span>
-    </a>
+  <div id="forabsolute" style="position: absolute; width:100%;background-color: rgba( 0, 0, 0, 0.5 );z-index: 100;">
+    <div class="hamburger" onclick="openNav()">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+    </div>
+    <!--<span id="menu" onclick="openNav()">&#9776; </span>-->
+  
+    <div id="icon-container">
+      <a href="{% url 'home' %}" class="sm-link sm-link_padding-all sm-link1" >
+        <span class="sm-link__label">
+          <img id="icon" src="{% static 'img/kpufestival.png' %}"></span>
+      </a>
+    </div>
   </div>
+  
+
+
+  
+ <!-- 페이지필링 적용시켜볼려고 넣은 자바스크립트 -->
+  <script>
+  $(document).ready(function() {
+			/*
+			* Plugin intialization
+			*/
+	    	$('#pagepiling').pagepiling({
+	    		menu: '#menu',
+	    		anchors: ['page1', 'page2', 'page3', 'page4'],
+			    sectionsColor: ['white', '#ee005a', '#2C3E50', '#39C'],
+			    navigation: {
+			    	'position': 'right',
+			   		'tooltips': ['Page 1', 'Page 2', 'Page 3', 'Page 4']
+			   	},
+			    afterRender: function(){
+			    	$('#pp-nav').addClass('custom');
+            
+			    },
+          onLeave: function(index, nextIndex, direction){
+          if(nextIndex==1) {                                             
+  
+		$("#menu").addClass("sticky");
+            } else{
+              $("#menu").removeClass("sticky");
+            }
+	                                                  
+                                                        },
+			    afterLoad: function(anchorLink, index){
+			    	if(index>1){
+			    		$('#pp-nav').removeClass('custom');
+			    	}else{
+			    		$('#pp-nav').addClass('custom');
+			    	}
+			    }
+			});
+			/*
+		    * Internal use of the demo website
+		    */
+		    $('#showExamples').click(function(e){
+				e.stopPropagation();
+				e.preventDefault();
+				$('#examplesList').toggle();
+			});
+			$('html').click(function(){
+				$('#examplesList').hide();
+			});
+	// if($('#pagepiling .section:first-child').hasClass('active')) {
+	// 	$("#menu").addClass("sticky");
+	// }
+	    });
+$(window).scroll(function () {
+
+	if($('#pagepiling .section:first-child').hasClass('active')) {
+		$("#menu").addClass("sticky");
+	}
+});
+  </script>
 
 
 
