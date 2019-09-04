@@ -7,7 +7,6 @@ from django.contrib import auth
 from django.core.files.storage import FileSystemStorage
 
 from .models import Board, Comment
-from .forms import BoardPost, PostSearchForm
 from django.views.generic.edit import FormView
 from django.db.models import Q
 
@@ -93,6 +92,15 @@ def like(request, board_id):
         board.like_users.add(request.user)
     return redirect('/board/board_detail/' + str(board.id))
 
+def hate(request, board_id):
+    board = get_object_or_404(Board, id=board_id)
+    if request.user in board.hate_users.all():
+        board.hate_users.remove(request.user)
+    else:
+        board.hate_users.add(request.user)
+    return redirect('/board/board_detail/' + str(board.id))
+
+#===================================================================================================================
 # 댓글
 def comment_write(request, board_id):
     # 로그인 안 되어있을 때 로그인 페이지로
@@ -106,14 +114,28 @@ def comment_write(request, board_id):
         Comment.objects.create(board=board, comment_body=content, author=author_user)
         return redirect('/board/board_detail/' + str(board.id))
     
-
 # 댓글 삭제하기
 def comment_delete(request,comment_id):
-    
     comment = get_object_or_404(Comment, pk=comment_id)
     comment.delete()
     # return redirect('/board/detail/' + 'str(comment.id)')
     # return redirect('/board/detail/', comment_id=comment.board.id)
+    return redirect('/board')
+
+def comment_like(request, comment_id):
+    comment = get_object_or_404(Comment, id=comment_id)
+    if request.user in comment.comment_like_users.all():
+        comment.comment_like_users.remove(request.user)
+    else:
+        comment.comment_like_users.add(request.user)
+    return redirect('/board')
+
+def comment_hate(request, comment_id):
+    comment = get_object_or_404(Comment, id=comment_id)
+    if request.user in comment.comment_hate_users.all():
+        comment.comment_hate_users.remove(request.user)
+    else:
+        comment.comment_hate_users.add(request.user)
     return redirect('/board')
 
 
