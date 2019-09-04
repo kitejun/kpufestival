@@ -219,3 +219,8 @@ SETTINGS
 .sm-link_bg{
     --smLinkTextColorHover: #fff;
 }
+
+#forabsolute
+{
+  position: absolute;
+}
