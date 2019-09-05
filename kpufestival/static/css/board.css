@@ -77,7 +77,7 @@
     }
 }
 #dev-img{
-    height: 300px;
+    height: 255px;
 }
 
 
@@ -136,5 +136,8 @@
     }
     #sub_button{
         float : right;
+    }
+    #dev-img{
+        height: 158px;
     }
 }
