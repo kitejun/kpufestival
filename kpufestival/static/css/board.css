@@ -33,6 +33,9 @@
 
 /*intro,developer*/
 #my-container{
+    background-color: white;
+    border-radius: 8px;
+    padding:30px;
     margin:4rem;
   }
   /*모바일*/
@@ -51,6 +54,9 @@
     text-align: center;
 }
 
+#intro-body{
+    padding:10px;
+}
 #intro-card-title{
     font-size: 2.5rem;
 }
@@ -78,6 +84,7 @@
 }
 #dev-img{
     height: 255px;
+    margin:10px;
 }
 
 
@@ -123,6 +130,12 @@
 .content-box{
     margin-top:20;
 }
+
+/*글자색 흰색*/
+#white{
+    color:white;
+}
+
 /*모바일*/
 @media (max-width: 1025px)  {
     #detail-text{

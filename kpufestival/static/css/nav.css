@@ -1,0 +1,107 @@
+      /*nav*/
+      .overlay {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 5;
+        top: 0;
+        left: 0;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.87);
+        overflow-x: hidden;
+        transition: 0.5s;
+      }
+
+      .overlay-content {
+        position: relative;
+        top: 25%;
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      /*메뉴 내용*/
+      .overlay a {
+        padding: 8px;
+        text-decoration: none;
+        font-size: 42px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      }
+
+      .overlay a:hover,
+      .overlay a:focus {
+        color: #f1f1f1;
+      }
+
+      /*닫기 버튼*/
+      .overlay .closebtn {
+        position: absolute;
+        top: 20px;
+        right: 45px;
+        font-size: 60px;
+      }
+
+      @media screen and (max-height: 450px) {
+        .overlay a {
+          font-size: 20px
+        }
+
+        .overlay .closebtn {
+          font-size: 40px;
+          top: 15px;
+          right: 35px;
+        }
+      }
+
+      /*로고 가운데정렬*/
+      #icon-container {
+        justify-content: center;
+        display: flex;
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+      }
+
+      #icon {
+        width: 18rem;
+      }
+      /*메뉴버튼*/
+      .menu-container{
+        float: left;
+      }
+
+
+/*게시판 메뉴*/
+.board a:last-child{display: none}
+.board:hover a:first-child{display:inline-block}
+.board:hover a:last-child{display:inline-block}
+
+@media (min-width: 1025px)  {
+  .menu-container{
+    float: left;
+    margin-left: 2.5rem;
+    margin-top: 2rem;
+  }
+  #icon-container{
+    margin-right: 7rem;
+  }
+}
+/*모바일*/
+@media (max-width: 1025px)  {
+  /*메뉴 내용*/
+  .overlay a {
+    font-size: 28px;
+  }
+
+  #icon{
+    width: 10rem;
+  }
+  #icon-container{
+    margin-right: 88px;
+  }
+  .board a:first-child{display: inline-block}
+  .board a:last-child{display: inline-block}
+  .board:hover a:first-child{display:inline-block}
+  .board:hover a:last-child{display:inline-block}
+}

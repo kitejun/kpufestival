@@ -210,11 +210,17 @@ SETTINGS
     --smLinkPadding: 10px 15px;
     --smLinkLineWeight: 5px;
     /*색 변경은 밑에서*/
-    --smLinkLineColor: rgb(252, 155, 155);  
+    --smLinkLineColor: rgb(253, 228, 146);  
     --smLinkTextColor: #243aab;
     --smLinkTextColorHover: #1b255a;
 }
 
 .sm-link_bg{
     --smLinkTextColorHover: #ffffff;
+}
+
+.container{
+  background-color: white;
+  border-radius: 8px;
+  padding:30px;
 }

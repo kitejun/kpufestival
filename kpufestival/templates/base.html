@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
+
 
     <!--bootstrap js-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -33,111 +35,12 @@
   <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
     <style>
-      /*nav*/
-      .overlay {
-        height: 100%;
-        width: 0;
-        position: fixed;
-        z-index: 5;
-        top: 0;
-        left: 0;
-        background-color: rgb(0, 0, 0);
-        background-color: rgba(0, 0, 0, 0.87);
-        overflow-x: hidden;
-        transition: 0.5s;
-      }
 
-      .overlay-content {
-        position: relative;
-        top: 25%;
-        width: 100%;
-        text-align: center;
-        margin-top: 30px;
-      }
-
-      /*메뉴 내용*/
-      .overlay a {
-        padding: 8px;
-        text-decoration: none;
-        font-size: 42px;
-        color: #818181;
-        display: block;
-        transition: 0.3s;
-      }
-
-      .overlay a:hover,
-      .overlay a:focus {
-        color: #f1f1f1;
-      }
-
-      /*닫기 버튼*/
-      .overlay .closebtn {
-        position: absolute;
-        top: 20px;
-        right: 45px;
-        font-size: 60px;
-      }
-
-      @media screen and (max-height: 450px) {
-        .overlay a {
-          font-size: 20px
-        }
-
-        .overlay .closebtn {
-          font-size: 40px;
-          top: 15px;
-          right: 35px;
-        }
-      }
-
-      /*로고 가운데정렬*/
-      #icon-container {
-        justify-content: center;
-        display: flex;
-        margin-top: 0.8rem;
-        margin-bottom: 0.8rem;
-      }
-
-      #icon {
-        width: 22rem;
-      }
-      /*메뉴버튼*/
-      .menu-container{
-        float: left;
-      }
-
-
-/*게시판 메뉴*/
-.board a:last-child{display: none}
-.board:hover a:first-child{display:inline-block}
-.board:hover a:last-child{display:inline-block}
-
-@media (min-width: 1025px)  {
-  .menu-container{
-    float: left;
-    margin-left: 2.5rem;
-    margin-top: 2rem;
-  }
-}
-/*모바일*/
-@media (max-width: 1025px)  {
-  /*메뉴 내용*/
-  .overlay a {
-    font-size: 28px;
-  }
-
-  #icon{
-    width: 10rem;
-  }
-  .board a:first-child{display: inline-block}
-  .board a:last-child{display: inline-block}
-  .board:hover a:first-child{display:inline-block}
-  .board:hover a:last-child{display:inline-block}
-}
     </style>
   </head>
 
-<body>
+<body style="background-size: auto; background-image:url('{% static "img/nav-background.jpg"%}');">
+  <!--style="background-size: auto; background-image:url('{% static "img/nav-background.jpg"%}');">-->
 
   <div id="myNav" class="overlay">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -162,19 +65,20 @@
 
 <!--/.Navbar-->
   <div class="menu-container" onclick="openNav()">
-    <nav class="navbar navbar-light navbar-1 white">
+    <nav class="navbar navbar-light navbar-2 white" >
       <!-- Collapse button -->
-      <button class="navbar-toggler" type="button">
-        <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler" type="button" style="background-color:rgba(255,255,255,0.8)">
+        <span style="color:white;" class="navbar-toggler-icon"></span>
       </button>
     </nav>
   </div>
   <!--<span id="menu" onclick="openNav()">&#9776; </span>-->
 
-  <div id="icon-container">
+  <div id="icon-container" >
+
     <a href="{% url 'home' %}" class="sm-link sm-link_padding-all sm-link1">
       <span class="sm-link__label">
-        <img id="icon" src="{% static 'img/kpufestival.png' %}"></span>
+        <img id="icon" src="{% static 'img/kpufestival2.png' %}"></span>
     </a>
   </div>
 
