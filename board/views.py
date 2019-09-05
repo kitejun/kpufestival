@@ -6,8 +6,8 @@ from django.contrib import auth
 # 파일 저장 import문
 from django.core.files.storage import FileSystemStorage
 
-from .models import Board, Comment
-from .forms import BoardPost, PostSearchForm
+from .models import Board, Comment, Missing
+from .forms import BoardPost, MissingPost
 from django.views.generic.edit import FormView
 from django.db.models import Q
 
@@ -22,8 +22,11 @@ from django.db.models import Count
 
 from django.db.models import Max 
 
+#===================================================================================================================
+# 게시판
 def board(request):
     boards=Board.objects
+
     # 댓글 수
     counts=Board.objects.count()
 
@@ -93,6 +96,92 @@ def like(request, board_id):
         board.like_users.add(request.user)
     return redirect('/board/board_detail/' + str(board.id))
 
+def hate(request, board_id):
+    board = get_object_or_404(Board, id=board_id)
+    if request.user in board.hate_users.all():
+        board.hate_users.remove(request.user)
+    else:
+        board.hate_users.add(request.user)
+    return redirect('/board/board_detail/' + str(board.id))
+
+#===================================================================================================================
+# 댓글
+def comment_write(request, board_id):
+    # 로그인 안 되어있을 때 로그인 페이지로
+    if not request.user.is_authenticated:
+        return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
+        
+    if request.method == 'POST':
+        board = get_object_or_404(Board, pk=board_id)
+        content = request.POST.get('content')
+        author_user=request.user
+        Comment.objects.create(board=board, comment_body=content, author=author_user)
+        return redirect('/board/board_detail/' + str(board.id))
+    
+# 댓글 삭제하기
+def comment_delete(request,comment_id):
+    comment = get_object_or_404(Comment, pk=comment_id)
+    comment.delete()
+    # return redirect('/board/detail/' + 'str(comment.id)')
+    # return redirect('/board/detail/', comment_id=comment.board.id)
+    return redirect('/board')
+
+def comment_like(request, comment_id):
+    comment = get_object_or_404(Comment, id=comment_id)
+    if request.user in comment.comment_like_users.all():
+        comment.comment_like_users.remove(request.user)
+    else:
+        comment.comment_like_users.add(request.user)
+    return redirect('/board')
+
+def comment_hate(request, comment_id):
+    comment = get_object_or_404(Comment, id=comment_id)
+    if request.user in comment.comment_hate_users.all():
+        comment.comment_hate_users.remove(request.user)
+    else:
+        comment.comment_hate_users.add(request.user)
+    return redirect('/board')
+
+#===================================================================================================================
+# 분실물
+def missing(request):
+    missings=Missing.objects.all()
+
+    # 댓글 수
+    counts=Missing.objects.count()
+        
+    return render (request,'board.html', { 'missings':missings, 'counts':counts } )
+
+
+def missing_detail(request, missing_id):
+    missing_details = get_object_or_404(Missing, pk=missing_id)
+    return render(request, 'missing_detail.html', {'missing_details': missing_details})
+
+def missing_new(request):
+    # 로그인 안 되어있을 때 로그인 페이지로
+    if not request.user.is_authenticated:
+        return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
+
+    # 1. 입력된 내용을 처리하는 기능 -> POST
+    if request.method == 'POST':
+        form = BoardPost(request.POST, request.FILES)
+        if form.is_valid():
+            missing = form.save(commit=False) # DB에 저장하지 않고 form에 임시 저장
+            missing.author=request.user
+            # 날짜는 자동으로 현재 입력해주는 것
+            missing.pub_date = timezone.now()
+            missing.save()
+            return redirect('missing')     # 바로 home으로 redirect
+        
+        else: #아무것도 안쓰고 글쓰기 눌렀을 때
+            messages.info(request, '내용을 입력하세요!')
+            return redirect('missing_new')
+    
+    # 2. 빈 페이지를 띄어주는 기능 -> GET
+    else:
+        form = MissingPost()
+        return render(request, 'board_new.html', {'form':form}) # form형태로 전달
+
 
 def introduce(request):
     return render(request,'introduce.html')
@@ -105,3 +194,4 @@ def intro_detail(request):
 # intro_detail
 # -학과명,좋아요 개수,싫어요 개수,조회수,태그,소개글,학과 아이콘 표시/모달에서 지도 표시
 # -카톡 공유하기 기능(학과명,사진 공유 혹은 링크)#
+
