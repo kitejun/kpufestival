@@ -117,7 +117,7 @@
     width: 40;
 }
 #detail-img{
-    width: 1110px; height:600px;
+    width: 1500px; height:600px;
 }
 #user-img{
     width:5rem;
@@ -151,6 +151,12 @@
         float : right;
     }
     #dev-img{
-        height: 158px;
+        height: 99px;
+    }
+    h3{
+        font-size: 24px;
+    }
+    h5{
+        font-size:14px;
     }
 }

@@ -3,7 +3,7 @@
         height: 100%;
         width: 0;
         position: fixed;
-        z-index: 5;
+        z-index: 6;
         top: 0;
         left: 0;
         background-color: rgb(0, 0, 0);
@@ -33,6 +33,7 @@
       .overlay a:hover,
       .overlay a:focus {
         color: #f1f1f1;
+        text-shadow: 0 0 3vw rgb(244, 209, 10);
       }
 
       /*닫기 버튼*/
@@ -54,6 +55,9 @@
           right: 35px;
         }
       }
+      .navbar-toggler-icon{
+          color: white;
+      }
 
       /*로고 가운데정렬*/
       #icon-container {
@@ -70,6 +74,12 @@
       .menu-container{
         float: left;
       }
+      #menu{
+          width: 5rem;
+      }
+      .navbar-toggler{
+        background-color:rgb(255,255,255)
+      }
 
 
 /*게시판 메뉴*/
@@ -77,16 +87,17 @@
 .board:hover a:first-child{display:inline-block}
 .board:hover a:last-child{display:inline-block}
 
+/*웹*/
 @media (min-width: 1025px)  {
   .menu-container{
-    float: left;
     margin-left: 2.5rem;
-    margin-top: 2rem;
+    margin-top: 4rem;
   }
   #icon-container{
     margin-right: 7rem;
   }
 }
+
 /*모바일*/
 @media (max-width: 1025px)  {
   /*메뉴 내용*/
@@ -94,11 +105,18 @@
     font-size: 28px;
   }
 
+  .menu-container{
+    margin-left: 0.6rem;
+    margin-top: 2rem;
+  }
+  #menu{
+    width: 4.5rem;
+  }
   #icon{
     width: 10rem;
   }
   #icon-container{
-    margin-right: 88px;
+    margin-right: 80px;
   }
   .board a:first-child{display: inline-block}
   .board a:last-child{display: inline-block}

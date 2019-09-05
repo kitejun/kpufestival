@@ -224,3 +224,10 @@ SETTINGS
   border-radius: 8px;
   padding:30px;
 }
+
+/*모바일*/
+@media (max-width: 1025px)  {
+  .container{
+    border-radius: 0;
+  }
+}
