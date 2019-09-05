@@ -29,10 +29,13 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css'%}">
-    <!-- pagePilling js   -->
 
-      <!-- 카카오 채팅 -->
-  <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <!-- pagePilling js   -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'dist/jquery.pagepiling.js' %}"></script>
+
+    <!-- 카카오 채팅 -->
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
     <style>
 
@@ -81,6 +84,74 @@
         <img id="icon" src="{% static 'img/kpufestival2.png' %}"></span>
     </a>
   </div>
+  
+
+<!-- 특정 URL에만 css 적용시킬려고 만든 자바스크립트 -->
+<script>
+ if ( window.location.pathname == '/' ) 
+ { 
+   document.write( '<style>#forabsolute{position: absolute;width:100%;background-color: rgba( 0, 0, 0, 0.4 );z-index: 100;}</style>' ); 
+ } 
+</script>
+
+  
+ <!-- 페이지필링 자바스크립트 -->
+  <script>
+  $(document).ready(function() {
+			/*
+			* Plugin intialization
+			*/
+	    	$('#pagepiling').pagepiling({
+	    		menu: '#menu',
+	    		anchors: ['page1', 'page2', 'page3', 'page4'],
+			    sectionsColor: ['white', '#ee005a', '#2C3E50', '#39C'],
+			    navigation: {
+			    	'position': 'right',
+			   		'tooltips': ['Page 1', 'Page 2', 'Page 3', 'Page 4']
+			   	},
+			    afterRender: function(){
+			    	$('#pp-nav').addClass('custom');
+            
+			    },
+          onLeave: function(index, nextIndex, direction){
+          if(nextIndex==1) {                                             
+  
+		$("#menu").addClass("sticky");
+            } else{
+              $("#menu").removeClass("sticky");
+            }
+	                                                  
+                                                        },
+			    afterLoad: function(anchorLink, index){
+			    	if(index>1){
+			    		$('#pp-nav').removeClass('custom');
+			    	}else{
+			    		$('#pp-nav').addClass('custom');
+			    	}
+			    }
+			});
+			/*
+		    * Internal use of the demo website
+		    */
+		    $('#showExamples').click(function(e){
+				e.stopPropagation();
+				e.preventDefault();
+				$('#examplesList').toggle();
+			});
+			$('html').click(function(){
+				$('#examplesList').hide();
+			});
+	// if($('#pagepiling .section:first-child').hasClass('active')) {
+	// 	$("#menu").addClass("sticky");
+	// }
+	    });
+$(window).scroll(function () {
+
+	if($('#pagepiling .section:first-child').hasClass('active')) {
+		$("#menu").addClass("sticky");
+	}
+});
+  </script>
 
 
 
