@@ -6,7 +6,8 @@ from django.contrib import auth
 # 파일 저장 import문
 from django.core.files.storage import FileSystemStorage
 
-from .models import Board, Comment
+from .models import Board, Comment, Missing
+from .forms import BoardPost, MissingPost
 from django.views.generic.edit import FormView
 from django.db.models import Q
 
@@ -21,8 +22,11 @@ from django.db.models import Count
 
 from django.db.models import Max 
 
+#===================================================================================================================
+# 게시판
 def board(request):
     boards=Board.objects
+
     # 댓글 수
     counts=Board.objects.count()
 
@@ -137,6 +141,46 @@ def comment_hate(request, comment_id):
     else:
         comment.comment_hate_users.add(request.user)
     return redirect('/board')
+
+#===================================================================================================================
+# 분실물
+def missing(request):
+    missings=Missing.objects.all()
+
+    # 댓글 수
+    counts=Missing.objects.count()
+        
+    return render (request,'board.html', { 'missings':missings, 'counts':counts } )
+
+
+def missing_detail(request, missing_id):
+    missing_details = get_object_or_404(Missing, pk=missing_id)
+    return render(request, 'missing_detail.html', {'missing_details': missing_details})
+
+def missing_new(request):
+    # 로그인 안 되어있을 때 로그인 페이지로
+    if not request.user.is_authenticated:
+        return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
+
+    # 1. 입력된 내용을 처리하는 기능 -> POST
+    if request.method == 'POST':
+        form = BoardPost(request.POST, request.FILES)
+        if form.is_valid():
+            missing = form.save(commit=False) # DB에 저장하지 않고 form에 임시 저장
+            missing.author=request.user
+            # 날짜는 자동으로 현재 입력해주는 것
+            missing.pub_date = timezone.now()
+            missing.save()
+            return redirect('missing')     # 바로 home으로 redirect
+        
+        else: #아무것도 안쓰고 글쓰기 눌렀을 때
+            messages.info(request, '내용을 입력하세요!')
+            return redirect('missing_new')
+    
+    # 2. 빈 페이지를 띄어주는 기능 -> GET
+    else:
+        form = MissingPost()
+        return render(request, 'board_new.html', {'form':form}) # form형태로 전달
 
 
 def introduce(request):
