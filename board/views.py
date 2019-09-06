@@ -159,7 +159,7 @@ def missing_detail(request, missing_id):
 
 def missing_new(request):
     # 로그인 안 되어있을 때 로그인 페이지로
-    if not request.user.email.endswith('@wehigher.com'):
+    if not request.user.email.endswith('@naver.com'):
         return redirect('missing')
 
     # 1. 입력된 내용을 처리하는 기능 -> POST
