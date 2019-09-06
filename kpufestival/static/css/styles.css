@@ -221,6 +221,9 @@ SETTINGS
     --smLinkTextColorHover: #ffffff;
 }
 
+#white{
+  color:white;
+}
 .container{
   background-color: white;
   border-radius: 8px;

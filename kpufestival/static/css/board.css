@@ -48,6 +48,8 @@
     width: 120;
     border: 0;
     width: 100%;
+    margin-bottom:10px;
+    padding:10px;
 }
 .intro_content{
     margin:10px;
@@ -83,8 +85,7 @@
     }
 }
 #dev-img{
-    height: 255px;
-    margin:10px;
+    height: 200px;
 }
 
 
@@ -151,7 +152,7 @@
         float : right;
     }
     #dev-img{
-        height: 99px;
+        height: 120px;
     }
     h3{
         font-size: 24px;
