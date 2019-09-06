@@ -233,6 +233,6 @@ SETTINGS
 /*모바일*/
 @media (max-width: 1025px)  {
   .container{
-    border-radius: 0;
+    width:90%;
   }
 }

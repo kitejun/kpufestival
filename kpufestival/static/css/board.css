@@ -43,9 +43,12 @@
   #my-container{
     margin:1rem;
   }
+  .col-6{
+    padding:0;
+    }
 }
+
 .card{
-    width: 120;
     border: 0;
     width: 100%;
     margin-bottom:10px;
