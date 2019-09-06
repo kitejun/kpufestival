@@ -43,16 +43,11 @@
   #my-container{
     margin:1rem;
   }
-  .col-6{
-    padding:0;
-    }
 }
-
 .card{
+    width: 120;
     border: 0;
     width: 100%;
-    margin-bottom:10px;
-    padding:10px;
 }
 .intro_content{
     margin:10px;
@@ -88,7 +83,8 @@
     }
 }
 #dev-img{
-    height: 200px;
+    height: 255px;
+    margin:10px;
 }
 
 
@@ -155,7 +151,7 @@
         float : right;
     }
     #dev-img{
-        height: 120px;
+        height: 99px;
     }
     h3{
         font-size: 24px;
