@@ -1,0 +1,97 @@
+<!--게시판 디테일페이지입니다-->
+{% extends 'base.html' %}
+{% block content %}
+{%load staticfiles%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/board.css' %}">
+
+<div class="container" >
+  <!--삭제버튼-->
+  <img id="right-icon" src="{% static 'img/delete_btn.png'%}">
+  <!--수정버튼-->
+  <img id="right-icon" src="{% static 'img/edit_btn.png'%}">
+  <br>
+  <hr>
+  <br>
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-9">
+      <!--작성자-->
+      <h3>{{missing_details.author}}</h3>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-1">
+      <!--작성자 아이콘-->
+      <img id="user-img" src="{% static 'img/icon.png'%}">
+    </div>
+    <div class="col-9">
+      <div id="context-box">
+        {{missing_details.update_counter_hit}}
+
+        <!--작성시간-->
+        <span id="detail-text">{{missing_details.pub_date}}</span>
+
+        <!-- 사진 -->
+        <p><img src="{{ missing_details.image.url }}" style="width: 55%;"></p>
+
+        <!--내용-->
+        <p>{{missing_details.context}}</p>
+
+      </div>
+    </div>
+  </div>
+  <br>
+  <hr>
+  <!--댓글 갯수-->
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-9">
+      <p>댓글 수: {{ details.comments.count }}</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-9">
+
+      <form action="{% url 'comment_write' details.id%}" method="POST" class="form-row">
+        {% csrf_token %}
+        <div>
+          <textarea type="text" name="content" class="form-control" placeholder="댓글을 입력해주세요."></textarea>
+        </div>
+        <div>
+          <input class="btn btn-light" id="right" type="submit" value="댓글달기">
+        </div>
+      </form>
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-9">
+
+      <div id="comment-box">
+        {% for comment in missing_details.comments.all %}
+        <!--작성자-->
+        <strong><span>{{ comment.author }}</span></strong>
+
+        <!--댓글작성시간-->
+        <span id="detail-text">{{ comment.comment_date }}</span>
+
+        <!--댓글 삭제-->
+        {% if user == comment.author %}<br>
+        <a href="{% url 'comment_delete' comment.id %}"> 삭제 </a>
+        {% endif %}<br>
+        <hr>
+
+
+        {% empty %}
+        <p>댓글이 없습니다.</p>
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

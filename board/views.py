@@ -150,7 +150,7 @@ def missing(request):
     # 댓글 수
     counts=Missing.objects.count()
         
-    return render (request,'board.html', { 'missings':missings, 'counts':counts } )
+    return render (request,'missing.html', { 'missings':missings, 'counts':counts } )
 
 
 def missing_detail(request, missing_id):
@@ -159,12 +159,12 @@ def missing_detail(request, missing_id):
 
 def missing_new(request):
     # 로그인 안 되어있을 때 로그인 페이지로
-    if not request.user.is_authenticated:
-        return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
+    if not request.user.email.endswith('@wehigher.com'):
+        return redirect('missing')
 
     # 1. 입력된 내용을 처리하는 기능 -> POST
     if request.method == 'POST':
-        form = BoardPost(request.POST, request.FILES)
+        form = MissingPost(request.POST, request.FILES)
         if form.is_valid():
             missing = form.save(commit=False) # DB에 저장하지 않고 form에 임시 저장
             missing.author=request.user
@@ -180,7 +180,7 @@ def missing_new(request):
     # 2. 빈 페이지를 띄어주는 기능 -> GET
     else:
         form = MissingPost()
-        return render(request, 'board_new.html', {'form':form}) # form형태로 전달
+        return render(request, 'missing_new.html', {'form':form}) # form형태로 전달
 
 
 def introduce(request):

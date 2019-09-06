@@ -44,9 +44,6 @@ class Missing(models.Model):
     class Meta:
         ordering=['-id']
 
-    def __str__(self):
-        return self.title
-
     def summary(self):
         return self.context[:50]
 
