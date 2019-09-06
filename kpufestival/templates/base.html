@@ -30,6 +30,9 @@
       crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css'%}">
 
+    <!--animation cdn-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
     <!-- pagePilling js   -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="{% static 'dist/jquery.pagepiling.js' %}"></script>
@@ -39,6 +42,9 @@
 
     <style>
 
+.neon img:last-child{display: none}
+.neon:hover img:first-child{display:none}
+.neon:hover img:last-child{display:inline-block}
     </style>
   </head>
 
@@ -73,10 +79,13 @@
   <!--<span id="menu" onclick="openNav()">&#9776; </span>-->
 
   <div id="icon-container" >
-
-    <a href="{% url 'home' %}" class="sm-link sm-link_padding-all sm-link1">
-      <span class="sm-link__label">
-        <img id="icon" src="{% static 'img/kpufestival2.png' %}"></span>
+    <a href="{% url 'home' %}">
+        <div class="animated flash delay-2s duration-0.5s slower">
+        <div class="neon">
+          <img id="icon" src="{% static 'img/kpufestival2.png' %}">
+          <img id="icon" src="{% static 'img/kpufestival_light.png' %}">
+        </div>
+        </div>
     </a>
   </div>
   
