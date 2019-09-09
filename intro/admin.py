@@ -1,3 +1,8 @@
 from django.contrib import admin
+from .models import Intro
 
-# Register your models here.
+# admin 디자인
+class IntroAdmin(admin.ModelAdmin):
+    list_display = ['id','author', 'dename', 'introduce', 'pub_date',  'tag']
+
+admin.site.register(Intro, IntroAdmin)

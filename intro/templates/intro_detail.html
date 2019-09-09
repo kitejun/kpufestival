@@ -6,89 +6,98 @@
 
 <style>
 </style>
-<div id="my-container" >
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
+<div id="my-container">
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
         <!--이미지1-->
-        <img id="detail-img" src="{% static 'img/food_example1.png' %}">
-    </div>
-    <div class="carousel-item">
+        <img id="detail-img" src="{{ intro_detail.img1.url }}">
+      </div>
+      <div class="carousel-item">
         <!--이미지2-->
-        <img id="detail-img" src="{% static 'img/food_example2.png' %}">
+        <img id="detail-img" src="{{ intro_detail.img2.url }}">
+      </div>
+      <div class="carousel-item">
+        <!--이미지3-->
+        <img id="detail-img" src="{{ intro_detail.img3.url }}">
+      </div>
     </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>    
 
   <!--태그-->
-  <a id="tag">#컴공 </a><a id="tag">#존맛</a>
+  <a id="tag">{{intro_detail.tag}} </a>
   <!--학과명-->
-  <h1 id="intro-card-title">컴퓨터공학과</h1>
+  <h1 id="intro-card-title">{{intro_detail.dename}}</h1>
   <!--조회수-->
   <span id="detail-text">460,959 views</span>
   <div id="contain-right">
-  <!--좋아요-->
-  <a href="{% url 'intro_detail' %}">
-    <img id="icon_btn" src="{% static 'img/like_btn.png'%}" style="margin-bottom:6px;">
-    <span id="detail-text"> 13K</span>
-  </a>
-  <!--싫어요-->
-  <a href="{% url 'intro_detail' %}">
-    <img id="icon_btn" src="{% static 'img/dislike_btn.png'%}" style="margin-top:2px;">
-    <span id="detail-text"> 3K</span>
-  </a>  
-  <!--공유하기-->
-  <a href="{% url 'intro_detail' %}">
-    <img id="icon_btn" src="{% static 'img/share_btn.png'%}">
-    <span id="detail-text"> SHARE</span>
-  </a>  
+    <!--좋아요-->
+    <!--
+          <img src="{% static 'img/like_btn.png'%}" style="margin-bottom:6px;">
+        -->
+    {% if user in intro_detail.intro_like_users.all %}
+    <a href="{% url 'intro_like' intro_detail.id %}">좋아요 취소</a>
+    {% else %}
+    <a href="{% url 'intro_like' intro_detail.id %}">좋아요</a>
+    {% endif %}
+    <span id="detail-text">{{ intro_detail.intro_like_users.count }}</span>
+
+    <!--공유하기(구현 예정)-->
+    <a href="#">
+      <img id="icon_btn" src="{% static 'img/share_btn.png'%}">
+      <span id="detail-text"> SHARE</span>
+    </a>
   </div>
+
   <br>
   <br>
   <hr>
   <!--학과별 이미지-->
   <img id="user-img" src="{% static 'img/icon.png'%}">
+
   <!--학과이름-->
-  <span id="intro-card-title">컴퓨터공학과 맛집</span>
+  <span id="intro-card-title">{{intro_detail.dename}} 맛집</span>
   <!--지도 보여주는 버튼-->
   <button id="sub_button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal">위치보기</button>
-    <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">컴퓨터공학과</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <img src="{%static 'img/map.png'%}">
-                지도 넣어주세요
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-light" data-dismiss="modal">닫기</button>
-              </div>
-            </div>
-          </div>
-        </div> 
-       <!--Modal-->  
-    <div class="content-box">
-        <h5>안녕하세요. 여기에 주점소개를 써주세요. 주점에서 연어도 팔았으면 좋겠다</h5>
-        <h5>좀 길게 쓰는게 이쁠거같네요</h5>
-        <h5>과마다 메뉴소개랑 컨셉소개 써주고 그러면 되겠어요</h5>
-        <h5>연어 한 접시 <strong>15,000</strong>원</h5>
-        <h5>이미지는 최대한 고화질로 보내줘야될거같아요</h5>
-        <h5>참고로 이미지 사이즈는 width: 840; height:480;이라서 비율안맞으면 짤려요</h5>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">{{intro_detail.dename}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- 학과 지도 사진 -->
+          <img src="{{ intro_detail.map_img.url }}">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-dismiss="modal">닫기</button>
+        </div>
+      </div>
     </div>
-    <hr>
+  </div>
+  <!--Modal-->
+  <div class="content-box">
+    <h5>{{intro_detail.introduce}}</h5>
+    <br>
+    <br>
+    <h5>내용 추가 할꺼 고민중</h5>
+    <h5>연어 한 접시 <strong>15,000</strong>원</h5>
+    <h5>이미지는 최대한 고화질로 보내줘야될거같아요</h5>
+    <h5>참고로 이미지 사이즈는 width: 840; height:480;이라서 비율안맞으면 짤려요</h5>
+  </div>
+  <hr>
 </div>
 {% endblock %}
