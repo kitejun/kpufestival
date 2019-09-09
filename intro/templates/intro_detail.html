@@ -51,9 +51,15 @@
     <span id="detail-text">{{ intro_detail.intro_like_users.count }}</span>
 
     <!--공유하기(구현 예정)-->
+    <!--
     <a href="#">
       <img id="icon_btn" src="{% static 'img/share_btn.png'%}">
       <span id="detail-text"> SHARE</span>
+    </a>
+    -->
+
+    <a href="javascript:sendLink()">
+        <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" width="50px"/>
     </a>
   </div>
 
@@ -100,4 +106,26 @@
   </div>
   <hr>
 </div>
+
+<script type='text/javascript'>
+  //<![CDATA[
+    // // 사용할 앱의 JavaScript 키를 설정해 주세요.
+    Kakao.init('5f2d23cd2c499b2da83462fb37ae738e');
+    // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+    function sendLink() {
+      Kakao.Link.sendDefault({
+        objectType: 'feed',
+        content: {
+          title: '학과: {{intro_detail.dename}}',
+          description: '{{ intro_detail.summary_introduce }}',
+          imageUrl: 'https://i.postimg.cc/7Y7JbZP4/Kakao-Talk-20190904-011500687.jpg',
+          link: {
+            mobileWebUrl: 'https://kpufestival.herokuapp.com/intro/intro_detail/{{intro_detail.id}}/',
+            webUrl: 'https://kpufestival.herokuapp.com/intro/intro_detail/{{intro_detail.id}}/'
+          }
+        },
+    });
+  }
+  //]]>
+</script>
 {% endblock %}
