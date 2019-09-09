@@ -50,16 +50,16 @@
     {% endif %}
     <span id="detail-text">{{ intro_detail.intro_like_users.count }}</span>
 
-    <!--공유하기(구현 예정)-->
+
     <!--
     <a href="#">
       <img id="icon_btn" src="{% static 'img/share_btn.png'%}">
       <span id="detail-text"> SHARE</span>
     </a>
     -->
-
-    <a href="javascript:sendLink()">
-        <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" width="50px"/>
+    <!--공유하기(구현 완료) 소영아 이쁘게 꾸며주시오... -->
+    <a id="kakao-link-btn" href="javascript:sendLink()">
+      <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" />
     </a>
   </div>
 
@@ -107,25 +107,66 @@
   <hr>
 </div>
 
+<!--
+  mobileWebUrl: 'https://kpufestival.herokuapp.com/intro/intro_detail/{{intro_detail.id}}/',
+  webUrl: 'https://kpufestival.herokuapp.com/intro/intro_detail/{{intro_detail.id}}/'
+-->
 <script type='text/javascript'>
   //<![CDATA[
-    // // 사용할 앱의 JavaScript 키를 설정해 주세요.
-    Kakao.init('5f2d23cd2c499b2da83462fb37ae738e');
-    // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
-    function sendLink() {
-      Kakao.Link.sendDefault({
-        objectType: 'feed',
-        content: {
-          title: '학과: {{intro_detail.dename}}',
-          description: '{{ intro_detail.summary_introduce }}',
-          imageUrl: 'https://i.postimg.cc/7Y7JbZP4/Kakao-Talk-20190904-011500687.jpg',
+  // // 사용할 앱의 JavaScript 키를 설정해 주세요.
+  Kakao.init('5f2d23cd2c499b2da83462fb37ae738e');
+  // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+  function sendLink() {
+    Kakao.Link.sendDefault({
+      objectType: 'list',
+      headerTitle: 'KPU Festival',
+      headerLink: {
+        mobileWebUrl: 'https://kpufestival.herokuapp.com',
+        webUrl: 'https://kpufestival.herokuapp.com'
+      },
+
+      contents: [
+        {
+          title: '{{intro_detail.dename}} 메뉴1',
+          imageUrl: 'http://mud-kage.kakao.co.kr/dn/bDPMIb/btqgeoTRQvd/49BuF1gNo6UXkdbKecx600/kakaolink40_original.png',
           link: {
-            mobileWebUrl: 'https://kpufestival.herokuapp.com/intro/intro_detail/{{intro_detail.id}}/',
-            webUrl: 'https://kpufestival.herokuapp.com/intro/intro_detail/{{intro_detail.id}}/'
+            mobileWebUrl: 'https://kpufestival.herokuapp.com',
+            webUrl: 'https://kpufestival.herokuapp.com'
+
           }
         },
+        {
+          title: '{{intro_detail.dename}} 메뉴2',
+          imageUrl: 'http://mud-kage.kakao.co.kr/dn/QPeNt/btqgeSfSsCR/0QJIRuWTtkg4cYc57n8H80/kakaolink40_original.png',
+          link: {
+            mobileWebUrl: 'https://kpufestival.herokuapp.com',
+            webUrl: 'https://kpufestival.herokuapp.com'
+
+          }
+        },
+        {
+          title: '{{intro_detail.dename}} 메뉴3',
+          imageUrl: 'http://mud-kage.kakao.co.kr/dn/c7MBX4/btqgeRgWhBy/ZMLnndJFAqyUAnqu4sQHS0/kakaolink40_original.png',
+          link: {
+            mobileWebUrl: 'https://kpufestival.herokuapp.com',
+            webUrl: 'https://kpufestival.herokuapp.com'
+
+          }
+        }
+      ],
+      buttons: [
+        {
+          title: '자세히 보기',
+          link: {
+            mobileWebUrl: 'https://kpufestival.herokuapp.com',
+            webUrl: 'https://kpufestival.herokuapp.com'
+
+          }
+        }
+      ]
     });
   }
+
   //]]>
 </script>
 {% endblock %}
