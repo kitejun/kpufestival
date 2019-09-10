@@ -85,10 +85,7 @@
         font-size: 1rem;
     }
 }
-#dev-img{
-    height: 255px;
-    margin:10px;
-}
+
 
 
 /*카드 바디*/
@@ -139,6 +136,16 @@
     color:white;
 }
 
+/*웹*/
+@media(min-width:1025px){
+    #dev-img{
+        height: 450px;
+        min-width: 200px;
+        max-width: 450px;
+        min-height: 200px;
+        margin:30px;
+    }
+}
 /*모바일*/
 @media (max-width: 1025px)  {
     #detail-text{
@@ -155,6 +162,9 @@
     }
     #dev-img{
         height: 99px;
+        min-width: 100px;
+        max-width: 120px;
+        min-height: 100px;
     }
     h3{
         font-size: 24px;
