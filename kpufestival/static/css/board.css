@@ -73,6 +73,9 @@
 #intro-card-content{
     font-size: 1.25rem;
 }
+#intro-card-img{
+    height: 125px;
+  }
 /*모바일*/
 @media (max-width: 1025px)  {
     #intro-card-title{
@@ -121,7 +124,7 @@
     width: 40;
 }
 #detail-img{
-    width: 1500px; height:600px;
+    width: 100%; height:600px;
 }
 #user-img{
     width:5rem;
