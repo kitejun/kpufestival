@@ -8,7 +8,8 @@ from .models import Intro
 # -카톡 공유하기 기능(학과명,사진 공유 혹은 링크)#
 
 def introduce(request):
-    all_intro=Intro.objects.all()
+    # random 으로 학과 주점 보여주기
+    all_intro=Intro.objects.annotate().order_by('?')
 
     return render(request,'introduce.html', { 'all_intro':all_intro })
 

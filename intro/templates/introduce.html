@@ -27,7 +27,7 @@
               <!-- 학과명 -->
               <span id="intro-card-title">{{ intro.dename }}</span>
               <!-- 좋아요 개수 -->
-              <span id="intro-card-like">좋아요개수</span>
+              <span id="intro-card-like">좋아요:{{ intro.intro_like_users.count }}</span>
               <!-- 지도 modal창 -->
               <a href="#">
                 <p id="intro-card-content" class="h-card-text" data-toggle="modal" data-target="#exampleModal">위치</p>
@@ -55,7 +55,7 @@
                 </div>
               </div>
               <!-- 소개글(summary)) -->
-              <p id="intro-card-content" class="h-card-text">{{ intro.summary_introduce }}</p>
+              <p id="intro-card-content" class="h-card-text">{{ intro.summary_introduce|linebreaks }}</p>
             </div>
           </div>
         </a>
