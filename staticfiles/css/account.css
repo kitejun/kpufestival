@@ -1,5 +1,8 @@
 /*로그인,회원가입*/
 /*카드*/
+.card-body{
+    padding: 2.3rem;
+}
 #login-box{
     border: 1px solid #BDBDBD;
     border-radius: 5px;
@@ -44,8 +47,6 @@
         margin-right: 25%; 
     }   
     .wrapper{
-        margin-top:200px;
-        margin-bottom:200px;
         margin-left: 30%;
         margin-right: 30%;
     }
@@ -59,10 +60,8 @@
         margin-right: 30%;
     }
     .wrapper{
-        margin-top:200px;
         margin-left: 5%;
         margin-right: 5%;
         height: 1200px;
     }
 }
-

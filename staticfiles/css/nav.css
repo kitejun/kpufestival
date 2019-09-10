@@ -97,8 +97,8 @@
 /*웹*/
 @media (min-width: 1025px)  {
   .menu-container{
-    margin-left: 0.8rem;
-    margin-top: 2rem;
+    margin-left: 2.5rem;
+    margin-top: 4rem;
   }
   #icon-container{
     margin-right: 7rem;
