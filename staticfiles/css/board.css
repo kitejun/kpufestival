@@ -2,13 +2,13 @@
 /*board*/
 #comment-box{
     font-family: Arial, sans-serif;
-    margin-left: 10;
+    margin-left: 10em;
   }
   #comment-box p{
     margin:0;
   }
   #context-box{
-    margin-left: 10;
+    margin-left: 10em;
     font-size:25px;
   }
   #context-box p{
@@ -32,6 +32,18 @@
   }
 
 /*intro,developer*/
+#my-container{
+    background-color: white;
+    border-radius: 8px;
+    padding:30px;
+    margin:4rem;
+  }
+  /*모바일*/
+@media (max-width: 1025px)  {
+  #my-container{
+    margin:1rem;
+  }
+}
 .card{
     width: 120;
     border: 0;
@@ -42,11 +54,40 @@
     text-align: center;
 }
 
+#intro-body{
+    padding:10px;
+}
+#intro-card-title{
+    font-size: 2.5rem;
+}
+
+#intro-card-like{
+    font-size: 1.25rem;
+}
+
 #intro-card-content{
     font-size: 1.25rem;
 }
+#intro-card-img{
+    height: 125px;
+  }
+/*모바일*/
+@media (max-width: 1025px)  {
+    #intro-card-title{
+        font-size: 1.5rem;
+    }
+    
+    #intro-card-like{
+        font-size: 0.8rem;
+    }
+    
+    #intro-card-content{
+        font-size: 1rem;
+    }
+}
 #dev-img{
-    height: 350;
+    height: 255px;
+    margin:10px;
 }
 
 
@@ -59,25 +100,6 @@
 
 /*intro detail 페이지*/
 /*웹*/
-@media (min-width: 1025px)  {
-#detail-container{
-    margin-left:29%;
-    margin-right:29%;
-    margin-top:12%; 
-    margin-bottom: 12%;
-    width: 840; 
-    }
-}
-/*모바일*/
-@media (max-width: 1025px)  {
-#detail-container{
-    margin-left:13.5%;
-    margin-right:13.5%;
-    margin-top:30%; 
-    margin-bottom: 12%;
-    width: 840; 
-    }
-}
 
 #carouselExampleControls{
     margin-bottom: 15px;
@@ -98,26 +120,46 @@
     width: 40;
 }
 #detail-img{
-    width: 1110px; height:600px;
+    width: 100%; height:600px;
 }
 #user-img{
-    width:60;
-    height:60;
+    width:5rem;
+    height:5rem;
 }
 #sub_button{
-    color: white;
-    font-size: 1.5rem;
-    background-color: red;
     float: right;
-}  
-/* 1110*0.648*/
+}
   
 .content-box{
     margin-top:20;
 }
+
+/*글자색 흰색*/
+#white{
+    color:white;
+}
+
 /*모바일*/
 @media (max-width: 1025px)  {
+    #detail-text{
+        font-size: 1rem;
+    }
+    #tag{
+        font-size: 1rem;
+    }
     #detail-img{
-        width: 710px; height:380px;
+        width: 500px; height:200px;
+    }
+    #sub_button{
+        float : right;
+    }
+    #dev-img{
+        height: 99px;
+    }
+    h3{
+        font-size: 24px;
+    }
+    h5{
+        font-size:14px;
     }
 }
