@@ -8,3 +8,6 @@ def home(request):
 
 def developer(request):
     return render(request,'developer.html')
+
+def siru(request):
+    return render(request,'siru.html')

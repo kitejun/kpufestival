@@ -1,10 +1,12 @@
 from django import forms
-from .models import Board
+from .models import Board, Missing
 
 class BoardPost(forms.ModelForm):
         class Meta:
             model = Board
             fields = ['title','context','image']
 
-class PostSearchForm(forms.Form):
-    search_word = forms.CharField(label='검색')
+class MissingPost(forms.ModelForm):
+        class Meta:
+            model = Missing
+            fields = ['context','image']

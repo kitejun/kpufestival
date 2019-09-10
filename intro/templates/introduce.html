@@ -1,0 +1,68 @@
+<!--학과,동아리별 주점소개페이지입니다-->
+{%extends 'base.html'%}
+{% load staticfiles %}
+
+{% block content %}
+<style>
+
+</style>
+<link rel="stylesheet" type="text/css" href="{% static 'css/board.css' %}">
+
+<!--컨테이너 속성변경해야함 이거때문에 다 작게 보임-->
+<div id="my-container">
+  <div style="margin:0 auto">
+    <h2>학과별 주점소개</h2>
+    <br>
+    <div class="row" style="margin-bottom: 30px;">
+      <!--이부분부터 추가 for문으로 넣으시면 됩니다-->
+      <!--bootstrap4부터는 모바일은 col-숫자형태로 바뀜!-->
+
+      {% for intro in all_intro %}
+      <div class="col-lg-3 col-6" style="margin-bottom: 30px;">
+        <a href="{% url 'intro_detail' intro.id %}">
+          <div class="card">
+            <!-- 학과 관련 사진 -->
+            <img class="card-img-top h-img" src="{{ intro.img1.url }}" id="intro-card-img">
+            <div id="intro-body">
+              <!-- 학과명 -->
+              <span id="intro-card-title">{{ intro.dename }}</span>
+              <!-- 좋아요 개수 -->
+              <span id="intro-card-like">좋아요개수</span>
+              <!-- 지도 modal창 -->
+              <a href="#">
+                <p id="intro-card-content" class="h-card-text" data-toggle="modal" data-target="#exampleModal">위치</p>
+              </a>
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <!-- 학과명 -->
+                      <h5 class="modal-title" id="exampleModalLabel">{{ intro.dename }}</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <!-- 학과 지도 사진 -->
+                      <img src="{{ intro.map_img.url }}">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-light" data-dismiss="modal">닫기</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 소개글(summary)) -->
+              <p id="intro-card-content" class="h-card-text">{{ intro.summary_introduce }}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      {%endfor%}
+
+    </div>
+  </div>
+</div>
+{% endblock %}

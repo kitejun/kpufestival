@@ -4,7 +4,7 @@
 {%load staticfiles%}
 <link rel="stylesheet" type="text/css" href="{% static 'css/board.css' %}">
 
-<div class="contatiner" id="detail-container">
+<div class="container" >
   <!--삭제버튼-->
   <img id="right-icon" src="{% static 'img/delete_btn.png'%}">
   <!--수정버튼-->
@@ -27,22 +27,40 @@
     </div>
     <div class="col-9">
       <div id="context-box">
+        {{details.update_counter_hit}}
         <!--작성자이름-->
         <span>{{details.author}}</span>
         <!--작성시간-->
         <span id="detail-text">{{details.pub_date}}</span>
+
+        <!-- 사진 -->
+        <p><img src="{{ details.image.url }}" style="width: 55%;"></p>
+
         <!--내용-->
         <p>{{details.context}}</p>
+
         <!--좋아요-->
-        <a href="#">
+        <!--
           <img src="{% static 'img/like_btn.png'%}" style="margin-bottom:6px;">
-          <span id="detail-text"> 13</span>
-        </a>
+        -->
+        {% if user in details.like_users.all %}
+        <a href="{% url 'like' details.id %}">좋아요 취소</a>
+        {% else %}
+        <a href="{% url 'like' details.id %}">좋아요</a>
+        {% endif %}
+        <span id="detail-text">{{ details.like_users.count }}</span>
+
         <!--싫어요-->
-        <a href="#">
+        <!--
           <img src="{% static 'img/dislike_btn.png'%}" style="margin-top:2px;">
-          <span id="detail-text"> 3</span>
-        </a>
+        -->
+        {% if user in details.hate_users.all %}
+        <a href="{% url 'hate' details.id %}">싫어요 취소</a>
+        {% else %}
+        <a href="{% url 'hate' details.id %}">싫어요</a>
+        {% endif %}
+        <span id="detail-text">{{ details.hate_users.count }}</span>
+
       </div>
     </div>
   </div>
@@ -52,60 +70,74 @@
   <div class="row">
     <div class="col-1"></div>
     <div class="col-9">
-      <p>댓글 5개</p>
+      <p>댓글 수: {{ details.comments.count }}</p>
     </div>
   </div>
+
   <div class="row">
     <div class="col-1"></div>
     <div class="col-9">
-      <form>
-        <div class="form-group">
-          <textarea class="form-control"></textarea>
-          <br>
-          <!--댓글 버튼-->
-          <button name="button" type="submit" class="btn btn-light" id="right">댓글달기</button>
+      <form action="{% url 'comment_write' details.id%}" method="POST" class="form-row">
+        {% csrf_token %}
+        <div>
+          <textarea type="text" name="content" class="form-control" placeholder="댓글을 입력해주세요."></textarea>
+        </div>
+        <div>
+          <input class="btn btn-light" id="right" type="submit" value="댓글달기">
         </div>
       </form>
     </div>
   </div>
   <hr>
-  <div class="row">
-    <div class="col-1"></div>
-    <div class="col-1">
-      <!--작성자아이콘-->
-      <img id="user-img" src="{% static 'img/icon.png'%}">
-    </div>
-    <div class="col-9">
-      <div id="comment-box">
-        <!--작성자-->
-        <strong><span>댕댕쓰</span></strong>
-        <!--댓글작성시간-->
-        <span id="detail-text">1분전</span>
-        <!--내용-->
-        <p>댓글 내용이 이렇게 주루르륵나오는거죠</p>
-        <p>길어지면 자세히 보기가 생기구</p>
-        <p>주르륵</p>
 
+  <div class="row">
+    <div class="col-9">
+
+      <div id="comment-box">
+        {% for comment in details.comments.all %}
+        <!--작성자-->
+        <strong><span>{{ comment.author }}</span></strong>
+
+        <!--댓글작성시간-->
+        <span id="detail-text">{{ comment.comment_date }}</span>
+
+        <!--내용-->
+        <p>{{ comment.comment_body }}</p>
+        <br>
         <!--좋아요-->
         <!--
-          {% if user in details.like_users.all %}
-        <br><a href="#"">좋아요</a><br><br>
-        {% else %}
-        <a href="#">
-            좋아요 취소
-        </a> <br>
-        {% endif %}
-
-        {{ details.like_users.count }} 명이 좋아합니다.
+          <img src="{% static 'img/like_btn.png'%}" style="margin-top:2px;">
         -->
-        
+        {% if user in comment.comment_like_users.all %}
+        <a href="{% url 'comment_like' comment.id %}">좋아요 취소</a>
+        {% else %}
+        <a href="{% url 'comment_like' comment.id %}">좋아요</a>
+        {% endif %}
+        <span id="detail-text">{{ comment.comment_like_users.count }}</span>
 
         <!--싫어요-->
-        <a href="#">
+        <!--
           <img src="{% static 'img/dislike_btn.png'%}" style="margin-top:2px;">
-          <span id="detail-text"> 3</span>
-        </a>
+        -->
+        {% if user in comment.comment_hate_users.all %}
+        <a href="{% url 'comment_hate' comment.id %}">싫어요 취소</a>
+        {% else %}
+        <a href="{% url 'comment_hate' comment.id %}">싫어요</a>
+        {% endif %}
+        <span id="detail-text">{{ comment.comment_hate_users.count }}</span>
+
+        <!--댓글 삭제-->
+        {% if user == comment.author %}<br>
+        <a href="{% url 'comment_delete' comment.id %}"> 삭제 </a>
+        {% endif %}<br>
+        <hr>
+
+
+        {% empty %}
+        <p>댓글이 없습니다.</p>
+        {% endfor %}
       </div>
+
     </div>
   </div>
 </div>
