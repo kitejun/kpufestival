@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&
 DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 #DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['django-env.pws5ppwp4q.us-west-2.elasticbeanstalk.com','*']
 
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'account.apps.AccountConfig',
     'info.apps.InfoConfig',
     'board.apps.BoardConfig',
+    'intro.apps.IntroConfig',
 
     'imagekit'
 ]
@@ -130,10 +131,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'kpufestival', 'static'),
     os.path.join(BASE_DIR, 'account', 'static'),
     os.path.join(BASE_DIR, 'board', 'static'),
     os.path.join(BASE_DIR, 'info', 'static'),
-    os.path.join(BASE_DIR, 'kpufestival', 'static'),
+    os.path.join(BASE_DIR, 'intro', 'static'),
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

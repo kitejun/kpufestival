@@ -221,9 +221,6 @@ SETTINGS
     --smLinkTextColorHover: #ffffff;
 }
 
-#white{
-  color:white;
-}
 .container{
   background-color: white;
   border-radius: 8px;
@@ -233,6 +230,6 @@ SETTINGS
 /*모바일*/
 @media (max-width: 1025px)  {
   .container{
-    width:90%;
+    border-radius: 0;
   }
 }

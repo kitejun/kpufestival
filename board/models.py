@@ -44,16 +44,12 @@ class Missing(models.Model):
     class Meta:
         ordering=['-id']
 
-    def __str__(self):
-        return self.title
-
     def summary(self):
         return self.context[:50]
 
 class Comment(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     board = models.ForeignKey(Board, on_delete=models.CASCADE, null=True, related_name='comments')   
-    missing = models.ForeignKey(Missing, on_delete=models.CASCADE, null=True, related_name='missing_comments')   
     comment_date = models.DateTimeField(auto_now_add=True)
     comment_body = models.CharField(max_length=50)
     comment_like_users=models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='comment_like_users')

@@ -55,10 +55,11 @@
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <div class="overlay-content">
       <a href="{% url 'introduce' %}">주점소개</a>
+      <a href="{% url 'siru' %}">시흥화폐 시루 소개</a>
       <div class="board">
         <a href="{% url 'board' %}">게시판</a>
         <!--분실물페이지 링크로 걸어주세요-->
-        <a href="{% url 'board' %}">분실물</a>
+        <a href="{% url 'missing' %}">분실물</a>
       </div>
       <a href="{% url 'developer'%}">개발자소개</a>
       {% if user.is_authenticated %}

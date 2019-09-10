@@ -5,5 +5,6 @@ import account.views
 import board.views
 
 urlpatterns = [
-    path('developer/', info.views.developer,name="developer")
+    path('developer/', info.views.developer,name="developer"),
+    path('siru/', info.views.siru,name="siru"),
 ]
