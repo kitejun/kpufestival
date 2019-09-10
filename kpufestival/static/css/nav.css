@@ -12,6 +12,13 @@
         transition: 0.5s;
       }
 
+      #forabsolute
+      {
+        position: absolute;
+        background-color: white;
+         z-index: 1000; width:100%;
+      }
+
       .overlay-content {
         position: relative;
         top: 25%;
@@ -96,6 +103,7 @@
   #icon-container{
     margin-right: 7rem;
   }
+
 }
 
 /*모바일*/
