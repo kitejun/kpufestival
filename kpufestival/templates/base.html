@@ -72,14 +72,15 @@
       {% endif %}
     </div>
   </div>
-
+<!--  style="position: absolute; z-index: 1000; width:100%;" -->
 <!--/.Navbar-->
+<div id="forabsolute">
   <div class="menu-container" onclick="openNav()">
     <img id="menu" src="{% static 'img/menu.png' %}">
   </div>
   <!--<span id="menu" onclick="openNav()">&#9776; </span>-->
 
-  <div id="icon-container" >
+  <div id="icon-container">
     <a href="{% url 'home' %}">
         <div class="animated flash delay-2s duration-0.5s slower">
         <div class="neon">
@@ -89,6 +90,8 @@
         </div>
     </a>
   </div>
+</div>
+  
   
 
 <!-- 특정 URL에만 css 적용시킬려고 만든 자바스크립트 -->
@@ -99,7 +102,7 @@
  } 
 </script>
 
-  
+
  <!-- 페이지필링 자바스크립트 -->
   <script>
   $(document).ready(function() {
