@@ -11,7 +11,7 @@
 <!--컨테이너 속성변경해야함 이거때문에 다 작게 보임-->
 <div id="my-container">
   <div style="margin:0 auto">
-    <h2>학과별 주점소개</h2>
+    <h2>학과별 주점소개</h2> ※ 무작위로 보여줍니다.
     <br>
     <div class="row" style="margin-bottom: 30px;">
       <!--이부분부터 추가 for문으로 넣으시면 됩니다-->
@@ -25,9 +25,10 @@
             <img class="card-img-top h-img" src="{{ intro.img1.url }}" id="intro-card-img">
             <div id="intro-body">
               <!-- 학과명 -->
+              <img id="user-img" src="{{ intro.de_logo.url }">
               <span id="intro-card-title">{{ intro.dename }}</span>
               <!-- 좋아요 개수 -->
-              <span id="intro-card-like">좋아요개수</span>
+              <span id="intro-card-like">좋아요:{{ intro.intro_like_users.count }}</span>
               <!-- 지도 modal창 -->
               <a href="#">
                 <p id="intro-card-content" class="h-card-text" data-toggle="modal" data-target="#exampleModal">위치</p>
@@ -55,7 +56,7 @@
                 </div>
               </div>
               <!-- 소개글(summary)) -->
-              <p id="intro-card-content" class="h-card-text">{{ intro.summary_introduce }}</p>
+              <p id="intro-card-content" class="h-card-text">{{ intro.summary_introduce|linebreaks }}</p>
             </div>
           </div>
         </a>

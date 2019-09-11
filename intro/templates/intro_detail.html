@@ -67,8 +67,7 @@
   <br>
   <hr>
   <!--학과별 이미지-->
-  <img id="user-img" src="{% static 'img/icon.png'%}">
-
+  <img id="user-img" src="{{ intro_detail.de_logo.url }">
   <!--학과이름-->
   <span id="intro-card-title">{{intro_detail.dename}} 맛집</span>
   <!--지도 보여주는 버튼-->
@@ -96,7 +95,8 @@
   </div>
   <!--Modal-->
   <div class="content-box">
-    <h5>{{intro_detail.introduce}}</h5>
+    <!-- |linebreaks 속성은 줄 바꿈 허용 -->
+    <h5>{{intro_detail.introduce|linebreaks}}</h5>
     <br>
     <br>
     <h5>내용 추가 할꺼 고민중</h5>
@@ -121,35 +121,35 @@
       objectType: 'list',
       headerTitle: 'KPU Festival',
       headerLink: {
-        mobileWebUrl: 'https://kpufestival.herokuapp.com',
-        webUrl: 'https://kpufestival.herokuapp.com'
+        mobileWebUrl: 'https://kpufestival.herokuapp.com/intro/intro_detail/{{ intro_detail.id }}',
+        webUrl: 'https://kpufestival.herokuapp.com/intro/intro_detail/{{ intro_detail.id }}'
       },
 
       contents: [
         {
           title: '{{intro_detail.dename}} 메뉴1',
-          imageUrl: 'http://mud-kage.kakao.co.kr/dn/bDPMIb/btqgeoTRQvd/49BuF1gNo6UXkdbKecx600/kakaolink40_original.png',
+          imageUrl: 'https://kpufestival.herokuapp.com/{{ intro_detail.img1.url }}',
           link: {
-            mobileWebUrl: 'https://kpufestival.herokuapp.com',
-            webUrl: 'https://kpufestival.herokuapp.com'
+            mobileWebUrl: 'https://kpufestival.herokuapp.com/intro/intro_detail/{{ intro_detail.id }}',
+        webUrl: 'https://kpufestival.herokuapp.com/intro/intro_detail/{{ intro_detail.id }}'
 
           }
         },
         {
           title: '{{intro_detail.dename}} 메뉴2',
-          imageUrl: 'http://mud-kage.kakao.co.kr/dn/QPeNt/btqgeSfSsCR/0QJIRuWTtkg4cYc57n8H80/kakaolink40_original.png',
+          imageUrl: 'https://kpufestival.herokuapp.com/{{ intro_detail.img2.url }}',
           link: {
-            mobileWebUrl: 'https://kpufestival.herokuapp.com',
-            webUrl: 'https://kpufestival.herokuapp.com'
+            mobileWebUrl: 'https://kpufestival.herokuapp.com{{ intro_detail.img2.url }}',
+            webUrl: 'https://kpufestival.herokuapp.com{{ intro_detail.img2.url }}'
 
           }
         },
         {
           title: '{{intro_detail.dename}} 메뉴3',
-          imageUrl: 'http://mud-kage.kakao.co.kr/dn/c7MBX4/btqgeRgWhBy/ZMLnndJFAqyUAnqu4sQHS0/kakaolink40_original.png',
+          imageUrl: 'https://kpufestival.herokuapp.com/{{ intro_detail.img3.url }}',
           link: {
-            mobileWebUrl: 'https://kpufestival.herokuapp.com',
-            webUrl: 'https://kpufestival.herokuapp.com'
+            mobileWebUrl: 'https://kpufestival.herokuapp.com{{ intro_detail.img3.url }}',
+            webUrl: 'https://kpufestival.herokuapp.com{{ intro_detail.img3.url }}'
 
           }
         }
@@ -158,8 +158,8 @@
         {
           title: '자세히 보기',
           link: {
-            mobileWebUrl: 'https://kpufestival.herokuapp.com',
-            webUrl: 'https://kpufestival.herokuapp.com'
+            mobileWebUrl: 'https://kpufestival.herokuapp.com/intro/intro_detail/{{ intro_detail.id }}',
+            webUrl: 'https://kpufestival.herokuapp.com/intro/intro_detail/{{ intro_detail.id }}'
 
           }
         }
