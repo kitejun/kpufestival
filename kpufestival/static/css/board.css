@@ -1,5 +1,14 @@
 
 /*board*/
+
+.siru_image {
+    width:85%;
+}
+.siru_imageset {
+
+    text-align: center;
+}
+
 #comment-box{
     font-family: Arial, sans-serif;
     margin-left: 10em;
@@ -43,6 +52,10 @@
   #my-container{
     margin:1rem;
   }
+  .siru_image{
+    width:100%;
+  }
+
 }
 .card{
     width: 120;
