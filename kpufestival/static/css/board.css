@@ -69,7 +69,7 @@
     font-size: 1.25rem;
 }
 #intro-card-img{
-    height: 125px;
+    height: 220px;
   }
 /*모바일*/
 @media (max-width: 1025px)  {
@@ -139,10 +139,9 @@
 /*웹*/
 @media(min-width:1025px){
     #dev-img{
-        height: 450px;
+        height: 200px;
         min-width: 200px;
-        max-width: 450px;
-        min-height: 200px;
+        max-width: 200px;
         margin:30px;
     }
 }
