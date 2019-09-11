@@ -12,12 +12,6 @@
         transition: 0.5s;
       }
 
-      #forabsolute
-      {
-        position: absolute;
-        background-color: white;
-         z-index: 1000; width:100%;
-      }
 
       .overlay-content {
         position: relative;
