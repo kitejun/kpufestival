@@ -1,0 +1,199 @@
+<!--학과,동아리별 주점소개페이지입니다-->
+{%extends 'base.html'%}
+{% load staticfiles %}
+
+{% block content %}
+<style>
+
+</style>
+<link rel="stylesheet" type="text/css" href="{% static 'css/board.css' %}">
+
+<!--컨테이너 속성변경해야함 이거때문에 다 작게 보임-->
+<div class="container">
+<div style="margin:0 auto">
+  <h2>학과별 주점소개</h2>
+  <br>
+  <div class="row" style="margin-bottom: 30px;">
+  <!--이부분부터 추가 for문으로 넣으시면 됩니다-->
+  <!--bootstrap4부터는 모바일은 col-숫자형태로 바뀜!-->
+  <div class="col-lg-3 col-6" style="margin-bottom: 30px;">
+  <a href="{%url 'intro_detail'%}">
+    <div class="card">
+        <img class="card-img-top h-img" src="{% static 'img/example1.png'%}" id="intro-card-img">
+        <div id="intro-body">
+        <!--음식 이미지-->
+        <span id="intro-card-title">학과명</span>
+        <span id="intro-card-like">좋아요</span>
+        <a href="#"><p id="intro-card-content" class="h-card-text" data-toggle="modal" data-target="#exampleModal">위치</p></a>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">컴퓨터공학과</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <img src="{%static 'img/map.png'%}">
+                지도 넣어주세요
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-dismiss="modal">닫기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--위치나 이미지 클릭하면 지도로 위치알려주기-->
+        <p id="intro-card-content" class="h-card-text">소개글</p>
+      </div>
+      </div>
+    </a>
+  </div>
+  <!--여기까지-->
+<!--예시-->
+  <div class="col-lg-3 col-6" style="margin-bottom: 30px;">
+  <a href="{%url 'intro_detail'%}">
+    <div class="card">
+        <img class="card-img-top h-img" src="{% static 'img/example1.png'%}" id="intro-card-img">
+        <div id="intro-body">
+        <!--음식 이미지-->
+        <span id="intro-card-title">학과명</span>
+        <span id="intro-card-like">좋아요</span>
+        <a href="#"><p id="intro-card-content" class="h-card-text" data-toggle="modal" data-target="#exampleModal">위치</p></a>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">컴퓨터공학과</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <img src="{%static 'img/map.png'%}">
+                지도 넣어주세요
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-dismiss="modal">닫기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--위치나 이미지 클릭하면 지도로 위치알려주기-->
+        <p id="intro-card-content" class="h-card-text">소개글</p>
+      </div>
+      </div>
+    </a>
+  </div>
+  <div class="col-lg-3 col-6" style="margin-bottom: 30px;">
+  <a href="{%url 'intro_detail'%}">
+    <div class="card">
+        <img class="card-img-top h-img" src="{% static 'img/example1.png'%}" id="intro-card-img">
+        <div id="intro-body">
+        <!--음식 이미지-->
+        <span id="intro-card-title">학과명</span>
+        <span id="intro-card-like">좋아요</span>
+        <a href="#"><p id="intro-card-content" class="h-card-text" data-toggle="modal" data-target="#exampleModal">위치</p></a>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">컴퓨터공학과</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <img src="{%static 'img/map.png'%}">
+                지도 넣어주세요
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-dismiss="modal">닫기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--위치나 이미지 클릭하면 지도로 위치알려주기-->
+        <p id="intro-card-content" class="h-card-text">소개글</p>
+      </div>
+      </div>
+    </a>
+  </div>
+  <div class="col-lg-3 col-6" style="margin-bottom: 30px;">
+  <a href="{%url 'intro_detail'%}">
+    <div class="card">
+        <img class="card-img-top h-img" src="{% static 'img/example1.png'%}" id="intro-card-img">
+        <div id="intro-body">
+        <!--음식 이미지-->
+        <span id="intro-card-title">학과명</span>
+        <span id="intro-card-like">좋아요</span>
+        <a href="#"><p id="intro-card-content" class="h-card-text" data-toggle="modal" data-target="#exampleModal">위치</p></a>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">컴퓨터공학과</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <img src="{%static 'img/map.png'%}">
+                지도 넣어주세요
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-dismiss="modal">닫기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--위치나 이미지 클릭하면 지도로 위치알려주기-->
+        <p id="intro-card-content" class="h-card-text">소개글</p>
+      </div>
+      </div>
+    </a>
+  </div>
+  <div class="col-lg-3 col-6" style="margin-bottom: 30px;">
+  <a href="{%url 'intro_detail'%}">
+    <div class="card">
+        <img class="card-img-top h-img" src="{% static 'img/example1.png'%}" id="intro-card-img">
+        <div id="intro-body">
+        <!--음식 이미지-->
+        <span id="intro-card-title">학과명</span>
+        <span id="intro-card-like">좋아요</span>
+        <a href="#"><p id="intro-card-content" class="h-card-text" data-toggle="modal" data-target="#exampleModal">위치</p></a>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">컴퓨터공학과</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <img src="{%static 'img/map.png'%}">
+                지도 넣어주세요
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-dismiss="modal">닫기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--위치나 이미지 클릭하면 지도로 위치알려주기-->
+        <p id="intro-card-content" class="h-card-text">소개글</p>
+      </div>
+      </div>
+    </a>
+  </div>        
+  </div>  
+</div>
+</div>
+{% endblock %}
