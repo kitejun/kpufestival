@@ -68,7 +68,7 @@
       }
 
       #icon {
-        width: 18rem;
+        width: 12rem;
       }
       /*메뉴버튼*/
       .menu-container{
@@ -90,8 +90,8 @@
 /*웹*/
 @media (min-width: 1025px)  {
   .menu-container{
-    margin-left: 2.5rem;
-    margin-top: 4rem;
+    margin-left: 0.8rem;
+    margin-top: 2rem;
   }
   #icon-container{
     margin-right: 7rem;

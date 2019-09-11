@@ -18,10 +18,10 @@
   #context-box span{
     font-size: 20px;
   }
-  #right-icon{
+  .right-icon{
     float: right;
-    width: 38px;
-    margin-right: 10px;
+    width: 2.2rem;
+    margin-right: 0.4rem;
   }
   .btn{
     color: white;
@@ -101,8 +101,13 @@
 #carouselExampleControls{
     margin-bottom: 15px;
 }
-#detail-text{
-    font-size: 1.3rem;
+.detail-title{
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+.detail-text{
+    font-size: 0.9rem;
     color:#606060;
 }
 #tag{
