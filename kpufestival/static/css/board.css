@@ -144,6 +144,10 @@
         max-width: 200px;
         margin:30px;
     }
+    #nav_siru
+    {
+        
+    }
 }
 /*모바일*/
 @media (max-width: 1025px)  {
@@ -170,5 +174,9 @@
     }
     h5{
         font-size:14px;
+    }
+    #nav_siru
+    {
+        display: none;
     }
 }
