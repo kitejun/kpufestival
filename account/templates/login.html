@@ -4,6 +4,7 @@
 
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/account.css' %}">
+<script type="text/javascript" src="{% static 'js/loginvalidate.js' %}"></script>
 <body>
 <div class="wrapper">
   <div class="container">
@@ -14,7 +15,7 @@
           <h1 style="justify-content: center; display:flex;">로그인</h1>
           </div>
         <!--가입폼은 기본으로 해뒀습니다 소셜로그인하시면 변경할게요-->
-        <form class="user" id="user" action="#" accept-charset="UTF-8" method="post">
+        <form class="user" id="user" action="#" accept-charset="UTF-8" method="post" onsubmit="validateForm()">
         {% csrf_token %}
           <div class="row">
             <div class="form-group col-12">

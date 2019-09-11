@@ -4,7 +4,7 @@
 
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/account.css' %}">
-
+<script type="text/javascript" src="{% static 'js/loginvalidate.js' %}"></script>
 
 <body>
   <div class="wrapper">
@@ -16,7 +16,7 @@
         </div>
         <br>
         <!--가입폼은 기본으로 해뒀습니다 소셜로그인하시면 변경할게요-->
-        <form method="POST" action="{% url 'signup'%}" class="user" id="user" accept-charset="UTF-8">
+        <form method="POST" action="{% url 'signup'%}" class="user" id="user" accept-charset="UTF-8" onsubmit="validateForm_signup()">
           {% csrf_token %}
           <div class="form">
             <label class="control-label" for="email">아이디</label><br />
