@@ -29,7 +29,8 @@ body{
 
 /* home */
 .section{
-    background: #dbdbdb;
+    background: white;
+    
 }
 #jb-container {
     width: 1025px;
