@@ -3,12 +3,14 @@
     color: #ffffff;
     text-align: left;
     padding: 1.5em;
-    margin-top:30px;
     bottom: 0;
 }
 
 /*웹*/
 @media (min-width: 1025px)  {
+    #img{
+        height:15px;
+    }
     div#footer{
         position: relative;
         background-color: #323232;
@@ -44,27 +46,32 @@
         #small{font-size: 0.8em; margin-bottom: 1em; }
     
     }
-    /*모바일*/
-    @media (max-width: 1025px)  {
-        /*구조*/
-        #footer>.row{   margin: 1em;  }
-        .side{ padding: 0;}
-        div.row{ margin: 0em;}
-        .box{ padding: 1em;}
-        .box.row{padding-left: 1em; padding-top: 1em; }
-        #rightside{vertical-align: center;}
-        /*글자*/
-        h3.title_m{  font-weight: 700; font-size: 2.0em; margin-right: 1.5em; text-align: left;}
-        h4.title_s{  font-weight: 400; font-size: 1.5em; margin-right: 0.5em;}
-        h5.content{  font-weight: 100; font-size: 1em; margin-top: auto; margin-bottom: auto;}
-        .logo{     font-weight: 900;  }
-        /*로고*/
-        .logo{ height: 1.2em; font-size: 3em;}
-        H1.logo{ font-size: 2.5em; margin: 0;height: 1em;}
-        #logo_{padding: 0}
-        #logo>h5.content{ font-size: 1em;}
-        .box#logo{ padding: 0;vertical-align: middle;}
-        .row#logo{ padding:0; align-items: center; width: 30em;}
-        #small{font-size: 1em; margin-bottom: 1em;}
+
+/*모바일*/
+@media (max-width: 1025px)  {
+    #footer{
+        padding:1.0em;
     }
-    
+    #img{
+        height:10px;
+    }
+    /*구조*/
+    #footer>.row{   margin: 1em;  }
+    .side{ padding: 0;}
+    div.row{ margin: 0em;}
+    .box.row{padding-left: 0.3em; }
+    #rightside{vertical-align: center;}
+    /*글자*/
+    h3.title_m{  font-weight: 700; font-size: 0.8em; margin-right: 0.2em; text-align: left;}
+    h4.title_s{  font-weight: 400; font-size: 0.6em; margin-right: 0.3em;margin-right: 0.3em;}
+    h5.content{  font-weight: 100; font-size: 0.1em; margin-top: auto; margin-bottom: auto;}
+    .logo{     font-weight: 900;  }
+    /*로고*/
+    .logo{ height: 0.5em; font-size: 3em;}
+    H1.logo{ font-size: 1.5em; margin: 0;height: 1em;}
+    #logo_{padding: 0}
+    #logo>h5.content{ font-size: 1em;}
+    .box#logo{ padding: 0;vertical-align: middle;}
+    .row#logo{ padding:0; align-items: center; width: 30em;}
+    #small{font-size: 0.3em; margin-bottom: 1em;}
+}
