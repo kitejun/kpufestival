@@ -9,7 +9,31 @@
   </div>
   <div class="row mt-4 mx-1">
   <!--이부분에 추가해주세요-->
-    <div class="row"></div>
+    <div class="row justify-content-center">
+      {% for missing in missings %}
+      <div class="col-lg-3">
+        <div class="row justify-content-center">
+          <div class="col-lg-12">
+            <img src="{{ missing.image.url }}" class="text-center" alt="he" style="object-fit: cover; width:210px; height: 7.5rem">
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-12">
+            <div class="row">
+              <span class="card_title">{{missing.summary}}</span>
+            </div>
+            <div class="row">
+              <span class="card_author">{{missing.author}}</span>
+            </div>
+            <div class="row">
+              <span class="card_author">조회수 {{missing.hits}}회 ㆍ 시간 전</span>
+              <!--시간 전 이라고 한 부분은 db에서 보내줄때 맞춰서 보내줬으면 함-->
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
 <!--      <div class="table-responsive">-->
 <!--        <table class="table">-->
 <!--        <tbody>-->

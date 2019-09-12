@@ -1,9 +1,31 @@
+/*missing*/
+.card_title{
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 1.2rem;
+}
+.card_author{
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 0.8rem;
+    color: #606060;
+}
+.card_count{
+
+}
 
 /*board*/
-#siru_image
-{
-    
+
+.siru_image {
+    width:85%;
 }
+.siru_imageset {
+
+    text-align: center;
+}
+.zoom a:hover{
+    transform: scale(1.1);
+    transition: all ease 500ms;
+  }
+
 
 #comment-box{
     font-family: Arial, sans-serif;
@@ -23,10 +45,10 @@
   #context-box span{
     font-size: 20px;
   }
-  #right-icon{
+  .right-icon{
     float: right;
-    width: 38px;
-    margin-right: 10px;
+    width: 2.2rem;
+    margin-right: 0.4rem;
   }
   .btn{
     color: white;
@@ -48,6 +70,10 @@
   #my-container{
     margin:1rem;
   }
+  .siru_image{
+    width:100%;
+  }
+
 }
 .card{
     width: 120;
@@ -74,7 +100,7 @@
     font-size: 1.25rem;
 }
 #intro-card-img{
-    height: 125px;
+    height: 220px;
   }
 /*모바일*/
 @media (max-width: 1025px)  {
@@ -90,10 +116,7 @@
         font-size: 1rem;
     }
 }
-#dev-img{
-    height: 255px;
-    margin:10px;
-}
+
 
 
 /*카드 바디*/
@@ -109,8 +132,13 @@
 #carouselExampleControls{
     margin-bottom: 15px;
 }
-#detail-text{
-    font-size: 1.3rem;
+.detail-title{
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+.detail-text{
+    font-size: 0.9rem;
     color:#606060;
 }
 #tag{
@@ -125,7 +153,8 @@
     width: 40;
 }
 #detail-img{
-    width: 100%; height:600px;
+    height: 600px;
+    width: 1000px;
 }
 #user-img{
     width:5rem;
@@ -144,6 +173,25 @@
     color:white;
 }
 
+/*웹*/
+@media(min-width:1025px){
+    #dev-img{
+        height: 200px;
+        min-width: 200px;
+        max-width: 200px;
+        margin:30px;
+    }
+    #youtube{
+      margin:auto;
+      width:70%;
+      height: 100%;
+      text-align: center;
+    }
+    #youtube_video{
+        width:70%;
+        height: 450px;
+    }
+}
 /*모바일*/
 @media (max-width: 1025px)  {
     #detail-text{
@@ -160,6 +208,9 @@
     }
     #dev-img{
         height: 99px;
+        min-width: 100px;
+        max-width: 120px;
+        min-height: 100px;
     }
     h3{
         font-size: 24px;
@@ -170,5 +221,17 @@
     #nav_siru
     {
         display: none;
+    }
+    #youtube{
+        text-align: left;
+        width:100%;
+        height: 100%;
+      }
+      #youtube_video{
+          height: 250px;
+          width: 100%;
+      }
+    .sirumain{
+        padding:0;
     }
 }
