@@ -43,10 +43,25 @@
 
     <style>
     </style>
+    <script language="javascript">
+        //버튼클릭시 javascript 호출합니다.
+        function javascript(color){
+          document.getElementById("switch").style.backgroundColor = color;  //RGB코드  
+          var background=document.getElementById("switch").style.backgroundColor;
+          if(color=='#2F2F2F'){
+            document.getElementById("icon").style.display="none";
+          }else{
+            document.getElementById("icon").style.display="none";
+          }
+        }
+        </script>
   </head>
 
-<body style="background-color:#2F2F2F">
-
+<body name='switch' id='switch'>
+    <input type='button' onclick="javascript('#2F2F2F')" value='검'/>  
+    <input type='button' onclick="javascript('#FFFFFF')" value='흰'/>    
+  
+    
   <div id="myNav" class="overlay">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <div class="overlay-content">
@@ -70,6 +85,7 @@
   </div>
 <!--  style="position: absolute; z-index: 1000; width:100%;" -->
 <!--/.Navbar-->
+
 <div id="forabsolute">
   <div class="menu-container" onclick="openNav()">
     <img id="menu" src="{% static 'img/menu5.png' %}">
