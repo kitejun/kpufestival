@@ -39,7 +39,7 @@
   <!--태그-->
   <a id="tag">{{intro_detail.tag}} </a>
   <!--학과명-->
-  <h1 id="intro-card-title">{{intro_detail.dename}}</h1>
+  <h1 id="detail-title">{{intro_detail.dename}}</h1>
   <!--조회수-->
   <span id="detail-text">460,959 views</span>
   <div id="contain-right">
@@ -63,7 +63,7 @@
     -->
     <!--공유하기(구현 완료) 소영아 이쁘게 꾸며주시오... -->
     <a id="kakao-link-btn" href="javascript:sendLink()">
-      <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" />
+      <img id="kakao" src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" />
     </a>
   </div>
 
@@ -100,6 +100,7 @@
   <!--Modal-->
   <div class="content-box">
     <!-- |linebreaks 속성은 줄 바꿈 허용 -->
+    <br>
     <h5>{{intro_detail.introduce|linebreaks}}</h5>
     <br>
     <br>
@@ -111,7 +112,7 @@
   <hr>
 </div>
 <!--타학과 7개만 보이게 해주세요-->
-<div col-lg-3 style="padding-left:20px;">
+<div id="other" col-lg-3 style="padding-left:20px;">
   <h3>다른 학과 구경가기</h3>
   <br>
   <!--for문은 여기부터-->

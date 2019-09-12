@@ -12,10 +12,8 @@
     width: 200px;
   }
 
-.detail-title{
+#detail-title{
     font-size: 1.8rem;
-    font-weight: 500;
-    line-height: 1.2;
 }
 .detail-text{
     font-size: 0.9rem;
@@ -48,6 +46,11 @@
     margin-top:20;
 }
 
+.btn{
+    color: white;
+    background-color: red;
+  }
+
 /*글자색 흰색*/
 #white{
     color:white;
@@ -65,7 +68,7 @@
   /*모바일*/
 @media (max-width: 1025px)  {
   #my-container{
-    padding:10px;
+    padding:30px;
     margin:1rem;
   }
 }
@@ -77,8 +80,8 @@
     #carouselExampleControls{
         justify-content:center;
         display:flex;
-        height: 200px;
-        width: 400px;
+        height: 134px;
+        width: 268px;
       }
       #small-img{
         height: 50px;
@@ -91,11 +94,21 @@
         font-size: 1rem;
     }
     #detail-img{
-        height: 200px;
-        width: 400px;
+        height: 134px;
+        width: 268px;
     }
     #sub_button{
         float : right;
+    }
+    #other{
+        display: none;
+    }
+
+    #detail-title{
+        font-size: 1.7rem;
+    }
+    #kakao{
+        width: 50px;
     }
 
 }
