@@ -1,0 +1,101 @@
+
+/*intro detail 페이지*/
+/*웹*/
+#carouselExampleControls{
+    justify-content:center;
+    display:flex;
+    height: 400px;
+    width: 800px;
+  }
+  #small-img{
+    height: 100px;
+    width: 200px;
+  }
+
+.detail-title{
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+.detail-text{
+    font-size: 0.9rem;
+    color:#606060;
+}
+#tag{
+    font-size: 1.5rem;
+    color: #065FD4;
+}
+#contain-right{
+    float:right;
+}
+
+#icon_btn{
+    width: 40;
+}
+#detail-img{
+    height: 400px;
+    width: 800px;
+}
+#user-img{
+    width:5rem;
+    height:5rem;
+}
+#sub_button{
+    float: right;
+}
+  
+.content-box{
+    margin-top:20;
+}
+
+/*글자색 흰색*/
+#white{
+    color:white;
+}
+#my-container{
+    background-color: white;
+    border-radius: 8px;
+  }
+@media (min-width: 1025px)  {
+#my-container{
+    padding:100px;
+    margin:4rem;
+  }
+}
+  /*모바일*/
+@media (max-width: 1025px)  {
+  #my-container{
+    padding:10px;
+    margin:1rem;
+  }
+}
+
+
+/*모바일*/
+@media (max-width: 1025px)  {
+    /*캐러셀*/
+    #carouselExampleControls{
+        justify-content:center;
+        display:flex;
+        height: 200px;
+        width: 400px;
+      }
+      #small-img{
+        height: 50px;
+        width: 100px;
+      }
+    #detail-text{
+        font-size: 1rem;
+    }
+    #tag{
+        font-size: 1rem;
+    }
+    #detail-img{
+        height: 200px;
+        width: 400px;
+    }
+    #sub_button{
+        float : right;
+    }
+
+}

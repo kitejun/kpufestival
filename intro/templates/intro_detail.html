@@ -2,22 +2,11 @@
 
 {% load staticfiles %}
 {% block content %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/board.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduce.css' %}">
+
 
 <style>
-  #carouselExampleControls{
-    justify-content:center;
-    display:flex;
-    height: 400px;
-    width: 800px;
-  }
-  #small-img{
-    height: 100px;
-    width: 200px;
-  }
-  #my-container{
-    padding:100px;
-  }
+
 </style>
 <div id="my-container">
   <div class="row">
@@ -59,9 +48,9 @@
           <img src="{% static 'img/like_btn.png'%}" style="margin-bottom:6px;">
         -->
     {% if user in intro_detail.intro_like_users.all %}
-    <a href="{% url 'intro_like' intro_detail.id %}">좋아요 취소</a>
+    <a href="{% url 'intro_like' intro_detail.id %}"><img src="{% static 'img/like_btn.png'%}" style="margin-bottom:6px;">좋아요 취소</a>
     {% else %}
-    <a href="{% url 'intro_like' intro_detail.id %}">좋아요</a>
+    <a href="{% url 'intro_like' intro_detail.id %}"><img src="{% static 'img/like_btn.png'%}" style="margin-bottom:6px;"></a>
     {% endif %}
     <span id="detail-text">{{ intro_detail.intro_like_users.count }}</span>
 
@@ -126,7 +115,7 @@
   <h3>다른 학과 구경가기</h3>
   <br>
   <!--for문은 여기부터-->
-    <div class="card mb-3" style="width: 380px;">
+    <div class="card mb-3" style="width: 370px;">
         <div class="row no-gutters">
           <div class="col-md-6">
               <img id="small-img" src="{{ intro_detail.img1.url }}">
@@ -139,7 +128,7 @@
       </div>
       <hr>
   <!--여기까지-->
-  <div class="card mb-3" style="width: 380px;">
+  <div class="card mb-3" style="width: 370px;">
       <div class="row no-gutters">
         <div class="col-md-6">
             <img id="small-img" src="{{ intro_detail.img1.url }}">

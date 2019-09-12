@@ -135,8 +135,8 @@
     width: 40;
 }
 #detail-img{
-    height: 600px;
-    width: 1000px;
+    height: 400px;
+    width: 800px;
 }
 #user-img{
     width:5rem;
@@ -177,7 +177,8 @@
         font-size: 1rem;
     }
     #detail-img{
-        width: 500px; height:200px;
+        height: 200px;
+        width: 400px;
     }
     #sub_button{
         float : right;
