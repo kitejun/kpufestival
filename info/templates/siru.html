@@ -3,31 +3,43 @@
 {% block content %}
 {%load staticfiles%}
 
-
-
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="{% static 'css/board.css' %}">
-
 
 <div id="my-container">
   <h2></h2>
   <br>
   <div class="row">
-    <div class="col-lg-12 col-12">
+    <div class="col-lg-12 col-12 sirumain">
         <h1 align="center" style="text-align:center;">
         총학에서 이번 축제에 시루쓴다고 소개하는 이미지
         </h1>
         <br><br>
+        
         <div class="card">
+            <div id="youtube">
+                    <iframe style="text-align: center;"  id="youtube_video"  src="https://www.youtube.com/embed/LWs0ZUjlLbo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
             <p align="center" style="text-align:center;">
-                <a href="https://play.google.com/store/apps/details?id=com.komscochak.m.client" rel="nofollow">
-                    안드로이드 링크 버튼&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                
+
+                <a href="https://play.google.com/store/apps/details?id=com.komscochak.m.client" rel="nofollow" style="transform: scale(1.1); transition: all ease 500ms;">
+                    <img width="230" src="{%static 'img/googleplay.png'%}" alt="앱 스토어에서 무료 다운로드">
                 </a>
-                <a href="https://itunes.apple.com/kr/app/%EC%A7%80%EC%97%AD%EC%83%81%ED%92%88%EA%B6%8C-chak/id1447922056?mt=8" rel="nofollow">
-                    아이폰 링크 버튼
+                <a href="https://itunes.apple.com/kr/app/%EC%A7%80%EC%97%AD%EC%83%81%ED%92%88%EA%B6%8C-chak/id1447922056?mt=8" rel="nofollow" style="transform: scale(1.1); transition: all ease 500ms;">
+                    <img width="230" src="{%static 'img/appstore.png'%}" alt="앱 스토어에서 무료 다운로드">
                 </a>
             </p>
-            <br><br><br>
+            <aside class="left" style="text-align:center;">
+                    <p>소비자앱 
+                        <strong style="border: 1px solid;">
+                            <i class="fa fa-download" aria-hidden="true">
+                            </i> 
+                            다운로드
+                        </strong>하기</p>
+            </aside>
+            <br>
             <div class="siru_imageset">
                 <img class="siru_image" title="53e73502dfdc2b6d50b8b223fb16e5d6_1550627792_8286.jpg" src="https://www.si-ru.kr/data/editor/1902/53e73502dfdc2b6d50b8b223fb16e5d6_1550627792_8286.jpg" alt="53e73502dfdc2b6d50b8b223fb16e5d6_1550627792_8286.jpg" style="" width="795">
                 <img class="siru_image" title="53e73502dfdc2b6d50b8b223fb16e5d6_1550627796_2778.jpg" src="https://www.si-ru.kr/data/editor/1902/53e73502dfdc2b6d50b8b223fb16e5d6_1550627796_2778.jpg" alt="53e73502dfdc2b6d50b8b223fb16e5d6_1550627796_2778.jpg" style="" width="795">
