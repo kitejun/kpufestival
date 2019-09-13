@@ -56,8 +56,8 @@ $(function(){
 <link rel="stylesheet" type="text/css" href="{% static 'css/board.css' %}">
 
 
-<div id="my-container">
-  <h2>개발자 소개</h2>
+<div id="my-container" style="padding:15px;"><br>
+  <h2 style="text-align: center;">팀원소개</h2>
   <br>
   <div class="row">
   <div class="col-lg-3 col-6">
@@ -104,29 +104,71 @@ $(function(){
   <br><br><br><br>
   <img src="{%static 'img/mainlogo.png'%}" aria-hidden="true" style="width:100%;">
   <br><br>
-  <h2 align="center">프로그래밍 동아리 멋쟁이 사자처럼은?</h2>
+  <h2 align="center"><strong>프로그래밍 동아리 멋쟁이 사자처럼은?</strong></h2>
   <h5 align="center">‘내 아이디어를 내 손으로 실현한다’의 슬로건을 가진</h5>
   <h5 align="center">비전공자들도 프로그래밍 교육(HTML/CSS/JS/Django 등)을 통해 원하는 웹 기반의 서비스를 스스로 개발해보는 경험을 제공합니다. </h5>
   <br><br><br><br>
   <h1 align="center"><strong>Curriculum</strong></h1>
 
 
-  <div class="row">
+  <div class="row" id="pcvisible">
         <div class="col-sm-6 introimage">
                 <img src="{%static 'img/html_logo.png'%}" aria-hidden="true" style="width:50%;">
         </div>
         <div class="col-sm-6 introimage">
                 <img src="{%static 'img/django_logo.jpg'%}" aria-hidden="true" style="width:50%;">
         </div>
-        <br>
+        <br><br><br>
         <div class="col-sm-6 introimage">
                 <img src="{%static 'img/react_logo.png'%}" aria-hidden="true" style="width:50%;">
         </div>
         <div class="col-sm-6 introimage">
                 <img src="{%static 'img/python_logo.png'%}" aria-hidden="true" style="width:50%;">
-
         </div>
   </div>
+
+  <div id="mobivisible">
+        <div class="col-sm-6 introimage row" style="padding:0;">
+                <img src="{%static 'img/html_logo.png'%}" aria-hidden="true" style="width:45%;">
+                <img src="{%static 'img/django_logo.jpg'%}" aria-hidden="true" style="width:45%; margin-left:9%;">
+        </div>
+        <div class="col-sm-6 introimage row" style="padding:0;">
+                <img src="{%static 'img/react_logo.png'%}" aria-hidden="true" style="width:45%;">
+                <img src="{%static 'img/python_logo.png'%}" aria-hidden="true" style="width:45%; margin-left:9%;">
+        </div>
+  </div>
+<br><br><br><br>
+
+  <h1 align="center"><strong>Picture</strong></h1>
+
+  <div class="row" id="">
+        <div class="col-sm-12 introimage2" style="margin-bottom: 15px;">
+                <img src="{%static 'img/intro2.png'%}" aria-hidden="true" style="width:100%; height: 100%;">
+        </div>
+        
+        <div class="col-sm-6 introimage2" style="margin-bottom: 15px;">
+                <img src="{%static 'img/intro1.jpg'%}" aria-hidden="true" style="width:100%; height: 100%;">
+        </div>
+
+        <br><br><br>
+        <div class="col-sm-6 introimage2" style="margin-bottom: 15px;">
+                <img src="{%static 'img/intro3.png'%}" aria-hidden="true" style="width:100%; height: 100%;">
+        </div>
+        <div class="col-sm-6 introimage2" style="margin-bottom: 15px;">
+                <img src="{%static 'img/intro4.jpg'%}" aria-hidden="true" style="width:100%; height: 100%;">
+        </div>
+        <div class="col-sm-6 introimage2" style="margin-bottom: 15px;">
+                <img src="{%static 'img/intro5.jpg'%}" aria-hidden="true" style="width:100%; height: 100%;">
+        </div>
+        <div class="col-sm-6 introimage2" style="margin-bottom: 15px;">
+                <img src="{%static 'img/intro6.jpg'%}" aria-hidden="true" style="width:100%; height: 100%;">
+        </div>
+        <div class="col-sm-6 introimage2" style="margin-bottom: 15px;">
+                <img src="{%static 'img/intro7.jpg'%}" aria-hidden="true" style="width:100%; height: 100%;">
+        </div>
+  </div>
+
+
 
 </div>
 

@@ -191,6 +191,9 @@
         width:70%;
         height: 450px;
     }
+    #mobivisible {
+        display:none;
+    }
 }
 /*모바일*/
 @media (max-width: 1025px)  {
@@ -233,5 +236,8 @@
       }
     .sirumain{
         padding:0;
+    }
+    #pcvisible{
+        display:none;
     }
 }
