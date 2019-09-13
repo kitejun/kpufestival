@@ -196,7 +196,7 @@
     }
     .introimage2{
         height: 400px;
-
+        margin-bottom: 30px;
     }
     #mobivisible {
         display:none;
@@ -254,5 +254,9 @@
     }
     #pcvisible{
         display: none;
+    }
+    .introimage2{
+        
+        margin-bottom: 15px;
     }
 }
