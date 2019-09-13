@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/switch.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
 
@@ -42,86 +43,8 @@
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
     <style>
-.switch-container{
-  float:right;
-}
-input[type="checkbox"] {
-  display: none;
-}
-
-.label__on-off {
-    overflow: hidden;
-    position: relative;
-    display: inline-block;
-    width: 58px;
-    height: 26px;
-    -webkit-border-radius: 13px;
-    -moz-border-radius: 13px;
-    border-radius: 13px;
-    background-color: #2f2f2f;
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
-    -ms-transition: all .3s;
-    -o-transition: all .3s;
-    transition: all .3s;
-}
-
-.label__on-off > * {
-    vertical-align: sub;
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
-    -ms-transition: all .3s;
-    -o-transition: all .3s;
-    transition: all .3s;
-    font-size: 14px;
-}
-
-.label__on-off .marble {
-    position: absolute;
-    top: 1px;
-    left: 1px;
-    display: block;
-    width: 24px;
-    height: 24px;
-    background-color: #fff;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
-    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
-    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
-}
-
-.label__on-off .on {
-    display: none;
-    padding-left: 12px;
-}
-
-.label__on-off .off {
-    padding-left: 30px;
-    line-height: 25px;
-}
-
-.input__on-off:checked + .label__on-off {
-    background-color: #ffffff;
-}
-
-.input__on-off:checked + .label__on-off .on {
-    display: inline-block;
-}
-
-.input__on-off:checked + .label__on-off .off {
-    display: none;
-}
-
-.input__on-off:checked + .label__on-off .marble {
-    left: 33px;
-}      
-
     </style>
+    <!--세션 유지시키는거 해결해야해서 놔둠-->
     <script language="javascript">
         var a = 0;
         //버튼클릭시 javascript 호출합니다.
