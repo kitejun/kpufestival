@@ -25,4 +25,4 @@ class Intro(models.Model):
         return self.dename
 
     def summary_introduce(self):
-        return self.introduce[:30]
+        return self.introduce[:15]

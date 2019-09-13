@@ -8,6 +8,7 @@
   <div class="row mt-4 ml-2">
   </div>
   <div class="row mt-4 mx-1">
+  ※ 싫어요 10개 이상인 글은 자동 삭제 됩니다.
   <!--이부분에 추가해주세요-->
       <div class="table-responsive">
         <table class="table">
@@ -27,6 +28,7 @@
             </td>
           </tr>
           {% for board in posts %}
+          {% if board.hate_users.count < 10 %}
           <tr>
             <td id="td-center">
               <a href="{% url 'board_detail' board.id %}">
@@ -49,6 +51,7 @@
               <span>{{ board.like_users.count }}</span>
             </td>
           </tr>
+          {% endif %}
           {%endfor%}
         </tbody>
         </table>

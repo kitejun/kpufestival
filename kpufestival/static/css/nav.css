@@ -6,7 +6,7 @@
       .overlay {
         height: 100%;
         width: 0;
-        position: fixed;
+        position: ABSOLUTE;
         z-index: 101;
         top: 0;
         left: 0;
