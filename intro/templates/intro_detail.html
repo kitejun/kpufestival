@@ -45,9 +45,11 @@
           <img src="{% static 'img/like_btn.png'%}" style="margin-bottom:6px;">
         -->
     {% if user in intro_detail.intro_like_users.all %}
-    <a href="{% url 'intro_like' intro_detail.id %}"><img src="{% static 'img/like_btn.png'%}" style="margin-bottom:6px;">좋아요 취소</a>
+    <a href="{% url 'intro_like' intro_detail.id %}"><img src="{% static 'img/like_btn.png'%}"
+        style="margin-bottom:6px;">좋아요 취소</a>
     {% else %}
-    <a href="{% url 'intro_like' intro_detail.id %}"><img src="{% static 'img/like_btn.png'%}" style="margin-bottom:6px;"></a>
+    <a href="{% url 'intro_like' intro_detail.id %}"><img src="{% static 'img/like_btn.png'%}"
+        style="margin-bottom:6px;"></a>
     {% endif %}
     <span id="detail-text">{{ intro_detail.intro_like_users.count }}</span>
 
@@ -113,32 +115,32 @@
   <h3>다른 학과 구경가기</h3>
   <br>
   <!--for문은 여기부터-->
-    <div class="card mb-3" style="width: 370px;">
-        <div class="row no-gutters">
-          <div class="col-md-6">
-              <img id="small-img" src="{{ intro_detail.img1.url }}">
-            </div>
-          <div class="col-md-6" style="padding-left: 20px;">
-              <h3>{{intro_detail.dename}}</h5>
-              <p class="card-text" id="detail-text">460,959 views</p>
-          </div>
-        </div>
-      </div>
-      <hr>
-  <!--여기까지-->
   <div class="card mb-3" style="width: 370px;">
-      <div class="row no-gutters">
-        <div class="col-md-6">
-            <img id="small-img" src="{{ intro_detail.img1.url }}">
-          </div>
-        <div class="col-md-6" style="padding-left: 20px;">
-            <h3>{{intro_detail.dename}}</h5>
-            <p class="card-text" id="detail-text">460,959 views</p>
-        </div>
+    <div class="row no-gutters">
+      <div class="col-md-6">
+        <img id="small-img" src="{{ intro_detail.img1.url }}">
+      </div>
+      <div class="col-md-6" style="padding-left: 20px;">
+        <h3>{{intro_detail.dename}}</h5>
+          <p class="card-text" id="detail-text">460,959 views</p>
       </div>
     </div>
-    <hr>
-    
+  </div>
+  <hr>
+  <!--여기까지-->
+  <div class="card mb-3" style="width: 370px;">
+    <div class="row no-gutters">
+      <div class="col-md-6">
+        <img id="small-img" src="{{ intro_detail.img1.url }}">
+      </div>
+      <div class="col-md-6" style="padding-left: 20px;">
+        <h3>{{intro_detail.dename}}</h5>
+          <p class="card-text" id="detail-text">460,959 views</p>
+      </div>
+    </div>
+  </div>
+  <hr>
+
 </div>
 </div>
 </div>
@@ -154,55 +156,18 @@
   // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
   function sendLink() {
     Kakao.Link.sendDefault({
-      objectType: 'list',
-      headerTitle: 'KPU Festival',
-      headerLink: {
-        mobileWebUrl: 'https://kpufestival.herokuapp.com/intro/intro_detail/{{ intro_detail.id }}',
-        webUrl: 'https://kpufestival.herokuapp.com/intro/intro_detail/{{ intro_detail.id }}'
+      objectType: 'feed',
+      content: {
+        title: '학과: {{intro_detail.dename}}',
+        description: '소개: {{ intro_detail.summary_introduce }}',
+        imageUrl: 'https://i.postimg.cc/7Y7JbZP4/Kakao-Talk-20190904-011500687.jpg',
+        link: {
+          mobileWebUrl: 'https://kpufestival.herokuapp.com',
+          webUrl: 'https://kpufestival.herokuapp.com'
+        }
       },
-
-      contents: [
-        {
-          title: '{{intro_detail.dename}} 메뉴1',
-          imageUrl: 'https://kpufestival.herokuapp.com/{{ intro_detail.img1.url }}',
-          link: {
-            mobileWebUrl: 'https://kpufestival.herokuapp.com/intro/intro_detail/{{ intro_detail.id }}',
-        webUrl: 'https://kpufestival.herokuapp.com/intro/intro_detail/{{ intro_detail.id }}'
-
-          }
-        },
-        {
-          title: '{{intro_detail.dename}} 메뉴2',
-          imageUrl: 'https://kpufestival.herokuapp.com/{{ intro_detail.img2.url }}',
-          link: {
-            mobileWebUrl: 'https://kpufestival.herokuapp.com{{ intro_detail.img2.url }}',
-            webUrl: 'https://kpufestival.herokuapp.com{{ intro_detail.img2.url }}'
-
-          }
-        },
-        {
-          title: '{{intro_detail.dename}} 메뉴3',
-          imageUrl: 'https://kpufestival.herokuapp.com/{{ intro_detail.img3.url }}',
-          link: {
-            mobileWebUrl: 'https://kpufestival.herokuapp.com{{ intro_detail.img3.url }}',
-            webUrl: 'https://kpufestival.herokuapp.com{{ intro_detail.img3.url }}'
-
-          }
-        }
-      ],
-      buttons: [
-        {
-          title: '자세히 보기',
-          link: {
-            mobileWebUrl: 'https://kpufestival.herokuapp.com/intro/intro_detail/{{ intro_detail.id }}',
-            webUrl: 'https://kpufestival.herokuapp.com/intro/intro_detail/{{ intro_detail.id }}'
-
-          }
-        }
-      ]
     });
   }
-
   //]]>
 </script>
 {% endblock %}
