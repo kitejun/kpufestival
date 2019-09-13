@@ -42,16 +42,121 @@
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
     <style>
+.switch-container{
+  float:right;
+}
+input[type="checkbox"] {
+  display: none;
+}
+
+.label__on-off {
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    width: 58px;
+    height: 26px;
+    -webkit-border-radius: 13px;
+    -moz-border-radius: 13px;
+    border-radius: 13px;
+    background-color: #2f2f2f;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}
+
+.label__on-off > * {
+    vertical-align: sub;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+    font-size: 14px;
+}
+
+.label__on-off .marble {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+}
+
+.label__on-off .on {
+    display: none;
+    padding-left: 12px;
+}
+
+.label__on-off .off {
+    padding-left: 30px;
+    line-height: 25px;
+}
+
+.input__on-off:checked + .label__on-off {
+    background-color: #ffffff;
+}
+
+.input__on-off:checked + .label__on-off .on {
+    display: inline-block;
+}
+
+.input__on-off:checked + .label__on-off .off {
+    display: none;
+}
+
+.input__on-off:checked + .label__on-off .marble {
+    left: 33px;
+}      
+
     </style>
+    <script language="javascript">
+        //버튼클릭시 javascript 호출합니다.
+        function javascript(color){
+          document.getElementById("switch").style.backgroundColor = color;  //RGB코드  
+          var background=document.getElementById("switch").style.backgroundColor;
+          if(color=='#2F2F2F'){
+            document.getElementById("icon").style.display="inline"; //로고 변경하기
+            document.getElementById("on").style.color="#2F2F2F";
+            document.getElementById("marble").style.backgroundColor="#2F2F2F";
+          }else{
+            document.getElementById("icon").style.display="none"; //로고 변경하기
+            document.getElementById("on").style.color="#FFFFFF";
+            document.getElementById("marble").style.backgroundColor="#FFFFFF";
+          }
+        }
+        </script>
   </head>
 
-<body style="background-color:#2F2F2F">
+<body name='switch' id='switch'>  
 
+  <div class="switch-container">
+    <input type="checkbox" id="switch1" name="switch1" class="input__on-off">
+    <label for="switch1" class="label__on-off">
+      <span id="marble" class="marble"></span>
+      <span id="on" class="on" onclick="javascript('#FFFFFF')">on</span>
+      <span class="off" onclick="javascript('#2F2F2F')">off</span>
+    </label>
+  </div>
+    
   <div id="myNav" class="overlay">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <div class="overlay-content">
       <a href="{% url 'introduce' %}">주점소개</a>
       <a href="{% url 'siru' %}">시흥화폐 시루 소개</a>
+      <a href="{% url 'promote' %}">홍보 페이지</a>
       <div class="board">
         <a href="{% url 'board' %}">게시판</a>
         <!--분실물페이지 링크로 걸어주세요-->
@@ -70,9 +175,10 @@
   </div>
 <!--  style="position: absolute; z-index: 1000; width:100%;" -->
 <!--/.Navbar-->
+
 <div id="forabsolute">
   <div class="menu-container" onclick="openNav()">
-    <img style="width:100px" src="{% static 'img/menu5.png' %}">
+    <img id="menu" src="{% static 'img/menu5.png' %}">
   </div>
   <!--<span id="menu" onclick="openNav()">&#9776; </span>-->
 
@@ -185,7 +291,7 @@ $(window).scroll(function () {
                   <h3 class="title_m">KPUTube</h3>
                   <div class="row box">
                       <div class="row"><h4 class="title_s">날짜</h4><h5 class="content">2019.09.25(수)-27(금)</h5></div>
-                      <div class="row"><h4 class="title_s">장소</h4><h5 class="content">경기도 시흥시 산기대학로 한국산업기술대학교</h5></div>
+                      <div class="row" style="margin-left:4px;"><h4 class="title_s">장소</h4><h5 class="content">경기도 시흥시 산기대학로 한국산업기술대학교</h5></div>
                       <div class="row"> <h5 class="content"></h5></div>
                   </div>
               </div>
@@ -208,13 +314,13 @@ $(window).scroll(function () {
                       <div class="row box">
                           <!--left-->
                           <div class="side col-6 col-md-6 col-lg-6 col-xl-6">
-                              <div class="dev row"><h4 class="title_s">김연준</h4><h5 class="content">컴퓨터공학과</h5></div>
-                              <div class="dev row"><h4 class="title_s">이세민</h4><h5 class="content">컴퓨터공학과</h5></div>
+                              <div class="row"><h4 class="title_s">김연준</h4><h5 class="content">컴퓨터공학과</h5></div>
+                              <div class="row"><h4 class="title_s">이세민</h4><h5 class="content">컴퓨터공학과</h5></div>
                           </div>
                           <!--right-->
                           <div class="side col-6 col-md-6 col-lg-6 col-xl-6">
-                              <div class="dev row"><h4 class="title_s">고주원</h4><h5 class="content">IT경영학과</h5></div>
-                              <div class="dev row"> <h4 class="title_s">양소영</h4><h5 class="content">컴퓨터공학과</h5></div>
+                              <div class="row"><h4 class="title_s">고주원</h4><h5 class="content">IT경영학과</h5></div>
+                              <div class="row"> <h4 class="title_s">양소영</h4><h5 class="content">컴퓨터공학과</h5></div>
                           </div>
                       </div>
                   </div>

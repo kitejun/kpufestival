@@ -75,7 +75,7 @@
         float: left;
       }
       #menu{
-          width: 5rem;
+          width: 6rem;
       }
       .navbar-toggler{
         background-color:rgb(255,255,255)
@@ -109,13 +109,13 @@
 
   .menu-container{
     margin-left: 0.6rem;
-    margin-top: 2rem;
+    margin-top: 0.1rem;
   }
   #menu{
-    width: 4.5rem;
+    width: 4rem;
   }
   #icon{
-    width: 10rem;
+    width: 16rem;
   }
   #icon-container{
     margin-right: 80px;

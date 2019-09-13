@@ -8,8 +8,8 @@ class Board(models.Model):
     pub_date=models.DateTimeField('date published')
     context=models.TextField()
     hits=models.PositiveIntegerField(default=0)
-    like_users=models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='like_users')
-    hate_users=models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='hate_users')
+    like_users=models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='like_users', blank=True)
+    hate_users=models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='hate_users', blank=True)
 
     class Meta:
         ordering=['-id']

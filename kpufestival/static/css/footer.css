@@ -1,16 +1,14 @@
 #footer{
     font-family: 'Nanum Gothic', sans-serif;
     color: #ffffff;
+    background-color: #2f2f2f;
     text-align: left;
-    padding: 1.5em;
+    padding: 3.5em;
     bottom: 0;
 }
 
 /*웹*/
 @media (min-width: 1025px)  {
-    #img{
-        height:15px;
-    }
     div#footer{
         position: relative;
         background-color: #323232;
@@ -34,7 +32,7 @@
         #rightside{vertical-align: center;}
         /*글자*/
         h3.title_m{  font-weight: 700; font-size: 1.2em; margin-right: 0.5em; text-align: left;}
-        h4.title_s{  font-weight: 400; font-size: 1.0em;  margin: 0.5em; margin-left:0;}
+        h4.title_s{  font-weight: 400; font-size: 1.0em;  margin: 0.5em; margin-left:0.5em;}
         h5.content{  font-weight: 100; font-size: 0.9em; margin-top: auto; margin-bottom: auto; padding:0;}
         .logo{     font-weight: 900;  }
         /*로고*/
@@ -44,7 +42,7 @@
         .box#logo{ padding: 0;vertical-align: middle;}
         .row#logo{ padding:0; align-items: center; width: 30em;}
         #small{font-size: 0.8em; margin-bottom: 1em; }
-    
+
     }
 
 /*모바일*/

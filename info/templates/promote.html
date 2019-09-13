@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+{%load staticfiles%}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="{% static 'css/board.css' %}">
+
+<div id="my-container">
+    <h1 align="center" style="text-align:center;">
+        홍보 페이지
+    </h1>
+    <div class="card">
+        <div id="youtube">
+            <iframe style="text-align: center;" id="youtube_video" src="https://www.youtube.com/embed/NjQU_l4p8dU"
+                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
