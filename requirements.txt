@@ -9,7 +9,9 @@ dj-database-url==0.5.0
 Django==2.2.1
 django-appconf==1.0.3
 django-imagekit==4.0.2
+django-seed==0.1.9
 docutils==0.15.2
+Faker==2.0.1
 future==0.16.0
 gunicorn==19.9.0
 idna==2.7
@@ -30,6 +32,7 @@ semantic-version==2.5.0
 six==1.11.0
 sqlparse==0.3.0
 termcolor==1.1.0
+text-unidecode==1.2
 typed-ast==1.4.0
 urllib3==1.24.3
 wcwidth==0.1.7
