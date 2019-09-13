@@ -1,4 +1,59 @@
 
+/*introduce 페이지*/
+#my-container{
+    padding:10px;
+}
+.card{
+    height: 280px;
+    border: 0;
+    width: 100%;
+    box-shadow: 1px 1px 10px gray;
+}
+#intro-card-img{
+    height: 150px;
+    width: 100%;
+    margin-bottom:10px;
+  }
+
+#user-img1{
+    height: 40px;
+    width: 40px;
+}
+#intro-card-title{
+    font-size: 1.5rem;
+}
+.icon{
+    float:right;
+    margin-bottom: 5px;
+    margin-right: 10px;
+}
+
+hr{
+    margin:0;
+}
+
+@media (max-width: 1025px)  {
+    .col-6{
+        padding:6px;
+    }
+    .card{
+        height: 120px;
+    }
+    #intro-card-img{
+        height: 51px;
+      }
+    
+    #user-img1{
+        height: 30px;
+        width: 30px;
+    }
+    #intro-card-title{
+        font-size: 0.9rem;
+    }
+    .gone{
+        display: none;
+    }
+}
 /*intro detail 페이지*/
 /*웹*/
 #carouselExampleControls{
