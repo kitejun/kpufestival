@@ -16,7 +16,7 @@ class Intro(models.Model):
     introduce=models.TextField()
     tag=models.TextField()
 
-    intro_like_users=models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='intro_like_users')
+    intro_like_users=models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='intro_like_users', blank=True)
     
     class Meta:
         ordering=['-id']
