@@ -88,7 +88,48 @@ def new(request):
         form = BoardPost()
         return render(request, 'board_new.html', {'form':form}) # form형태로 전달
 
+# 수정하기
+def update(request,board_id):
+    post=Board.objects.get(id=board_id)
+
+    # 글을 수정사항을 입력하고 제출을 눌렀을 때
+    if request.method == "POST":
+        form = BoardPost(request.POST, request.FILES)
+        if form.is_valid():
+                
+            # 검증에 성공한 값들은 사전타입으로 제공 
+            print(form.cleaned_data)
+            post.title = form.cleaned_data['title']
+            post.context = form.cleaned_data['context']
+            post.image = form.cleaned_data['image']
+            post.pub_date = timezone.now()
+
+            post.save()
+            
+            return redirect('board')
+
+    # 수정사항을 입력하기 위해 페이지에 처음 접속했을 때
+    else:
+        form = BoardPost(instance = post)
+        # 기존 내용 불러오기
+        context={
+            'form':form,
+            'writing':True,
+            'now':'update',
+        }
+        return render(request, 'update.html',{'form':form})
+
+# 삭제하기
+def delete(request, board_id):
+    board = get_object_or_404(Board, pk=board_id)
+    board.delete()
+    return redirect('board')
+
 def like(request, board_id):
+    # 로그인 안 되어있을 때 로그인 페이지로
+    if not request.user.is_authenticated:
+        return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
+
     board = get_object_or_404(Board, id=board_id)
     if request.user in board.like_users.all():
         board.like_users.remove(request.user)
@@ -97,6 +138,10 @@ def like(request, board_id):
     return redirect('/board/board_detail/' + str(board.id))
 
 def hate(request, board_id):
+    # 로그인 안 되어있을 때 로그인 페이지로
+    if not request.user.is_authenticated:
+        return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
+        
     board = get_object_or_404(Board, id=board_id)
     if request.user in board.hate_users.all():
         board.hate_users.remove(request.user)
@@ -127,6 +172,10 @@ def comment_delete(request,comment_id):
     return redirect('/board')
 
 def comment_like(request, comment_id):
+    # 로그인 안 되어있을 때 로그인 페이지로
+    if not request.user.is_authenticated:
+        return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
+
     comment = get_object_or_404(Comment, id=comment_id)
     if request.user in comment.comment_like_users.all():
         comment.comment_like_users.remove(request.user)
@@ -135,6 +184,10 @@ def comment_like(request, comment_id):
     return redirect('/board')
 
 def comment_hate(request, comment_id):
+    # 로그인 안 되어있을 때 로그인 페이지로
+    if not request.user.is_authenticated:
+        return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
+
     comment = get_object_or_404(Comment, id=comment_id)
     if request.user in comment.comment_hate_users.all():
         comment.comment_hate_users.remove(request.user)
