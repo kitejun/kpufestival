@@ -52,14 +52,14 @@
           var background = document.getElementById("switch").style.backgroundColor;
           if(a ==0){ //배경 어두울때
             document.getElementById("menu").src="{% static 'img/menu5.png'%}";    //메뉴 변경
-            document.getElementById("icon").src="{% static 'img/kputube1.png' %}"; //로고 변경하기
+            document.getElementById("logo-icon").src="{% static 'img/kputube1.png' %}"; //로고 변경하기
             document.getElementById("on").style.color="#2F2F2F";
             document.getElementById("marble").style.backgroundColor="#2F2F2F";
             document.getElementById("switch").style.backgroundColor = '#2F2F2F';  //배경색 변경 
             a = 1;
           }else{
             document.getElementById("menu").src="{% static 'img/menu6.png'%}";    //메뉴 변경
-            document.getElementById("icon").src="{% static 'img/kputube2.png' %}"; //로고 변경하기
+            document.getElementById("logo-icon").src="{% static 'img/kputube2.png' %}"; //로고 변경하기
             document.getElementById("on").style.color="#FFFFFF";
             document.getElementById("marble").style.backgroundColor="#FFFFFF";
             document.getElementById("switch").style.backgroundColor = '#FFFFFF';  //배경색 변경   
@@ -115,7 +115,7 @@
     <a href="{% url 'home' %}">
         <div class="animated flash delay-2s duration-0.5s slower">
         <div class="neon">
-          <img id="icon" src="{% static 'img/kputube2.png' %}">
+          <img id="logo-icon" src="{% static 'img/kputube2.png' %}">
         </div>
         </div>
     </a>
