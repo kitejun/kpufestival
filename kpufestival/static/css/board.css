@@ -178,6 +178,11 @@
         width:70%;
         height: 450px;
     }
+    .introimage
+    {
+        width:100px;
+        text-align: center;
+    }
 }
 /*모바일*/
 @media (max-width: 1025px)  {

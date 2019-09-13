@@ -6,11 +6,8 @@
 
 
 <style>
-
 </style>
 <div id="my-container">
-  <div class="row">
-    <div col-lg-9>
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -71,7 +68,7 @@
   <br>
   <hr>
   <!--학과별 이미지-->
-  <img id="user-img" src="{{ intro_detail.de_logo.url }">
+  <img id="user-img" src="{{ intro_detail.de_logo }}">
   <!--학과이름-->
   <span id="intro-card-title">{{intro_detail.dename}} 맛집</span>
   <!--지도 보여주는 버튼-->
@@ -208,5 +205,4 @@
 
   //]]>
 </script>
-
 {% endblock %}
