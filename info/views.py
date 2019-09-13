@@ -11,3 +11,6 @@ def developer(request):
 
 def siru(request):
     return render(request,'siru.html')
+
+def promote(request):
+    return render(request,'promote.html')
