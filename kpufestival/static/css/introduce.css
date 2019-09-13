@@ -1,10 +1,13 @@
 
+a:hover{
+    text-decoration: none;
+}
 /*introduce 페이지*/
 #my-container{
     padding:10px;
 }
 #card{
-    height: 280px;
+    height: 300px;
     border: 0;
     width: 100%;
     box-shadow: 1px 1px 10px gray;
@@ -60,8 +63,8 @@ hr{
 #carouselExampleControls{
     justify-content:center;
     display:flex;
-    height: 400px;
-    width: 800px;
+    height: 500px;
+    width: 1000px;
   }
   #small-img{
     height: 100px;
@@ -87,8 +90,8 @@ hr{
     width: 40px;
 }
 #detail-img{
-    height: 400px;
-    width: 800px;
+    height: 500px;
+    width: 1000px;
 }
 #user-img{
     width:5rem;

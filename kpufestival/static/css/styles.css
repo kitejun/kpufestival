@@ -6,8 +6,8 @@
 
 *{box-sizing: border-box;}
 html,body{height: 100%;}
-a:link,a:visited,a:active{color:inherit;}
-
+a:link,a:visited,a:active{}
+/* a:link,a:visited,a:active{color:inherit;}  원래이거였음*/
 
 
 body{

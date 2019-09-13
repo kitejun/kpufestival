@@ -23,6 +23,7 @@
         bottom:0;
         left:0;        
     }
+
         /*구조*/
         #footer>.row{   margin: 1em; position: relative; }
         .side{ padding: 0;}
@@ -56,11 +57,12 @@
     /*구조*/
     #footer>.row{   margin: 1em;  }
     .side{ padding: 0;}
-    div.row{ margin: 0em;}
-    .box.row{padding-left: 0.3em; }
+    div.row{ margin: 0em; margin-bottom: 6px;}
+    .box.row{padding-left: 0.3em; margin-top:8px;}
     #rightside{vertical-align: center;}
+    
     /*글자*/
-    h3.title_m{  font-weight: 700; font-size: 0.8em; margin-right: 0.2em; text-align: left;}
+    h3.title_m{  font-weight: 700; font-size: 0.8em; margin-right: 0.2em; text-align: left; margin-bottom: 2px;}
     h4.title_s{  font-weight: 400; font-size: 0.6em; margin-right: 0.3em;margin-right: 0.3em;}
     h5.content{  font-weight: 100; font-size: 0.1em; margin-top: auto; margin-bottom: auto;}
     .logo{     font-weight: 900;  }
@@ -71,5 +73,5 @@
     #logo>h5.content{ font-size: 1em;}
     .box#logo{ padding: 0;vertical-align: middle;}
     .row#logo{ padding:0; align-items: center; width: 30em;}
-    #small{font-size: 0.3em; margin-bottom: 1em;}
+    #small{font-size: 0.1em; margin-bottom: 1em;}
 }
