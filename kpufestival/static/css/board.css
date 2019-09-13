@@ -194,6 +194,14 @@
         width:100px;
         text-align: center;
     }
+    .introimage2{
+        height: 400px;
+        margin-bottom: 30px;
+    }
+    #mobivisible {
+        display:none;
+    }
+    
 }
 /*모바일*/
 @media (max-width: 1025px)  {
@@ -212,7 +220,7 @@
     }
     #dev-img{
         height: 150px;
-        width:100%;
+        width:90%;
         
     }
     h3{
@@ -240,10 +248,15 @@
     .col-6{
         padding: 0;
     }
-    .mright{
-        margin-right: 10px;
-    }
+  
     .mleft{
-        margin-left:10px;
+        margin-left:10%;
+    }
+    #pcvisible{
+        display: none;
+    }
+    .introimage2{
+        
+        margin-bottom: 15px;
     }
 }
