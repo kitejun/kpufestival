@@ -1,3 +1,13 @@
+/*missing*/
+.card_title{
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 1.2rem;
+}
+.card_author{
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 0.8rem;
+    color: #606060;
+}
 
 /*board*/
 
@@ -59,6 +69,9 @@
   }
   .siru_image{
     width:100%;
+  }
+  #dev-container{
+    margin:30px;
   }
 
 }
@@ -163,10 +176,8 @@
 /*웹*/
 @media(min-width:1025px){
     #dev-img{
-        height: 200px;
-        min-width: 200px;
-        max-width: 200px;
-        margin:30px;
+        height: 250px;
+        width: 100%;
     }
     #youtube{
       margin:auto;
@@ -200,10 +211,9 @@
         float : right;
     }
     #dev-img{
-        height: 99px;
-        min-width: 100px;
-        max-width: 120px;
-        min-height: 100px;
+        height: 150px;
+        width:100%;
+        
     }
     h3{
         font-size: 24px;
@@ -226,5 +236,14 @@
       }
     .sirumain{
         padding:0;
+    }
+    .col-6{
+        padding: 0;
+    }
+    .mright{
+        margin-right: 10px;
+    }
+    .mleft{
+        margin-left:10px;
     }
 }
