@@ -5,23 +5,8 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/board.css' %}">
 
 <style>
-  #carouselExampleControls{
-    justify-content:center;
-    display:flex;
-    height: 900px;
-    width: 1400px;
-  }
-  #small-img{
-    height: 150px;
-    width: 250px;
-  }
-  #my-container{
-    padding:100px;
-  }
 </style>
 <div id="my-container">
-  <div class="row">
-    <div col-lg-9>
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -121,39 +106,6 @@
   </div>
   <hr>
 </div>
-<!--타학과 7개만 보이게 해주세요-->
-<div col-lg-3 style="padding-left:60px;">
-  <h3>다른 학과 구경가기</h3>
-  <br>
-  <!--for문은 여기부터-->
-    <div class="card mb-3" style="width: 500px;">
-        <div class="row no-gutters">
-          <div class="col-md-6">
-              <img id="small-img" src="{{ intro_detail.img1.url }}">
-            </div>
-          <div class="col-md-6" style="padding-left: 20px;">
-              <h3>{{intro_detail.dename}}</h5>
-              <p class="card-text" id="detail-text">460,959 views</p>
-          </div>
-        </div>
-      </div>
-      <hr>
-  <!--여기까지-->
-  <div class="card mb-3" style="width: 500px;">
-      <div class="row no-gutters">
-        <div class="col-md-6">
-            <img id="small-img" src="{{ intro_detail.img1.url }}">
-          </div>
-        <div class="col-md-6" style="padding-left: 20px;">
-            <h3>{{intro_detail.dename}}</h5>
-            <p class="card-text" id="detail-text">460,959 views</p>
-        </div>
-      </div>
-    </div>
-    <hr>
-    
-</div>
-</div>
 
 <!--
   mobileWebUrl: 'https://kpufestival.herokuapp.com/intro/intro_detail/{{intro_detail.id}}/',
@@ -217,5 +169,4 @@
 
   //]]>
 </script>
-
 {% endblock %}
