@@ -1,5 +1,7 @@
 .switch-container{
     float:right;
+    margin-top:30px;
+    margin-right:5px;
   }
   input[type="checkbox"] {
     display: none;
@@ -75,5 +77,11 @@
   
   .input__on-off:checked + .label__on-off .marble {
       left: 33px;
-  }      
+  }
+  @media (max-width: 1025px)  {
+    .switch-container{
+        margin-top:14px;
+        margin-right:10px;
+      }
+}      
   

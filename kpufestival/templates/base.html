@@ -69,17 +69,7 @@
         </script>
   </head>
 
-<body name='switch' id='switch'>  
-
-  <div class="switch-container">
-    <input type="checkbox" id="switch1" name="switch1" class="input__on-off">
-    <label for="switch1" onclick="javascript()" class="label__on-off">
-      <span id="marble" class="marble"></span>
-      <span id="on" class="on">on</span>
-      <span class="off">off</span>
-    </label>
-  </div>
-    
+<body name='switch' id='switch'>      
   <div id="myNav" class="overlay">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <div class="overlay-content">
@@ -111,6 +101,15 @@
   </div>
   <!--<span id="menu" onclick="openNav()">&#9776; </span>-->
 
+  <div class="switch-container">
+      <input type="checkbox" id="switch1" name="switch1" class="input__on-off">
+      <label for="switch1" onclick="javascript()" class="label__on-off">
+        <span id="marble" class="marble"></span>
+        <span id="on" class="on">on</span>
+        <span class="off">off</span>
+      </label>
+    </div>
+</div>
   <div id="icon-container">
     <a href="{% url 'home' %}">
         <div class="animated flash delay-2s duration-0.5s slower">
@@ -118,8 +117,7 @@
           <img id="logo-icon" src="{% static 'img/kputube2.png' %}">
         </div>
         </div>
-    </a>
-  </div>
+    </a>  
 </div>
   
   
