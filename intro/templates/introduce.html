@@ -4,7 +4,9 @@
 
 {% block content %}
 <style>
-
+  .card{
+    height: 200px;
+  }
 </style>
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduce.css' %}">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -22,7 +24,7 @@
       {% for intro in all_intro %}
       <div class="col-lg-3 col-6" style="margin-bottom: 30px;">
         <a href="{% url 'intro_detail' intro.id %}">
-          <div class="card">
+          <div class="card" id="card">
             <!-- 학과 관련 사진 -->
             <img class="card-img-top h-img" src="{{ intro.img1.url }}" id="intro-card-img">
             <div class="row">
