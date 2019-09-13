@@ -67,7 +67,7 @@
         margin-bottom: 0.8rem;
       }
 
-      #icon {
+      #logo-icon {
         width: 25rem;
       }
       /*메뉴버튼*/
@@ -91,10 +91,10 @@
 @media (min-width: 1025px)  {
   .menu-container{
     margin-left: 0.8rem;
-    margin-top: 0.5rem;
+    margin-top: 0.2rem;
   }
   #icon-container{
-    margin-top: 1.2rem;
+    margin-top: 1rem;
     margin-right: 7rem;
   }
 
@@ -114,7 +114,7 @@
   #menu{
     width: 4rem;
   }
-  #icon{
+  #logo-icon{
     width: 16rem;
   }
   #icon-container{

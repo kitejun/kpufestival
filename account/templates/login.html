@@ -6,10 +6,10 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/account.css' %}">
 <script type="text/javascript" src="{% static 'js/loginvalidate.js' %}"></script>
 <body>
-<div class="container">
+<div class="container-fluid my-4">
   <div class="row justify-content-center">
-  <div class="col-lg-8" >
-      <div id="login-box">
+  <div class="col-lg-5" >
+      <div id="login-box" class="mt-4">
         <div class="container">
         <h1 style="justify-content: center; display:flex;">로그인</h1>
         </div>
@@ -18,7 +18,7 @@
       {% csrf_token %}
         <div class="row">
           <div class="form-group col-12">
-            <label class="control-label" for="email">아이디</label><br />
+            <label class="control-label" for="email">아이디</label>
             <input name="username" autofocus="autofocus" class="form-control" type="text" id="email" />
           </div>
         </div>
@@ -28,7 +28,7 @@
             <input name="password" autocomplete="off" class="form-control" type="password" id="password" />
           </div>
         </div>
-        <div class="row">
+        <div class="row my-2">
           <div class="form-group col-12">
             <input name="remember" type="hidden" value="0" />
             <input type="checkbox" value="1" name="remember" id="user_remember" />
@@ -38,7 +38,7 @@
           </div>
         </div>
       </form>
-        <div class="row">
+        <div class="row mb-4">
           <p class="sign_up_p pl-3">아직 회원이 아니라면? <a class="sign_up_link" href="{% url 'signup' %}">회원가입</a></p>
         </div>
 

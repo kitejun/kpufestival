@@ -6,12 +6,14 @@
 <style>
 
 </style>
-<link rel="stylesheet" type="text/css" href="{% static 'css/board.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/introduce.css' %}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
 
 <!--컨테이너 속성변경해야함 이거때문에 다 작게 보임-->
-<div id="my-container">
+<div id="my-container" style="padding:10px;">
   <div style="margin:0 auto">
-    <h2>학과별 주점소개</h2> ※ 무작위로 보여줍니다.
+    <h3>학과별 주점소개</h3> ※ 무작위로 보여집니다.
     <br>
     <div class="row" style="margin-bottom: 30px;">
       <!--이부분부터 추가 for문으로 넣으시면 됩니다-->
@@ -23,44 +25,31 @@
           <div class="card">
             <!-- 학과 관련 사진 -->
             <img class="card-img-top h-img" src="{{ intro.img1.url }}" id="intro-card-img">
+            <div class="row">
+              <div class="col-2 col-lg-2">
+                  <img id="user-img1" src="{{ intro.de_logo.url }}">
+              </div>
+              <div class="col-9 col-lg-10">
+                  <span id="intro-card-title">{{ intro.dename }}</span>
+                  <!-- 소개글(summary)) -->
+                  <div class="gone">
+                      <p id="intro-card-content" class="h-card-text">{{ intro.summary_introduce|linebreaks }}</p>
+                  </div>
+              </div>
+            </div>
             <div id="intro-body">
               <!-- 학과명 -->
-              <img id="user-img" src="{{ intro.de_logo.url }}">
-              <span id="intro-card-title">{{ intro.dename }}</span>
-              <br>
-              <!-- 좋아요 개수 -->
-              <span id="intro-card-like">좋아요:{{ intro.intro_like_users.count }}</span>
-              <!-- 지도 modal창 -->
-              <a href="#">
-                <p id="intro-card-content" class="h-card-text" data-toggle="modal" data-target="#exampleModal">위치</p>
+              <hr>
+            </a>
+            <div class="icon">
+              <i class="fa fa-heart" style="color:#ed2553;">{{ intro.intro_like_users.count }}</i>
+              <!--sendLink부분 여기도 적용되게 해주세요-->
+              <a id="kakao-link-btn" href="javascript:sendLink()">
+              <i class="fa fa-share" style="color: #2f2f2f;;"></i>
               </a>
-              <!-- Modal -->
-              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <!-- 학과명 -->
-                      <h5 class="modal-title" id="exampleModalLabel">{{ intro.dename }}</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      <!-- 학과 지도 사진 -->
-                      <img src="{{ intro.map_img.url }}">
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-light" data-dismiss="modal">닫기</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- 소개글(summary)) -->
-              <p id="intro-card-content" class="h-card-text">{{ intro.summary_introduce|linebreaks }}</p>
+            </div>
             </div>
           </div>
-        </a>
       </div>
       {%endfor%}
 
