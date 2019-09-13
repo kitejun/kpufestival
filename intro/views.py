@@ -19,6 +19,10 @@ def intro_detail(request, intro_id):
 
 
 def intro_like(request, intro_id):
+    # 로그인 안 되어있을 때 로그인 페이지로
+    if not request.user.is_authenticated:
+        return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
+        
     intro = get_object_or_404(Intro, id=intro_id)
     if request.user in intro.intro_like_users.all():
         intro.intro_like_users.remove(request.user)
