@@ -3,7 +3,7 @@
 #my-container{
     padding:10px;
 }
-.card{
+#card{
     height: 280px;
     border: 0;
     width: 100%;
@@ -32,11 +32,12 @@ hr{
     margin:0;
 }
 
+
 @media (max-width: 1025px)  {
     .col-6{
         padding:6px;
     }
-    .card{
+    #card{
         height: 120px;
     }
     #intro-card-img{
@@ -83,7 +84,7 @@ hr{
 }
 
 #icon_btn{
-    width: 40;
+    width: 40px;
 }
 #detail-img{
     height: 400px;
