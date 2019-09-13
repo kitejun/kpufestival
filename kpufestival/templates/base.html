@@ -46,7 +46,7 @@
     </style>
     <!--세션 유지시키는거 해결해야해서 놔둠-->
     <script language="javascript">
-        var a = 0;
+        var a = sessionStorage.getItem("a");
         //버튼클릭시 javascript 호출합니다.
         function javascript(){
           var background = document.getElementById("switch").style.backgroundColor;
@@ -57,6 +57,7 @@
             document.getElementById("marble").style.backgroundColor="#2F2F2F";
             document.getElementById("switch").style.backgroundColor = '#2F2F2F';  //배경색 변경 
             a = 1;
+            sessionStorage.setItem("a", 1);
           }else{
             document.getElementById("menu").src="{% static 'img/menu6.png'%}";    //메뉴 변경
             document.getElementById("logo-icon").src="{% static 'img/kputube2.png' %}"; //로고 변경하기
@@ -64,6 +65,7 @@
             document.getElementById("marble").style.backgroundColor="#FFFFFF";
             document.getElementById("switch").style.backgroundColor = '#FFFFFF';  //배경색 변경   
             a = 0;
+            sessionStorage.setItem("a", 0);
           }
  }
         </script>
@@ -206,60 +208,63 @@ $(window).scroll(function () {
   <div>
     <div style="position:fixed; right:0px; bottom:0px;" id="plusfriend-chat-button"></div>
   </div>
-
-<!--footer-->
-<footer id="footer" class="footer mt-auto py-3 ">
-  <div id="info">
-      <div class="row">
-          <!--leftside-->
-          <div class="side col-6 col-md-6 col-lg-6 col-xl-6">
-              <div class="box" id="dts">
-                  <h3 class="title_m">KPUTube</h3>
-                  <div class="row box">
-                      <div class="row"><h4 class="title_s">날짜</h4><h5 class="content">2019.09.25(수)-27(금)</h5></div>
-                      <div class="row"><h4 class="title_s">장소</h4><h5 class="content">경기도 시흥시 산기대학로 한국산업기술대학교</h5></div>
-                      <div class="row"> <h5 class="content"></h5></div>
-                  </div>
-              </div>
-                  <!--logo-->
-                  <div class="box" id="logo">
-                      <div class="row" id="logo">
-                          <img src="{% static 'img/logo.png' %}" alt="logo" class="logo">
-                          <div class="box" id="logo_">
-                              <img id="img" src="{% static 'img/kpuXlikelion.png' %}">
-                            <h5 class="content" id="small">Copyright © 산기대멋쟁이사자처럼7기.</h5>
-                            <h5 class="content" id="small">All right reserved</h5>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <!--rightside-->
-              <div class="side col-6 col-md-6 col-lg-4 col-xl-6" id="rightside">
-                  <!--DEVELOPER-->
-                  <div class="box" id="developer">
-                      <h3 class="title_m">DEVELOPER</h3>
-                      <div class="row box">
-                          <!--left-->
-                          <div class="side col-6 col-md-6 col-lg-6 col-xl-6">
-                              <div class="row"><h4 class="title_s">김연준</h4><h5 class="content">컴퓨터공학과</h5></div>
-                              <div class="row"><h4 class="title_s">이세민</h4><h5 class="content">컴퓨터공학과</h5></div>
-                          </div>
-                          <!--right-->
-                          <div class="side col-6 col-md-6 col-lg-6 col-xl-6">
-                              <div class="row"><h4 class="title_s">고주원</h4><h5 class="content">IT경영학과</h5></div>
-                              <div class="row"> <h4 class="title_s">양소영</h4><h5 class="content">컴퓨터공학과</h5></div>
-                          </div>
-                      </div>
-                  </div>
-                
-                  <div class="box row" id="contact" style="padding-top: 0;">
-                      <h3 class="title_m">협력</h3>
-                      <h5 class="content">총학생회 '위하여'</h5>
-                  </div>
-          </div>      
+  <footer id="footer" class="footer mt-auto py-3 ">
+    <div class="row">
+      <div class="col-6 col-lg-6">
+        <h3 class="title_l">KPUTube</h3>
+        <div class="left-container">
+        <div class="row" id="row-container">
+          <h4 class="title_m">날짜</h4>
+          <span class="content">2019.09.25(수)-27(금)</span>
+        </div>
+        <div class="row" id="row-container">
+          <h4 class="title_m">장소</h4>
+          <span class="content">경기도 시흥시 산기대학로 한국산업기술대학교</span>
+        </div>
+        </div>
+        <div class="row">
+          <div class="col-1 col-lg-1">
+            <img src="{% static 'img/logo.png' %}" alt="logo" class="logo">
+          </div>
+          <div class="col-10 col-lg-11">
+            <img id="icon2" src="{% static 'img/kpuXlikelion.png' %}">
+            <h5 class="content">Copyright © 산기대멋쟁이사자처럼7기.All right reserved</h5>
+          </div>
+        </div>
+      </div><!--오른쪽-->
+      <div class="col-6 col-lg-6">
+        <h3 class="title_l">DEVELOPER</h3>
+        <div class="right-container">
+        <div class="row" id="row-container">
+          <div class="col-6 col-lg-6">
+            <div class="row">
+              <h4 class="title_m">김연준</h4>
+              <span class="content">컴퓨터공학과</span>
+            </div>
+            <div class="row">
+              <h4 class="title_m">고주원</h4>
+              <span class="content">IT경영학과</span>
+            </div>
+          </div>
+          <div class="col-6 col-lg-6">  
+            <div class="row">
+              <h4 class="title_m">이세민</h4>
+              <span class="content">컴퓨터공학과</span>
+            </div>
+            <div class="row">
+              <h4 class="title_m">양소영</h4>
+              <span class="content">컴퓨터공학과</span>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="row" style="padding-left:15px;">
+          <h3 class="title_l">협력</h3>
+          <h4 class="title_m">총학생회 '위하여'</h4>
+        </div>
       </div>
-  </div>
-</footer>
+    </div>
+  </footer>
 
   <script type='text/javascript'>
     //<![CDATA[
