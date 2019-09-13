@@ -5,88 +5,58 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/board.css' %}">
 
 <div class="container">
-  <div class="row mt-4 ml-2">
-  </div>
   <div class="row mt-4 mx-1">
   <!--이부분에 추가해주세요-->
-    <div class="row justify-content-center">
+    <div class="row">
       {% for missing in missings %}
-      <div class="col-lg-3">
-        <div class="row justify-content-center">
-          <div class="col-lg-12">
-            <img src="{{ missing.image.url }}" class="text-center" alt="he" style="object-fit: cover; width:210px; height: 7.5rem">
-          </div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-lg-12">
-            <div class="row">
-              <span class="card_title">{{missing.summary}}</span>
-            </div>
-            <div class="row">
-              <span class="card_author">{{missing.author}}</span>
-            </div>
-            <div class="row">
-              <span class="card_author">조회수 {{missing.hits}}회 ㆍ 시간 전</span>
-              <!--시간 전 이라고 한 부분은 db에서 보내줄때 맞춰서 보내줬으면 함-->
+        <div class="col-lg-3">
+          <a href="{% url 'missing_detail' missing.id%}">
+          <div class="row justify-content-center mt-1">
+            <div class="col-lg-12">
+              <img src="{{ missing.image.url }}" class="text-center" alt="he" style="object-fit: cover; width:210px; height: 7.5rem">
             </div>
           </div>
+          <div class="row justify-content-center">
+            <div class="col-lg-12">
+              <div class="row">
+                <span class="card_title">{{missing.summary}}</span>
+              </div>
+              <div class="row">
+                <span class="card_author">{{missing.author}}</span>
+              </div>
+              <div class="row">
+                <span class="card_author">조회수 {{missing.hits}}회 ㆍ 시간 전</span>
+                <!--시간 전 이라고 한 부분은 db에서 보내줄때 맞춰서 보내줬으면 함-->
+              </div>
+            </div>
+          </div>
+          </a>
         </div>
-      </div>
+
       {% endfor %}
     </div>
-<!--      <div class="table-responsive">-->
-<!--        <table class="table">-->
-<!--        <tbody>-->
-<!--          <tr>-->
-<!--            <td>-->
-<!--              <span>사진</span>-->
-<!--            </td>-->
-<!--            <td>-->
-<!--              <span>작성자</span>-->
-<!--            </td>-->
-<!--            <td id="td-center">-->
-<!--              <span>조회수</span>-->
-<!--            </td>-->
-<!--          </tr>-->
-<!--          {% for missing in missings %}-->
-<!--          <tr>-->
-<!--            <td>-->
-<!--              <a href="{% url 'missing_detail' missing.id %}">-->
-<!--                <img src="{{ missing.image.url }}" style="width: 8rem; height: 8rem;"><br>-->
-<!--                <span>({{ missing.comments.count }})</span>-->
-<!--              </a>-->
-<!--              &lt;!&ndash;제목&ndash;&gt;-->
-<!--              &lt;!&ndash;날짜는 제외하는게 깔끔할거같아요&ndash;&gt;-->
-<!--              &lt;!&ndash;{{ board.pub_date|date:'bj일 f' }}&ndash;&gt;-->
-<!--              &lt;!&ndash;날짜&ndash;&gt;-->
-<!--            </td>-->
-<!--            <td>-->
-<!--              &lt;!&ndash;작성자&ndash;&gt;-->
-<!--              <span>{{ missing.author }}</span>-->
-<!--            </td>-->
-<!--            <td id="td-center">-->
-<!--              <span>{{ missing.hits }}</span>-->
-<!--            </td>-->
-<!--          </tr>-->
-<!--          {%endfor%}-->
-<!--        </tbody>-->
-<!--        </table>-->
-<!--      </div>-->
   </div>
   <div class="row mt-4 mx-1 justify-content-between">
     <!--로그인 구현 후 글쓰기 버튼 if문 처리-->
     {% if user.is_authenticated %}
-    <div class="col-lg-8"><p>※ 분실물은 총학생회만 작성 할 수 있습니다.</p></div>
+    <div class="col-lg-8">
+      <p>※ 분실물은 총학생회만 작성 할 수 있습니다.</p>
+    </div>
 
-    <div class="col-lg-4"><a class="btn float-right" href="{%url 'missing_new'%}" style="color: white">글쓰기</a></div>
+    <div class="col-lg-4">
+      <a class="btn float-right" href="{%url 'missing_new'%}" style="color: white">글쓰기</a>
+    </div>
 
     {% else %}
-    <div class="col-lg-8"><p>※ 분실물은 총학생회만 작성 할 수 있습니다.</p></div>
-    <div class="col-lg-4"><button id="sub_button" class="btn float-right" data-toggle="modal" data-target="#exampleModal">글쓰기</button></div>
+    <div class="col-lg-8">
+      <p>※ 분실물은 총학생회만 작성 할 수 있습니다.</p>
+    </div>
+    <div class="col-lg-4">
+      <button id="sub_button" class="btn float-right" data-toggle="modal" data-target="#exampleModal">글쓰기</button>
+    </div>
   </div>
   {% if messages %}
   <ul class="messages">
-  <br><br>
   {% for message in messages %}
   <li class="{{ message.tags }}">{{ message }}</li>
   {% endfor %}
@@ -115,6 +85,6 @@
         </div> 
        <!--Modal-->
    {% endif %}
-  <br>
+</div>
 </div>
 {% endblock %}
