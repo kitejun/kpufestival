@@ -4,13 +4,19 @@
 {%load staticfiles%}
 <link rel="stylesheet" type="text/css" href="{% static 'css/board.css' %}">
 
-<div class="container" >
-  <!--삭제버튼-->
+<div class="container">
+
   <div class="row justify-content-end">
+  <a href="{% url 'delete' details.id %}">
+    <!--삭제버튼-->
     <img class="right-icon float-right" src="{% static 'img/delete_btn.png'%}">
+  </a>
+  <a href="{% url 'update' details.id %}">
     <!--수정버튼-->
     <img class="right-icon float-right" src="{% static 'img/edit_btn.png'%}">
-  </div>
+  </a>
+</div>
+
   <hr>
 
   <div class="row mt-2 justify-content-center">
@@ -22,13 +28,13 @@
   </div>
   <div class="row justify-content-center mt-n2">
     <div class="col-lg-10">
-        <!--작성자이름-->
+      <!--작성자이름-->
       <div class="row">
-          <div class="col-lg-8 ml-n3">
-            <span class="detail-text mr-2">{{details.author}}</span>
-            <span class="detail-text">{{details.pub_date}}</span>
-          </div>
-          <!--작성시간-->
+        <div class="col-lg-8 ml-n3">
+          <span class="detail-text mr-2">{{details.author}}</span>
+          <span class="detail-text">{{details.pub_date}}</span>
+        </div>
+        <!--작성시간-->
       </div>
       <div class="row my-4">
         <!--내용-->
@@ -36,27 +42,27 @@
           <p>{{details.context|linebreaks}}</p>
         </div>
       </div>
-        <!--좋아요-->
-        <!--
+      <!--좋아요-->
+      <!--
           <img src="{% static 'img/like_btn.png'%}" style="margin-bottom:6px;">
         -->
-        {% if user in details.like_users.all %}
-        <a href="{% url 'like' details.id %}">좋아요 취소</a>
-        {% else %}
-        <a href="{% url 'like' details.id %}">좋아요</a>
-        {% endif %}
-        <span>{{ details.like_users.count }}</span>
+      {% if user in details.like_users.all %}
+      <a href="{% url 'like' details.id %}">좋아요 취소</a>
+      {% else %}
+      <a href="{% url 'like' details.id %}">좋아요</a>
+      {% endif %}
+      <span>{{ details.like_users.count }}</span>
 
-        <!--싫어요-->
-        <!--
+      <!--싫어요-->
+      <!--
           <img src="{% static 'img/dislike_btn.png'%}" style="margin-top:2px;">
         -->
-        {% if user in details.hate_users.all %}
-        <a href="{% url 'hate' details.id %}">싫어요 취소</a>
-        {% else %}
-        <a href="{% url 'hate' details.id %}">싫어요</a>
-        {% endif %}
-        <span>{{ details.hate_users.count }}</span>
+      {% if user in details.hate_users.all %}
+      <a href="{% url 'hate' details.id %}">싫어요 취소</a>
+      {% else %}
+      <a href="{% url 'hate' details.id %}">싫어요</a>
+      {% endif %}
+      <span>{{ details.hate_users.count }}</span>
     </div>
   </div>
   <hr>
@@ -68,24 +74,24 @@
   </div>
 
   <div class="row justify-content-center">
-      <form action="{% url 'comment_write' details.id%}" method="POST" class="col-lg-10">
-        {% csrf_token %}
-        <div class="row justify-content-end">
-          <div class="col-lg-12">
-            <textarea type="text" name="content" class="form-control" placeholder="댓글을 입력해주세요."></textarea>
-          </div>
+    <form action="{% url 'comment_write' details.id%}" method="POST" class="col-lg-10">
+      {% csrf_token %}
+      <div class="row justify-content-end">
+        <div class="col-lg-12">
+          <textarea type="text" name="content" class="form-control" placeholder="댓글을 입력해주세요."></textarea>
         </div>
-        <div class="row justify-content-end mt-2">
-          <div class="col-lg-2"><input class="btn btn-light" id="right" type="submit" value="댓글"></div>
-        </div>
-      </form>
+      </div>
+      <div class="row justify-content-end mt-2">
+        <div class="col-lg-2"><input class="btn btn-light" id="right" type="submit" value="댓글"></div>
+      </div>
+    </form>
   </div>
   <hr>
 
   <div class="row justify-content-center">
     <div class="col-lg-10">
       {% for comment in details.comments.all %}
-        <!--작성자-->
+      <!--작성자-->
       <div class="row">
         <div class="col-lg-4">
           <strong>{{ comment.author }}</strong>
@@ -99,10 +105,10 @@
           <p class="font-weight-light">{{ comment.comment_body }}</p>
         </div>
       </div>
-        <!--내용-->
+      <!--내용-->
 
-        <!--좋아요-->
-        <!--
+      <!--좋아요-->
+      <!--
           <img src="{% static 'img/like_btn.png'%}" style="margin-top:2px;">
         -->
       <div class="row">
@@ -135,9 +141,9 @@
 
 
 
-        {% empty %}
-          <p>댓글이 없습니다.</p>
-        {% endfor %}
+      {% empty %}
+      <p>댓글이 없습니다.</p>
+      {% endfor %}
     </div>
   </div>
 </div>

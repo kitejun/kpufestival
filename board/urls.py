@@ -5,6 +5,9 @@ urlpatterns = [
     path('', views.board,name="board"),
     path('board_detail/<int:board_id>/', views.board_detail,name="board_detail"),
     path('new/', views.new,name="new"),
+    path('detail/<int:board_id>/delete', views.delete, name="delete"),
+    path('detail/<int:board_id>/update', views.update, name="update"),
+
     path('<int:board_id>/like/', views.like, name="like"),
     path('<int:board_id>/hate/', views.hate, name="hate"),
 

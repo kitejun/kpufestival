@@ -13,10 +13,10 @@
         <table class="table">
         <tbody>
           <tr>
-            <td>
+            <td id="td-center">
               <span>제목</span>
             </td>
-            <td>
+            <td id="td-center">
               <span>작성자</span>
             </td>
             <td id="td-center">
@@ -28,7 +28,7 @@
           </tr>
           {% for board in posts %}
           <tr>
-            <td>
+            <td id="td-center">
               <a href="{% url 'board_detail' board.id %}">
                 <span>{{board.summary_title}}</span>
                 <span>({{ board.comments.count }})</span>
@@ -38,7 +38,7 @@
               <!--{{ board.pub_date|date:'bj일 f' }}-->
               <!--날짜-->
             </td>
-            <td>
+            <td id="td-center">
               <!--작성자-->
               <span>{{ board.author }}</span>
             </td>
