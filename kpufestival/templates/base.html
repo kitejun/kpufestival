@@ -123,20 +123,26 @@ input[type="checkbox"] {
 
     </style>
     <script language="javascript">
+        var a = 0;
         //버튼클릭시 javascript 호출합니다.
-        function javascript(color){
-          document.getElementById("switch").style.backgroundColor = color;  //RGB코드  
-          var background=document.getElementById("switch").style.backgroundColor;
-          if(color=='#2F2F2F'){
-            document.getElementById("icon").style.display="inline"; //로고 변경하기
+        function javascript(){
+          var background = document.getElementById("switch").style.backgroundColor;
+          if(a ==0){ //배경 어두울때
+            document.getElementById("menu").src="{% static 'img/menu5.png'%}";    //메뉴 변경
+            document.getElementById("icon").src="{% static 'img/kputube1.png' %}"; //로고 변경하기
             document.getElementById("on").style.color="#2F2F2F";
             document.getElementById("marble").style.backgroundColor="#2F2F2F";
+            document.getElementById("switch").style.backgroundColor = '#2F2F2F';  //배경색 변경 
+            a = 1;
           }else{
-            document.getElementById("icon").style.display="none"; //로고 변경하기
+            document.getElementById("menu").src="{% static 'img/menu6.png'%}";    //메뉴 변경
+            document.getElementById("icon").src="{% static 'img/kputube2.png' %}"; //로고 변경하기
             document.getElementById("on").style.color="#FFFFFF";
             document.getElementById("marble").style.backgroundColor="#FFFFFF";
+            document.getElementById("switch").style.backgroundColor = '#FFFFFF';  //배경색 변경   
+            a = 0;
           }
-        }
+ }
         </script>
   </head>
 
@@ -144,10 +150,10 @@ input[type="checkbox"] {
 
   <div class="switch-container">
     <input type="checkbox" id="switch1" name="switch1" class="input__on-off">
-    <label for="switch1" class="label__on-off">
+    <label for="switch1" onclick="javascript()" class="label__on-off">
       <span id="marble" class="marble"></span>
-      <span id="on" class="on" onclick="javascript('#FFFFFF')">on</span>
-      <span class="off" onclick="javascript('#2F2F2F')">off</span>
+      <span id="on" class="on">on</span>
+      <span class="off">off</span>
     </label>
   </div>
     
@@ -178,7 +184,7 @@ input[type="checkbox"] {
 
 <div id="forabsolute">
   <div class="menu-container" onclick="openNav()">
-    <img id="menu" src="{% static 'img/menu5.png' %}">
+    <img id="menu" src="{% static 'img/menu6.png' %}">
   </div>
   <!--<span id="menu" onclick="openNav()">&#9776; </span>-->
 
@@ -186,7 +192,7 @@ input[type="checkbox"] {
     <a href="{% url 'home' %}">
         <div class="animated flash delay-2s duration-0.5s slower">
         <div class="neon">
-          <img id="icon" src="{% static 'img/kputube1.png' %}">
+          <img id="icon" src="{% static 'img/kputube2.png' %}">
         </div>
         </div>
     </a>
