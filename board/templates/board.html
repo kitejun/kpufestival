@@ -59,31 +59,18 @@
   </div>
   <!--로그인 구현 후 글쓰기 버튼 if문 처리-->
   {% if user.is_authenticated %}
-  <a class="btn" href="{%url 'new'%}" id="right" style="color: white">글쓰기</a>
-  {% else %}
-  <button id="sub_button" class="btn right" data-toggle="modal" data-target="#exampleModal">글쓰기</button>
-    <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">게시판 이용</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <h3>로그인이 필요합니다</h3>
-              </div>
-              <div class="modal-footer">
-                <a class="btn" href="{%url 'login'%}" id="right" style="color: white">로그인하러가기</a>
-                <button type="button" class="btn btn-light" data-dismiss="modal">닫기</button>
-              </div>
-            </div>
-          </div>
-        </div> 
-       <!--Modal-->
-   {% endif %}
+    <div class="col-lg-8">
+    </div>
+    <div class="col-lg-4">
+        <a class="btn" href="{%url 'new'%}" id="right" style="color: white">글쓰기</a>
+    </div>
+    {% else %}
+    <div class="col-lg-8">
+    </div>
+    <div class="col-lg-4">
+      <button id="sub_button" class="btn float-right" data-toggle="modal" data-target="#exampleModal">글쓰기</button>
+    </div>
+    {% endif %}
   <br>
 
   <!--pagenation-->

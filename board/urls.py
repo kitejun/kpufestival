@@ -16,7 +16,7 @@ urlpatterns = [
     path('<int:comment_id>/comment_like/', views.comment_like, name="comment_like"),
     path('<int:comment_id>/comment_hate/', views.comment_hate, name="comment_hate"),
 
-    path('missing', views.missing,name="missing"),
-    path('missing_detail/<int:missing_id>/', views.missing_detail,name="missing_detail"),
-    path('missing_new/', views.missing_new,name="missing_new"),
+    path('missing', views.missing, name="missing"),
+    path('missing_detail/<int:missing_id>/', views.missing_detail, name="missing_detail"),
+    path('missing_new/', views.missing_new, name="missing_new"),
 ]

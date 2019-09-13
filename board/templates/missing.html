@@ -6,14 +6,15 @@
 
 <div class="container">
   <div class="row mt-4 mx-1">
-  <!--이부분에 추가해주세요-->
+    <!--이부분에 추가해주세요-->
     <div class="row">
       {% for missing in missings %}
-        <div class="col-lg-3">
-          <a href="{% url 'missing_detail' missing.id%}">
+      <div class="col-lg-3">
+        <a href="{% url 'missing_detail' missing.id%}">
           <div class="row justify-content-center mt-1">
             <div class="col-lg-12">
-              <img src="{{ missing.image.url }}" class="text-center" alt="he" style="object-fit: cover; width:210px; height: 7.5rem">
+              <img src="{{ missing.image.url }}" class="text-center" alt="he"
+                style="object-fit: cover; width:210px; height: 7.5rem">
             </div>
           </div>
           <div class="row justify-content-center">
@@ -30,8 +31,8 @@
               </div>
             </div>
           </div>
-          </a>
-        </div>
+        </a>
+      </div>
 
       {% endfor %}
     </div>
@@ -40,51 +41,48 @@
     <!--로그인 구현 후 글쓰기 버튼 if문 처리-->
     {% if user.is_authenticated %}
     <div class="col-lg-8">
-      <p>※ 분실물은 총학생회만 작성 할 수 있습니다.</p>
     </div>
-
     <div class="col-lg-4">
-      <a class="btn float-right" href="{%url 'missing_new'%}" style="color: white">글쓰기</a>
+      <a class="btn" href="{%url 'missing_new'%}" id="right" style="color: white">글쓰기</a>
     </div>
-
     {% else %}
     <div class="col-lg-8">
-      <p>※ 분실물은 총학생회만 작성 할 수 있습니다.</p>
     </div>
     <div class="col-lg-4">
       <button id="sub_button" class="btn float-right" data-toggle="modal" data-target="#exampleModal">글쓰기</button>
     </div>
+    {% endif %}
   </div>
   {% if messages %}
   <ul class="messages">
-  {% for message in messages %}
-  <li class="{{ message.tags }}">{{ message }}</li>
-  {% endfor %}
+    {% for message in messages %}
+    <li class="{{ message.tags }}">{{ message }}</li>
+    {% endfor %}
   </ul>
   {% endif %}
 
-    <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">게시판 이용</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <h3>로그인이 필요합니다</h3>
-              </div>
-              <div class="modal-footer">
-                <a class="btn" href="{%url 'login'%}" id="right" style="color: white">로그인하러가기</a>
-                <button type="button" class="btn btn-light" data-dismiss="modal">닫기</button>
-              </div>
-            </div>
-          </div>
-        </div> 
-       <!--Modal-->
-   {% endif %}
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">게시판 이용</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h3>로그인이 필요합니다</h3>
+        </div>
+        <div class="modal-footer">
+          <a class="btn" href="{%url 'login'%}" id="right" style="color: white">로그인하러가기</a>
+          <button type="button" class="btn btn-light" data-dismiss="modal">닫기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Modal-->
 </div>
 </div>
 {% endblock %}

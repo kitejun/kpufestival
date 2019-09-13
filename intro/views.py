@@ -1,4 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.conf import settings
+
 from .models import Intro
 
 # introduce 기능
@@ -15,7 +17,9 @@ def introduce(request):
 
 def intro_detail(request, intro_id):
     intro_detail = get_object_or_404(Intro, pk=intro_id)
-    return render(request,'intro_detail.html', {'intro_detail': intro_detail})
+    # 타 학과
+    exclude_intro=Intro.objects.annotate().order_by('?').exclude(id = intro_id)
+    return render(request,'intro_detail.html', {'intro_detail': intro_detail, 'exclude_intro': exclude_intro})
 
 
 def intro_like(request, intro_id):

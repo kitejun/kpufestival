@@ -114,6 +114,7 @@ USE_L10N = True
 
 USE_TZ = False # 한국시간을 표시하기 위해 True -> False로 변경
 
+LOGIN_URL = '/account/login/'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
