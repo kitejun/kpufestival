@@ -6,8 +6,8 @@
 
 *{box-sizing: border-box;}
 html,body{height: 100%;}
-a:link,a:visited,a:active{color:inherit;}
-
+a:link,a:visited,a:active{}
+/* a:link,a:visited,a:active{color:inherit;}  원래이거였음*/
 
 
 body{
@@ -29,8 +29,8 @@ body{
 
 /* home */
 .section{
-    background: white;
-    
+    background: #dbdbdb;
+    margin: 40px;
 }
 #jb-container {
     width: 1025px;
@@ -72,7 +72,6 @@ body{
         height: 20%;
     }
     #jb-content {
-        height: 30%;
       float: none;
       width: auto;
     }
@@ -226,6 +225,7 @@ SETTINGS
   background-color: white;
   border-radius: 8px;
   padding:30px;
+  margin-bottom: 100px;
 }
 
 /*모바일*/

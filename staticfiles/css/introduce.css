@@ -1,0 +1,199 @@
+
+a{
+    color:#2f2f2f;
+}
+a:hover{
+    color:black;
+    text-decoration: none;
+}
+hr{
+    border-color: #c0c0c0;
+}
+/*introduce 페이지*/
+#my-container{
+    padding:10px;
+    margin-top:0;
+}
+#card{
+    height: 300px;
+    border: 0;
+    width: 100%;
+    box-shadow: 1px 1px 10px gray;
+}
+#intro-card-img{
+    height: 150px;
+    width: 100%;
+    margin-bottom:10px;
+  }
+
+#user-img1{
+    height: 30px;
+    width: 30px;
+}
+#intro-card-title{
+    font-size: 1.5rem;
+}
+.icon{
+    float:right;
+    margin-bottom: 5px;
+    margin-right: 10px;
+}
+
+hr{
+    margin:0;
+}
+.heart-icon{
+    float:right;
+    margin-bottom: 5px;
+    margin-right: 10px;
+}
+@media (min-width: 1025px)  {
+    .heart-icon{
+        margin-top:10px;
+    }
+}
+@media (max-width: 1025px)  {
+    .col-6{
+        padding:6px;
+        margin-bottom: 4px;
+    }
+    #card{
+        height: 150px;
+    }
+    #intro-card-img{
+        height: 80px;
+      }
+    
+    #user-img1{
+        height: 30px;
+        width: 30px;
+    }
+    #intro-card-title{
+        margin-top:5px;
+        font-size: 0.9rem;
+    }
+    .gone{
+        display: none;
+    }
+}
+/*intro detail 페이지*/
+/*웹*/
+#carouselExampleControls{
+    justify-content:center;
+    display:flex;
+    height: 500px;
+    width: 100%;
+  }
+  #small-img{
+    max-height: 100px;
+    width: 100%;
+  }
+/*캐라셀 버튼색*/
+.carousel-control-prev-icon{
+    background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%2f2f2f' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e")
+}
+.carousel-control-next-icon{
+    background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%2f2f2f' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e")
+}
+#detail-title{
+    font-size: 1.8rem;
+}
+.detail-text{
+    font-size: 0.9rem;
+    color:#606060;
+}
+#tag{
+    font-size: 1.5rem;
+    color: #065FD4;
+}
+#contain-right{
+    float:right;
+}
+
+#icon_btn{
+    width: 40px;
+}
+#detail-img{
+    height: 500px;
+    width: 100%;
+}
+#user-img{
+    width:5rem;
+    height:5rem;
+}
+#sub_button{
+    float: right;
+}
+  
+.content-box{
+    margin-top:20;
+}
+
+.btn{
+    color: white;
+    background-color: red;
+  }
+
+
+/*글자색 흰색*/
+#white{
+    color:white;
+}
+#my-container{
+    background-color: white;
+    border-radius: 8px;
+  }
+@media (min-width: 1025px)  {
+#my-container{
+    padding:100px;
+    margin:4rem;
+    margin-top:0;
+  }
+}
+  /*모바일*/
+@media (max-width: 1025px)  {
+  #my-container{
+    padding:30px;
+    margin:1rem;
+  }
+}
+
+
+/*모바일*/
+@media (max-width: 1025px)  {
+    /*캐러셀*/
+    #carouselExampleControls{
+        justify-content:center;
+        display:flex;
+        height: 134px;
+        width: 268px;
+      }
+      #small-img{
+        height: 50px;
+        width: 100px;
+      }
+    #detail-text{
+        font-size: 1rem;
+    }
+    #tag{
+        font-size: 1rem;
+    }
+    #detail-img{
+        height: 134px;
+        width: 268px;
+    }
+    #sub_button{
+        float : right;
+    }
+    #other{
+        display: none;
+    }
+
+    #detail-title{
+        font-size: 1.7rem;
+    }
+    #kakao{
+        width: 50px;
+    }
+
+}
