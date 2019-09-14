@@ -7,6 +7,10 @@
 
 
 <style>
+  #user-img1{
+    margin-top:5px;
+  }
+
 </style>
 <div id="my-container">
   <div class="row">
@@ -73,6 +77,7 @@
       <br>
       <br>
       <hr>
+      <br>
       <!--학과별 이미지-->
       <img id="user-img" src="{{ intro_detail.de_logo.url }}">
       <!--학과이름-->
@@ -108,7 +113,6 @@
             <br>
             <h5>{{intro_detail.introduce|linebreaks}}</h5>
             <br>
-            <h6>※ 참고로 이미지 사이즈는 width: 840; height:480;이라서 비율안맞으면 짤려요</h6>
           </div>
           <hr>
         </div>
@@ -120,21 +124,20 @@
       <!--for문은 여기부터-->
       {% for intro in exclude_intro %}
       <a href="{% url 'intro_detail' intro.id %}">
-      <div class="card mb-3" style="width: 370px;">
+      <div class="card mb-3" style="width: 100%;">
         <div class="row no-gutters">
           <div class="col-md-6">
             <img id="small-img" src="{{ intro.img1.url }}">
           </div>
           <div class="col-md-6" style="padding-left: 20px;">
               <img id="user-img1" src="{{ intro.de_logo.url }}">
-            <b>{{intro.dename}}</b>
-            <p class="card-text" id="detail-text">{{intro.tag}}</p>
+            <span>{{intro.dename}}</span>
+            <p class="card-text" id="detail-text" style="margin:5px 0 5px 5px; ">{{intro.tag}}</p>
             <i class="fa fa-heart fa-1x" style="color:#ed2553;"></i>
             <span id="detail-text">{{ intro.intro_like_users.count }}</span>
           </div>
         </div>
       </div>
-      <hr>
       </a>
       {% endfor %}
     </div>

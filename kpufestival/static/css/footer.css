@@ -7,9 +7,9 @@
     bottom: 0;
 }
 h3.title_l{font-weight: 700; font-size: 1.5em; margin-right: 0.5em; text-align: left;}
-h4.title_m{font-weight: 500; font-size: 1.1em; margin-right: 0.5em; text-align: left;}
-.content{font-weight: 200; font-size: 0.8em; margin-right: 0.5em; text-align: left;}
-.logo{
+h4.title_m{font-weight: 500; font-size: 1.2em; margin-right: 0.5em; text-align: left;}
+.content{font-weight: 200; font-size: 0.8em; margin-right: 0.5em; margin-top:1px; text-align: left;}
+.my-logo{
     width: 50px;
 }
 #row-container{
@@ -43,8 +43,8 @@ h4.title_m{font-weight: 500; font-size: 1.1em; margin-right: 0.5em; text-align: 
     h3.title_l{font-weight: 700; font-size: 1em; margin-right: 0.2em; text-align: left;}
     h4.title_m{font-weight: 500; font-size: 0.6em; margin-right: 0.3em; text-align: left;}
     .content{font-weight: 200; font-size: 0.2em; margin-right: 0.2em; text-align: left;}
-    .logo{
-        width: 30px;
+    .my-logo{
+        width: 28px;
         margin-top:10px;
     }
     #row-container{
@@ -54,7 +54,7 @@ h4.title_m{font-weight: 500; font-size: 1.1em; margin-right: 0.5em; text-align: 
         width:70px;
     }
     .left-container{
-        margin-top:15px;
+        margin-top:10px;
     }
     .right-container{
         margin-left: 6px;

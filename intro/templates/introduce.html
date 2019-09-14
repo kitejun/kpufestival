@@ -7,13 +7,16 @@
   .card{
     height: 200px;
   }
+  #user-img1{
+    margin:5px 0 0 15px;
+  }
 </style>
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduce.css' %}">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 
 <!--컨테이너 속성변경해야함 이거때문에 다 작게 보임-->
-<div id="my-container" style="padding:10px;">
+<div id="my-container" style="padding:30px;">
   <div style="margin:0 auto">
     <h3>학과별 주점소개</h3> ※ 무작위로 보여집니다.
     <br>
@@ -28,10 +31,10 @@
             <!-- 학과 관련 사진 -->
             <img class="card-img-top h-img" src="{{ intro.img1.url }}" id="intro-card-img">
             <div class="row">
-              <div class="col-2 col-lg-2">
+              <div class="col-4 col-lg-2">
                   <img id="user-img1" src="{{ intro.de_logo.url }}">
               </div>
-              <div class="col-9 col-lg-10">
+              <div class="col-8 col-lg-10"  style="margin-top:4px;">
                   <span id="intro-card-title">{{ intro.dename }}</span>
                   <!-- 소개글(summary)) -->
                   <div class="gone">
@@ -41,14 +44,10 @@
             </div>
             <div id="intro-body">
               <!-- 학과명 -->
-              <hr>
+              <hr class="gone">
             </a>
-            <div class="icon">
+            <div class="heart-icon">
               <i class="fa fa-heart" style="color:#ed2553;">{{ intro.intro_like_users.count }}</i>
-              <!--sendLink부분 여기도 적용되게 해주세요-->
-              <a id="kakao-link-btn" href="javascript:sendLink()">
-              <i class="fa fa-share" style="color: #2f2f2f;;"></i>
-              </a>
             </div>
             </div>
           </div>
