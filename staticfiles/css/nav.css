@@ -1,8 +1,12 @@
+      
+.label__on-off{
+  margin-right:10px;
+}      
       /*nav*/
       .overlay {
         height: 100%;
         width: 0;
-        position: fixed;
+        position: ABSOLUTE;
         z-index: 101;
         top: 0;
         left: 0;
@@ -25,7 +29,7 @@
         padding: 8px;
         text-decoration: none;
         font-size: 42px;
-        color: #818181;
+        color: #686767;
         display: block;
         transition: 0.3s;
       }
@@ -63,11 +67,11 @@
       #icon-container {
         justify-content: center;
         display: flex;
-        margin-top: 0.8rem;
+        margin-top: 1rem;
         margin-bottom: 0.8rem;
       }
 
-      #icon {
+      #logo-icon {
         width: 25rem;
       }
       /*메뉴버튼*/
@@ -75,7 +79,7 @@
         float: left;
       }
       #menu{
-          width: 5rem;
+          width: 6rem;
       }
       .navbar-toggler{
         background-color:rgb(255,255,255)
@@ -91,10 +95,10 @@
 @media (min-width: 1025px)  {
   .menu-container{
     margin-left: 0.8rem;
-    margin-top: 0.5rem;
+    margin-top: 0.2rem;
   }
   #icon-container{
-    margin-top: 1.2rem;
+    margin-top: 1rem;
     margin-right: 7rem;
   }
 
@@ -109,13 +113,13 @@
 
   .menu-container{
     margin-left: 0.6rem;
-    margin-top: 2rem;
+    margin-top: 0.1rem;
   }
   #menu{
-    width: 4.5rem;
+    width: 4rem;
   }
-  #icon{
-    width: 10rem;
+  #logo-icon{
+    width: 16rem;
   }
   #icon-container{
     margin-right: 80px;

@@ -2,6 +2,9 @@
 .card_title{
     font-family: Roboto, Arial, sans-serif;
     font-size: 1.2rem;
+    font-weight: 500;
+    color : rgb(12,12,12) !important;
+    line-height: 1.6rem;
 }
 .card_author{
     font-family: Roboto, Arial, sans-serif;
