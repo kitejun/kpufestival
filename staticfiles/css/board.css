@@ -2,14 +2,14 @@
 .card_title{
     font-family: Roboto, Arial, sans-serif;
     font-size: 1.2rem;
+    font-weight: 500;
+    color : rgb(12,12,12) !important;
+    line-height: 1.6rem;
 }
 .card_author{
     font-family: Roboto, Arial, sans-serif;
     font-size: 0.8rem;
     color: #606060;
-}
-.card_count{
-
 }
 
 /*board*/
@@ -72,6 +72,9 @@
   }
   .siru_image{
     width:100%;
+  }
+  #dev-container{
+    margin:30px;
   }
 
 }
@@ -153,8 +156,8 @@
     width: 40;
 }
 #detail-img{
-    height: 600px;
-    width: 1000px;
+    height: 400px;
+    width: 800px;
 }
 #user-img{
     width:5rem;
@@ -175,11 +178,10 @@
 
 /*웹*/
 @media(min-width:1025px){
-    #dev-img{
-        height: 200px;
-        min-width: 200px;
-        max-width: 200px;
-        margin:30px;
+    .dev-img{
+        height: 250px;
+        width: 100%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
     #youtube{
       margin:auto;
@@ -191,9 +193,20 @@
         width:70%;
         height: 450px;
     }
+    .introimage
+    {
+        width:100px;
+        text-align: center;
+    }
+    .introimage2{
+        height: 400px;
+        margin-bottom: 30px;
+        
+    }
     #mobivisible {
         display:none;
     }
+    
 }
 /*모바일*/
 @media (max-width: 1025px)  {
@@ -204,16 +217,17 @@
         font-size: 1rem;
     }
     #detail-img{
-        width: 500px; height:200px;
+        height: 200px;
+        width: 400px;
     }
     #sub_button{
         float : right;
     }
-    #dev-img{
-        height: 99px;
-        min-width: 100px;
-        max-width: 120px;
-        min-height: 100px;
+    .dev-img{
+        height: 150px;
+        width:90%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        
     }
     h3{
         font-size: 24px;
@@ -237,7 +251,20 @@
     .sirumain{
         padding:0;
     }
+    .col-6{
+        padding: 0;
+    }
+  
+    .mleft{
+        margin-left:10%;
+    }
     #pcvisible{
-        display:none;
+        display: none;
+    }
+    .introimage2{
+        
+        margin-bottom: 15px;
+        
+        
     }
 }
