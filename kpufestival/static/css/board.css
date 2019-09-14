@@ -178,9 +178,10 @@
 
 /*웹*/
 @media(min-width:1025px){
-    #dev-img{
-        height: 250px;
-        width: 100%;
+    .dev-img{
+        width:13rem !important;
+        text-align: center;
+        height:13rem !important;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
     #youtube{
@@ -223,9 +224,10 @@
     #sub_button{
         float : right;
     }
-    #dev-img{
-        height: 150px;
-        width:90%;
+    .dev-img{
+        width:10rem !important;
+        text-align: center;
+        height:10rem !important;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         
     }
