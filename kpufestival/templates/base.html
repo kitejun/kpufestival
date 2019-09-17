@@ -46,8 +46,7 @@
     </style>
     <!--세션 유지시키는거 해결해야해서 놔둠-->
     <script language="javascript">
-        //var a = sessionStorage.getItem("a");
-        //버튼클릭시 javascript 호출합니다.
+        //로드될때 a값을 확인해서 실행
         window.onload=function(){
           var a=sessionStorage.getItem('a');
           a*=1;
@@ -57,6 +56,7 @@
             document.getElementById("logo-icon").src="{% static 'img/kputube1.png' %}"; //로고 변경하기
             document.getElementById("on").style.color="#2F2F2F";
             document.getElementById("marble").style.backgroundColor="#2F2F2F";
+            document.getElementById("switch1").checked="checked";
             document.getElementById("switch").style.backgroundColor = '#2F2F2F';  //배경색 변경 
           }else{
             document.getElementById("menu").src="{% static 'img/menu6.png'%}";    //메뉴 변경
