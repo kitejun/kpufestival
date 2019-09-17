@@ -207,7 +207,7 @@ $(window).scroll(function () {
 
   {% endblock %}
   <div>
-    <div style="position:fixed; left:0px; bottom:0px;" id="plusfriend-chat-button"></div>
+    <div style="position:fixed; left:0px; bottom:0px; z-index: 5;" id="plusfriend-chat-button"></div>
   </div>
   <div>
     <div style="position:fixed; right:0px; bottom:5px;">
@@ -216,7 +216,8 @@ $(window).scroll(function () {
       </a>
     </div>
   </div>
-  <footer id="footer" class="footer mt-auto py-3 ">
+<!--footer-->
+  <footer id="footer" class="footer mt-auto py-3">
     <div class="row">
       <div class="col-6 col-lg-6">
         <h3 class="title_l">KPUTube</h3>
@@ -266,9 +267,10 @@ $(window).scroll(function () {
           </div>
         </div>
         </div>
-        <div class="row" style="padding-left:15px; margin-top:10px;">
-          <h3 class="title_l">협력</h3>
-          <h4 class="title_m" style="margin-top:5px;">총학생회 '위하여'</h4>
+        <div class="row" style="padding-left:15px; margin-top:8px;">
+              <h3 class="title_l">협력</h3>
+              <img src="{% static 'img/wehigher.png' %}" alt="logo" class="my-logo2">
+              <h4 class="content"style="margin-top:8px; margin-left:10px;">총학생회 '위하여'</h4>
         </div>
       </div>
     </div>
