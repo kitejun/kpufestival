@@ -9,8 +9,8 @@ def home(request):
 
 def developer(request):
     random_button = random.randint(1,2)
-    random_width = random.randint(3,97)
-    random_height = random.randint(3,97)
+    random_width = random.randint(10,90)
+    random_height = random.randint(10,90)
     # random_button = 2
     return render(request,'developer.html', {'random_button':random_button, 'random_width':random_width, 'random_height':random_height})
 
