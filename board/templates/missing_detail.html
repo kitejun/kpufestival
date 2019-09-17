@@ -16,20 +16,20 @@
     <div class="col-lg-10">
       <!--작성자-->
       <h3>{{missing_details.author}}</h3>
+      <span class="detail-text">{{missing_details.pub_date}}</span>
     </div>
   </div>
   <div class="row justify-content-center">
-    <div class="col-lg-10">
+    <div class="col-lg-10 text-center">
         {{missing_details.update_counter_hit}}
 
         <!--작성시간-->
-        <span class="detail-text">{{missing_details.pub_date}}</span>
 
         <!-- 사진 -->
         <p class="my-4"><img src="{{ missing_details.image.url }}" style="width: 55%;"></p>
 
         <!--내용-->
-        <p>{{missing_details.context|linebreaks}}</p>
+        <p class="text-left">{{missing_details.context}}</p>
     </div>
   </div>
   <br>
