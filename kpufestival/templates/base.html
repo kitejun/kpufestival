@@ -48,17 +48,36 @@
     <script language="javascript">
         //var a = sessionStorage.getItem("a");
         //버튼클릭시 javascript 호출합니다.
-        var a=0;
-        function javascript(){
+        window.onload=function(){
+          var a=sessionStorage.getItem('a');
+          a*=1;
           //var background = document.getElementById("switch").style.backgroundColor;
-          if(a ==0){ //배경 어두울때
+          if(a == 1){ //검은배경
+            document.getElementById("menu").src="{% static 'img/menu5.png'%}";    //메뉴 변경
+            document.getElementById("logo-icon").src="{% static 'img/kputube1.png' %}"; //로고 변경하기
+            document.getElementById("on").style.color="#2F2F2F";
+            document.getElementById("marble").style.backgroundColor="#2F2F2F";
+            document.getElementById("switch").style.backgroundColor = '#2F2F2F';  //배경색 변경 
+          }else{
+            document.getElementById("menu").src="{% static 'img/menu6.png'%}";    //메뉴 변경
+            document.getElementById("logo-icon").src="{% static 'img/kputube2.png' %}"; //로고 변경하기
+            document.getElementById("on").style.color="#FFFFFF";
+            document.getElementById("marble").style.backgroundColor="#FFFFFF";
+            document.getElementById("switch").style.backgroundColor = '#FFFFFF';  //배경색 변경   
+          }
+        }
+        function javascript(){
+          var a=sessionStorage.getItem('a');
+          a*=1;
+          //var background = document.getElementById("switch").style.backgroundColor;
+          if(a == 0){ //흰배경에서 검은 배경으로
             document.getElementById("menu").src="{% static 'img/menu5.png'%}";    //메뉴 변경
             document.getElementById("logo-icon").src="{% static 'img/kputube1.png' %}"; //로고 변경하기
             document.getElementById("on").style.color="#2F2F2F";
             document.getElementById("marble").style.backgroundColor="#2F2F2F";
             document.getElementById("switch").style.backgroundColor = '#2F2F2F';  //배경색 변경 
             a = 1;
-            sessionStorage.setItem("a", 1);
+            sessionStorage.setItem('a', "1");
           }else{
             document.getElementById("menu").src="{% static 'img/menu6.png'%}";    //메뉴 변경
             document.getElementById("logo-icon").src="{% static 'img/kputube2.png' %}"; //로고 변경하기
@@ -66,7 +85,8 @@
             document.getElementById("marble").style.backgroundColor="#FFFFFF";
             document.getElementById("switch").style.backgroundColor = '#FFFFFF';  //배경색 변경   
             a = 0;
-            sessionStorage.setItem("a", 0);
+            sessionStorage.setItem('a', "0");
+
           }
  }
         </script>
