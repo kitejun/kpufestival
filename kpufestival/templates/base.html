@@ -46,19 +46,38 @@
     </style>
     <!--세션 유지시키는거 해결해야해서 놔둠-->
     <script language="javascript">
-        //var a = sessionStorage.getItem("a");
-        //버튼클릭시 javascript 호출합니다.
-        var a=0;
-        function javascript(){
+        //로드될때 a값을 확인해서 실행
+        window.onload=function(){
+          var a=sessionStorage.getItem('a');
+          a*=1;
           //var background = document.getElementById("switch").style.backgroundColor;
-          if(a ==0){ //배경 어두울때
+          if(a == 1){ //검은배경
+            document.getElementById("menu").src="{% static 'img/menu5.png'%}";    //메뉴 변경
+            document.getElementById("logo-icon").src="{% static 'img/kputube1.png' %}"; //로고 변경하기
+            document.getElementById("on").style.color="#2F2F2F";
+            document.getElementById("marble").style.backgroundColor="#2F2F2F";
+            document.getElementById("switch1").checked="checked";
+            document.getElementById("switch").style.backgroundColor = '#2F2F2F';  //배경색 변경 
+          }else{
+            document.getElementById("menu").src="{% static 'img/menu6.png'%}";    //메뉴 변경
+            document.getElementById("logo-icon").src="{% static 'img/kputube2.png' %}"; //로고 변경하기
+            document.getElementById("on").style.color="#FFFFFF";
+            document.getElementById("marble").style.backgroundColor="#FFFFFF";
+            document.getElementById("switch").style.backgroundColor = '#FFFFFF';  //배경색 변경   
+          }
+        }
+        function javascript(){
+          var a=sessionStorage.getItem('a');
+          a*=1;
+          //var background = document.getElementById("switch").style.backgroundColor;
+          if(a == 0){ //흰배경에서 검은 배경으로
             document.getElementById("menu").src="{% static 'img/menu5.png'%}";    //메뉴 변경
             document.getElementById("logo-icon").src="{% static 'img/kputube1.png' %}"; //로고 변경하기
             document.getElementById("on").style.color="#2F2F2F";
             document.getElementById("marble").style.backgroundColor="#2F2F2F";
             document.getElementById("switch").style.backgroundColor = '#2F2F2F';  //배경색 변경 
             a = 1;
-            sessionStorage.setItem("a", 1);
+            sessionStorage.setItem('a', "1");
           }else{
             document.getElementById("menu").src="{% static 'img/menu6.png'%}";    //메뉴 변경
             document.getElementById("logo-icon").src="{% static 'img/kputube2.png' %}"; //로고 변경하기
@@ -66,7 +85,8 @@
             document.getElementById("marble").style.backgroundColor="#FFFFFF";
             document.getElementById("switch").style.backgroundColor = '#FFFFFF';  //배경색 변경   
             a = 0;
-            sessionStorage.setItem("a", 0);
+            sessionStorage.setItem('a', "0");
+
           }
  }
         </script>
@@ -207,7 +227,7 @@ $(window).scroll(function () {
 
   {% endblock %}
   <div>
-    <div style="position:fixed; left:0px; bottom:0px;" id="plusfriend-chat-button"></div>
+    <div style="position:fixed; left:0px; bottom:0px; z-index: 5;" id="plusfriend-chat-button"></div>
   </div>
   <div>
     <div style="position:fixed; right:0px; bottom:5px;">
@@ -216,7 +236,8 @@ $(window).scroll(function () {
       </a>
     </div>
   </div>
-  <footer id="footer" class="footer mt-auto py-3 ">
+<!--footer-->
+  <footer id="footer" class="footer mt-auto py-3">
     <div class="row">
       <div class="col-6 col-lg-6">
         <h3 class="title_l">KPUTube</h3>
@@ -266,9 +287,10 @@ $(window).scroll(function () {
           </div>
         </div>
         </div>
-        <div class="row" style="padding-left:15px; margin-top:10px;">
-          <h3 class="title_l">협력</h3>
-          <h4 class="title_m" style="margin-top:5px;">총학생회 '위하여'</h4>
+        <div class="row" style="padding-left:15px; margin-top:8px;">
+              <h3 class="title_l">협력</h3>
+              <img src="{% static 'img/wehigher.png' %}" alt="logo" class="my-logo2">
+              <h4 class="content"style="margin-top:8px; margin-left:10px;">총학생회 '위하여'</h4>
         </div>
       </div>
     </div>
