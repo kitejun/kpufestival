@@ -297,17 +297,8 @@ $(window).scroll(function () {
     </div>
   </footer>
 
-  <script type='text/javascript'>
-    //<![CDATA[
-    // 사용할 앱의 JavaScript 키를 설정해 주세요.
-    Kakao.init('5f2d23cd2c499b2da83462fb37ae738e');
-    // 플러스친구 1:1채팅 버튼을 생성합니다.
-    Kakao.PlusFriend.createChatButton({
-      container: '#plusfriend-chat-button',
-      plusFriendId: '_BqiaT' // 플러스친구 홈 URL에 명시된 id로 설정합니다.
-    });
-   //]]>
-  </script>
+  <script type="text/javascript" src="{% static 'js/kakao.js' %}"></script>
+
 
 </body>
 
