@@ -46,6 +46,12 @@ class Missing(models.Model):
 
     def summary(self):
         return self.context[:50]
+        
+    @property
+    def update_counter_hit(self):
+        self.hits=self.hits+1
+        self.save()
+        return ''
 
 class Comment(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -61,7 +67,6 @@ class Comment(models.Model):
     
     class Meta:
         ordering=['-id']
-
 
 # introduce 모델
 # 학과명,좋아요 개수,싫어요 개수,조회수,위치,소개글,태그
