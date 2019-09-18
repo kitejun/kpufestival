@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+
+{% block content %}
+
+<div class="container">
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <br>
+
+        <div class="form-group">
+            <input id="id_image" type="file" class="" name="image">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="text" style="float:left">내용</label>
+            {{form.context}}
+            </textarea>
+        </div>
+        <br>
+
+        <input class="btn btn-light" role="button" aria-pressed="true" type="submit" value="수정">
+
+    </form>
+</div>
+{% endblock %}
