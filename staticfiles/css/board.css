@@ -12,6 +12,13 @@
     color: #606060;
 }
 
+.shadow_card{
+    box-shadow: 1px 1px 10px grey;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
 /*board*/
 
 .siru_image {
@@ -179,8 +186,9 @@
 /*웹*/
 @media(min-width:1025px){
     .dev-img{
-        height: 250px;
-        width: 100%;
+        width:15rem !important;
+        text-align: center;
+        height:15rem !important;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
     #youtube{
@@ -224,8 +232,9 @@
         float : right;
     }
     .dev-img{
-        height: 150px;
-        width:90%;
+        width:13rem !important;
+        text-align: center;
+        height:13rem !important;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         
     }
