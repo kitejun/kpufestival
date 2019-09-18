@@ -4,12 +4,22 @@
 {%load staticfiles%}
 <link rel="stylesheet" type="text/css" href="{% static 'css/board.css' %}">
 
-<div class="container" >
+<div class="container">
+
+  {% if user == missing_details.author %}
   <div class="row justify-content-end">
-    <img class="right-icon float-right" src="{% static 'img/delete_btn.png'%}">
-    <!--수정버튼-->
-    <img class="right-icon float-right" src="{% static 'img/edit_btn.png'%}">
+    <a href="{% url 'missing_delete' missing_details.id %}">
+      <!--삭제버튼-->
+      <img class="right-icon float-right" src="{% static 'img/delete_btn.png'%}">
+    </a>
+    <a href="{% url 'missing_update' missing_details.id %}">
+      <!--수정버튼-->
+      <img class="right-icon float-right" src="{% static 'img/edit_btn.png'%}">
+    </a>
+
   </div>
+  {% endif %}
+
   <hr>
 
   <div class="row mt-2 justify-content-center">
@@ -21,21 +31,19 @@
   </div>
   <div class="row justify-content-center">
     <div class="col-lg-10 text-center">
-        {{missing_details.update_counter_hit}}
+      {{missing_details.update_counter_hit}}
 
-        <!--작성시간-->
+      <!--작성시간-->
 
-        <!-- 사진 -->
-        <p class="my-4"><img src="{{ missing_details.image.url }}" alt=" " style="width: 55%;"></p>
+      <!-- 사진 -->
+      <p class="my-4"><img src="{{ missing_details.image.url }}" alt=" " style="width: 55%;"></p>
 
-        <!--내용-->
-        <p class="ml-4 text-left">{{missing_details.context}}</p>
+      <!--내용-->
+      <p class="ml-4 text-left">{{missing_details.context}}</p>
     </div>
   </div>
   <br>
   <hr>
 
-    </div>
-  </div>
 </div>
 {% endblock %}

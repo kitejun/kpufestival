@@ -6,91 +6,91 @@
 
   <!--bootstrap 추가-->
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!--CSS only-->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/switch.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!--CSS only-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/switch.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
 
 
 
-    <!--bootstrap js-->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css'%}">
+  <!--bootstrap js-->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css'%}">
 
-    <!--animation cdn-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+  <!--animation cdn-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
-    <!-- pagePilling js   -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script type="text/javascript" src="{% static 'dist/jquery.pagepiling.js' %}"></script>
+  <!-- pagePilling js   -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript" src="{% static 'dist/jquery.pagepiling.js' %}"></script>
 
-    <!-- 카카오 채팅 -->
-    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+  <!-- 카카오 채팅 -->
+  <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
-    <!--이미지로드해와야해서 js파일로 옮기면 이미지가 안떠요-->
-    <script>
-            //로드될때 a값을 확인해서 실행
-            window.onload=function(){
-          var a=sessionStorage.getItem('a');
-          a*=1;
-          //var background = document.getElementById("switch").style.backgroundColor;
-          if(a == 1){ //검은배경
-            document.getElementById("menu").src="{% static 'img/menu5.png'%}";    //메뉴 변경
-            document.getElementById("logo-icon").src="{% static 'img/kputube1.png' %}"; //로고 변경하기
-            document.getElementById("on").style.color="#2F2F2F";
-            document.getElementById("marble").style.backgroundColor="#2F2F2F";
-            document.getElementById("switch1").checked="checked";
-            document.getElementById("switch").style.backgroundColor = '#2F2F2F';  //배경색 변경 
-          }else{
-            document.getElementById("menu").src="{% static 'img/menu6.png'%}";    //메뉴 변경
-            document.getElementById("logo-icon").src="{% static 'img/kputube2.png' %}"; //로고 변경하기
-            document.getElementById("on").style.color="#FFFFFF";
-            document.getElementById("marble").style.backgroundColor="#FFFFFF";
-            document.getElementById("switch").style.backgroundColor = '#FFFFFF';  //배경색 변경   
-          }
-        }
-        function javascript(){
-          var a=sessionStorage.getItem('a');
-          a*=1;
-          //var background = document.getElementById("switch").style.backgroundColor;
-          if(a == 0){ //흰배경에서 검은 배경으로
-            document.getElementById("menu").src="{% static 'img/menu5.png'%}";    //메뉴 변경
-            document.getElementById("logo-icon").src="{% static 'img/kputube1.png' %}"; //로고 변경하기
-            document.getElementById("on").style.color="#2F2F2F";
-            document.getElementById("marble").style.backgroundColor="#2F2F2F";
-            document.getElementById("switch").style.backgroundColor = '#2F2F2F';  //배경색 변경 
-            a = 1;
-            sessionStorage.setItem('a', "1");
-          }else{
-            document.getElementById("menu").src="{% static 'img/menu6.png'%}";    //메뉴 변경
-            document.getElementById("logo-icon").src="{% static 'img/kputube2.png' %}"; //로고 변경하기
-            document.getElementById("on").style.color="#FFFFFF";
-            document.getElementById("marble").style.backgroundColor="#FFFFFF";
-            document.getElementById("switch").style.backgroundColor = '#FFFFFF';  //배경색 변경   
-            a = 0;
-            sessionStorage.setItem('a', "0");
-          }
- }
-    </script>
+  <!--이미지로드해와야해서 js파일로 옮기면 이미지가 안떠요-->
+  <script>
+    //로드될때 a값을 확인해서 실행
+    window.onload = function () {
+      var a = sessionStorage.getItem('a');
+      a *= 1;
+      //var background = document.getElementById("switch").style.backgroundColor;
+      if (a == 1) { //검은배경
+        document.getElementById("menu").src = "{% static 'img/menu5.png'%}";    //메뉴 변경
+        document.getElementById("logo-icon").src = "{% static 'img/kputube1.png' %}"; //로고 변경하기
+        document.getElementById("on").style.color = "#2F2F2F";
+        document.getElementById("marble").style.backgroundColor = "#2F2F2F";
+        document.getElementById("switch1").checked = "checked";
+        document.getElementById("switch").style.backgroundColor = '#2F2F2F';  //배경색 변경 
+      } else {
+        document.getElementById("menu").src = "{% static 'img/menu6.png'%}";    //메뉴 변경
+        document.getElementById("logo-icon").src = "{% static 'img/kputube2.png' %}"; //로고 변경하기
+        document.getElementById("on").style.color = "#FFFFFF";
+        document.getElementById("marble").style.backgroundColor = "#FFFFFF";
+        document.getElementById("switch").style.backgroundColor = '#FFFFFF';  //배경색 변경   
+      }
+    }
+    function javascript() {
+      var a = sessionStorage.getItem('a');
+      a *= 1;
+      //var background = document.getElementById("switch").style.backgroundColor;
+      if (a == 0) { //흰배경에서 검은 배경으로
+        document.getElementById("menu").src = "{% static 'img/menu5.png'%}";    //메뉴 변경
+        document.getElementById("logo-icon").src = "{% static 'img/kputube1.png' %}"; //로고 변경하기
+        document.getElementById("on").style.color = "#2F2F2F";
+        document.getElementById("marble").style.backgroundColor = "#2F2F2F";
+        document.getElementById("switch").style.backgroundColor = '#2F2F2F';  //배경색 변경 
+        a = 1;
+        sessionStorage.setItem('a', "1");
+      } else {
+        document.getElementById("menu").src = "{% static 'img/menu6.png'%}";    //메뉴 변경
+        document.getElementById("logo-icon").src = "{% static 'img/kputube2.png' %}"; //로고 변경하기
+        document.getElementById("on").style.color = "#FFFFFF";
+        document.getElementById("marble").style.backgroundColor = "#FFFFFF";
+        document.getElementById("switch").style.backgroundColor = '#FFFFFF';  //배경색 변경   
+        a = 0;
+        sessionStorage.setItem('a', "0");
+      }
+    }
+  </script>
 
-  </head>
+</head>
 
-<body name='switch' id='switch'>     
+<body name='switch' id='switch'>
   <div id="myNav" class="overlay">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <div class="overlay-content">
@@ -113,41 +113,41 @@
       {% endif %}
     </div>
   </div>
-<!--  style="position: absolute; z-index: 1000; width:100%;" -->
-<!--/.Navbar-->
-<div class="row">
-<div class="col-3 col-lg-2 left">
-<div id="forabsolute">
-  <div class="menu-container" onclick="openNav()">
-    <img id="menu" src="{% static 'img/menu6.png' %}">
-  </div>
-  </div>
-</div>
-  <div class="col-6 col-lg-8 center">
-  <!--<span id="menu" onclick="openNav()">&#9776; </span>-->
-  <a href="{% url 'home' %}">
-      <div class="animated flash delay-2s duration-0.5s slower">
-      <div class="neon">
-        <img id="logo-icon" src="{% static 'img/kputube2.png' %}">
+  <!--  style="position: absolute; z-index: 1000; width:100%;" -->
+  <!--/.Navbar-->
+  <div class="row">
+    <div class="col-3 col-lg-2 left">
+      <div id="forabsolute">
+        <div class="menu-container" onclick="openNav()">
+          <img id="menu" src="{% static 'img/menu6.png' %}">
+        </div>
       </div>
-      </div>
-  </a> 
-  </div>
-  <div class="col-3 col-lg-2 right">
+    </div>
+    <div class="col-6 col-lg-8 center">
+      <!--<span id="menu" onclick="openNav()">&#9776; </span>-->
+      <a href="{% url 'home' %}">
+        <div class="animated flash delay-2s duration-0.5s slower">
+          <div class="neon">
+            <img id="logo-icon" src="{% static 'img/kputube2.png' %}">
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-3 col-lg-2 right">
       <input type="checkbox" id="switch1" name="switch1" class="input__on-off">
       <label for="switch1" onclick="javascript()" class="label__on-off">
         <span id="marble" class="marble"></span>
         <span id="on" class="on">on</span>
         <span class="off">off</span>
       </label>
-</div>
-</div>
- 
-  
-  
+    </div>
+  </div>
 
-<!-- 특정 URL에만 css 적용시킬려고 만든 자바스크립트 -->
- <!-- <script>
+
+
+
+  <!-- 특정 URL에만 css 적용시킬려고 만든 자바스크립트 -->
+  <!-- <script>
  if ( window.location.pathname == '/' ) 
  { 
    document.write( '<style>@media(min-width:580px){#forabsolute{position: absolute;width:100%;background-color: rgba( 0, 0, 0, 0.4 );z-index: 100;}}</style>' ); 
@@ -155,62 +155,62 @@
 </script>  -->
 
 
- <!-- 페이지필링 자바스크립트 -->
+  <!-- 페이지필링 자바스크립트 -->
   <script>
-  $(document).ready(function() {
+    $(document).ready(function () {
 			/*
 			* Plugin intialization
 			*/
-	    	$('#pagepiling').pagepiling({
-	    		menu: '#menu',
-	    		anchors: ['page1', 'page2', 'page3', 'page4'],
-			    sectionsColor: ['white', '#ee005a', '#2C3E50', '#39C'],
-			    navigation: {
-			    	'position': 'right',
-			   		'tooltips': ['Page 1', 'Page 2', 'Page 3', 'Page 4']
-			   	},
-			    afterRender: function(){
-			    	$('#pp-nav').addClass('custom');
-            
-			    },
-          onLeave: function(index, nextIndex, direction){
-          if(nextIndex==1) {                                             
-  
-		$("#menu").addClass("sticky");
-            } else{
-              $("#menu").removeClass("sticky");
-            }
-	                                                  
-                                                        },
-			    afterLoad: function(anchorLink, index){
-			    	if(index>1){
-			    		$('#pp-nav').removeClass('custom');
-			    	}else{
-			    		$('#pp-nav').addClass('custom');
-			    	}
-			    }
-			});
+      $('#pagepiling').pagepiling({
+        menu: '#menu',
+        anchors: ['page1', 'page2', 'page3', 'page4'],
+        sectionsColor: ['white', '#ee005a', '#2C3E50', '#39C'],
+        navigation: {
+          'position': 'right',
+          'tooltips': ['Page 1', 'Page 2', 'Page 3', 'Page 4']
+        },
+        afterRender: function () {
+          $('#pp-nav').addClass('custom');
+
+        },
+        onLeave: function (index, nextIndex, direction) {
+          if (nextIndex == 1) {
+
+            $("#menu").addClass("sticky");
+          } else {
+            $("#menu").removeClass("sticky");
+          }
+
+        },
+        afterLoad: function (anchorLink, index) {
+          if (index > 1) {
+            $('#pp-nav').removeClass('custom');
+          } else {
+            $('#pp-nav').addClass('custom');
+          }
+        }
+      });
 			/*
 		    * Internal use of the demo website
 		    */
-		    $('#showExamples').click(function(e){
-				e.stopPropagation();
-				e.preventDefault();
-				$('#examplesList').toggle();
-			});
-			$('html').click(function(){
-				$('#examplesList').hide();
-			});
-	// if($('#pagepiling .section:first-child').hasClass('active')) {
-	// 	$("#menu").addClass("sticky");
-	// }
-	    });
-$(window).scroll(function () {
+      $('#showExamples').click(function (e) {
+        e.stopPropagation();
+        e.preventDefault();
+        $('#examplesList').toggle();
+      });
+      $('html').click(function () {
+        $('#examplesList').hide();
+      });
+      // if($('#pagepiling .section:first-child').hasClass('active')) {
+      // 	$("#menu").addClass("sticky");
+      // }
+    });
+    $(window).scroll(function () {
 
-	if($('#pagepiling .section:first-child').hasClass('active')) {
-		$("#menu").addClass("sticky");
-	}
-});
+      if ($('#pagepiling .section:first-child').hasClass('active')) {
+        $("#menu").addClass("sticky");
+      }
+    });
   </script>
 
 
@@ -233,24 +233,24 @@ $(window).scroll(function () {
   <div>
     <div style="position:fixed; right:5px; bottom:50px;">
       <a href="javascript:scroll(0,0)">
-        <img src="{% static 'img/Top.png' %}" width="50px"; height="50px" alt="Top" id="topbutton">
+        <img src="{% static 'img/Top.png' %}" width="50px" ; height="50px" alt="Top" id="topbutton">
       </a>
     </div>
   </div>
-<!--footer-->
+  <!--footer-->
   <footer id="footer" class="footer mt-auto py-3">
     <div class="row">
       <div class="col-6 col-lg-6">
         <h3 class="title_l">KPUTube</h3>
         <div class="left-container">
-        <div class="row" id="row-container">
-          <h4 class="title_m">날짜</h4>
-          <span class="content">2019.09.25(수)-27(금)</span>
-        </div>
-        <div class="row" id="row-container">
-          <h4 class="title_m">장소</h4>
-          <span class="content">경기도 시흥시 산기대학로 한국산업기술대학교</span>
-        </div>
+          <div class="row" id="row-container">
+            <h4 class="title_m">날짜</h4>
+            <span class="content">2019.09.25(수)-27(금)</span>
+          </div>
+          <div class="row" id="row-container">
+            <h4 class="title_m">장소</h4>
+            <span class="content">경기도 시흥시 산기대학로 한국산업기술대학교</span>
+          </div>
         </div>
         <div class="row">
           <div class="col-1 col-lg-1">
@@ -261,37 +261,38 @@ $(window).scroll(function () {
             <h5 class="content">Copyright © 산기대멋쟁이사자처럼7기.All right reserved</h5>
           </div>
         </div>
-      </div><!--오른쪽-->
+      </div>
+      <!--오른쪽-->
       <div class="col-6 col-lg-6">
         <h3 class="title_l">DEVELOPER</h3>
         <div class="right-container">
-        <div class="row" id="row-container">
-          <div class="col-6 col-lg-6">
-            <div class="row">
-              <h4 class="title_m">김연준</h4>
-              <span class="content">컴퓨터공학과</span>
+          <div class="row" id="row-container">
+            <div class="col-6 col-lg-6">
+              <div class="row">
+                <h4 class="title_m">김연준</h4>
+                <span class="content">컴퓨터공학과</span>
+              </div>
+              <div class="row">
+                <h4 class="title_m">고주원</h4>
+                <span class="content">IT경영학과</span>
+              </div>
             </div>
-            <div class="row">
-              <h4 class="title_m">고주원</h4>
-              <span class="content">IT경영학과</span>
+            <div class="col-6 col-lg-6">
+              <div class="row">
+                <h4 class="title_m">이세민</h4>
+                <span class="content">컴퓨터공학과</span>
+              </div>
+              <div class="row">
+                <h4 class="title_m">양소영</h4>
+                <span class="content">컴퓨터공학과</span>
+              </div>
             </div>
           </div>
-          <div class="col-6 col-lg-6">  
-            <div class="row">
-              <h4 class="title_m">이세민</h4>
-              <span class="content">컴퓨터공학과</span>
-            </div>
-            <div class="row">
-              <h4 class="title_m">양소영</h4>
-              <span class="content">컴퓨터공학과</span>
-            </div>
-          </div>
-        </div>
         </div>
         <div class="row" style="padding-left:15px; margin-top:8px;">
-              <h3 class="title_l">협력</h3>
-              <img src="{% static 'img/wehigher.png' %}" alt="logo" class="my-logo2">
-              <h4 class="content"style="margin-top:8px; margin-left:10px;">총학생회 '위하여'</h4>
+          <h3 class="title_l">협력</h3>
+          <img src="{% static 'img/wehigher.png' %}" alt="logo" class="my-logo2">
+          <h4 class="content" style="margin-top:8px; margin-left:10px;">총학생회 '위하여'</h4>
         </div>
       </div>
     </div>
