@@ -42,12 +42,10 @@
     <!-- 카카오 채팅 -->
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
-    <style>
-    </style>
-    <!--세션 유지시키는거 해결해야해서 놔둠-->
-    <script language="javascript">
-        //로드될때 a값을 확인해서 실행
-        window.onload=function(){
+    <!--이미지로드해와야해서 js파일로 옮기면 이미지가 안떠요-->
+    <script>
+            //로드될때 a값을 확인해서 실행
+            window.onload=function(){
           var a=sessionStorage.getItem('a');
           a*=1;
           //var background = document.getElementById("switch").style.backgroundColor;
@@ -86,13 +84,13 @@
             document.getElementById("switch").style.backgroundColor = '#FFFFFF';  //배경색 변경   
             a = 0;
             sessionStorage.setItem('a', "0");
-
           }
  }
-        </script>
+    </script>
+
   </head>
 
-<body name='switch' id='switch'>      
+<body name='switch' id='switch'>     
   <div id="myNav" class="overlay">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <div class="overlay-content">
@@ -117,31 +115,34 @@
   </div>
 <!--  style="position: absolute; z-index: 1000; width:100%;" -->
 <!--/.Navbar-->
-
+<div class="row">
+<div class="col-3 col-lg-2 left">
 <div id="forabsolute">
   <div class="menu-container" onclick="openNav()">
     <img id="menu" src="{% static 'img/menu6.png' %}">
   </div>
+  </div>
+</div>
+  <div class="col-6 col-lg-8 center">
   <!--<span id="menu" onclick="openNav()">&#9776; </span>-->
-
-  <div class="switch-container">
+  <a href="{% url 'home' %}">
+      <div class="animated flash delay-2s duration-0.5s slower">
+      <div class="neon">
+        <img id="logo-icon" src="{% static 'img/kputube2.png' %}">
+      </div>
+      </div>
+  </a> 
+  </div>
+  <div class="col-3 col-lg-2 right">
       <input type="checkbox" id="switch1" name="switch1" class="input__on-off">
       <label for="switch1" onclick="javascript()" class="label__on-off">
         <span id="marble" class="marble"></span>
         <span id="on" class="on">on</span>
         <span class="off">off</span>
       </label>
-    </div>
 </div>
-  <div id="icon-container">
-    <a href="{% url 'home' %}">
-        <div class="animated flash delay-2s duration-0.5s slower">
-        <div class="neon">
-          <img id="logo-icon" src="{% static 'img/kputube2.png' %}">
-        </div>
-        </div>
-    </a>  
 </div>
+ 
   
   
 
