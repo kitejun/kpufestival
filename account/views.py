@@ -5,13 +5,16 @@ from django.contrib import messages
 
 def signup(request):
     if request.method == 'POST':
-        if request.POST['password1'] == request.POST['password2']:
-            user = User.objects.create_user(username = request.POST['username'], password=request.POST['password1'])
-            # 계정 생성
-            auth.login(request, user)  # 회원가입하면 자동 로그인 될 수 있게
-            return redirect('home')  # 로그인되면 home으로
+        if User.objects.filter(username=request.POST['username']).exists():
+            messages.warning(request,'아이디가 이미 사용중입니다')
         else:
-            messages.warning(request,'비밀번호가 일치하지 않습니다.')
+            if request.POST['password1'] == request.POST['password2']:
+                user = User.objects.create_user(username = request.POST['username'], password=request.POST['password1'])
+                # 계정 생성
+                auth.login(request, user)  # 회원가입하면 자동 로그인 될 수 있게
+                return redirect('home')  # 로그인되면 home으로
+            else:
+                messages.warning(request,'비밀번호가 일치하지 않습니다.')
 
     return render(request,'signup.html')
 
