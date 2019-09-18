@@ -17,6 +17,7 @@ class Intro(models.Model):
     tag=models.TextField()
 
     intro_like_users=models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='intro_like_users', blank=True)
+    hits=models.PositiveIntegerField(default=0)
     
     class Meta:
         ordering=['-id']
@@ -26,3 +27,9 @@ class Intro(models.Model):
 
     def summary_introduce(self):
         return self.introduce[:15]
+
+    @property
+    def update_counter_hit(self):
+        self.hits=self.hits+1
+        self.save()
+        return ''
