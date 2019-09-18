@@ -19,6 +19,6 @@ urlpatterns = [
     path('missing', views.missing, name="missing"),
     path('missing_detail/<int:missing_id>/', views.missing_detail, name="missing_detail"),
     path('missing_new/', views.missing_new, name="missing_new"),
-        path('missing_detail/<int:missing_id>/missing_delete', views.missing_delete, name="missing_delete"),
+    path('missing_detail/<int:missing_id>/missing_delete', views.missing_delete, name="missing_delete"),
     path('missing_detail/<int:missing_id>/missing_update', views.missing_update, name="missing_update"),
 ]
