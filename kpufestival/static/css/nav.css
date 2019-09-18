@@ -63,14 +63,24 @@
           color: white;
       }
 
+      .left{
+        padding-top:1.6rem;
+      }
+
       /*로고 가운데정렬*/
-      #icon-container {
+      .center {
         justify-content: center;
         display: flex;
         margin-top: 1rem;
         margin-bottom: 0.8rem;
       }
 
+      .right{
+        float:right;
+        margin-top: 1rem;
+        padding-left:9rem;
+        padding-top:3rem;
+      }
       #logo-icon {
         width: 25rem;
       }
@@ -123,6 +133,24 @@
   }
   #icon-container{
     margin-right: 80px;
+  }
+
+  .left{
+    padding-top:0.8rem;
+  }
+
+  /*로고 가운데정렬*/
+  .center {
+    justify-content: center;
+    display: flex;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .right{
+    float:right;
+    padding-left:1rem;
+    padding-top:0.8rem;
   }
   .board a:first-child{display: inline-block}
   .board a:last-child{display: inline-block}
