@@ -2,6 +2,7 @@
 /* 모바일에서 보여지는 부분입니당 */
 @media(max-width: 800px)
 {
+    #carouselExampleIndicators{}
     #pagepiling
     {
         display:none;
