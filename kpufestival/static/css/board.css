@@ -1,15 +1,64 @@
-/*missing*/
-.card_title{
-    font-family: Roboto, Arial, sans-serif;
-    font-size: 1.2rem;
-    font-weight: 500;
-    color : rgb(12,12,12) !important;
-    line-height: 1.6rem;
+/*missing 웹 */
+@media(min-width:1025px){
+    .card_title{
+        font-family: Roboto, Arial, sans-serif;
+        font-size: 1.2rem;
+        font-weight: 500;
+        color : rgb(12,12,12) !important;
+        line-height: 1.6rem;
+    }
+    .card_author{
+        font-family: Roboto, Arial, sans-serif;
+        font-size: 0.8rem;
+        color: #606060;
+    }
+
+    .shadow_card{
+        box-shadow: 1px 1px 10px grey;
+        background-color: #fff;
+        background-clip: border-box;
+        border-radius: .25rem;
+    }
+    .missing_card_img{
+        object-fit: cover;
+        width:100%;
+        height: 150px;
+    }
+    .missing_textarea{
+        margin: 1rem 0;
+    }
 }
-.card_author{
-    font-family: Roboto, Arial, sans-serif;
-    font-size: 0.8rem;
-    color: #606060;
+
+/*missing 모바일*/
+@media (max-width: 1025px)  {
+    .card_title{
+        text-align: center;
+        font-family: Roboto, Arial, sans-serif;
+        font-size: 0.8rem;
+        font-weight: 500;
+        color : rgb(12,12,12) !important;
+        line-height: 1.6rem;
+    }
+    .card_author{
+        font-family: Roboto, Arial, sans-serif;
+        font-size: 0.5rem;
+        color: #606060;
+    }
+
+    .shadow_card{
+        box-shadow: 1px 1px 10px grey;
+        background-color: #fff;
+        background-clip: border-box;
+        border-radius: .25rem;
+    }
+    .missing_card_img{
+        object-fit: cover;
+        width:100%;
+        height: 100px;
+    }
+    .missing_center {
+        text-align: center;
+    }
 }
 
 /*board*/
@@ -179,9 +228,9 @@
 /*웹*/
 @media(min-width:1025px){
     .dev-img{
-        width:13rem !important;
+        width:15rem !important;
         text-align: center;
-        height:13rem !important;
+        height:15rem !important;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
     #youtube{
@@ -225,9 +274,9 @@
         float : right;
     }
     .dev-img{
-        width:10rem !important;
+        width:13rem !important;
         text-align: center;
-        height:10rem !important;
+        height:13rem !important;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         
     }
