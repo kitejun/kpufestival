@@ -233,4 +233,7 @@ SETTINGS
   .container{
     border-radius: 0;
   }
+  #topbutton{
+    display:none;
+  }
 }

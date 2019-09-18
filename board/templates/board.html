@@ -101,9 +101,7 @@
   <!--pagenation-->
   <div class="pagination-container">
     {% if board_list.has_other_pages %}
-
     <ul class="pagination">
-
       {% if board_list.has_previous %}
       <li><a href="?page={{ board_list.previous_page_number }}">&laquo;</a></li>
       {% else %}

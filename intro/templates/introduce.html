@@ -37,9 +37,16 @@
               </div>
               <div class="col-8 col-lg-10"  style="margin-top:4px;">
                   <span id="intro-card-title">{{ intro.dename }}</span>
+
+                  <!-- 조회수 ( 소영아 수정 좀) -->
+                  <br>
+                  조회수: {{ intro.hits }} views
+
                   <!-- 소개글(summary)) -->
                   <div class="gone">
                       <p id="intro-card-content" class="h-card-text">{{ intro.tag|linebreaks }}</p>
+                      
+        
                   </div>
               </div>
             </div>
