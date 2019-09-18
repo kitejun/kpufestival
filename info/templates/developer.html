@@ -114,7 +114,7 @@
     {% if random_button == 2 %}
     <!-- random 쿠폰! -->
     <div>
-        <div style="position:fixed; right: {{ random_width }}%; bottom:{{ random_height }}%;">
+        <div style="position:fixed; right: {{ random_width }}%; bottom:{{ random_height }}%; z-index: 10;">
             <img src="{% static 'img/logo.png'%}" aria-hidden="true" style="width:100px;height:90px">
         </div>
     </div>
