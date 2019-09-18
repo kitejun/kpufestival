@@ -38,8 +38,11 @@
       </div>
       <div class="row my-4">
         <!--내용-->
-        <div class="col-lg-10 ml-2">
-          <p>{{details.context|linebreaks}}</p>
+        <div class="col-lg-10 ml-2 text-center">
+          {% if details.image != "https://image.flaticon.com/icons/svg/149/149852.svg" %}
+          <p class="my-4"><img src="{{details.image.url }}" style="width: 55%;"></p>
+          {% endif %}
+          <p class="text-left" {{details.context|linebreaks}}</p>
         </div>
       </div>
       <!--좋아요-->
