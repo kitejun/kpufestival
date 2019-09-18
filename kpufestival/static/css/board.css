@@ -34,14 +34,14 @@
     .card_title{
         text-align: center;
         font-family: Roboto, Arial, sans-serif;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         font-weight: 500;
         color : rgb(12,12,12) !important;
         line-height: 1.6rem;
     }
     .card_author{
         font-family: Roboto, Arial, sans-serif;
-        font-size: 0.5rem;
+        font-size: 0.6rem;
         color: #606060;
     }
 
