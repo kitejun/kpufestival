@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render_to_response, render
+from django.template import RequestContext
 import random
 
 def temp(request):
@@ -19,3 +20,12 @@ def siru(request):
 
 def promote(request):
     return render(request,'promote.html')
+
+#
+'''
+def error404(request):
+    return render(request, "page_404.html", status=404)
+
+def error500(request):
+    return render(request, "page_500.html", status=500)
+    '''
