@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 *{box-sizing: border-box;}
-html,body{height: 100%;}
+body{height: 100%;}
 a:link,a:visited,a:active{}
 /* a:link,a:visited,a:active{color:inherit;}  원래이거였음*/
 
