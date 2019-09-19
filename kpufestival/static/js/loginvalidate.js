@@ -21,9 +21,15 @@
             return false;
         }
 
-        if(user.length<3)
+        if(user.length<4)
         {
-            alert("아이디는 3글자 이상으로 입력해주세요.");
+            alert("아이디는 4글자 이상으로 입력해주세요.");
+            return false;
+        }
+
+        if(password1.length<4)
+        {
+            alert("비밀번호는 4글자 이상으로 입력해주세요.");
             return false;
         }
 
