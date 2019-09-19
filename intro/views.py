@@ -9,6 +9,9 @@ from .models import Intro
 # -학과명,좋아요 개수,싫어요 개수,조회수,태그,소개글,학과 아이콘 표시/모달에서 지도 표시
 # -카톡 공유하기 기능(학과명,사진 공유 혹은 링크)#
 
+def firework(request):
+    return render(request,'firework.html')
+
 def introduce(request):
     # random 으로 학과 주점 보여주기
     all_intro=Intro.objects.annotate().order_by('?')
