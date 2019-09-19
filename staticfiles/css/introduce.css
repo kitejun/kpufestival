@@ -9,19 +9,22 @@ a:hover{
 hr{
     border-color: #c0c0c0;
 }
+p{
+    margin-bottom: 0.5rem;
+}
 /*introduce 페이지*/
 #my-container{
     padding:10px;
     margin-top:0;
 }
 #card{
-    height: 300px;
+    height: 345px;
     border: 0;
     width: 100%;
     box-shadow: 1px 1px 10px gray;
 }
 #intro-card-img{
-    height: 150px;
+    height: 200px;
     width: 100%;
     margin-bottom:10px;
   }
@@ -58,10 +61,10 @@ hr{
         margin-bottom: 4px;
     }
     #card{
-        height: 150px;
+        height: 250px;
     }
     #intro-card-img{
-        height: 80px;
+        height: 137px;
       }
     
     #user-img1{
@@ -70,7 +73,10 @@ hr{
     }
     #intro-card-title{
         margin-top:5px;
-        font-size: 0.9rem;
+        font-size: 16px;
+    }
+    .tag{
+        font-size:12px;
     }
     .gone{
         display: none;
@@ -118,8 +124,8 @@ hr{
     width: 100%;
 }
 #user-img{
-    width:5rem;
-    height:5rem;
+    width:40px;
+    height:40px;
 }
 #sub_button{
     float: right;
