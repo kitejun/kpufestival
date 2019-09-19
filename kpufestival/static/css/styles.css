@@ -30,7 +30,7 @@ body{
 /* home */
 .section{
     background: #dbdbdb;
-    margin: 40px;
+    margin: 20px;
 }
 #jb-container {
     width: 1025px;
@@ -40,13 +40,10 @@ body{
 }
 #jb-header {
     padding: 20px;
-    margin-bottom: 20px;
     border: 1px solid #bcbcbc;
 }
 #jb-content {
     width: 600px;
-    
-    margin-bottom: 20px;
     float: left;
     border: 1px solid #bcbcbc;
 }
