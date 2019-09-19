@@ -39,6 +39,10 @@
         color : rgb(12,12,12) !important;
         line-height: 1.6rem;
     }
+    #siru_main
+    {
+        height: 130px;
+    }
     .card_author{
         font-family: Roboto, Arial, sans-serif;
         font-size: 0.6rem;
