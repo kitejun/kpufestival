@@ -10,7 +10,6 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!--CSS only-->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css' %}">
@@ -116,7 +115,7 @@
   </div>
   <!--  style="position: absolute; z-index: 1000; width:100%;" -->
   <!--/.Navbar-->
-  <div class="row">
+  <div class="row" style="margin:0;">
     <div class="col-3 col-lg-2 left">
       <div id="forabsolute">
         <div class="menu-container" onclick="openNav()">
@@ -250,7 +249,7 @@
           </div>
           <div class="row" id="row-container">
             <h4 class="title_m">장소</h4>
-            <span class="content">경기도 시흥시 산기대학로 한국산업기술대학교</span>
+            <span class="content">경기도 시흥시 산기대학로 237</span>
           </div>
         </div>
         <div class="row">
@@ -267,30 +266,31 @@
       <div class="col-6 col-lg-6">
         <h3 class="title_l">DEVELOPER</h3>
         <div class="right-container">
-          <div class="row" id="row-container">
-            <div class="col-6 col-lg-6">
-              <div class="row">
+          <div class="row mobile" id="row-container" >
+            <div class="col-4 col-lg-6">
+              <div class="row small-row" >
                 <h4 class="title_m">김연준</h4>
                 <span class="content">컴퓨터공학과</span>
               </div>
-              <div class="row">
+              <div class="row small-row">
                 <h4 class="title_m">고주원</h4>
                 <span class="content">IT경영학과</span>
               </div>
             </div>
-            <div class="col-6 col-lg-6">
-              <div class="row">
+            <div class="col-4 col-lg-6" id="small-row">
+              <div class="row small-row">
                 <h4 class="title_m">이세민</h4>
                 <span class="content">컴퓨터공학과</span>
               </div>
-              <div class="row">
+              <div class="row small-row">
                 <h4 class="title_m">양소영</h4>
                 <span class="content">컴퓨터공학과</span>
               </div>
             </div>
+
           </div>
         </div>
-        <div class="row" style="padding-left:15px; margin-top:8px;">
+        <div class="row bottom" style="padding-left:15px; margin-top:8px;">
           <h3 class="title_l">협력</h3>
           <img src="{% static 'img/wehigher.png' %}" alt="logo" class="my-logo2">
           <h4 class="content" style="margin-top:8px; margin-left:10px;">총학생회 '위하여'</h4>
