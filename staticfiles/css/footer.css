@@ -41,11 +41,14 @@ h4.title_m{font-weight: 500; font-size: 1.2em; margin-right: 0.5em; text-align: 
 }
 /*모바일*/
 @media (max-width: 1025px)  {
+    .col-6{
+        padding:0;
+    }
     #footer{
         padding:20px;
     }
     h3.title_l{font-weight: 700; font-size: 0.8em; margin-right: 0.2em; text-align: left;}
-    h4.title_m{font-weight: 500; font-size: 0.6em; margin-right: 0.3em; text-align: left;}
+    h4.title_m{font-weight: 500; font-size: 0.6em; margin-right: 1em; text-align: left;}
     .content{font-weight: 200; font-size: 0.2em; margin-right: 0.2em; text-align: left;}
     .my-logo{
         width: 28px;
