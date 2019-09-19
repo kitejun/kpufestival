@@ -67,6 +67,25 @@
 
 /*board*/
 
+.probutton {
+    text-decoration:none;
+    border: 0px;
+    outline:none;
+    background-color: white;
+    padding: 0px;
+}
+.probutton:hover {
+    text-decoration:none;
+    border: 0px;
+    outline:none;
+}
+.probutton:active {
+    text-decoration:none;
+    border: 0px;
+    outline:none;
+}
+button:focus {outline:0;}
+
 .siru_image {
     width:85%;
 }
