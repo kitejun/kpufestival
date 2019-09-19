@@ -26,7 +26,7 @@
       <!--bootstrap4부터는 모바일은 col-숫자형태로 바뀜!-->
 
       {% for intro in all_intro %}
-      <div class="col-lg-3 col-6" style="margin-bottom: 30px;">
+      <div class="col-lg-3 col-6" style="margin-bottom: 30px;" id="col">
         <a href="{% url 'intro_detail' intro.id %}">
           <div class="card" id="card">
             <!-- 학과 관련 사진 -->
