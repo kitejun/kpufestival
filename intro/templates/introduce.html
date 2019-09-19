@@ -40,19 +40,20 @@
 
                   <!-- 조회수 ( 소영아 수정 좀) -->
                   <br>
-                  조회수: {{ intro.hits }} views
+                  <div class="tag">
+                  {{ intro.hits }} views
+                    </div>
 
                   <!-- 소개글(summary)) -->
-                  <div class="gone">
-                      <p id="intro-card-content" class="h-card-text">{{ intro.tag|linebreaks }}</p>
-                      
+                  <div class="tag">
+                    {{ intro.tag|linebreaks }}
+                  </div> 
         
-                  </div>
               </div>
             </div>
             <div id="intro-body">
               <!-- 학과명 -->
-              <hr class="gone">
+              <hr>
             </a>
             <div class="heart-icon">
               <i class="fa fa-heart" style="color:#ed2553;">{{ intro.intro_like_users.count }}</i>
