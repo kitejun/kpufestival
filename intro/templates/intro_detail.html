@@ -7,10 +7,9 @@
 
 
 <style>
-  #user-img1{
-    margin-top:5px;
+  #user-img1 {
+    margin-top: 5px;
   }
-
 </style>
 <div id="my-container">
   {{intro_detail.update_counter_hit}}
@@ -126,27 +125,43 @@
       <!--for문은 여기부터-->
       {% for intro in exclude_intro %}
       <a href="{% url 'intro_detail' intro.id %}">
-      <div class="card mb-3" style="width: 100%;">
-        <div class="row no-gutters">
-          <div class="col-md-6">
-            <img id="small-img" src="{{ intro.img1.url }}">
-          </div>
-          <div class="col-md-6" style="padding-left: 20px;">
+        <div class="card mb-3" style="width: 100%;">
+          <div class="row no-gutters">
+            <div class="col-md-6">
+              <img id="small-img" src="{{ intro.img1.url }}">
+            </div>
+            <div class="col-md-6" style="padding-left: 20px;">
               <img id="user-img1" src="{{ intro.de_logo.url }}">
-            <span>{{intro.dename}}</span>
-            <p class="card-text" id="detail-text" style="margin:5px 0 5px 5px; ">{{intro.tag}}</p>
-            <i class="fa fa-heart fa-1x" style="color:#ed2553;"></i>
-            <span id="detail-text">{{ intro.intro_like_users.count }}</span>
+              <span>{{intro.dename}}</span>
+              <p class="card-text" id="detail-text" style="margin:5px 0 5px 5px; ">{{intro.tag}}</p>
+              <i class="fa fa-heart fa-1x" style="color:#ed2553;"></i>
+              <span id="detail-text">{{ intro.intro_like_users.count }}</span>
+            </div>
           </div>
         </div>
-      </div>
       </a>
-      
+
       {% endfor %}
     </div>
   </div>
 </div>
 
-  <script type="text/javascript" src="{% static 'js/kakao_link.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/kakao_link.js' %}"></script>
+<script>
+function sendLink() {
+  Kakao.Link.sendDefault({
+    objectType: 'feed',
+    content: {
+      title: '학과: {{intro_detail.dename}}',
+      description: '소개: {{ intro_detail.tag }}',
+      imageUrl: 'http://kpufestival.waytech.kr/{{ intro_detail.img1.url }}/',
+      link: {
+        mobileWebUrl: 'http://kpufestival.waytech.kr/intro/intro_detail/{{ intro_detail.id }}/',
+        webUrl: 'http://kpufestival.waytech.kr/intro/intro_detail/{{ intro_detail.id }}/',
+      }
+    },
+  });
+}
+</script>
 
 {% endblock %}

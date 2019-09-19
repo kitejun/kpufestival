@@ -235,3 +235,39 @@ def missing_new(request):
     else:
         form = MissingPost()
         return render(request, 'missing_new.html', {'form':form}) # form형태로 전달
+
+# 수정하기
+def missing_update(request, missing_id):
+    missing=Missing.objects.get(id=missing_id)
+
+    # 글을 수정사항을 입력하고 제출을 눌렀을 때
+    if request.method == "POST":
+        form = MissingPost(request.POST, request.FILES)
+        if form.is_valid():
+                
+            # 검증에 성공한 값들은 사전타입으로 제공 
+            print(form.cleaned_data)
+            missing.context = form.cleaned_data['context']
+            missing.image = form.cleaned_data['image']
+            missing.pub_date = timezone.now()
+
+            missing.save()
+            
+            return redirect('missing')
+
+    # 수정사항을 입력하기 위해 페이지에 처음 접속했을 때
+    else:
+        form = MissingPost(instance = missing)
+        # 기존 내용 불러오기
+        context={
+            'form':form,
+            'writing':True,
+            'now':'update',
+        }
+        return render(request, 'missing_update.html',{'form':form})
+
+# 삭제하기
+def missing_delete(request, missing_id):
+    missing = get_object_or_404(Missing, pk=missing_id)
+    missing.delete()
+    return redirect('missing')
