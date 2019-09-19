@@ -11,6 +11,7 @@ class Intro(models.Model):
     img3 = models.FileField(upload_to="department", default='https://image.flaticon.com/icons/svg/149/149852.svg')
     map_img = models.FileField(upload_to="department", default='https://image.flaticon.com/icons/svg/149/149852.svg')
     de_logo = models.FileField(upload_to="department", default='https://image.flaticon.com/icons/svg/149/149852.svg')
+    menufan = models.FileField(upload_to="department", default='https://image.flaticon.com/icons/svg/149/149852.svg')
 
     pub_date=models.DateTimeField('date published')
     introduce=models.TextField()
