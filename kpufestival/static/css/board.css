@@ -66,7 +66,14 @@
 }
 
 /*board*/
+.summary_title{
+    color: #21252B;
+}
+.summary_title a:hover{
+    color: #007bff;
+}
 
+/*endboard*/
 .probutton {
     text-decoration:none;
     border: 0px;
