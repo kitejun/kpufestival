@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-{% extends 'base.html' %}
 
 {% load staticfiles %}
-{% block content %}
 
 <html>
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#000000">
@@ -54,11 +52,23 @@
 			<div class="loading-init__header"></div>
 			<div class="loading-init__status"></div>
 		</div>
+		<h1 style="color:#fff; z-index: 10;">
+				안녕!!
+				</h1>
 		<div class="stage-container remove">
 			<div class="canvas-container">
 				<canvas id="trails-canvas"></canvas>
+				<h1 style="color:#fff; z-index: 10;">
+						안녕1
+						</h1>
 				<canvas id="main-canvas"></canvas>
+				<h1 style="color:#fff; z-index: 10;">
+						안녕2
+						</h1>
 			</div>
+			<h1 style="color:#fff; z-index: 10;">
+					안녕3
+					</h1>
 			<div class="controls">
 				<div class="btn pause-btn">
 					<svg fill="white" width="24" height="24"><use href="#icon-pause" xlink:href="#icon-pause"></use></svg>
@@ -134,7 +144,9 @@
 			</div>
 		</div>
 	</div>
+	<h1 style="color:#fff; z-index: 10;">
+			안녕4
+			</h1>
 </body>
 <script type="text/javascript" src="{% static 'js/firework.js' %}"></script>
 </html>
-{% endblock %}

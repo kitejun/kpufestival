@@ -4,7 +4,7 @@
 }      
       /*nav*/
       .overlay {
-        height: 200%;
+        height: 100%;
         width: 0;
         position: ABSOLUTE;
         z-index: 101;
