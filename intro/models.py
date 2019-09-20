@@ -1,6 +1,6 @@
 from django.db import models
 from django.conf import settings # 외래키를 위한 라이브러리
-
+import datetime
 
 class Intro(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -13,7 +13,7 @@ class Intro(models.Model):
     de_logo = models.FileField(upload_to="department", default='https://image.flaticon.com/icons/svg/149/149852.svg')
     menufan = models.FileField(upload_to="department", default='https://image.flaticon.com/icons/svg/149/149852.svg')
 
-    pub_date=models.DateTimeField('date published')
+    pub_date=models.DateTimeField('date published', default=datetime.datetime.now)
     introduce=models.TextField()
     tag=models.TextField()
 
