@@ -48,22 +48,32 @@
           <img src="{% static 'img/like_btn.png'%}" style="margin-bottom:6px;">
         -->
             {% if user in details.like_users.all %}
-            <a href="{% url 'like' details.id %}">좋아요 취소</a>
+                <a href="{% url 'like' details.id %}">
+                  <img src="{% static 'img/like_btn_blue.jpg' %}" alt="좋아요 취소">
             {% else %}
-            <a href="{% url 'like' details.id %}">좋아요</a>
+<!--            <a href="{% url 'like' details.id %}">좋아요</a>-->
+                <a href="{% url 'like' details.id %}">
+                  <img src="{% static 'img/like_btn.png' %}" alt="좋아요">
             {% endif %}
             <span>{{ details.like_users.count }}</span>
+                </a>
 
             <!--싫어요-->
             <!--
           <img src="{% static 'img/dislike_btn.png'%}" style="margin-top:2px;">
         -->
             {% if user in details.hate_users.all %}
-            <a href="{% url 'hate' details.id %}">싫어요 취소</a>
+                <a href="{% url 'hate' details.id %}">
+                  <img src="{% static 'img/dislike_btn_blue' %}" alt="싫어요 취소">
+
             {% else %}
-            <a href="{% url 'hate' details.id %}">싫어요</a>
+<!--            <a href="{% url 'hate' details.id %}">싫어요</a>-->
+                <a href="{% url 'hate' details.id %}">
+                  <img src="{% static 'img/dislike_btn.png' %}" alt="싫어요">
+
             {% endif %}
-            <span>{{ details.hate_users.count }}</span>
+                <span>{{ details.hate_users.count }}</span>
+                </a>
         </div>
       </div>
       <hr>
