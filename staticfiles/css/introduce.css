@@ -56,7 +56,7 @@ hr{
     }
 }
 @media (max-width: 1025px)  {
-    .col-6{
+    #col{
         padding:6px;
         margin-bottom: 4px;
     }
@@ -172,7 +172,7 @@ hr{
         justify-content:center;
         display:flex;
         height: 134px;
-        width: 268px;
+        width: 100%;
       }
       #small-img{
         height: 50px;
@@ -186,7 +186,7 @@ hr{
     }
     #detail-img{
         height: 134px;
-        width: 268px;
+        width: 100%;
     }
     #sub_button{
         float : right;

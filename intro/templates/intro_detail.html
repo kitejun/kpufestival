@@ -102,7 +102,6 @@
             <div class="modal-body">
               <!-- 학과 지도 사진 -->
               <img src="{{ intro_detail.map_img.url }}">
-              {{ intro_detail.map_img.url }}
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-light" data-dismiss="modal">닫기</button>
@@ -142,6 +141,8 @@
             <!-- |linebreaks 속성은 줄 바꿈 허용 -->
             <br>
             <h5>{{intro_detail.introduce|linebreaks}}</h5>
+            <!-- 메뉴판 -->
+            <img src="{{ intro_detail.menufan.url }}">
             <br>
           </div>
           <hr>
