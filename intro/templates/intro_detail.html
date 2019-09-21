@@ -16,15 +16,15 @@
 }
 .modal-body{
   justify-content:center;
-display:flex;
+  display:flex;
 
 }
 .menu{
-  max-width: 500px;
+  max-width: 400px;
   max-height: 500px;
 }
 .map{
-  max-width: 500px;
+  max-width: 400px;
   max-height: 500px;
 }
 @media (max-width: 1025px)  {
@@ -45,7 +45,7 @@ display:flex;
 <div id="my-container">
   {{intro_detail.update_counter_hit}}
   <div class="row">
-    <div class="col-lg-9">
+    <div class="col-lg-9 col-12" id="col-12">
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -114,7 +114,7 @@ display:flex;
       <!--학과이름-->
       <span id="intro-card-title">{{intro_detail.dename}}</span>
       <!--메뉴판 보여주는 버튼-->
-      <img src="{%static 'img/menuboard2.png'%}" style="margin-right: 10px; width:40px;" data-toggle="modal" data-target="#exampleModal"></button>
+      <img src="{%static 'img/menuboard2.png'%}" class="my-menu" data-toggle="modal" data-target="#exampleModal"></button>
       <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
