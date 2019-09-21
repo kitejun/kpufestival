@@ -30,7 +30,7 @@ body{
 /* home */
 .section{
     background: #dbdbdb;
-    margin: 20px;
+    margin: 45px;
 }
 #jb-container {
     width: 1025px;
@@ -69,6 +69,7 @@ body{
         height: 20%;
     }
     #jb-content {
+      border: 0;
       float: none;
       width: auto;
     }
