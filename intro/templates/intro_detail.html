@@ -14,6 +14,33 @@
     width:80px;
     height:80px;
 }
+.modal-body{
+  justify-content:center;
+display:flex;
+
+}
+.menu{
+  max-width: 500px;
+  max-height: 500px;
+}
+.map{
+  max-width: 500px;
+  max-height: 500px;
+}
+@media (max-width: 1025px)  {
+  #user-img{
+    width:40px;
+    height:40px;
+  }
+  .menu{
+  max-width: 300px;
+  max-height: 400px;
+}
+.map{
+  max-width: 300px;
+  max-height: 400px;
+}
+}
 </style>
 <div id="my-container">
   {{intro_detail.update_counter_hit}}
@@ -85,9 +112,9 @@
       <!--학과별 이미지-->
       <img id="user-img" src="{{ intro_detail.de_logo.url }}">
       <!--학과이름-->
-      <span id="intro-card-title">{{intro_detail.dename}} 맛집</span>
+      <span id="intro-card-title">{{intro_detail.dename}}</span>
       <!--메뉴판 보여주는 버튼-->
-      <img src="{%static 'img/menuboard.png'%}" style="margin-right: 10px;  width:50px;" data-toggle="modal" data-target="#exampleModal"></button>
+      <img src="{%static 'img/menuboard2.png'%}" style="margin-right: 10px; width:40px;" data-toggle="modal" data-target="#exampleModal"></button>
       <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -101,7 +128,7 @@
             </div>
             <div class="modal-body">
               <!-- 학과 메뉴판 사진 -->
-              <img src="{{ intro_detail.menufan.url }}">
+              <img class="menu" src="{{ intro_detail.menufan.url }}">
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-light" data-dismiss="modal">닫기</button>
@@ -111,9 +138,9 @@
       </div>
       <!--Modal-->
       <!--지도 보여주는 버튼-->
-      <button id="sub_button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal">위치보기</button>
+      <button id="sub_button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal1">지도</button>
       <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -125,8 +152,7 @@
             </div>
             <div class="modal-body">
               <!-- 학과 지도 사진 -->
-              <img src="{{ intro_detail.map_img.url }}">
-              {{ intro_detail.map_img.url }}
+              <img class="map" src="{{ intro_detail.map_img.url }}">
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-light" data-dismiss="modal">닫기</button>
