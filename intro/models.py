@@ -29,6 +29,12 @@ class Intro(models.Model):
     def summary_introduce(self):
         return self.introduce[:15]
 
+    def summary_tag(self):
+        return self.tag[:9]
+
+    def summary_dename(self):
+        return self.dename[:6]
+
     @property
     def update_counter_hit(self):
         self.hits=self.hits+1
