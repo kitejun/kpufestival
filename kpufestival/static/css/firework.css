@@ -43,7 +43,7 @@
 	height: auto !important;
 	overflow: hidden;
 	box-sizing: initial;
-	border: 1px solid #222;
+	border: 1px solid #2F2F2F;
 	margin: -1px;
   }
   @media (max-width: 840px) {
