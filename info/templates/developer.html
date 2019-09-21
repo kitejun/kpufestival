@@ -64,9 +64,12 @@
 
 
 <div id="my-container">
+    <!--
     값: {{ random_button }}
     x: {{ random_width }}
     y: {{ random_height }}
+    -->
+    
     <h2 align="center">개발자 소개</h2>
     <div class="row mt-4 justify-content-center">
         <div class="col-lg-3 mx-n4">
@@ -115,7 +118,7 @@
     <!-- random 쿠폰! -->
     <div>
         <div style="position:fixed; right: {{ random_width }}%; bottom:{{ random_height }}%; z-index: 10;">
-            <img src="{% static 'img/random.png'%}" aria-hidden="true" style="width:100px;height:90px">
+            <img src="{% static 'img/random.png'%}" aria-hidden="true" width="200px">
         </div>
     </div>
 
