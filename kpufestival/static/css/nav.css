@@ -147,8 +147,8 @@
 
   .right{
     float:right;
-    padding-left:1rem;
-    padding-top:0.8rem;
+    padding-left:0.5rem;
+    padding-top:0.4rem;
   }
   .board a:first-child{display: inline-block}
   .board a:last-child{display: inline-block}
