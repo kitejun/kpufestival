@@ -54,8 +54,7 @@
     }
     .main_info
     {
-        background-image: url( '/static/img/main_info.png' );
-        background-size: 100% 200px;
+        border: 1px gray;
     }
     .line-up3
     {

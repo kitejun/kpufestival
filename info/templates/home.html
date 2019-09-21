@@ -85,13 +85,13 @@ jQuery (necessary for Bootstrap's JavaScript plugins)
             </div>
       </div>
       <div class="section" id="section1">
-          <img src="{% static 'img/main_2.png' %}" class="d-block w-100" alt="...">
+        <a href="{% url 'introduce' %}"><img src="/static/img/main_pub.png" style=""  class="d-block w-100 picture_size" alt="..."></a>
       </div>
       <div class="section" id="section1">
-          <img src="{% static 'img/main_5.png' %}" class="d-block w-100" alt="...">
+        <a href="{% url 'missing' %}"><img style="" src="{% static 'img/BoardLost.png' %}" class="d-block w-100" alt="..."></a>
       </div>
       <div class="section" id="section3">
-          <a href="{% url 'missing' %}"><img style="" src="{% static 'img/BoardLost.png' %}" class="d-block w-100" alt="..."></a>
+        <a href="{% url 'siru' %}"><img src="/static/img/main_siru.png" style=""  class="d-block w-100 picture_size" alt="..."></a>
       </div>
       <div class="section" id="section2">
           <div id="carouselExampleIndicators2" class="carousel slide carousel-fade" data-ride="carousel" data-interval="5000">
@@ -125,7 +125,7 @@ jQuery (necessary for Bootstrap's JavaScript plugins)
 <!-- 모바일부분에 표시되는  -->
 <div class="" id="section_mobile">
   <div id="mobi_container">
-    <div id="jb-content" class="line-up">
+    <div id="jb-content" class="main_info">
         <div id="carouselExampleIndicators3" class="carousel slide carousel-fade" data-ride="carousel" data-interval="5000">
 
             <div class="carousel-inner">
@@ -160,15 +160,15 @@ jQuery (necessary for Bootstrap's JavaScript plugins)
     </div>
   </div>
     <div id="jb-content" class="main_info">
-    주점소개사진
+      <a href="{% url 'introduce' %}"><img src="/static/img/main_pub.png" style=""  class="d-block w-100 picture_size" alt="..."></a>
     </div>
     <div id="jb-content" class="main_info">
-    시흥화폐 시루사진
+      <a href="{% url 'missing' %}"><img style="height:200px;" src="{% static 'img/BoardLost.png' %}" class="d-block w-100" alt="..."></a>
     </div>
-    <div id="jb-content" class="line-up">
-        <a href="{% url 'missing' %}"><img style="height:200px;" src="{% static 'img/BoardLost.png' %}" class="d-block w-100" alt="..."></a>
+    <div id="jb-content" class="main_info">
+      <a href="{% url 'siru' %}"><img src="/static/img/main_siru.png" style=""  class="d-block w-100 picture_size" alt="..."></a>
     </div>
-    <div id="jb-content" class="line-up">
+    <div id="jb-content" class="main_info">
         <div id="carouselExampleIndicators4" class="carousel slide carousel-fade" data-ride="carousel" data-interval="5000">
             <ol class="carousel-indicators">
               <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
