@@ -63,6 +63,9 @@
     .missing_center {
         text-align: center;
     }
+    #promote_lan {
+        display:none;
+    }
 }
 
 /*board*/
@@ -287,6 +290,9 @@ button:focus {outline:0;}
         
     }
     #mobivisible {
+        display:none;
+    }
+    #promote_lan2{
         display:none;
     }
     
