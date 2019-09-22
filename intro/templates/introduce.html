@@ -5,11 +5,12 @@
 {% block content %}
 <style>
   /*intro_detail이랑 겹치면 안돼서 못옮겨요*/
-  .card{
+  .card {
     height: 200px;
   }
-  #user-img1{
-    margin:5px 0 0 15px;
+
+  #user-img1 {
+    margin: 5px 0 0 15px;
   }
 </style>
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduce.css' %}">
@@ -33,36 +34,36 @@
             <img class="card-img-top h-img" src="{{ intro.img1.url }}" id="intro-card-img">
             <div class="row">
               <div class="col-4 col-lg-2">
-                  <img id="user-img1" src="{{ intro.de_logo.url }}">
+                <img id="user-img1" src="{{ intro.de_logo.url }}">
               </div>
-              <div class="col-8 col-lg-10"  style="margin-top:4px;">
-                  <span id="intro-card-title">{{ intro.summary_dename }}</span>
+              <div class="col-8 col-lg-10" style="margin-top:4px;">
+                <span id="intro-card-title">{{ intro.summary_dename }}</span>
 
-                  <!-- 조회수 ( 소영아 수정 좀) -->
-                  <br>
-                  <div class="tag">
+                <!-- 조회수 ( 소영아 수정 좀) -->
+                <br>
+                <div class="tag">
                   {{ intro.hits }} views
-                    </div>
+                </div>
 
-                  <!-- 태그(tag) -->
-                  <div class="tag">
-                    {{ intro.summary_tag }}
-                  </div> 
-        
+                <!-- 태그(tag) -->
+                <div class="tag">
+                  {{ intro.summary_tag }}
+                </div>
+
               </div>
             </div>
             <div id="intro-body">
               <!-- 학과명 -->
               <hr>
-            </a>
-            <div class="heart-icon">
-              <i class="fa fa-heart" style="color:#ed2553;">{{ intro.intro_like_users.count }}</i>
-            </div>
-            </div>
-          </div>
+        </a>
+        <div class="heart-icon">
+          <i class="fa fa-heart" style="color:#ed2553;">{{ intro.intro_like_users.count }}</i>
+        </div>
       </div>
-      {%endfor%}
     </div>
   </div>
+  {%endfor%}
+</div>
+</div>
 </div>
 {% endblock %}

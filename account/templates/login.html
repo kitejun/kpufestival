@@ -5,54 +5,55 @@
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/account.css' %}">
 <script type="text/javascript" src="{% static 'js/loginvalidate.js' %}"></script>
+
 <body>
-<div class="container-fluid my-4">
-  <div class="row justify-content-center">
-  <div class="col-lg-5" >
-      <div id="login-box" class="mt-4">
-        <div class="container">
-        <h1 style="justify-content: center; display:flex;">로그인</h1>
-        </div>
-      <!--가입폼은 기본으로 해뒀습니다 소셜로그인하시면 변경할게요-->
-      <form class="user" id="user" action="#" accept-charset="UTF-8" method="post" onsubmit="validateForm()">
-      {% csrf_token %}
-        <div class="row justify-content-center">
-          <div class="form-group col-10">
-            <label class="control-label" for="email">아이디</label>
-            <input name="username" autofocus="autofocus" class="form-control" type="text" id="email" />
+  <div class="container-fluid my-4">
+    <div class="row justify-content-center">
+      <div class="col-lg-5">
+        <div id="login-box" class="mt-4">
+          <div class="container">
+            <h1 style="justify-content: center; display:flex;">로그인</h1>
           </div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="form-group col-10">
-            <label class="control-label" for="password">비밀번호</label><br />
-            <input name="password" autocomplete="off" class="form-control" type="password" id="password" />
+          <!--가입폼은 기본으로 해뒀습니다 소셜로그인하시면 변경할게요-->
+          <form class="user" id="user" action="#" accept-charset="UTF-8" method="post" onsubmit="validateForm()">
+            {% csrf_token %}
+            <div class="row justify-content-center">
+              <div class="form-group col-10">
+                <label class="control-label" for="email">아이디</label>
+                <input name="username" autofocus="autofocus" class="form-control" type="text" id="email" />
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="form-group col-10">
+                <label class="control-label" for="password">비밀번호</label><br />
+                <input name="password" autocomplete="off" class="form-control" type="password" id="password" />
+              </div>
+            </div>
+            <div class="row justify-content-center my-2">
+              <div class="form-group col-10">
+                <input name="remember" type="hidden" value="0" />
+                <input type="checkbox" value="1" name="remember" id="user_remember" />
+                <label for="user_remember">저장하기</label>
+
+                <input type="submit" value="로그인" class="btn btn-primary" style="float:right" />
+              </div>
+            </div>
+          </form>
+          <div class="row justify-content-center mb-4">
+            <p class="sign_up_p pl-3">아직 회원이 아니라면? <a class="sign_up_link" href="{% url 'signup' %}">회원가입</a></p>
           </div>
-        </div>
-        <div class="row justify-content-center my-2">
-          <div class="form-group col-10">
-            <input name="remember" type="hidden" value="0" />
-            <input type="checkbox" value="1" name="remember" id="user_remember" />
-            <label for="user_remember">저장하기</label>
 
-            <input type="submit" value="로그인" class="btn btn-primary" style="float:right" />
-          </div>
-        </div>
-      </form>
-        <div class="row justify-content-center mb-4">
-          <p class="sign_up_p pl-3">아직 회원이 아니라면? <a class="sign_up_link" href="{% url 'signup' %}">회원가입</a></p>
-        </div>
+          {% if messages %}
+          <ul class="messages">
+            {% for message in messages %}
+            <li class="{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
 
-      {% if messages %}
-      <ul class="messages">
-      {% for message in messages %}
-      <li class="{{ message.tags }}">{{ message }}</li>
-      {% endfor %}
-      </ul>
-      {% endif %}
-
+        </div>
       </div>
     </div>
-    </div>
-</div>
+  </div>
 </body>
 {%endblock%}
