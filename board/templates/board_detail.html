@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/board.css' %}">
 
 <div class="container">
-  {% if user == details.author %}
+  {% if details.author ==  user or "admin" or "kpufestival7" %}
   <div class="row justify-content-end">
     <a href="{% url 'delete' details.id %}">
       <!--삭제버튼-->

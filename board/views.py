@@ -21,7 +21,6 @@ from django.shortcuts import render
 from django.db.models import Count
 
 from django.db.models import Max 
-from datetime import datetime
 
 #===================================================================================================================
 # 게시판
@@ -209,11 +208,7 @@ def missing(request):
 def missing_detail(request, missing_id):
     missing_details = get_object_or_404(Missing, pk=missing_id)
 
-    now_time = datetime.now()
-
-    real_time = now_time - missing_details.pub_date
-    #real_time.strftime("%d %H %M %S")
-    return render(request, 'missing_detail.html', {'missing_details': missing_details, 'real_time':real_time, 'now_date':now_time})
+    return render(request, 'missing_detail.html', {'missing_details': missing_details})
 
 def missing_new(request):
     # 로그인 안 되어있을 때 로그인 페이지로

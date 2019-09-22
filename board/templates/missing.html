@@ -17,7 +17,7 @@
               <div class="missing_center my-3">
                 <p class="card_author">{{missing.author}}</p>
                 
-                <p class="card_author mt-n3">조회수 {{missing.hits}}회 ㆍ {{now_time}}-{{missing.pub_date}} 시간 전</p>
+                <p class="card_author mt-n3">조회수 {{missing.hits}}회 ㆍ {{missing.pub_date|timesince}}전</p>
               </div>
               <!--시간 전 이라고 한 부분은 db에서 보내줄때 맞춰서 보내줬으면 함-->
             </div>

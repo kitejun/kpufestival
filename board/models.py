@@ -60,10 +60,6 @@ class Comment(models.Model):
     comment_body = models.CharField(max_length=50)
     comment_like_users=models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='comment_like_users')
     comment_hate_users=models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='comment_hate_users')
-
-
-    def __str__(self):
-        return self.author, self.comment_body
     
     class Meta:
         ordering=['-id']
