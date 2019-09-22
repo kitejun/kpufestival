@@ -72,7 +72,10 @@
 .summary_title a:hover{
     color: #007bff;
 }
-
+.liked_img{
+    width: 1.5rem;
+    height: 1.5rem;
+}
 /*endboard*/
 .probutton {
     text-decoration:none;

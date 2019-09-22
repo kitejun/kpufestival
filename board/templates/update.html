@@ -3,30 +3,28 @@
 {% block content %}
 
 <div class="container">
+  <div class="row justify-content-center mt-4">
+    <div class="col-lg-6">
+      <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
 
-  <form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    <br>
+      <div class="form-group">
+        <label for="title" style="float:left">제목</label>
+        {{form.title}}
+      </div>
 
-    <div class="form-group">
-      <label for="title" style="float:left">제목</label>
-      {{form.title}}
-      <br>
-    </div>
-
-    <div class="form-group">
-      <input id="id_image" type="file" class="" name="image">
-    </div>
-    <br>
-    <div class="form-group">
-      <label for="text" style="float:left">내용</label>
+      <div class="form-group">
+        <input id="id_image" type="file" class="" name="image">
+      </div>
+      <div class="form-group">
+        <label for="text" style="float:left">내용</label>
       {{form.context}}
-      </textarea>
+      </div>
+
+        <input class="btn btn-light" role="button" aria-pressed="true" type="submit" value="수정">
+
+      </form>
     </div>
-    <br>
-
-    <input class="btn btn-light" role="button" aria-pressed="true" type="submit" value="수정">
-
-  </form>
+  </div>
 </div>
 {% endblock %}
