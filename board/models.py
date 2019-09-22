@@ -18,7 +18,7 @@ class Board(models.Model):
         return self.title
 
     def summary_title(self):
-        return self.title[:10]
+        return self.title[:4]
 
     def summary(self):
         return self.context[:50]
@@ -45,7 +45,7 @@ class Missing(models.Model):
         ordering=['-id']
 
     def summary(self):
-        return self.context[:50]
+        return self.context[:7]
         
     @property
     def update_counter_hit(self):
