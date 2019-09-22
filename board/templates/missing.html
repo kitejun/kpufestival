@@ -15,11 +15,13 @@
           <div class="mx-2 missing_textarea">
             <p class="card_title text-black my-2 mb-n2 border-bottom">{{missing.summary}}</p>
             <div class="missing_center my-3">
+              
               {% if missing.author.is_superuser %}
                 <p class="card_author">관리자</p>
               {% else %}
                 <p class="card_author">{{missing.author}}</p>
               {% endif %}
+
               <p class="card_author mt-n3">조회수 {{missing.hits}}회 ㆍ {{missing.pub_date|timesince}}전</p>
             </div>
           </div>
