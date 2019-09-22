@@ -1,4 +1,3 @@
-<!--게시판 디테일페이지입니다-->
 {% extends 'base.html' %}
 {% block content %}
 {%load staticfiles%}
@@ -9,11 +8,9 @@
   {% if missing_details.author ==  user or "admin" or "kpufestival7" %}
   <div class="row justify-content-end">
     <a href="{% url 'missing_delete' missing_details.id %}">
-      <!--삭제버튼-->
       <img class="right-icon float-right" src="{% static 'img/delete_btn.png'%}">
     </a>
     <a href="{% url 'missing_update' missing_details.id %}">
-      <!--수정버튼-->
       <img class="right-icon float-right" src="{% static 'img/edit_btn.png'%}">
     </a>
 
@@ -24,7 +21,6 @@
 
   <div class="row mt-2 justify-content-center">
     <div class="col-lg-10">
-      <!--작성자-->
       <h3>{{missing_details.author}}</h3>
       <br><span class="detail-text">{{missing_details.pub_date}}</span>
 
@@ -33,13 +29,7 @@
   <div class="row justify-content-center">
     <div class="col-lg-10 text-center">
       {{missing_details.update_counter_hit}}
-
-      <!--작성시간-->
-
-      <!-- 사진 -->
       <p class="my-4"><img src="{{ missing_details.image.url }}" alt=" " style="width: 55%;"></p>
-
-      <!--내용-->
       <p class="ml-4 text-left">{{missing_details.context}}</p>
     </div>
   </div>

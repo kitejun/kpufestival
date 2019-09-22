@@ -13,6 +13,10 @@
   <link rel="stylesheet" type="text/css" href="{% static 'css/switch.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
@@ -23,9 +27,18 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css'%}">
+<<<<<<< HEAD
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script type="text/javascript" src="{% static 'dist/jquery.pagepiling.js' %}"></script>
+=======
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+  <!-- 카카오 채팅 -->
+>>>>>>> master
   <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
   <script>
     window.onload = function () {
@@ -49,9 +62,15 @@
     function javascript() {
       var a = sessionStorage.getItem('a');
       a *= 1;
+<<<<<<< HEAD
       if (a == 0) { 
         document.getElementById("menu").src = "{% static 'img/menu5.png'%}";  
         document.getElementById("logo-icon").src = "{% static 'img/kputube1.png' %}";
+=======
+      if (a == 0) { //흰배경에서 검은 배경으로
+        document.getElementById("menu").src = "{% static 'img/menu5.png'%}";    //메뉴 변경
+        document.getElementById("logo-icon").src = "{% static 'img/kputube1.png' %}"; //로고 변경하기
+>>>>>>> master
         document.getElementById("on").style.color = "#2F2F2F";
         document.getElementById("marble").style.backgroundColor = "#2F2F2F";
         document.getElementById("switch").style.backgroundColor = '#2F2F2F'; 
@@ -119,6 +138,10 @@
       </label>
     </div>
   </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
   <script>
     function openNav() {
       document.getElementById("myNav").style.width = "100%";
@@ -203,5 +226,9 @@
     </div>
   </footer>
   <script type="text/javascript" src="{% static 'js/kakao.js' %}"></script>
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 </body>
 </html>

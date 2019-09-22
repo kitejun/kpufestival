@@ -1,4 +1,4 @@
-<!--홈입니다-->
+
 {% extends 'base.html'%}
 
 {% load staticfiles %}
@@ -8,40 +8,6 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-
-
-
-<!-- fade 캐러셀 bootstrap cdn -->
-
-
-
-<!-- 
-<link rel="stylesheet" type="text/css" href="{% static 'dist/jquery.pagepiling.css' %}" >
-
-    <script type="text/javascript">
-        var deleteLog = false;
-		$(document).ready(function() {
-	    	$('#pagepiling').pagepiling({
-                menu: '#menu',
-	    		anchors: ['page1', 'page2', 'page3'],
-	    		navigation: {
-                    'textColor': '#f2f2f2',
-                    'bulletsColor': '#ccc',
-                    'position': 'right',
-                    'tooltips': ['Page 1', 'Page 2', 'Page 3', 'Page 4']
-                }
-      });
-      
-    </script> -->
-
-
-<!--
-jQuery (necessary for Bootstrap's JavaScript plugins)
--->
-
-
-
-
 
 <div class="festival">
   <div class="section" id="section">
@@ -53,6 +19,8 @@ jQuery (necessary for Bootstrap's JavaScript plugins)
         <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -63,6 +31,12 @@ jQuery (necessary for Bootstrap's JavaScript plugins)
         </div>
         <div class="carousel-item">
           <img src="/static/img/mamamoo.png" style="" class="d-block w-100 picture_size" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="/static/img/esens.png" style="" class="d-block w-100 picture_size" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="/static/img/xxx.png" style="" class="d-block w-100 picture_size" alt="...">
         </div>
         <div class="carousel-item">
           <img src="/static/img/jannavi.png" style="" class="d-block w-100 picture_size" alt="...">
@@ -124,8 +98,6 @@ jQuery (necessary for Bootstrap's JavaScript plugins)
 </div>
 </div>
 
-
-<!-- 모바일부분에 표시되는  -->
 <div class="" id="section_mobile">
   <div id="mobi_container">
     <div id="jb-content" class="main_info">
@@ -141,6 +113,12 @@ jQuery (necessary for Bootstrap's JavaScript plugins)
           </div>
           <div class="carousel-item">
             <img src="/static/img/mamamoo.png" style="" class="d-block w-100 picture_size" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="/static/img/esens.png" style="" class="d-block w-100 picture_size" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="/static/img/xxx.png" style="" class="d-block w-100 picture_size" alt="...">
           </div>
           <div class="carousel-item">
             <img src="/static/img/jannavi.png" style="" class="d-block w-100 picture_size" alt="...">
