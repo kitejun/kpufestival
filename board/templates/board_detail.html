@@ -125,23 +125,28 @@
           <div class="row">
             <div class="col-lg-12">
               {% if user in comment.comment_like_users.all %}
-              <a href="{% url 'comment_like' comment.id %}">좋아요 취소</a>
+              <a href="{% url 'comment_like' comment.id %}">
+                <img class="liked_img" src="{% static 'img/like_btn_blue.png' %}" alt="좋아요 취소">
               {% else %}
-              <a href="{% url 'comment_like' comment.id %}">좋아요</a>
+              <a href="{% url 'comment_like' comment.id %}">
+                <img class="liked_img" src="{% static 'img/like_btn.png' %}" alt="좋아요">
               {% endif %}
-              <span>{{ comment.comment_like_users.count }}</span>
+                <span class="summary_title">{{ comment.comment_like_users.count }}</span>
+              </a>
 
               <!--싫어요-->
               <!--
             <img src="{% static 'img/dislike_btn.png'%}" style="margin-top:2px;">
           -->
               {% if user in comment.comment_hate_users.all %}
-              <a href="{% url 'comment_hate' comment.id %}">싫어요 취소</a>
+              <a href="{% url 'comment_hate' comment.id %}">
+                <img class="liked_img" src="{% static 'img/dislike_btn_blue.png' %}" alt="싫어요 취소">
               {% else %}
-              <a href="{% url 'comment_hate' comment.id %}">싫어요</a>
+              <a href="{% url 'comment_hate' comment.id %}">
+                <img class="liked_img" src="{% static 'img/dislike_btn.png' %}" alt="싫어요 취소">
               {% endif %}
-              <span>{{ comment.comment_hate_users.count }}</span>
-
+              <span class="summary_title">{{ comment.comment_hate_users.count }}</span>
+              </a>
               <!--댓글 삭제-->
               {% if user == comment.author %}
               <a href="{% url 'comment_delete' comment.id %}"> 삭제 </a>
