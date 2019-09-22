@@ -36,7 +36,11 @@
               </a>
             </td>
             <td>
-              <span>{{ board.author }}</span>
+              {% if board.author.is_superuser %}
+                <span>관리자</span>
+              {% else %}
+                <span>{{ board.author }}</span>
+              {% endif %}
             </td>
             <td class="text-center">
               <span>{{ board.hits }}</span>
