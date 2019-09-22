@@ -19,8 +19,11 @@
   <hr>
   <div class="row mt-2 justify-content-center">
     <div class="col-lg-10">
+      {% if missing_details.author.is_superuser %}
+      <span class="detail-title">관리자</span><br>
+      {% else %}
       <span class="detail-title">{{missing_details.author}}</span><br>
-      <span class="detail-text">{{missing_details.pub_date}}</span>
+      {% endif %}
 
     </div>
   </div>
