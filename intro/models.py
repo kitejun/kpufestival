@@ -19,6 +19,8 @@ class Intro(models.Model):
 
     intro_like_users=models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='intro_like_users', blank=True)
     hits=models.PositiveIntegerField(default=0)
+
+    check = models.IntegerField(default=0)
     
     class Meta:
         ordering=['-id']
