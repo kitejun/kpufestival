@@ -1,4 +1,4 @@
-<!--학과,동아리별 주점소개페이지입니다-->
+
 {% extends 'base.html' %}
 {% block content %}
 {%load staticfiles%}
@@ -8,9 +8,7 @@
         margin: 40px auto 0px;
         text-align: center;
         background: none;
-        /*background: #ed2553;*/
         border-radius: 3px;
-        /*수평 수직 흐림반경 확산거리 색상*/
         box-shadow: 0 10px 25px -8px rgb(255, 158, 27);
         padding: 10px 17px;
         font-size: 18px;
@@ -49,11 +47,9 @@
     }
 </style>
 <script>
-    /*font-awesome에 사자아이콘은 없는가..?*/
     $(function () {
         $(document).one('click', '.like-review', function (e) {
             $(this).html('<i class="fa fa-heart" style="color:#ed2553;" aria-hidden="true"></i><span style="color:#544C4C">LIKELION</span>');
-            /*$(this).html('<img src="{%static "img/user.png"%}" aria-hidden="true"> You liked this');*/
             $(this).children('.fa-heart').addClass('animate-like');
         });
     });
@@ -64,12 +60,6 @@
 
 
 <div id="my-container">
-    <!--
-    값: {{ random_button }}
-    x: {{ random_width }}
-    y: {{ random_height }}
-    -->
-
     <h2 align="center">개발자 소개</h2>
     <div class="row mt-4 justify-content-center">
         <div class="col-lg-3 mx-n4">
@@ -115,7 +105,6 @@
     </div>
     <br><br>
     {% if random_button == 2 %}
-    <!-- random 쿠폰! -->
     <div>
         <div style="position:fixed; right: {{ random_width }}%; bottom:{{ random_height }}%; z-index: 10;">
             <img src="{% static 'img/random.png'%}" aria-hidden="true" width="200px">
@@ -211,24 +200,3 @@
 </div>
 
 {% endblock %}
-
-<!-- 좋아요 버튼
-     <div class="row">
-        <div class="col-lg-4 col-12">
-            <div class="like-content">
-                <button class="btn-secondary like-review">
-                    <img src="{%static 'img/user.png'%}" aria-hidden="true">
-                    <i class="fa fa-star" aria-hidden="true"></i> Like
-                </button>
-            </div>  
-        </div>
-        <div class="col-lg-7 col-12" style="margin-top: 4rem;">
-            <h3>온라인 강의와 오프라인 활동을 통한 체계적인 프로그래밍 교육</h3>
-            <h5>자체 개발된 온라인 강의 플랫폼 '클래스라이언' 을 통해 강의를 듣고 과제를 수행합니다. 다양한 오프라인 활동과 병행하여 뜻을 같이하는 동료를 찾고 자신이 만들고자 하는 서비스를 직접 프로그래밍 하도록 돕습니다</h5>
-        </div>
-        <div class="col-lg-1">
-            
-        </div>    
-    </div>
-    <br>
-    <br> -->

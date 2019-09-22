@@ -1,10 +1,8 @@
-<!--학과,동아리별 주점소개페이지입니다-->
 {%extends 'base.html'%}
 {% load staticfiles %}
 
 {% block content %}
 <style>
-  /*intro_detail이랑 겹치면 안돼서 못옮겨요*/
   .card {
     height: 200px;
   }
@@ -16,23 +14,17 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduce.css' %}">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
-
-<!--컨테이너 속성변경해야함 이거때문에 다 작게 보임-->
 <div id="my-container" style="padding:30px;">
   <div style="margin:0 auto">
-    <h3>학과별 주점소개</h3> 
+    <h3>학과별 주점소개</h3>
     ※ 학과인증: 학과로부터 제공받은 자료 포함 <br>
     ※ 무작위로 보여집니다.
     <div class="row" style="margin-bottom: 30px;">
-      <!--이부분부터 추가 for문으로 넣으시면 됩니다-->
-      <!--bootstrap4부터는 모바일은 col-숫자형태로 바뀜!-->
-
       {% for intro in all_intro %}
       {% if intro.check == 1 %}
       <div class="col-lg-3 col-6" style="margin-bottom: 30px;" id="col">
         <a href="{% url 'intro_detail' intro.id %}">
           <div class="card" id="card">
-            <!-- 학과 관련 사진 -->
             <img class="card-img-top h-img" src="{{ intro.img1.url }}" id="intro-card-img">
             <div class="row">
               <div class="col-4 col-lg-2">
@@ -60,9 +52,9 @@
               <hr>
         </a>
         <div class="heart-icon">
-            {% if intro.check == 1 %}
-            ★학과인증★
-            {% endif %}
+          {% if intro.check == 1 %}
+          ★학과인증★
+          {% endif %}
           <i class="fa fa-heart" style="color:#ed2553;">{{ intro.intro_like_users.count }}</i>
         </div>
       </div>
@@ -72,46 +64,38 @@
   {%endfor%}
 
   {% for intro in all_intro %}
-      {% if intro.check == 0 %}
-      <div class="col-lg-3 col-6" style="margin-bottom: 30px;" id="col">
-        <a href="{% url 'intro_detail' intro.id %}">
-          <div class="card" id="card">
-            <!-- 학과 관련 사진 -->
-            <img class="card-img-top h-img" src="{{ intro.img1.url }}" id="intro-card-img">
-            <div class="row">
-              <div class="col-4 col-lg-2">
-                <img id="user-img1" src="{{ intro.de_logo.url }}">
-              </div>
-              <div class="col-8 col-lg-10" style="margin-top:4px;">
+  {% if intro.check == 0 %}
+  <div class="col-lg-3 col-6" style="margin-bottom: 30px;" id="col">
+    <a href="{% url 'intro_detail' intro.id %}">
+      <div class="card" id="card">
+        <!-- 학과 관련 사진 -->
+        <img class="card-img-top h-img" src="{{ intro.img1.url }}" id="intro-card-img">
+        <div class="row">
+          <div class="col-4 col-lg-2">
+            <img id="user-img1" src="{{ intro.de_logo.url }}">
+          </div>
+          <div class="col-8 col-lg-10" style="margin-top:4px;">
 
-                <span id="intro-card-title">{{ intro.summary_dename }}</span>
-
-                <!-- 조회수 ( 소영아 수정 좀) -->
-                <br>
-                <div class="tag">
-                  {{ intro.hits }} views
-                </div>
-
-                <!-- 태그(tag) -->
-                <div class="tag">
-                  {{ intro.summary_tag }}
-                </div>
-
-              </div>
+            <span id="intro-card-title">{{ intro.summary_dename }}</span>
+            <br>
+            <div class="tag">
+              {{ intro.hits }} views
             </div>
-            <div id="intro-body">
-              <!-- 학과명 -->
-              <hr>
-        </a>
-        <div class="heart-icon">
-          <i class="fa fa-heart" style="color:#ed2553;">{{ intro.intro_like_users.count }}</i>
+            <div class="tag">
+              {{ intro.summary_tag }}
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div id="intro-body">
+          <div class="heart-icon">
+            <i class="fa fa-heart" style="color:#ed2553;">{{ intro.intro_like_users.count }}</i>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
   </div>
-  {% endif %}
-  {%endfor%}
-</div>
-</div>
+{% endif %}
+{%endfor%}
 </div>
 {% endblock %}

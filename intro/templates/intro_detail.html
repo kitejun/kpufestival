@@ -4,8 +4,6 @@
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduce.css' %}">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
-
 <style>
   #user-img1 {
     margin-top: 5px;
@@ -13,32 +11,6 @@
   #user-img{
     width:80px;
     height:80px;
-}
-.modal-body{
-  justify-content:center;
-  display:flex;
-}
-.menu{
-  max-width: 400px;
-  max-height: 500px;
-}
-.map{
-  max-width: 400px;
-  max-height: 500px;
-}
-@media (max-width: 1025px)  {
-  #user-img{
-    width:40px;
-    height:40px;
-  }
-  .menu{
-  max-width: 300px;
-  max-height: 400px;
-}
-.map{
-  max-width: 300px;
-  max-height: 400px;
-}
 }
 </style>
 <div id="my-container">
@@ -48,15 +20,12 @@
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <!--이미지1-->
             <img id="detail-img" src="{{ intro_detail.img1.url }}">
           </div>
           <div class="carousel-item">
-            <!--이미지2-->
             <img id="detail-img" src="{{ intro_detail.img2.url }}">
           </div>
           <div class="carousel-item">
-            <!--이미지3-->
             <img id="detail-img" src="{{ intro_detail.img3.url }}">
           </div>
         </div>
@@ -69,18 +38,12 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-      ※ 상기 이미지는 실제와 다를 수 있습니다. <br>
-      <!--태그-->
+      ※ 상기 이미지는 실제와 다를 수 있습니다.
+      <br>
       <a id="tag">{{intro_detail.tag}} </a>
-      <!--학과명-->
       <h1 id="detail-title">{{intro_detail.dename}}</h1>
-      <!--조회수-->
       <span id="detail-text">{{intro_detail.hits}} views</span>
       <div id="contain-right">
-        <!--좋아요-->
-        <!--
-          <img src="{% static 'img/like_btn.png'%}" style="margin-bottom:6px;">
-        -->
         {% if user in intro_detail.intro_like_users.all %}
         <a href="{% url 'intro_like' intro_detail.id %}">
           <i class="fa fa-heart fa-2x" style="color:#ed2553;"></i>
@@ -90,31 +53,17 @@
           <i class="fa fa-heart fa-2x" style="color:#2F2F2F;"></i></a>
         {% endif %}
         <span id="detail-text">{{ intro_detail.intro_like_users.count }}</span>
-
-
-        <!--
-    <a href="#">
-      <img id="icon_btn" src="{% static 'img/share_btn.png'%}">
-      <span id="detail-text"> SHARE</span>
-    </a>
-    -->
-        <!--공유하기(구현 완료) 소영아 이쁘게 꾸며주시오... -->
         <a id="kakao-link-btn" href="javascript:sendLink()">
           <i class="fa fa-share fa-2x" style="color: #2f2f2f;;"></i>
         </a>
       </div>
-
       <br>
       <br>
       <hr>
       <br>
-      <!--학과별 이미지-->
       <img id="user-img" src="{{ intro_detail.de_logo.url }}">
-      <!--학과이름-->
       <span id="intro-card-title">{{intro_detail.dename}}</span>
-      <!--메뉴판 보여주는 버튼-->
       <img src="{%static 'img/menuboard2.png'%}" class="my-menu" data-toggle="modal" data-target="#exampleModal"></button>
-      <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -126,7 +75,6 @@
               </button>
             </div>
             <div class="modal-body">
-              <!-- 학과 메뉴판 사진 -->
               <img class="menu" src="{{ intro_detail.menufan.url }}">
             </div>
             <div class="modal-footer">
@@ -135,10 +83,7 @@
           </div>
         </div>
       </div>
-      <!--Modal-->
-      <!--지도 보여주는 버튼-->
       <button id="sub_button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal1">지도</button>
-      <!-- Modal -->
       <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -150,7 +95,6 @@
               </button>
             </div>
             <div class="modal-body">
-              <!-- 학과 지도 사진 -->
               <img class="map" src="{{ intro_detail.map_img.url }}">
             </div>
             <div class="modal-footer">
@@ -159,11 +103,9 @@
           </div>
         </div>
       </div>
-      <!--Modal-->
       <div class="content-box">
         <div row>
           <div class="col-lg-9">
-            <!-- |linebreaks 속성은 줄 바꿈 허용 -->
             <br>
             <h5>{{intro_detail.introduce|linebreaks}}</h5>
             <br>
@@ -172,10 +114,8 @@
         </div>
       </div>
     </div>
-    <!--타학과 7개만 보이게 해주세요-->
     <div id="other" class="col-lg-3" style="padding-left:20px;">
       <h5>다른 학과 구경가기</h5>
-      <!--for문은 여기부터-->
       {% for intro in exclude_intro %}
       <a href="{% url 'intro_detail' intro.id %}">
         <div class="card mb-3" style="width: 100%;">
@@ -193,7 +133,6 @@
           </div>
         </div>
       </a>
-
       {% endfor %}
     </div>
   </div>

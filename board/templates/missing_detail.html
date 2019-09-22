@@ -21,8 +21,8 @@
 
   <div class="row mt-2 justify-content-center">
     <div class="col-lg-10">
-      <h3>{{missing_details.author}}</h3>
-      <br><span class="detail-text">{{missing_details.pub_date}}</span>
+      <span class="detail-title">{{missing_details.author}}</span>
+      <span class="detail-text">{{missing_details.pub_date}}</span>
 
     </div>
   </div>
@@ -30,7 +30,7 @@
     <div class="col-lg-10 text-center">
       {{missing_details.update_counter_hit}}
       <p class="my-4"><img src="{{ missing_details.image.url }}" alt=" " style="width: 55%;"></p>
-      <p class="ml-4 text-left">{{missing_details.context}}</p>
+      <p class="ml-4 text-left">{{missing_details.context|linebreaks}}}</p>
     </div>
   </div>
   <br>
