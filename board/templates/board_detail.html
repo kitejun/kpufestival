@@ -4,7 +4,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/board.css' %}">
 
 <div class="container">
-  {% if details.author ==  user or "admin" or "kpufestival7" %}
+  {% if details.author ==  user or user.is_superuser %}
   <div class="row justify-content-end">
     <a href="{% url 'delete' details.id %}">
       <img class="right-icon float-right" src="{% static 'img/delete_btn.png'%}">
@@ -27,7 +27,14 @@
     <div class="col-lg-10">
       <div class="row">
         <div class="col-lg-8 mt-1">
+
+          {% if details.author.is_superuser %}
+          <span class="detail-text mr-2">관리자</span>
+          {% else %}
           <span class="detail-text mr-2">{{details.author}}</span>
+          {% endif %}
+
+
           <span class="detail-text">{{details.pub_date}}</span>
         </div>
       </div>
@@ -86,7 +93,11 @@
           {% for comment in details.comments.all %}
           <div class="row">
             <div class="col-lg-4">
+                {% if comment.author.is_superuser %}
+                <strong>관리자</strong>
+              {% else %}
               <strong>{{ comment.author }}</strong>
+              {% endif %}
               <span class="detail-text">{{ comment.comment_date }}</span>
             </div>
 
@@ -101,26 +112,26 @@
               {% if user in comment.comment_like_users.all %}
               <a href="{% url 'comment_like' comment.id %}">
                 <img class="liked_img" src="{% static 'img/like_btn_blue.png' %}" alt="좋아요 취소">
-              {% else %}
-              <a href="{% url 'comment_like' comment.id %}">
-                <img class="liked_img" src="{% static 'img/like_btn.png' %}" alt="좋아요">
-              {% endif %}
-                <span class="summary_title">{{ comment.comment_like_users.count }}</span>
-              </a>
+                {% else %}
+                <a href="{% url 'comment_like' comment.id %}">
+                  <img class="liked_img" src="{% static 'img/like_btn.png' %}" alt="좋아요">
+                  {% endif %}
+                  <span class="summary_title">{{ comment.comment_like_users.count }}</span>
+                </a>
 
-              {% if user in comment.comment_hate_users.all %}
-              <a href="{% url 'comment_hate' comment.id %}">
-                <img class="liked_img" src="{% static 'img/dislike_btn_blue.png' %}" alt="싫어요 취소">
-              {% else %}
-              <a href="{% url 'comment_hate' comment.id %}">
-                <img class="liked_img" src="{% static 'img/dislike_btn.png' %}" alt="싫어요 취소">
-              {% endif %}
-              <span class="summary_title">{{ comment.comment_hate_users.count }}</span>
-              </a>
-              {% if user == comment.author %}
-              <a href="{% url 'comment_delete' comment.id %}"> 삭제 </a>
-              {% endif %}
-              <hr>
+                {% if user in comment.comment_hate_users.all %}
+                <a href="{% url 'comment_hate' comment.id %}">
+                  <img class="liked_img" src="{% static 'img/dislike_btn_blue.png' %}" alt="싫어요 취소">
+                  {% else %}
+                  <a href="{% url 'comment_hate' comment.id %}">
+                    <img class="liked_img" src="{% static 'img/dislike_btn.png' %}" alt="싫어요 취소">
+                    {% endif %}
+                    <span class="summary_title">{{ comment.comment_hate_users.count }}</span>
+                  </a>
+                  {% if user == comment.author %}
+                  <a href="{% url 'comment_delete' comment.id %}"> 삭제 </a>
+                  {% endif %}
+                  <hr>
             </div>
           </div>
 
