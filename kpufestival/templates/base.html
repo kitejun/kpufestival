@@ -13,7 +13,10 @@
   <link rel="stylesheet" type="text/css" href="{% static 'css/switch.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
+<<<<<<< HEAD
+=======
 
+>>>>>>> master
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
@@ -24,53 +27,61 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css'%}">
+<<<<<<< HEAD
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript" src="{% static 'dist/jquery.pagepiling.js' %}"></script>
+=======
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
   <!-- 카카오 채팅 -->
+>>>>>>> master
   <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
-
-  <!--이미지로드해와야해서 js파일로 옮기면 이미지가 안떠요-->
   <script>
-    //로드될때 a값을 확인해서 실행
     window.onload = function () {
       var a = sessionStorage.getItem('a');
       a *= 1;
-      //var background = document.getElementById("switch").style.backgroundColor;
-      if (a == 1) { //검은배경
-        document.getElementById("menu").src = "{% static 'img/menu5.png'%}";    //메뉴 변경
-        document.getElementById("logo-icon").src = "{% static 'img/kputube1.png' %}"; //로고 변경하기
+      if (a == 1) {
+        document.getElementById("menu").src = "{% static 'img/menu5.png'%}";
+        document.getElementById("logo-icon").src = "{% static 'img/kputube1.png' %}"; 
         document.getElementById("on").style.color = "#2F2F2F";
         document.getElementById("marble").style.backgroundColor = "#2F2F2F";
         document.getElementById("switch1").checked = "checked";
-        document.getElementById("switch").style.backgroundColor = '#2F2F2F';  //배경색 변경 
+        document.getElementById("switch").style.backgroundColor = '#2F2F2F'; 
       } else {
-        document.getElementById("menu").src = "{% static 'img/menu6.png'%}";    //메뉴 변경
-        document.getElementById("logo-icon").src = "{% static 'img/kputube2.png' %}"; //로고 변경하기
+        document.getElementById("menu").src = "{% static 'img/menu6.png'%}"; 
+        document.getElementById("logo-icon").src = "{% static 'img/kputube2.png' %}"; 
         document.getElementById("on").style.color = "#FFFFFF";
         document.getElementById("marble").style.backgroundColor = "#FFFFFF";
-        document.getElementById("switch").style.backgroundColor = '#FFFFFF';  //배경색 변경   
+        document.getElementById("switch").style.backgroundColor = '#FFFFFF'; 
       }
     }
     function javascript() {
       var a = sessionStorage.getItem('a');
       a *= 1;
+<<<<<<< HEAD
+      if (a == 0) { 
+        document.getElementById("menu").src = "{% static 'img/menu5.png'%}";  
+        document.getElementById("logo-icon").src = "{% static 'img/kputube1.png' %}";
+=======
       if (a == 0) { //흰배경에서 검은 배경으로
         document.getElementById("menu").src = "{% static 'img/menu5.png'%}";    //메뉴 변경
         document.getElementById("logo-icon").src = "{% static 'img/kputube1.png' %}"; //로고 변경하기
+>>>>>>> master
         document.getElementById("on").style.color = "#2F2F2F";
         document.getElementById("marble").style.backgroundColor = "#2F2F2F";
-        document.getElementById("switch").style.backgroundColor = '#2F2F2F';  //배경색 변경 
+        document.getElementById("switch").style.backgroundColor = '#2F2F2F'; 
         a = 1;
         sessionStorage.setItem('a', "1");
       } else {
-        document.getElementById("menu").src = "{% static 'img/menu6.png'%}";    //메뉴 변경
-        document.getElementById("logo-icon").src = "{% static 'img/kputube2.png' %}"; //로고 변경하기
+        document.getElementById("menu").src = "{% static 'img/menu6.png'%}";  
+        document.getElementById("logo-icon").src = "{% static 'img/kputube2.png' %}"; 
         document.getElementById("on").style.color = "#FFFFFF";
         document.getElementById("marble").style.backgroundColor = "#FFFFFF";
-        document.getElementById("switch").style.backgroundColor = '#FFFFFF';  //배경색 변경   
+        document.getElementById("switch").style.backgroundColor = '#FFFFFF';   
         a = 0;
         sessionStorage.setItem('a', "0");
       }
@@ -127,7 +138,10 @@
       </label>
     </div>
   </div>
+<<<<<<< HEAD
+=======
 
+>>>>>>> master
   <script>
     function openNav() {
       document.getElementById("myNav").style.width = "100%";
@@ -152,7 +166,6 @@
   <div style="height: 50px;" >
 
   </div>
-  <!--footer-->
   <footer id="footer" class="footer mt-auto py-3">
     <div class="row">
       <div class="col-6 col-lg-6">
@@ -177,7 +190,6 @@
           </div>
         </div>
       </div>
-      <!--오른쪽-->
       <div class="col-6 col-lg-6">
         <h3 class="title_l">DEVELOPER</h3>
         <div class="right-container">
@@ -213,9 +225,10 @@
       </div>
     </div>
   </footer>
-
   <script type="text/javascript" src="{% static 'js/kakao.js' %}"></script>
+<<<<<<< HEAD
+=======
 
+>>>>>>> master
 </body>
-
 </html>

@@ -25,7 +25,6 @@ h4.title_m{font-weight: 500; font-size: 1.2em; margin-right: 0.5em; text-align: 
 }
 @media (min-width: 1025px)  {
 }
-/*웹*/
 @media (min-width: 1025px)  {
     div#footer{
         position: relative;
@@ -43,7 +42,6 @@ h4.title_m{font-weight: 500; font-size: 1.2em; margin-right: 0.5em; text-align: 
     }
 
 }
-/*모바일*/
 @media (max-width: 1025px)  {
     .mobile{
         width:140px;
