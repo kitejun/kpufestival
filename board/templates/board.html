@@ -9,7 +9,6 @@
   </div>
   <div class="row mt-4 mx-1">
     ※ 싫어요 10개 이상인 글은 자동 삭제 됩니다.
-    <!--이부분에 추가해주세요-->
     <div class="table-responsive">
       <table class="table">
         <tbody>
@@ -35,13 +34,8 @@
                 <span>{{board.summary_title}}</span>
                 <span>({{ board.comments.count }})</span>
               </a>
-              <!--제목-->
-              <!--날짜는 제외하는게 깔끔할거같아요-->
-              <!--{{ board.pub_date|date:'bj일 f' }}-->
-              <!--날짜-->
             </td>
             <td>
-              <!--작성자-->
               <span>{{ board.author }}</span>
             </td>
             <td class="text-center">
@@ -57,7 +51,6 @@
       </table>
     </div>
   </div>
-  <!--로그인 구현 후 글쓰기 버튼 if문 처리-->
   {% if user.is_authenticated %}
   <div class="row justify-content-end">
     <div class="col-lg-4">
@@ -68,7 +61,6 @@
   <div class="row justify-content-end">
     <div class="col-lg-4">
       <button id="sub_button" class="btn float-right" data-toggle="modal" data-target="#exampleModal">글쓰기</button>
-      <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -91,7 +83,6 @@
 
   {% endif %}
 
-  <!--pagenation-->
   <div class="pagination-container">
     {% if board_list.has_other_pages %}
     <ul class="pagination">
