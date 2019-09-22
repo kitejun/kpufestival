@@ -4,7 +4,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/board.css' %}">
 
 <div class="container">
-  {% if details.author ==  user or "admin" or "kpufestival7" %}
+  {% if details.author ==  user or user.is_superuser %}
   <div class="row justify-content-end">
     <a href="{% url 'delete' details.id %}">
       <img class="right-icon float-right" src="{% static 'img/delete_btn.png'%}">

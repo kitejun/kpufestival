@@ -5,7 +5,7 @@
 
 <div class="container">
 
-  {% if missing_details.author ==  user or "admin" or "kpufestival7" %}
+  {% if user == missing_details.author or user.is_superuser%}
   <div class="row justify-content-end">
     <a href="{% url 'missing_delete' missing_details.id %}">
       <img class="right-icon float-right" src="{% static 'img/delete_btn.png'%}">
@@ -16,9 +16,7 @@
 
   </div>
   {% endif %}
-
   <hr>
-
   <div class="row mt-2 justify-content-center">
     <div class="col-lg-10">
       <span class="detail-title">{{missing_details.author}}</span>
@@ -30,7 +28,7 @@
     <div class="col-lg-10 text-center">
       {{missing_details.update_counter_hit}}
       <p class="my-4"><img src="{{ missing_details.image.url }}" alt=" " style="width: 55%;"></p>
-      <p class="ml-4 text-left">{{missing_details.context|linebreaks}}}</p>
+      <p class="ml-4 text-left">{{missing_details.context|linebreaks}}</p>
     </div>
   </div>
   <br>
