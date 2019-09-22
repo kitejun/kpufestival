@@ -93,7 +93,11 @@
           {% for comment in details.comments.all %}
           <div class="row">
             <div class="col-lg-4">
+                {% if comment.author.is_superuser %}
+                <strong>관리자</strong>
+              {% else %}
               <strong>{{ comment.author }}</strong>
+              {% endif %}
               <span class="detail-text">{{ comment.comment_date }}</span>
             </div>
 
