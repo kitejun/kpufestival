@@ -88,6 +88,11 @@
       {% endif %}
       {%endfor%}
 
+      {% if random_button == 2 %}
+      <div style="position:fixed; right:{{ random_width }}%; bottom:{{ random_height }}%; z-index: 10;">
+        <img src="{% static 'img/random.png'%}" width="150px">
+      </div>
+      {% endif %}
     </div>
   </div>
 </div>

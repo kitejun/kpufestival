@@ -1,10 +1,16 @@
-
 {% extends 'base.html' %}
 {% block content %}
 {%load staticfiles%}
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="{% static 'css/board.css' %}">
+
+
+{% if random_button == 2 %}
+<div style="position:fixed; right:{{ random_width }}%; bottom:{{ random_height }}%; z-index: 10;">
+    <img src="{% static 'img/random.png'%}" width="150px">
+</div>
+{% endif %}
 
 <div id="my-container">
     <h2></h2>
@@ -66,6 +72,11 @@
     </div>
     <br><br>
 
+    {% if random_button == 2 %}
+    <div style="position:fixed; right:{{ random_width }}%; bottom:{{ random_height }}%; z-index: 10;">
+        <img src="{% static 'img/random.png'%}" width="150px">
+    </div>
+    {% endif %}
     <div class="row">
         <div class="col-lg-4 col-12">
 

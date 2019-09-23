@@ -2,16 +2,18 @@
 
 {% load staticfiles %}
 {% block content %}
+
 <link rel="stylesheet" type="text/css" href="{% static 'css/introduce.css' %}">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <style>
   #user-img1 {
     margin-top: 5px;
   }
-  #user-img{
-    width:80px;
-    height:80px;
-}
+
+  #user-img {
+    width: 80px;
+    height: 80px;
+  }
 </style>
 <div id="my-container">
   {{intro_detail.update_counter_hit}}
@@ -63,7 +65,8 @@
       <br>
       <img id="user-img" src="{{ intro_detail.de_logo.url }}">
       <span id="intro-card-title">{{intro_detail.dename}}</span>
-      <img src="{%static 'img/menuboard2.png'%}" class="my-menu" data-toggle="modal" data-target="#exampleModal"></button>
+      <img src="{%static 'img/menuboard2.png'%}" class="my-menu" data-toggle="modal"
+        data-target="#exampleModal"></button>
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -134,26 +137,33 @@
         </div>
       </a>
       {% endfor %}
+
+      {% if random_button == 2 %}
+      <div style="position:fixed; right:{{ random_width }}%; bottom:{{ random_height }}%; z-index: 10;">
+        <img src="{% static 'img/random.png'%}" width="150px">
+      </div>
+      {% endif %}
+
     </div>
   </div>
 </div>
 
 <script type="text/javascript" src="{% static 'js/kakao_link.js' %}"></script>
 <script>
-function sendLink() {
-  Kakao.Link.sendDefault({
-    objectType: 'feed',
-    content: {
-      title: '학과: {{intro_detail.dename}}',
-      description: '소개: {{ intro_detail.tag }}',
-      imageUrl: 'http://kpufestival.waytech.kr/{{ intro_detail.img1.url }}/',
-      link: {
-        mobileWebUrl: 'http://kpufestival.waytech.kr/intro/intro_detail/{{ intro_detail.id }}/',
-        webUrl: 'http://kpufestival.waytech.kr/intro/intro_detail/{{ intro_detail.id }}/',
-      }
-    },
-  });
-}
+  function sendLink() {
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '학과: {{intro_detail.dename}}',
+        description: '소개: {{ intro_detail.tag }}',
+        imageUrl: 'http://kpufestival.waytech.kr/{{ intro_detail.img1.url }}/',
+        link: {
+          mobileWebUrl: 'http://kpufestival.waytech.kr/intro/intro_detail/{{ intro_detail.id }}/',
+          webUrl: 'http://kpufestival.waytech.kr/intro/intro_detail/{{ intro_detail.id }}/',
+        }
+      },
+    });
+  }
 </script>
 
 {% endblock %}

@@ -20,11 +20,18 @@ def developer(request):
 
 
 def siru(request):
-    return render(request, 'siru.html')
+    random_button = random.randint(1, 2)
+    random_width = random.randint(20, 80)
+    random_height = random.randint(20, 80)
+    # random_button = 2
+    return render(request, 'siru.html', {'random_button': random_button, 'random_width': random_width, 'random_height': random_height})
 
 
 def promote(request):
-    return render(request, 'promote.html')
+    random_button = random.randint(1, 2)
+    random_width = random.randint(20, 80)
+    random_height = random.randint(20, 80)
+    return render(request, 'promote.html', {'random_button': random_button, 'random_width': random_width, 'random_height': random_height})
 
 '''
 def handler404(request):

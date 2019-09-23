@@ -3,11 +3,7 @@ from django.conf import settings
 
 from .models import Intro
 
-# introduce 기능
-# introduce-학과명,좋아요개수,위치,소개글 표시/모달에서 지도 표시
-# intro_detail
-# -학과명,좋아요 개수,싫어요 개수,조회수,태그,소개글,학과 아이콘 표시/모달에서 지도 표시
-# -카톡 공유하기 기능(학과명,사진 공유 혹은 링크)#
+import random
 
 def firework(request):
     return render(request,'firework.html')
@@ -16,13 +12,22 @@ def introduce(request):
     # random 으로 학과 주점 보여주기
     all_intro=Intro.objects.annotate().order_by('?')
 
-    return render(request,'introduce.html', { 'all_intro':all_intro })
+    random_button = random.randint(1, 2)
+    random_width = random.randint(20, 80)
+    random_height = random.randint(20, 80)
+
+    return render(request,'introduce.html', { 'all_intro':all_intro, 'random_button': random_button, 'random_width': random_width, 'random_height': random_height })
 
 def intro_detail(request, intro_id):
     intro_detail = get_object_or_404(Intro, pk=intro_id)
     # 타 학과
     exclude_intro=Intro.objects.annotate().order_by('?').exclude(id = intro_id)
-    return render(request,'intro_detail.html', {'intro_detail': intro_detail, 'exclude_intro': exclude_intro})
+
+    random_button = random.randint(1, 2)
+    random_width = random.randint(20, 80)
+    random_height = random.randint(20, 80)
+
+    return render(request,'intro_detail.html', {'intro_detail': intro_detail, 'exclude_intro': exclude_intro, 'random_button': random_button, 'random_width': random_width, 'random_height': random_height})
 
 
 def intro_like(request, intro_id):
