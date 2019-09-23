@@ -15,4 +15,3 @@ urlpatterns = [
     path('siru/', info.views.siru, name="siru"),
     path('promote/', info.views.promote, name="promote"),
 ]
-

@@ -108,8 +108,17 @@
     <h3 align="center">총학생회 김시영,최윤주,김아정</h3>
     {% if random_button == 2 %}
     <div>
-        <div style="position:fixed; right: {{ random_width }}%; bottom:{{ random_height }}%; z-index: 10;">
-            <img src="{% static 'img/random.png'%}" aria-hidden="true" width="200px">
+        <div style="position:fixed; right:{{ random_width }}%; bottom:{{ random_height }}%; z-index: 10;">
+            <div class="row">
+                <div class="col-sm-3 align-self-center"">
+                    찾았다!
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 align-self-center"">
+                    <img src="{% static 'img/random.png'%}" width="150px">
+                </div>
+            </div>
         </div>
     </div>
 
