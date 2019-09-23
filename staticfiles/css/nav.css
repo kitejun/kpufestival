@@ -1,8 +1,7 @@
-      
+     
 .label__on-off{
   margin-right:10px;
 }      
-      /*nav*/
       .overlay {
         height:200%;
         width: 0;
@@ -22,7 +21,6 @@
         margin-top: 120px;
       }
 
-      /*메뉴 내용*/
       .overlay a {
         padding: 8px;
         text-decoration: none;
@@ -38,7 +36,6 @@
         text-shadow: 0 0 3vw rgb(244, 209, 10);
       }
 
-      /*닫기 버튼*/
       .overlay .closebtn {
         position: absolute;
         top: 20px;
@@ -65,7 +62,6 @@
         padding-top:1.6rem;
       }
 
-      /*로고 가운데정렬*/
       .center {
         justify-content: center;
         display: flex;
@@ -82,7 +78,6 @@
       #logo-icon {
         width: 25rem;
       }
-      /*메뉴버튼*/
       .menu-container{
         float: left;
       }
@@ -94,12 +89,10 @@
       }
 
 
-/*게시판 메뉴*/
 .board a:last-child{display: none}
 .board:hover a:first-child{display:inline-block}
 .board:hover a:last-child{display:inline-block}
 
-/*웹*/
 @media (min-width: 1025px)  {
   .menu-container{
     margin-left: 0.8rem;
@@ -112,9 +105,7 @@
 
 }
 
-/*모바일*/
 @media (max-width: 1025px)  {
-  /*메뉴 내용*/
   .overlay a {
     font-size: 28px;
   }
@@ -137,7 +128,6 @@
     padding-top:0.8rem;
   }
 
-  /*로고 가운데정렬*/
   .center {
     justify-content: center;
     display: flex;
@@ -147,8 +137,8 @@
 
   .right{
     float:right;
-    padding-left:1rem;
-    padding-top:0.8rem;
+    padding-left:0.5rem;
+    padding-top:0.4rem;
   }
   .board a:first-child{display: inline-block}
   .board a:last-child{display: inline-block}

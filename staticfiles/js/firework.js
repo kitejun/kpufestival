@@ -6,6 +6,9 @@
 console.clear();
 
 
+
+
+//크기지정
 const IS_MOBILE = window.innerWidth <= 640;
 const IS_DESKTOP = window.innerWidth > 800;
 const IS_HEADER = IS_DESKTOP && window.innerHeight < 300;
@@ -51,6 +54,8 @@ const SKY_LIGHT_NONE = 0;
 const SKY_LIGHT_DIM = 1;
 const SKY_LIGHT_NORMAL = 2;
 
+
+//색지정
 const COLOR = {
 	Red: '#ff0043',
 	Green: '#14fc56',
@@ -1496,7 +1501,7 @@ function colorSky(speed) {
 	currentSkyColor.g += (targetSkyColor.g - currentSkyColor.g) / colorChange * speed;
 	currentSkyColor.b += (targetSkyColor.b - currentSkyColor.b) / colorChange * speed;
 	
-	appNodes.canvasContainer.style.backgroundColor = `rgb(${currentSkyColor.r | 0}, ${currentSkyColor.g | 0}, ${currentSkyColor.b | 0})`;
+	//appNodes.canvasContainer.style.backgroundColor = `rgb(${currentSkyColor.r | 0}, ${currentSkyColor.g | 0}, ${currentSkyColor.b | 0})`;
 }
 
 mainStage.addEventListener('ticker', update);
@@ -2293,3 +2298,4 @@ if (IS_HEADER) {
 		);
 	}, 0);
 }
+
