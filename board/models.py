@@ -12,7 +12,7 @@ class Board(models.Model):
         default='https://image.flaticon.com/icons/svg/149/149852.svg',
         processors=[ResizeToFit (700,700)], # 처리할 작업 목록
         format='JPEG', # 저장 포맷(확장자)
-        options= {'quality': 90 }, # 저장 포맷 관련 옵션 (JPEG 압축률 설정)
+        options= {'quality': 90 } # 저장 포맷 관련 옵션 (JPEG 압축률 설정)
         )
     pub_date=models.DateTimeField('date published')
     context=models.TextField()
@@ -50,7 +50,7 @@ class Missing(models.Model):
         default='https://image.flaticon.com/icons/svg/149/149852.svg',
         processors=[ResizeToFit (700,700)], # 처리할 작업 목록
         format='JPEG', # 저장 포맷(확장자)
-        options= {'quality': 90 }, # 저장 포맷 관련 옵션 (JPEG 압축률 설정)
+        options= {'quality': 90 } # 저장 포맷 관련 옵션 (JPEG 압축률 설정)
         )
     pub_date=models.DateTimeField('date published')
     context=models.TextField()
