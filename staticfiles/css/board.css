@@ -275,6 +275,10 @@ button:focus {outline:0;}
         height:12rem !important;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
+    .waytech_logo{
+        width:15rem;
+        height: auto;
+    }
     #youtube{
       margin:auto;
       width:70%;
@@ -317,6 +321,10 @@ button:focus {outline:0;}
     }
     #sub_button{
         float : right;
+    }
+    .waytech_logo{
+        width:10rem;
+        height: auto;
     }
     .dev-img{
         width:10rem !important;
