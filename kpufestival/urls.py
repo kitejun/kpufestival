@@ -10,7 +10,7 @@ handler404 = info.views.handler404
 handler500 = info.views.handler500
 '''
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('kpufestival7/', admin.site.urls),
     path('', info.views.home,name="home"),
 
     # URL을 연결하기 위한 import 부분
