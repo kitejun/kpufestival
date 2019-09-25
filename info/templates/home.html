@@ -5,8 +5,7 @@
 
 {% block content %}
 <script>
-$("img.lazy").lazyload({
-    threshold : 50,        //뷰포트에 보이기 300px 전에 미리 로딩
+$("img.lazy").lazyload({     //뷰포트에 보이기 300px 전에 미리 로딩
     effect : "fadeIn"       //효과
 });
 </script>
@@ -64,15 +63,15 @@ $("img.lazy").lazyload({
     </div>
   </div>
   <div class="section" id="section1">
-    <a href="{% url 'introduce' %}"><img src="/static/img/main_pub.png" style="" class="d-block w-100 picture_size"
+    <a href="{% url 'introduce' %}"><img src="/static/img/main_pub.png" style="" class="lazy d-block w-100 picture_size"
         alt="..."></a>
   </div>
   <div class="section" id="section1">
-    <a href="{% url 'missing' %}"><img style="" src="{% static 'img/BoardLost.png' %}" class="d-block w-100"
+    <a href="{% url 'missing' %}"><img style="" src="{% static 'img/BoardLost.png' %}" class="lazy d-block w-100"
         alt="..."></a>
   </div>
   <div class="section" id="section3">
-    <a href="{% url 'siru' %}"><img src="/static/img/main_siru.png" style="" class="d-block w-100 picture_size"
+    <a href="{% url 'siru' %}"><img src="/static/img/main_siru.png" class="lazy d-block w-100 picture_size"
         alt="..."></a>
   </div>
   <div class="section" id="section2">
@@ -83,10 +82,10 @@ $("img.lazy").lazyload({
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="/static/img/main_map1.png" style="" class="d-block w-100 picture_size" alt="...">
+          <img src="/static/img/main_map1.png" style="" class="lazy d-block w-100 picture_size" alt="...">
         </div>
         <div class="carousel-item">
-          <img src="/static/img/main_map2.png" style="" class="d-block w-100 picture_size" alt="...">
+          <img src="/static/img/main_map2.png" style="" class="lazy d-block w-100 picture_size" alt="...">
         </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
@@ -111,28 +110,28 @@ $("img.lazy").lazyload({
 
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="/static/img/Line-up.png" style="" class="d-block w-100 picture_size" alt="...">
+            <img src="/static/img/Line-up.png" class="lazy d-block w-100 picture_size" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="/static/img/youn-ha.png" style="" class="d-block w-100 picture_size" alt="...">
+            <img src="/static/img/youn-ha.png" class="lazy d-block w-100 picture_size" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="/static/img/mamamoo.png" style="" class="d-block w-100 picture_size" alt="...">
+            <img src="/static/img/mamamoo.png" class="lazy d-block w-100 picture_size" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="/static/img/esens.png" style="" class="d-block w-100 picture_size" alt="...">
+            <img src="/static/img/esens.png" class="lazy d-block w-100 picture_size" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="/static/img/xxx.png" style="" class="d-block w-100 picture_size" alt="...">
+            <img src="/static/img/xxx.png" class="lazy d-block w-100 picture_size" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="/static/img/jannavi.png" style="" class="d-block w-100 picture_size" alt="...">
+            <img src="/static/img/jannavi.png" class="lazy d-block w-100 picture_size" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="/static/img/da-du.png" style="" class="d-block w-100 picture_size" alt="...">
+            <img src="/static/img/da-du.png" class="lazy d-block w-100 picture_size" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="/static/img/joey.png" style="" class="d-block w-100 picture_size" alt="...">
+            <img src="/static/img/joey.png" class="lazy d-block w-100 picture_size" alt="...">
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators3" role="button" data-slide="prev">
@@ -147,15 +146,15 @@ $("img.lazy").lazyload({
     </div>
   </div>
   <div id="jb-content" class="main_info">
-    <a href="{% url 'introduce' %}"><img src="/static/img/main_pub.png" style="" class="d-block w-100 picture_size"
+    <a href="{% url 'introduce' %}"><img src="/static/img/main_pub.png" class="lazy d-block w-100 picture_size"
         alt="..."></a>
   </div>
   <div id="jb-content" class="main_info">
     <a href="{% url 'missing' %}"><img style="height:200px;" src="{% static 'img/BoardLost.png' %}"
-        class="d-block w-100" alt="..."></a>
+        class="lazy d-block w-100" alt="..."></a>
   </div>
   <div id="jb-content" class="main_info">
-    <a href="{% url 'siru' %}"><img src="/static/img/main_siru.png" style="" class="d-block w-100 picture_size"
+    <a href="{% url 'siru' %}"><img src="/static/img/main_siru.png"class="lazy d-block w-100 picture_size"
         alt="..."></a>
   </div>
   <div id="jb-content" class="main_info">
@@ -166,10 +165,10 @@ $("img.lazy").lazyload({
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="/static/img/main_map1.png" style="" class="d-block w-100 picture_size" alt="...">
+          <img src="/static/img/main_map1.png" class="lazy d-block w-100 picture_size" alt="...">
         </div>
         <div class="carousel-item">
-          <img src="/static/img/main_map2.png" style="" class="d-block w-100 picture_size" alt="...">
+          <img src="/static/img/main_map2.png" class="lazy d-block w-100 picture_size" alt="...">
         </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators4" role="button" data-slide="prev">
