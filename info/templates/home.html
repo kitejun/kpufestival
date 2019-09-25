@@ -4,7 +4,12 @@
 {% load staticfiles %}
 
 {% block content %}
-
+<script>
+$("img.lazy").lazyload({
+    threshold : 50,        //뷰포트에 보이기 300px 전에 미리 로딩
+    effect : "fadeIn"       //효과
+});
+</script>
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
@@ -24,28 +29,28 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="/static/img/Line-up.png" style="" class="d-block w-100 picture_size" alt="...">
+          <img src="/static/img/Line-up.png" class="lazy d-block w-100 picture_size" alt="...">
         </div>
         <div class="carousel-item">
-          <img src="/static/img/youn-ha.png" style="" class="d-block w-100 picture_size" alt="...">
+          <img src="/static/img/youn-ha.png" class="lazy d-block w-100 picture_size" alt="...">
         </div>
         <div class="carousel-item">
-          <img src="/static/img/mamamoo.png" style="" class="d-block w-100 picture_size" alt="...">
+          <img src="/static/img/mamamoo.png" class="lazy d-block w-100 picture_size" alt="...">
         </div>
         <div class="carousel-item">
-          <img src="/static/img/esens.png" style="" class="d-block w-100 picture_size" alt="...">
+          <img src="/static/img/esens.png" class="lazy d-block w-100 picture_size" alt="...">
         </div>
         <div class="carousel-item">
-          <img src="/static/img/xxx.png" style="" class="d-block w-100 picture_size" alt="...">
+          <img src="/static/img/xxx.png"  class="lazy d-block w-100 picture_size" alt="...">
         </div>
         <div class="carousel-item">
-          <img src="/static/img/jannavi.png" style="" class="d-block w-100 picture_size" alt="...">
+          <img src="/static/img/jannavi.png" class="lazy d-block w-100 picture_size" alt="...">
         </div>
         <div class="carousel-item">
-          <img src="/static/img/da-du.png" style="" class="d-block w-100 picture_size" alt="...">
+          <img src="/static/img/da-du.png" class="lazy d-block w-100 picture_size" alt="...">
         </div>
         <div class="carousel-item">
-          <img src="/static/img/joey.png" style="" class="d-block w-100 picture_size" alt="...">
+          <img src="/static/img/joey.png" class="lazy d-block w-100 picture_size" alt="...">
         </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
