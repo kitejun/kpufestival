@@ -3,7 +3,7 @@
 
 __김연준, 고주원, 양소영, 이세민__
 
-<img src="/images/likelion_logo.png" width="300" height="300">
+<img src="/images/up.png" width="50%">
 
 ### 0. 개요
 ------------------------------
