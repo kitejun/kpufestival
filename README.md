@@ -8,8 +8,7 @@ __김연준, 고주원, 양소영, 이세민__
 1. 한국산업기술대학교(KPU) 축제 기간 중 Web Site 의 필요성
 2. 총학생회(We higher)의 요청(외주)
 
-<img src="/images/up.png" width="50%">
-<img src="/images/up_change.png" width="50%">
+<img src="/images/up.png" width="50%"><img src="/images/up_change.png" width="50%">
 
 ### 1. 제작 목적
 ------------------------------
