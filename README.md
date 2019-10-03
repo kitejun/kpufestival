@@ -8,7 +8,12 @@ __김연준, 고주원, 양소영, 이세민__
 1. 한국산업기술대학교(KPU) 축제 기간 중 Web Site 의 필요성
 2. 총학생회(We higher)의 요청(외주)
 
+http://kpufestival.waytech.kr/
+
+
 <img src="/images/up.png" width="50%"><img src="/images/up_change.png" width="50%">
+
+
 
 ### 1. 제작 목적
 ------------------------------
@@ -22,9 +27,9 @@ __김연준, 고주원, 양소영, 이세민__
 ### 2. 역할 분담
 ------------------------------
  * 김연준 : Back-end
- * 고주원 : Front-End
+ * 고주원 : Front-End / Publishing
  * 양소영 : Front-End / Publishing
- * 이세민 : Front-End / Back-end
+ * 이세민 : Front-End / Publishing
 
 ### 3. 참고
 ------------------------------
